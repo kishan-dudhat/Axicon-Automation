@@ -1,0 +1,51 @@
+// ============================== 
+// CORE BRAND COLORS 
+// ============================== 
+$primary: #0f2a24;        // Deep industrial green 
+$secondary: #2f4f4a;      // Muted green-gray 
+$accent: #4a9c81;         // Automation green (CTA) 
+$accent-light: #cfe5dd;   // Soft background tint 
+$surface: #f5faf8;        // Page background 
+$dark: #1e282f;           // Footer / dark sections 
+$white: #ffffff; 
+$black: #000000; 
+
+// ============================== 
+// TEXT COLORS 
+// ============================== 
+$text-primary: #1f2933;   // Main text 
+$text-secondary: #5a6b72; // Paragraph / muted 
+$text-light: #9aa6ac; 
+
+// ============================== 
+// UI COLORS 
+// ============================== 
+$border-light: #e4e8ec; 
+$input-bg: #f9fbfc; 
+$table-head: #eef4f2; 
+$table-hover: #c9e2da; 
+
+// ============================== 
+// STATUS COLORS 
+// ============================== 
+$success: #4a9c81; 
+$info: #2d9cdb; 
+$warning: #deab44; 
+$danger: #d9596a; 
+
+// ============================== 
+// THEME MAP 
+// ============================== 
+$theme-colors: ( 
+  "primary": $primary, 
+  "secondary": $secondary, 
+  "accent": $accent, 
+  "light": $surface, 
+  "dark": $dark, 
+  "success": $success, 
+  "info": $info, 
+  "warning": $warning, 
+  "danger": $danger, 
+  "white": $white, 
+  "black": $black 
+);
