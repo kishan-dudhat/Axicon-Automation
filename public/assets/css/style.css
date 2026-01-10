@@ -1,34 +1,330 @@
+/* =========================================================
+   STYLE.CSS — AXICON AUTOMATION (TAILWIND FRIENDLY)
+   ---------------------------------------------------------
+   HOW TO USE (IMPORTANT)
+   ---------------------------------------------------------
+   This file EXTENDS Tailwind CSS.
+    Use these semantic utility classes like:
+      text-primary
+      bg-primary
+      border-light
+      btn btn-primary
+      card
+      breadcrumb
+
+   Example usage in HTML:
+   <h1 class="text-primary">Automation Solutions</h1>
+   <p class="text-muted">Industrial-grade machinery</p>
+   <div class="card bg-surface">...</div>
+
+
+/* =========================================================
+   ROOT VARIABLES — SINGLE SOURCE OF TRUTH
+   ========================================================= */
 :root {
-  /* CORE BRAND COLORS */
-  --primary: #0f2a24;
-  --secondary: #2f4f4a;
-  --accent: #4a9c81;
-  --accent-light: #cfe5dd;
-  --surface: #f5faf8;
-  --dark: #1e282f;
-  --white: #ffffff;
-  --black: #000000;
 
-  /* TEXT COLORS */
-  --text-primary: #1f2933;
-  --text-secondary: #5a6b72;
-  --text-light: #9aa6ac;
+  /* CORE BRAND */
+  --primary: #0b2a4a;
+  /* Deep Navy */
+  --primary-hover: #06203a;
+  /* Darker blue for hover */
+  --primary-soft: #456e9c;
 
-  /* UI COLORS */
-  --border-light: #e4e8ec;
-  --input-bg: #f9fbfc;
-  --table-head: #eef4f2;
-  --table-hover: #c9e2da;
+  --secondary: #123c66;
+  /* Blue Slate */
+  --secondary-hover: #174b80;
+  --secondary-soft: #e8f0f8;
 
-  /* STATUS COLORS */
-  --success: #4a9c81;
-  --info: #2d9cdb;
-  --warning: #deab44;
-  --danger: #d9596a;
+  --accent: #f28c28;
+  /* Warm Orange */
+  --accent-hover: #dd7b1f;
+  --accent-soft: #fff1e4;
+
+  /* EXTENDED COLORS (Same Tone Family) */
+  --info: #0ea5e9;
+  /* Sky Blue – links, info */
+  --info-soft: #e0f2fe;
+
+  --success: #16a34a;
+  /* Green – success */
+  --success-soft: #dcfce7;
+
+  --warning: #f59e0b;
+  /* Amber – warnings */
+  --warning-soft: #fef3c7;
+
+  --danger: #dc2626;
+  /* Red – errors */
+  --danger-soft: #fee2e2;
+
+  --neutral-dark: #0f172a;
+  /* Headings */
+  --neutral: #334155;
+  /* Body text */
+  --neutral-muted: #64748b;
+  /* Labels */
+  --neutral-soft: #e2e8f0;
+  /* Borders */
+
+  --navbar-bg: #3e4095;
+
+
+
+
+  /* BACKGROUNDS */
+  --bg-light: #f7f9fc;
+  /* Page background */
+  --bg-surface: #ffffff;
+  /* Cards / panels */
+  --bg-dark: #0a1622;
+
+
+  /* Header / footer */
+
+
+  /* BORDERS */
+  --border-light: #e2e8f0;
+  --border-dark: #1e293b;
+
+  /* FORMS */
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --input-focus: #0b5ed7;
+
+  /* TABLES */
+  --table-head: #eef2f7;
+  --table-hover: #f1f5f9;
+
+  /* STATUS */
+  --success: #16a34a;
+  --info: #0284c7;
+  --warning: #f59e0b;
+  --danger: #dc2626;
+
+
+  /* Font-F */
+  --font-poppins: 'Poppins',
+  ui-sans-serif,
+  system-ui,
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Arial,
+  sans-serif;
+
+  --font-inter: 'Inter',
+  ui-sans-serif,
+  system-ui,
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Arial,
+  sans-serif;
+
+  --font-serif: ui-serif,
+  Georgia,
+  'Times New Roman',
+  serif;
 }
 
+
+/* =========================================================
+   BASE STYLES (GLOBAL)
+   ========================================================= */
 body {
-  background-color: var(--surface);
+  font-family: var(--font-poppins);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--text-primary);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+}
+
+
+
+
+/* =========================================================
+   TEXT COLOR UTILITIES
+   Usage:
+   <p class="text-primary">
+   <span class="text-muted">
+   ========================================================= */
+/* ===================== */
+/* CORE BRAND */
+/* ===================== */
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-primary-hover {
+  color: var(--primary-hover) !important;
+}
+
+.text-primary-soft {
+  color: var(--primary-soft) !important;
+}
+
+.text-secondary {
+  color: var(--secondary) !important;
+}
+
+.text-secondary-hover {
+  color: var(--secondary-hover) !important;
+}
+
+.text-secondary-soft {
+  color: var(--secondary-soft) !important;
+}
+
+.text-accent {
+  color: var(--accent) !important;
+}
+
+.text-accent-hover {
+  color: var(--accent-hover) !important;
+}
+
+.text-accent-soft {
+  color: var(--accent-soft) !important;
+}
+
+
+/* ===================== */
+/* EXTENDED COLORS */
+/* ===================== */
+
+.text-info {
+  color: var(--info) !important;
+}
+
+.text-info-soft {
+  color: var(--info-soft) !important;
+}
+
+.text-success {
+  color: var(--success) !important;
+}
+
+.text-success-soft {
+  color: var(--success-soft) !important;
+}
+
+.text-warning {
+  color: var(--warning) !important;
+}
+
+.text-warning-soft {
+  color: var(--warning-soft) !important;
+}
+
+.text-danger {
+  color: var(--danger) !important;
+}
+
+.text-danger-soft {
+  color: var(--danger-soft) !important;
+}
+
+/* ===================== */
+/* NEUTRALS */
+/* ===================== */
+
+.text-heading {
+  color: var(--neutral-dark) !important;
+}
+
+.text-body {
+  color: var(--neutral) !important;
+}
+
+.text-muted {
+  color: var(--neutral-muted) !important;
+}
+
+.text-border {
+  color: var(--neutral-soft) !important;
+}
+
+
+
+/* =========================================================
+   BACKGROUND UTILITIES
+   Usage:
+   <section class="bg-primary text-invert">
+   ========================================================= */
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary) !important;
+}
+
+.bg-accent {
+  background-color: var(--accent) !important;
+}
+
+.bg-light {
+  background-color: var(--bg-light) !important;
+}
+
+.bg-surface {
+  background-color: var(--bg-surface) !important;
+}
+
+.bg-dark {
+  background-color: var(--bg-dark) !important;
+}
+
+.bg-navbar-bg {
+  background-color: var(--bg-navbar-bg) !important;
+}
+
+.bg-header-top {
+  background-color: #e1e2ee !important;
+}
+
+
+/* =========================================================
+   BORDER UTILITIES
+   Usage:
+   <div class="border border-light">
+   ========================================================= */
+.border-light {
+  border-color: var(--border-light) !important;
+}
+
+.border-dark {
+  border-color: var(--border-dark) !important;
+}
+
+.border-primary {
+  border-color: var(--primary) !important;
+}
+
+.border-accent {
+  border-color: var(--accent) !important;
+}
+
+
+/* =========================================================
+   TAILWIND VARIABLE BRIDGE
+   Usage:
+   text-[var(--tw-primary)]
+   ========================================================= */
+.custom-tailwind-vars {
+  --tw-primary: var(--primary);
+  --tw-secondary: var(--secondary);
+  --tw-accent: var(--accent);
+  --tw-dark: var(--bg-dark);
+  --tw-success: var(--success);
+  --tw-warning: var(--warning);
+  --tw-danger: var(--danger);
 }

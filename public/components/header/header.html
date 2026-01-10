@@ -1,173 +1,327 @@
-<header class="sticky top-0 z-50 bg-white shadow-md font-sans">
+<!DOCTYPE html>
+<html lang="en">
 
-  <!-- ================= TOP BAR ================= -->
-  <div class="bg-primary text-white text-sm hidden md:block">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-2">
-      <div class="flex gap-6">
-        <span class="flex items-center gap-2">
-          <i class="fa-solid fa-phone"></i> +91 98765 43210
-        </span>
-        <a href="mailto:info@axiconautomation.com" class="flex items-center gap-2 hover:text-blue-200">
-          <i class="fa-solid fa-envelope"></i> info@axiconautomation.com
-        </a>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Axicon Automation - Industrial automation solutions and laser marking systems">
+    <title>Axicon Automation | Industrial Solutions</title>
 
-      <div class="flex items-center gap-4">
-        <a href="#" class="hover:text-blue-200"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#" class="hover:text-blue-200"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="#" class="hover:text-blue-200"><i class="fa-brands fa-youtube"></i></a>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-        <a href="#/products" class="bg-secondary px-3 py-1 font-semibold rounded">
-          Catalogue
-        </a>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙️</text></svg>">
 
-        <a href="#" class="bg-green-600 px-3 py-1 rounded font-semibold flex items-center gap-1">
-          <i class="fa-brands fa-whatsapp"></i> WhatsApp
-        </a>
-      </div>
-    </div>
-  </div>
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./header.css">
 
-  <!-- ================= MAIN NAVBAR ================= -->
-  <nav class="bg-white">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="flex justify-between items-center h-20">
 
-        <!-- Logo -->
-        <a href="#/" class="flex items-center gap-3 font-extrabold text-primary text-xl">
-          <span class="bg-primary text-white px-3 py-2 rounded">A</span>
-          AXICON AUTOMATION
-        </a>
+    <script src="./header.js"></script>
+</head>
 
-        <!-- Desktop Menu -->
-        <ul class="hidden md:flex items-center gap-8 text-gray-800 font-medium">
+<body>
+    <!-- SECTION A: HERO TOP BAR -->
+    <div id="hero-top-bar"
+        class="hero-top-bar block bg-header-top transition-all duration-400 ease-out translate-y-0 opacity-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-between items-center py-1">
+                <!-- Contact Info -->
+                <div class="flex flex-wrap items-center justify-center gap-6 text-sm">
+                    <a href="tel:+919876543210"
+                        class="flex items-center gap-2 text-blue-900 hover:text-blue-600 transition-colors duration-300">
+                        <i class="fa-solid fa-phone-flip rotate-90"></i>
+                        <span class="pb-1">+91 9876543210</span>
+                    </a>
+                    <a href="mailto:contact@axicon.com"
+                        class="flex items-center justify-center gap-2 text-blue-900 hover:text-blue-600 transition-colors duration-300">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span class="pb-1">contact@axicon.com</span>
+                    </a>
+                    <div
+                        class="flex items-center gap-2 cursor-pointer text-blue-900 hover:text-blue-600 transition-colors duration-300">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span class="pb-1">Industrial Park, Zone 5</span>
+                    </div>
+                </div>
 
-          <li><a href="#/" class="hover:text-primary transition">Home</a></li>
-
-          <!-- About Dropdown -->
-          <li class="relative group">
-            <button class="flex items-center gap-1 hover:text-primary transition">
-              About Us <i class="fa-solid fa-angle-down text-xs"></i>
-            </button>
-
-            <ul class="absolute left-0 top-full w-64 bg-white shadow-xl border-t-4 border-primary
-              opacity-0 invisible group-hover:opacity-100 group-hover:visible
-              transform translate-y-3 group-hover:translate-y-0
-              transition-all duration-300">
-
-              <li><a href="#/company-profile"
-                  class="block px-4 py-3 hover:bg-blue-100 active:bg-blue-600 text-primary">Company
-                  Profile</a></li>
-              <li><a href="#/environmental-protection"
-                  class="block px-4 py-3 hover:bg-gray-50 hover:text-primary hover:bg-blue-600">Environmental
-                  Protection</a></li>
-              <li><a href="#/mission-vision"
-                  class="block px-4 py-3 hover:bg-gray-50 hover:text-primary hover:bg-blue-600">Mission &
-                  Vision</a></li>
-              <li><a href="#/awards-achievements"
-                  class="block px-4 py-3 hover:bg-gray-50 hover:text-primary hover:bg-blue-600">Awards &
-                  Achievements</a></li>
-            </ul>
-          </li>
-
-          <!-- Products Dropdown -->
-          <li class="relative group">
-            <button class="flex items-center gap-1 hover:text-primary transition">
-              Products <i class="fa-solid fa-angle-down text-xs"></i>
-            </button>
-
-            <ul class="absolute left-0 top-full w-64 bg-white shadow-xl border-t-4 border-primary
-              opacity-0 invisible group-hover:opacity-100 group-hover:visible
-              transform translate-y-3 group-hover:translate-y-0
-              transition-all duration-300">
-
-              <li><a href="#/products" class="block px-4 py-3 hover:bg-gray-50 hover:text-primary">All Products</a></li>
-              <li><a href="#/products" class="block px-4 py-3 hover:bg-gray-50 hover:text-primary">Fiber Laser
-                  Marking</a></li>
-              <li><a href="#/products" class="block px-4 py-3 hover:bg-gray-50 hover:text-primary">CO₂ Laser Marking</a>
-              </li>
-            </ul>
-          </li>
-
-          <li><a href="#/quality" class="hover:text-primary transition">Quality</a></li>
-          <li><a href="#/services" class="hover:text-primary transition">Services</a></li>
-          <li><a href="#/industries" class="hover:text-primary transition">Industries</a></li>
-          <li><a href="#/contact" class="hover:text-primary transition">Contact</a></li>
-        </ul>
-
-        <!-- Mobile Button -->
-        <button id="mobile-menu-button" class="md:hidden text-2xl text-primary">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
+                <!-- Social Icons -->
+                <div class="flex items-center gap-3">
+                    <a href="#"
+                        class="opacity-80 hover:opacity-100 transform hover:-translate-y-0.5 transition-all duration-300">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="#"
+                        class="opacity-80 hover:opacity-100 transform hover:-translate-y-0.5 transition-all duration-300">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#"
+                        class="opacity-80 hover:opacity-100 transform hover:-translate-y-0.5 transition-all duration-300">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="#"
+                        class="opacity-80 hover:opacity-100 transform hover:-translate-y-0.5 transition-all duration-300">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <div
+                        class="flex gap-2 border border-blue-900 rounded items-center px-2 py-1 hover:bg-gray-100 transition-colors duration-300">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <p
+                            class="border-r border-blue-900 px-2 cursor-pointer hover:text-blue-900 transition-colors duration-300">
+                            Register</p>
+                        <p class="cursor-pointer hover:text-blue-900 transition-colors duration-300">Login</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- ================= MOBILE MENU ================= -->
-    <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-40 pt-24 px-6 overflow-y-auto">
+    <!-- SECTION B: MAIN NAVBAR -->
+    <header id="main-navbar" class="main-navbar relative z-50 shadow-lg transition-all duration-300 ease-out">
+        <div class="container mx-auto">
+            <nav class="flex justify-between items-center py-4" aria-label="Main navigation">
+                <!-- Logo -->
+                <a href="/" class="logo">
+                    <div class="flex items-center gap-2 ml-3">
+                        <div class="w-20 h-auto bg-transparent flex items-center justify-center">
+                            <img src="./public/assets/images/axicon-automation-logo.webp" alt="Axicon Automation Logo"
+                                class="w-full h-full">
+                        </div>
+                    </div>
+                </a>
 
-      <ul class="space-y-4 text-lg font-semibold text-gray-800">
+                <!-- Desktop Navigation -->
+                <div id="desktop-navbar" class="items-center space-x-1">
+                    <ul class="flex items-center space-x-1" role="menubar">
+                        <!-- Home -->
+                        <li role="none" class="flex items-center py-4">
+                            <a href="/" class="group px-4 font-medium">Home
+                                <span
+                                    class="block max-w-0 mt-1 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+                            </a>
+                        </li>
 
-        <li><a href="#/" class="block py-2 border-b">Home</a></li>
+                        <!-- About Us Dropdown -->
+                        <li class="relative group flex items-center py-4" role="none">
+                            <div class="group flex items-center relative">
+                                <button class="ps-4 pe-2 font-medium flex items-center pb-3"
+                                    aria-expanded="false" role="menuitem">
+                                    About Us
+                                </button>
 
-        <!-- About (Dropdown) -->
-        <li>
-          <button onclick="toggleMobile('about')" class="w-full flex justify-between items-center py-2 border-b">
-            About Us
-            <i id="icon-about" class="fa-solid fa-chevron-down text-sm transition"></i>
-          </button>
+                                  <i class="fa-solid fa-chevron-down ms-1
+           transition-transform duration-300 group-hover:rotate-180">
+                                </i>
 
-          <ul id="menu-about" class="hidden pl-4 pt-2 space-y-2 text-base font-medium">
-            <li><a href="#/company-profile">Company Profile</a></li>
-            <li><a href="#/environmental-protection">Environmental Protection</a></li>
-            <li><a href="#/mission-vision">Mission & Vision</a></li>
-            <li><a href="#/awards-achievements">Awards & Achievements</a></li>
-          </ul>
-        </li>
+                                <!-- underline -->
+                                <span class="absolute left-4 right-2 bottom-1 mt-3 
+           h-0.5 bg-sky-600 me-3 mt-2
+           scale-x-0 origin-left
+           transition-transform duration-500 ease-in-out
+           group-hover:scale-x-100">
+                                </span>
+                            </div>
 
-        <!-- Products (Dropdown) -->
-        <li>
-          <button onclick="toggleMobile('products')" class="w-full flex justify-between items-center py-2 border-b">
-            Products
-            <i id="icon-products" class="fa-solid fa-chevron-down text-sm transition"></i>
-          </button>
+                            <div class="absolute top-full left-0 min-w-64 bg-blue-50 shadow-lg rounded opacity-0 invisible translate-y-[-10px] transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 z-40"
+                                role="menu">
+                                <a href="/about/company-profile"
+                                    class="block px-4 py-2.5 text-gray-800 hover:bg-slate-300 hover:text-blue-900 hover:pl-5 transition-all duration-300"
+                                    role="menuitem">Company Profile</a>
+                                <a href="/about/infrastructure"
+                                    class="block px-4 py-2.5 text-gray-800 hover:bg-slate-300 hover:text-blue-900 hover:pl-5 transition-all duration-300"
+                                    role="menuitem">Infrastructure</a>
+                            </div>
+                        </li>
 
-          <ul id="menu-products" class="hidden pl-4 pt-2 space-y-2 text-base font-medium">
-            <li><a href="#/products">All Products</a></li>
-            <li><a href="#/products">Fiber Laser Marking</a></li>
-            <li><a href="#/products">CO₂ Laser Marking</a></li>
-          </ul>
-        </li>
+                        <!-- Products Dropdown (with sub-menu) -->
+                        <li class="relative group flex items-center py-4" role="none">
+                            <div class="group flex items-center ">
+                                <button class="ps-4 pe-2 font-medium flex items-center" aria-expanded="false"
+                                    role="menuitem">
+                                    Products
+                                </button>
 
-        <li><a href="#/quality" class="block py-2 border-b">Quality</a></li>
-        <li><a href="#/services" class="block py-2 border-b">Services</a></li>
-        <li><a href="#/industries" class="block py-2 border-b">Industries</a></li>
-        <li><a href="#/contact" class="block py-2 border-b">Contact</a></li>
-      </ul>
+                                <i class="fa-solid fa-chevron-down ms-1
+           transition-transform duration-300 group-hover:rotate-180">
+                                </i>
 
-      <!-- CTA -->
-      <div class="mt-8 space-y-3">
-        <a href="tel:+919876543210" class="block bg-primary text-white text-center py-3 rounded font-bold">
-          📞 Call Now
-        </a>
-        <a href="https://wa.me/919876543210" class="block bg-green-600 text-white text-center py-3 rounded font-bold">
-          💬 WhatsApp
-        </a>
-      </div>
-    </div>
+                                <!-- underline -->
+                                <span class="absolute left-4 right-2 bottom-1
+           h-0.5 bg-sky-600
+           scale-x-0 origin-left
+           transition-transform duration-500 ease-in-out
+           group-hover:scale-x-100">
+                                </span>
+                            </div>
+
+                            <div class="absolute top-full left-0 min-w-64 bg-blue-50 shadow-lg rounded opacity-0 invisible translate-y-[-10px] transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 z-40"
+                                role="menu">
+                                <div class="relative group/submenu">
+                                    <a href="/products/laser-marking-machine"
+                                        class="flex items-center justify-between text-gray-800 px-4 py-2.5 hover:bg-slate-300 hover:text-blue-900 hover:pl-5 transition-all duration-300"
+                                        role="menuitem">
+                                        Laser Marking Machine
+                                        <i
+                                            class="fa-solid fa-chevron-right ps-10 transition-transform duration-300 group-hover/submenu:rotate-180 group-hover/submenu:ml-8 group-hover/submenu:p-0"></i>
+                                    </a>
+                                    <div class="absolute top-[-0.5rem] left-full ml-2 min-w-48 bg-white shadow-lg rounded opacity-0 invisible translate-x-[-10px] transition-all duration-300 group-hover/submenu:opacity-100 group-hover/submenu:visible group-hover/submenu:translate-x-0 z-40"
+                                        role="menu">
+                                        <a href="/products/industrial-marking-machine"
+                                            class="block px-4 py-2.5 text-gray-800 hover:bg-slate-200 hover:text-blue-900 transition-all duration-300"
+                                            role="menuitem">Industrial Marking Machine</a>
+                                        <a href="/products/fiber-laser"
+                                            class="block px-4 py-2.5 text-gray-800 hover:bg-slate-200 hover:text-blue-900 transition-all duration-300"
+                                            role="menuitem">Fiber Laser</a>
+                                        <a href="/products/co2-laser"
+                                            class="block px-4 py-2.5 text-gray-800 hover:bg-slate-200 hover:text-blue-900 transition-all duration-300"
+                                            role="menuitem">CO₂ Laser</a>
+                                    </div>
+                                </div>
+                                <a href="/products/automation-systems"
+                                    class="block px-4 py-2.5 text-gray-800 hover:bg-slate-300 hover:text-blue-900 hover:pl-5 transition-all duration-300"
+                                    role="menuitem">Automation Systems</a>
+                                <a href="/products/robotics"
+                                    class="block px-4 py-2.5 text-gray-800 hover:bg-slate-300 hover:text-blue-900 hover:pl-5 transition-all duration-300"
+                                    role="menuitem">Robotics</a>
+                            </div>
+                        </li>
+
+                        <!-- Services -->
+                        <li role="none" class="flex items-center py-4">
+                            <a href="/services" class="group px-4 py-4 font-medium">Services
+                                <span
+                                    class="block max-w-0 mt-1 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+                            </a>
+                        </li>
+
+                        <!-- Industrial -->
+                        <li role="none" class="flex items-center py-4">
+                            <a href="/industrial" class="group px-4 font-medium">Industrial
+                                <span
+                                    class="block max-w-0 mt-1 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+                            </a>
+
+                        </li>
+
+                        <!-- Application -->
+                        <li role="none" class="flex items-center py-4">
+                            <a href="/application" class="group px-4 font-medium">Application
+                                <span
+                                    class="block max-w-0 mt-1 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+                            </a>
+                        </li>
+
+                        <!-- Contact -->
+                        <li role="none" class="flex items-center py-4">
+                            <!-- <a href="/contact"
+                                class="relative px-4 py-3 font-medium hover:font-bold transition-all duration-300"
+                                role="menuitem">Contact</a> -->
+
+                            <a href="/contact" class="group px-4 font-medium">contact
+                                <span
+                                    class="block max-w-0 mt-1 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+                            </a>
+
+
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-toggle"
+                    class="w-10 h-10 flex flex-col justify-center items-center gap-1.5 transition-all duration-300 rounded mr-3"
+                    aria-label="Toggle menu" aria-expanded="false">
+                    <i id="mobile-menu-icon" class="fa-solid fa-list"></i>
+                </button>
+            </nav>
+
+          
+                <!-- Mobile Navigation Menu -->
+                <div id="mobile-menu"
+                    class="mobile-menu  overflow-y-auto h-full scrollbar  fixed top-50 right-0 h-full w-1/2 bg-white translate-x-full transition-transform duration-300 ease-out z-100"
+                    aria-hidden="true">
+                    <ul class="flex flex-col" role="menubar">
+                        <li role="none">
+                            <a href="/"
+                                class="block py-4 text-white font-medium border-b border-slate-200 transition-all duration-300 px-2"
+                                role="menuitem">Home</a>
+                        </li>
+    
+                        <li>
+                            <div class="mobile-toggle text-white font-medium flex w-full items-center justify-between py-4 px-2 border-b"
+                                aria-expanded="false">
+                                About Us
+                                <i id="about-btn" class="fa-solid fa-chevron-down transition-transform"></i>
+                            </div>
+    
+                            <ul id="about-panel" class="mobile-panel hidden">
+                                <li class="border-b pl-5 font-normal py-3"><a href="/products/automation-systems">Automation
+                                        Systems</a></li>
+                                <li class="border-b pl-5 font-normal py-3"><a href="/products/robotics">Robotics</a></li>
+                            </ul>
+                        </li>
+    
+                        <li>
+                            <div class="mobile-toggle text-white font-medium flex w-full items-center justify-between py-4 px-2 border-b"
+                                aria-expanded="false">
+                                Products
+                                <i id="products-btn" class="fa-solid fa-chevron-down transition-transform"></i>
+                            </div>
+    
+                            <ul id="products-panel" class="mobile-panel hidden">
+                                <li class="border-b pl-5 font-normal py-3"><a href="/products/automation-systems">Automation
+                                        Systems</a></li>
+                                <li class="border-b pl-5 font-normal py-3"><a href="/products/robotics">Robotics</a></li>
+                            </ul>
+                        </li>
+    
+    
+    
+                        <li role="none">
+                            <a href="/services"
+                                class="block py-4 px-2 text-white font-medium border-b border-slate-200 hover:text-blue-900 hover:pl-2 transition-all duration-300"
+                                role="menuitem">Services</a>
+                        </li>
+    
+                        <li role="none">
+                            <a href="/industrial"
+                                class="block py-4 px-2 text-white font-medium border-b border-slate-200 hover:text-blue-900 hover:pl-2 transition-all duration-300"
+                                role="menuitem">Industrial</a>
+                        </li>
+    
+                        <li role="none">
+                            <a href="/application"
+                                class="block py-4 px-2 text-whi font-medium border-b border-slate-200 hover:text-blue-900 hover:pl-2 transition-all duration-300"
+                                role="menuitem">Application</a>
+                        </li>
+    
+                        <li role="none">
+                            <a href="/contact"
+                                class="block py-4 px-2 text-white font-medium border-b border-slate-200 hover:text-blue-900 hover:pl-2 transition-all duration-300"
+                                role="menuitem">Contact</a>
+                        </li>
+                    </ul>
+    
+                    <div class="mt-6 pt-6 border-gray-200">
+                        <a href="/contact"
+                            class="block w-full py-3 px-4 text-center bg-orange-400 hover:bg-orange-500 text-white font-medium rounded transition-colors duration-300">
+                            Request a Quote
+                        </a>
+                    </div>
+                </div>
+          
 
 
 
-  </nav>
-</header>
+        </div>
+    </header>
 
 
 
-<script>
-  function toggleMobile(id) {
-    const menu = document.getElementById(`menu-${id}`);
-    const icon = document.getElementById(`icon-${id}`);
 
-    menu.classList.toggle('hidden');
-    icon.classList.toggle('rotate-180');
-  }
-</script>
+</body>
+
+</html>

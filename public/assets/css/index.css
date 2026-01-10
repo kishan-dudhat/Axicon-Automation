@@ -1,0 +1,17 @@
+s:root {
+  --header-height: 108px !important;
+}
+
+#app {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  scroll-behavior: smooth !important;
+  scrollbar-width: none !important;
+}
+
+@media (width < 1021px) {
+  #app {
+    margin-top: var(--header-height) !important;
+    height: calc(100vh - var(--header-height)) !important;
+  }
+}
