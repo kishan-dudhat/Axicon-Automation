@@ -1,54 +1,488 @@
-<section class=" gap-10 items-center">
-  <img src="./public/assets/images/axicon-automation-home-hero-img.webp" class="w-full" />
-  <div class="order-2 md:order-1">
-    <span class="text-accent font-semibold tracking-wide uppercase text-sm">Smart Manufacturing</span>
-    <h1 class="text-4xl md:text-5xl font-bold leading-tight mt-2 text-primary">
-      Industrial Automation <br>Solutions
-    </h1>
-    <p class="mt-4 text-text-secondary text-lg leading-relaxed">
-      We specialize in PLC, SCADA, Robotics, and Special Purpose Machines to drive efficiency and innovation in your manufacturing process.
-    </p>
-    <div class="mt-8 flex gap-4">
-      <a href="#/contact"
-         class="inline-block bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-secondary transition shadow-lg hover:shadow-xl">
-        Get a Quote
-      </a>
-      <a href="#/products"
-         class="inline-block bg-white text-primary border border-gray-200 px-8 py-3 rounded-lg font-medium hover:border-accent hover:text-accent transition">
-        View Products
-      </a>
+<script src="./home.js"></script>
+
+<!-- image section -->
+<section class="grid items-end justify-items-center lg:mb-5 mx-auto">
+  <img src="./public/assets/images/HomeImage/axicon-automation-home-hero-img.webp"
+    class="w-full col-start-1 row-start-1" alt="Axicon Automation" />
+  <h1 id="heroTitle" class="
+    col-start-1 row-start-1
+    px-4 pb-4
+    text-hero text-white
+    text-center lg:text-right
+    opacity-0 translate-x-20
+    transition-all duration-700 ease-out
+  ">
+    LEADER IN PERMANENT LASER MARKING SOLUTIONS.
+
+  </h1>
+</section>
+
+<!-- about us and our misiion section -->
+<section class="w-full py-12 px-4 sm:px-6 lg:px-12 overflow-hidden">
+  <!-- About Section -->
+  <div class="
+      max-w-7xl mx-auto
+      grid grid-cols-1 md:grid-cols-2
+      items-center
+      gap-6 sm:gap-8 lg:gap-12
+    ">
+    <div class="
+        w-full
+        opacity-0 translate-y-10
+        transition-all duration-700 ease-out
+        animate-on-scroll
+      ">
+      <img src="./public/assets/images/HomeImage/home-about-image.jpg" alt="Axicon Automation"
+        class="w-full h-auto rounded-xl object-cover shadow-lg" />
+    </div>
+    <div class="
+        text-center md:text-left
+        opacity-0 translate-x-10
+        transition-all duration-700 delay-150 ease-out
+        animate-on-scroll
+      ">
+      <h2 class="mb-4 text-heading text-gray-900">
+        About Axicon Automation
+      </h2>
+
+      <p class="text-body text-gray-700 leading-relaxed">
+        Axicon Automation is rising and thriving in the Indian Laser industry for producing a highly valuable range of
+        Industrial machines & built our reputation on designing and building industry-leading solutions for laser-based
+        applications, including automated and robotic parts handling, vision and validation. The sole purpose of our
+        company is to support & uplift the quality of processes in Laser industries by providing them better machines
+        that generates finer results of Marking & Cutting process.
+      </p>
     </div>
   </div>
+  <!-- Mission Section -->
+  <div class="
+      max-w-7xl mx-auto mt-16
+      grid grid-cols-1 md:grid-cols-2
+      items-center
+      gap-6 sm:gap-8 lg:gap-12
+    ">
+    <!-- Text -->
+    <div class="
+        text-center md:text-left
+        opacity-0 -translate-x-10
+        transition-all duration-700 delay-150 ease-out
+        animate-on-scroll
+        md:order-1 order-2
+      ">
+      <h2 class="mb-4 text-heading text-gray-900">
+        Our Mission
+      </h2>
 
-  <div class="order-1 md:order-2">
-    <img src="https://placehold.co/600x400?text=Automation+Machine"
-         alt="Axicon Automation Machinery"
-         class="rounded-xl shadow-2xl w-full object-cover h-[400px]">
+      <p class="text-body text-gray-700 leading-relaxed">
+        Our Mission is to be one of the world’s leading manufacturers of Fiber Laser Marking Machine and Customized
+        Laser solution Provider. We seek to develop the most inventive, smart, and profitable Laser marking experiences
+        and related products in the world. We believe that product should be simplistic not the complicated.
+      </p>
+    </div>
+
+    <!-- Image -->
+    <div class="
+        w-full
+        opacity-0 translate-y-10
+        transition-all duration-700 ease-out
+        animate-on-scroll
+        md:order-2 order-1
+      ">
+      <img src="./public/assets/images/HomeImage/home-our-mission-image.jpg" alt="Axicon Automation Mission"
+        class="w-full h-auto rounded-xl object-cover shadow-lg" />
+    </div>
   </div>
 </section>
 
-<!-- Features Section -->
-<section class="py-16 bg-white rounded-xl shadow-sm px-8 my-12">
-  <div class="text-center max-w-2xl mx-auto mb-12">
-    <h2 class="text-3xl font-bold text-primary">Why Choose Us?</h2>
-    <p class="text-text-secondary mt-3">Delivering excellence in industrial automation with over a decade of expertise.</p>
+<!-- our product -->
+<section class="py-12 overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.15)]
+ m-4">
+  <div class="max-w-7xl mx-auto">
+    <h1 class="text-hero-heading text-center opacity-0 translate-x-10
+            transition-all duration-700 ease-out animate-on-scroll mb-10">
+      Explore Our Products
+    </h1>
+    <div class="w-full mx-auto px-4 pb-8">
+      <div class="overflow-hidden">
+        <div id="carouselTrack" class="flex gap-6 items-stretch transition-transform duration-500 ease-in-out">
+
+
+          <div class="min-w-full md:min-w-[48%] lg:min-w-[32%]
+            bg-white rounded-2xl  p-6 h-full">
+            <img src="./public/assets/images/ProductsImage/lasor-marking-mashine-product.webp"
+              class="rounded-xl mb-4 w-full" />
+            <h3 class="text-center font-semibold text-subheading">Laser Marking Machine</h3>
+          </div>
+
+
+
+          <div class="min-w-full md:min-w-[48%] lg:min-w-[32%]
+                    bg-white rounded-2xl  p-6">
+            <img src="./public/assets/images/ProductsImage/industrial-lasor-marking-mashine-product.webp"
+              class="rounded-xl mb-4 w-full" />
+            <h3 class="text-center font-semibold text-subheading">Fiber Laser Cutting Marking Mashine</h3>
+          </div>
+
+
+
+          <div class="min-w-full md:min-w-[48%] lg:min-w-[32%]
+                    bg-white rounded-2xl  p-6">
+            <img src="./public/assets/images/ProductsImage/co2-lasor-cutting-mashine-product.webp"
+              class="rounded-xl mb-4 w-full" />
+            <h3 class="text-center font-semibold text-subheading">Handheld Laser Marking Mashine</h3>
+          </div>
+
+
+
+          <div class="min-w-full md:min-w-[48%] lg:min-w-[32%]
+                    bg-white rounded-2xl  p-6">
+            <img src="./public/assets/images/ProductsImage/compect-lasor-marking-mashine-product.webp"
+              class="rounded-xl mb-4 w-full" />
+            <h3 class="text-center font-semibold text-subheading">Co2 Laser Cutting Mashine for NOn-metal</h3>
+          </div>
+
+
+
+          <div class="min-w-full md:min-w-[48%] lg:min-w-[32%]
+                    bg-white rounded-2xl  p-6">
+            <img src="./public/assets/images/ProductsImage/compect-lasor-marking-mashine-product.webp"
+              class="rounded-xl mb-4 w-full" />
+            <h3 class="text-center font-semibold text-subheading">Compact Laser Marking Mashine</h3>
+          </div>
+
+
+
+          <div class="min-w-full md:min-w-[48%] lg:min-w-[32%]
+                    bg-white rounded-2xl  p-6">
+            <img src="./public/assets/images/ProductsImage/compect-lasor-marking-mashine-product.webp"
+              class="rounded-xl mb-4 w-full" />
+            <h3 class="text-center font-semibold text-subheading">Industrial Laser Marking Mashine</h3>
+          </div>
+
+
+
+
+        </div>
+      </div>
+
+
+      <!-- <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2
+             bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center z-10">
+      <i class="fa-solid fa-angle-left"></i>
+    </button>
+
+    <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2
+             bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center z-10">
+      <i class="fa-solid fa-angle-right"></i>
+    </button> -->
+
+    </div>
+
   </div>
-  
-  <div class="grid md:grid-cols-3 gap-8">
-    <div class="text-center p-6 rounded-lg hover:bg-surface transition">
-      <div class="w-12 h-12 bg-accent-light text-accent rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">⚡</div>
-      <h3 class="text-xl font-bold mb-2">High Efficiency</h3>
-      <p class="text-text-secondary">Optimized solutions that maximize your production output while minimizing downtime.</p>
+
+</section>
+
+<!-- vidio section -->
+<section class="w-full py-12 px-4 sm:px-6 lg:px-12">
+  <div class="
+      max-w-7xl mx-auto
+      grid grid-cols-1 lg:grid-cols-2
+      gap-6 sm:gap-8 lg:gap-12
+      items-center
+    ">
+    <!-- left side section -->
+    <div class="text-center lg:text-left">
+      <p class="
+          text-body
+          text-gray-700
+          leading-relaxed
+          opacity-0 -translate-x-10
+           transition-all duration-700 ease-in animate-on-scroll
+        ">
+        <span class="pt-2">
+          We, Axicon Automation located at Ahmedabad, Gujarat, are considered a
+          renowned name in the laser industry.
+        </span>
+        <br />
+        <span class="pt-2">
+          We provide a wide range of laser
+          machines including Fiber Laser Marking Machines, Laser Cutting Machines,
+          Laser Engraving Machines, Laser Welding Machines, and customized laser
+          machine solutions for over a decade.
+        </span>
+        <br />
+        <span class="pt-2">
+          Our laser machine series is manufactured in accordance with existing
+          industry standards and norms.
+        </span>
+        <br />
+        <span class="pt-2">
+          The proposed assemblage is widely
+          appreciated for strong construction, longer operational life,
+          functional fluency, reliable performance, and low maintenance.
+        </span>
+      </p>
     </div>
-    <div class="text-center p-6 rounded-lg hover:bg-surface transition">
-      <div class="w-12 h-12 bg-accent-light text-accent rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">🔧</div>
-      <h3 class="text-xl font-bold mb-2">Custom Engineering</h3>
-      <p class="text-text-secondary">Tailor-made machines and control systems designed specifically for your unique requirements.</p>
-    </div>
-    <div class="text-center p-6 rounded-lg hover:bg-surface transition">
-      <div class="w-12 h-12 bg-accent-light text-accent rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">🛡️</div>
-      <h3 class="text-xl font-bold mb-2">Reliable Support</h3>
-      <p class="text-text-secondary">24/7 technical support and maintenance ensuring your systems run smoothly.</p>
+
+    <!-- right side vidio section -->
+    <div class="
+         w-full
+        aspect-video
+        rounded-xl
+        overflow-hidden
+        shadow-lg
+        opacity-0 translate-x-10
+           transition-all duration-700 ease-in animate-on-scroll
+      ">
+      <iframe class="inset-0 w-full h-full" src="https://www.youtube.com/embed/e882a_TQfaw"
+        title="Axicon Automation Laser Machines" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
     </div>
   </div>
+</section>
+
+<!-- Why Us section -->
+<section class="py-12">
+  <h1 class="text-hero-heading opacity-0 -translate-x-10
+           transition-all duration-700 ease-in animate-on-scroll text-center py-4">Why Us?</h1>
+  <h1 class="text-body opacity-0 translate-x-10
+           transition-all duration-700 ease-in animate-on-scroll text-center ">Advanced solutions backed by expert
+    teams and genuine products</h1>
+
+  <div class="
+  max-w-7xl mx-auto
+  grid
+  grid-cols-2
+  md:grid-cols-4
+  gap-6
+  items-center
+  justify-items-center
+  text-center
+   py-4
+">
+
+    <div class="flex flex-col items-center gap-3">
+      <img src="./public/assets/images/HomeImage/home-why-us-1.png" class="h-16 md:h-20 w-auto object-contain opacity-0 -translate-x-10
+           transition-all duration-700 ease-out animate-on-scroll  hover:scale-110
+    hover:drop-shadow-[0_0_15px_rgba(0,0,0,0.25)]" />
+      <h6 class="text-subheading opacity-0 -translate-x-10
+           transition-all duration-700 ease-out animate-on-scroll">Ultimate Quality</h6>
+    </div>
+
+    <div class="flex flex-col items-center gap-3">
+      <img src="./public/assets/images/HomeImage/home-why-us-2.png" class="h-16 md:h-20 w-auto object-contain  opacity-0 translate-x-10
+           transition-all duration-700 ease-out animate-on-scroll hover:scale-110
+    hover:drop-shadow-[0_0_15px_rgba(0,0,0,0.25)]" />
+      <h6 class="text-subheading opacity-0 translate-x-10
+           transition-all duration-700 ease-out animate-on-scroll">Genuine Products</h6>
+    </div>
+
+    <div class="flex flex-col items-center gap-3">
+      <img src="./public/assets/images/HomeImage/home-why-us-3.png" class="h-16 md:h-20 w-auto object-contain  opacity-0 -translate-x-10
+           transition-all duration-700 ease-out animate-on-scroll hover:scale-110
+    hover:drop-shadow-[0_0_15px_rgba(0,0,0,0.25)]" />
+      <h6 class="text-subheading opacity-0 -translate-x-10
+           transition-all duration-700 ease-out animate-on-scroll ">Expert Team</h6>
+    </div>
+    <div class="flex flex-col items-center gap-3">
+      <img src="./public/assets/images/HomeImage/home-why-us-4.webp" class="h-16 md:h-20 w-auto object-contain opacity-0 translate-x-10
+           transition-all duration-700 ease-out animate-on-scroll  hover:scale-110
+    hover:drop-shadow-[0_0_15px_rgba(0,0,0,0.25)]" />
+      <h6 class="text-subheading opacity-0 translate-x-10
+           transition-all duration-700 ease-out animate-on-scroll">Innovation</h6>
+    </div>
+  </div>
+</section>
+
+<!-- we support -->
+<section class="py-12 shadow-[0_0_30px_rgba(0,0,0,0.15)]
+ m-4 text-center">
+  <h1 class="text-hero-heading opacity-0 -translate-x-10
+           transition-all duration-700 ease-in animate-on-scroll">We support</h1>
+  <h6 class="text-body py-3">Our governmental support & digital preference</p>
+    <div class="grid 
+            grid-cols-2 
+            md:grid-cols-3 
+            lg:grid-cols-6
+            gap-6 
+            items-center 
+            justify-items-center
+            py-6 max-w-7xl mx-auto">
+
+      <img src="./public/assets/images/HomeImage/home-we-support-1.webp" class="h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain opacity-0 translate-y-10
+           transition-all duration-700 ease-out animate-on-scroll" />
+
+      <img src="./public/assets/images/HomeImage/home-we-support-2.webp" class="h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain opacity-0 translate-x-10
+           transition-all duration-700 ease-out animate-on-scroll" />
+
+      <img src="./public/assets/images/HomeImage/home-we-support-3.webp" class="h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain opacity-0 translate-y-10
+           transition-all duration-700 ease-out animate-on-scroll" />
+
+      <img src="./public/assets/images/HomeImage/home-we-support-4.webp" class="h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain opacity-0 translate-x-10
+           transition-all duration-700 ease-out animate-on-scroll" />
+
+      <img src="./public/assets/images/HomeImage/home-we-support-5.webp" class="h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain opacity-0 translate-y-10
+           transition-all duration-700 ease-out animate-on-scroll" />
+
+      <img src="./public/assets/images/HomeImage/home-we-support-6.webp" class="h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain opacity-0 translate-x-10
+           transition-all duration-700 ease-out animate-on-scroll" />
+
+    </div>
+</section>
+
+<!-- contact Form section -->
+<section class="w-full py-20 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h1 class="text-hero-heading opacity-0 -translate-x-10
+           transition-all duration-700 ease-in animate-on-scroll  mb-4">
+        Get In Touch
+        </h2>
+        <p class="text-body opacity-0 -translate-x-10
+           transition-all duration-700 ease-in animate-on-scroll">
+          Have questions or need assistance? We're here to help. Reach out to us through any channel below.
+        </p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+      <!-- left Side Section -->
+      <div class="space-y-8">
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100  opacity-0 -translate-x-10
+            transition-all duration-700 ease-out animate-on-scroll ">
+          <div class="flex items-start gap-5">
+            <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <span class="text-2xl text-blue-600"><i class="fa-solid fa-location-crosshairs"></i></span>
+            </div>
+            <div>
+              <h4 class="font-bold text-xl text-gray-900 mb-3">Our Location</h4>
+              <p class="text-gray-700 leading-relaxed">
+                Shed No-9, Khodiyar Industrial Estate,<br>
+                Beside Victoria Industrial Estate,<br>
+                Kotak Bank Kathwada lane,<br>
+                Kathwada GIDC, Road No-5,<br>
+                <strong class="text-gray-900">Ahmedabad-382430.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100  opacity-0 -translate-x-10
+            transition-all duration-700 ease-out animate-on-scroll ">
+          <div class="flex items-start gap-5">
+            <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <span class="text-2xl text-green-600"><i class="fa-solid fa-envelope"></i></span>
+            </div>
+            <div>
+              <h4 class="font-bold text-xl text-gray-900 mb-3">Email Us</h4>
+              <p class="text-gray-700 mb-1">General Enquiries</p>
+              <a href="mailto:sales@axiconautomation.in"
+                class="text-blue-600 font-medium hover:text-blue-700 transition-colors">
+                sales@axiconautomation.in
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100  opacity-0 -translate-x-10
+            transition-all duration-700 ease-out animate-on-scroll ">
+          <div class="flex items-start gap-5">
+            <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <span class="text-2xl text-purple-600"><i class="fa-solid fa-phone"></i></span>
+            </div>
+            <div>
+              <h4 class="font-bold text-xl text-gray-900 mb-3">Call Us</h4>
+              <div class="space-y-2">
+                <a href="tel:+919978430431" class="block text-gray-700 hover:text-blue-600 transition-colors">
+                  +91-9978430431
+                </a>
+                <a href="tel:+919099653777" class="block text-gray-700 hover:text-blue-600 transition-colors">
+                  +91-9099653777
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100  opacity-0 -translate-x-10
+            transition-all duration-700 ease-out animate-on-scroll ">
+          <div class="flex items-start gap-5">
+            <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <span class="text-2xl text-amber-600"><i class="fa-solid fa-clock"></i></span>
+            </div>
+            <div>
+              <h4 class="font-bold text-xl text-gray-900 mb-3">Working Hours</h4>
+              <div class="space-y-1">
+                <p class="text-gray-700">
+                  <span class="font-medium">Mon - Sat:</span> 09:00 AM - 07:00 PM
+                </p>
+                <p class="text-gray-700">
+                  <span class="font-medium">Sun:</span> Closed
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side Section-->
+      <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100  opacity-0 translate-x-10
+            transition-all duration-700 ease-out animate-on-scroll ">
+        <h3 class="text-2xl font-bold text-gray-900 mb-2">Send us a message</h3>
+        <p class="text-gray-600 mb-8">We'll get back to you within 24 hours</p>
+        <form class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+              Your Name *
+            </label>
+            <input type="text" id="name" placeholder="John Doe"
+              class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+              required />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+              Email Address *
+            </label>
+            <input type="email" id="email" placeholder="john@example.com"
+              class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+              required />
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+              Contact Number *
+            </label>
+            <input type="tel" id="phone" placeholder="+91 9876543210"
+              class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+              required />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+              Your Message *
+            </label>
+            <textarea id="message" rows="4" placeholder="Tell us about your requirements..."
+              class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none resize-none transition-all"
+              required></textarea>
+          </div>
+
+          <button class="px-3 py-2 border bg-blue-600 rounded-xl flex items-center justify-center gap-2 hover:bg-blue-800 shadow-lg hover:shadow-xl
+         transition-all duration-300">
+            <spna class="text-md  font-semibold  text-white">Send Message</spna> <i
+              class="fa-solid fa-arrow-right-long animate-arrow pt-1 text-white"></i>
+          </button>
+          <p class="text-xs text-gray-500 text-center mt-4">
+            By submitting this form, you agree to our Privacy Policy
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="w-full">
+  <iframe class="
+      w-full
+      h-[300px]
+      sm:h-[400px]
+      lg:h-[500px]
+      border-0
+    " src="https://www.google.com/maps?q=Ahmedabad,+Gujarat,+India&output=embed" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
 </section>

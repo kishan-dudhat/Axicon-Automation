@@ -104,27 +104,27 @@
 
   /* Font-F */
   --font-poppins: 'Poppins',
-  ui-sans-serif,
-  system-ui,
-  -apple-system,
-  BlinkMacSystemFont,
-  'Segoe UI',
-  Arial,
-  sans-serif;
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Arial,
+    sans-serif;
 
   --font-inter: 'Inter',
-  ui-sans-serif,
-  system-ui,
-  -apple-system,
-  BlinkMacSystemFont,
-  'Segoe UI',
-  Arial,
-  sans-serif;
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Arial,
+    sans-serif;
 
   --font-serif: ui-serif,
-  Georgia,
-  'Times New Roman',
-  serif;
+    Georgia,
+    'Times New Roman',
+    serif;
 }
 
 
@@ -143,7 +143,6 @@ h4,
 h5,
 h6 {
   color: var(--text-primary);
-  font-weight: 600;
 }
 
 
@@ -236,7 +235,7 @@ h6 {
 /* NEUTRALS */
 /* ===================== */
 
-.text-heading {
+.text-heading-color {
   color: var(--neutral-dark) !important;
 }
 
@@ -314,6 +313,11 @@ h6 {
 }
 
 
+
+
+
+
+
 /* =========================================================
    TAILWIND VARIABLE BRIDGE
    Usage:
@@ -327,4 +331,151 @@ h6 {
   --tw-success: var(--success);
   --tw-warning: var(--warning);
   --tw-danger: var(--danger);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Hero */
+.text-hero {
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.text-hero-suheading {
+  font-size: 0.2rem;
+  font-weight: 500;
+}
+
+.text-hero-heading {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+/* Section heading */
+.text-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* Subheading */
+.text-subheading {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Body */
+.text-body {
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+/* Caption */
+.text-caption {
+  font-size: 0.6875rem;
+  font-weight: 400;
+}
+
+/* Breakpoints */
+@media (min-width: 640px) {
+  .text-hero {
+    font-size: 1.3rem;
+  }
+
+  .text-hero-suheading {
+    font-size: 0.6rem;
+  }
+
+  .text-hero-heading {
+    font-size: 1.2rem
+  }
+
+  .text-heading {
+    font-size: 1rem;
+  }
+
+  .text-subheading {
+    font-size: 0.875rem;
+  }
+
+  .text-body {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-hero {
+    font-size: 1.7rem;
+  }
+
+  .text-hero-suheading {
+    font-size: 0.7rem;
+  }
+
+  .text-hero-heading {
+    font-size: 1.65rem;
+  }
+
+  .text-heading {
+    font-size: 1.25rem;
+  }
+
+  .text-subheading {
+    font-size: 1.125rem;
+  }
+
+  .text-body {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-hero {
+    font-size: 2.2rem;
+  }
+  
+  .text-hero-suheading {
+    font-size: 1.4rem;
+  }
+
+  .text-hero-heading {
+    font-size: 2rem
+  }
+
+  .text-heading {
+    font-size: 1.5rem;
+  }
+
+  .text-subheading {
+    font-size: 1.25rem;
+  }
+
+  .text-body {
+    font-size: 1.125rem;
+  }
 }

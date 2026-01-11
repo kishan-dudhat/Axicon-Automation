@@ -13,9 +13,12 @@ const routes = {
 
   "/industries": "/public/pages/industries/industries.html",
 
-  "/products": "/public/pages/products/products.html",
+  "/products": "/public/pages/products/product.html",
   
   "/contact": "/public/pages/contact/contact.html",
+
+
+  "/contactForm": "/public/components/contactForm.html"
 };
 
 async function loadFile(path) {
