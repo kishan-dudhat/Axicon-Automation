@@ -76,8 +76,8 @@ function next() {
 }
 
 function startAuto() {
-  stopAuto(); // 🔥 IMPORTANT
-  autoSlide = setInterval(next, 2000); // smoother
+  stopAuto(); //  IMPORTANT
+  autoSlide = setInterval(next, 1500); // smoother
 }
 
 function stopAuto() {

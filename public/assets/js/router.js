@@ -32,6 +32,9 @@ export async function loadRoute() {
   const page = routes[hash] || routes["/"];
 
   app.innerHTML = await loadFile(page);
+    if (!window.location.hash) {
+    window.location.hash = "#/home";
+  }
 
   const base = page.replace(".html", "");
   loadCSS(`${base}.css`);
