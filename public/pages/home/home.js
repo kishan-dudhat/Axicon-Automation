@@ -88,7 +88,7 @@ function stopAuto() {
 }
 
 // Pause on hover
-track.addEventListener("mouseenter", stopAuto);
+track.addEventListener("click", stopAuto);
 track.addEventListener("mouseleave", startAuto);
 
 // Handle resize

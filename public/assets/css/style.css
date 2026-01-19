@@ -24,82 +24,26 @@
 :root {
 
   /* CORE BRAND */
-  --primary: #0b2a4a;
-  /* Deep Navy */
-  --primary-hover: #06203a;
-  /* Darker blue for hover */
-  --primary-soft: #456e9c;
+  /* --primary: #16497b; */
+  /* --secondary: #07111b; */
+  --primary: #3e4095;
+  --secondary: #1d2024;
+  --trinary: #102830;
+  --off-white: #dfe9ea;
 
-  --secondary: #123c66;
-  /* Blue Slate */
-  --secondary-hover: #174b80;
-  --secondary-soft: #e8f0f8;
-
-  --accent: #f28c28;
-  /* Warm Orange */
-  --accent-hover: #dd7b1f;
-  --accent-soft: #fff1e4;
-
-  /* EXTENDED COLORS (Same Tone Family) */
-  --info: #0ea5e9;
-  /* Sky Blue – links, info */
-  --info-soft: #e0f2fe;
-
-  --success: #16a34a;
-  /* Green – success */
-  --success-soft: #dcfce7;
-
-  --warning: #f59e0b;
-  /* Amber – warnings */
-  --warning-soft: #fef3c7;
-
-  --danger: #dc2626;
-  /* Red – errors */
-  --danger-soft: #fee2e2;
-
-  --neutral-dark: #0f172a;
-  /* Headings */
-  --neutral: #334155;
-  /* Body text */
-  --neutral-muted: #64748b;
-  /* Labels */
-  --neutral-soft: #e2e8f0;
-  /* Borders */
-
+  --bg-light: #f7f9fc;
+  --bg-dark: #0a1622;
+  --bg-primary: #1773d0;
+  --bg-secondary: #2631ab;
+  --bg-trinary: rgb(7, 18, 114);
   --navbar-bg: #3e4095;
 
-
-
-
-  /* BACKGROUNDS */
-  --bg-light: #f7f9fc;
-  /* Page background */
-  --bg-surface: #ffffff;
-  /* Cards / panels */
-  --bg-dark: #0a1622;
-
-
-  /* Header / footer */
-
-
-  /* BORDERS */
   --border-light: #e2e8f0;
   --border-dark: #1e293b;
+  --border-primary: #1773d0;
+  --border-secondary: #2631ab;
+  --border-trinary: rgb(7, 18, 114);
 
-  /* FORMS */
-  --input-bg: #ffffff;
-  --input-border: #cbd5e1;
-  --input-focus: #0b5ed7;
-
-  /* TABLES */
-  --table-head: #eef2f7;
-  --table-hover: #f1f5f9;
-
-  /* STATUS */
-  --success: #16a34a;
-  --info: #0284c7;
-  --warning: #f59e0b;
-  --danger: #dc2626;
 
 
   /* Font-F */
@@ -149,151 +93,54 @@ h6 {
 
 
 /* =========================================================
-   TEXT COLOR UTILITIES
-   Usage:
-   <p class="text-primary">
    <span class="text-muted">
-   ========================================================= */
-/* ===================== */
-/* CORE BRAND */
 /* ===================== */
 
 .text-primary {
   color: var(--primary) !important;
 }
 
-.text-primary-hover {
-  color: var(--primary-hover) !important;
-}
-
-.text-primary-soft {
-  color: var(--primary-soft) !important;
-}
-
 .text-secondary {
   color: var(--secondary) !important;
 }
 
-.text-secondary-hover {
-  color: var(--secondary-hover) !important;
+.text-trinary {
+  color: var(--trinary) !important;
 }
 
-.text-secondary-soft {
-  color: var(--secondary-soft) !important;
-}
-
-.text-accent {
-  color: var(--accent) !important;
-}
-
-.text-accent-hover {
-  color: var(--accent-hover) !important;
-}
-
-.text-accent-soft {
-  color: var(--accent-soft) !important;
-}
-
-
-/* ===================== */
-/* EXTENDED COLORS */
-/* ===================== */
-
-.text-info {
-  color: var(--info) !important;
-}
-
-.text-info-soft {
-  color: var(--info-soft) !important;
-}
-
-.text-success {
-  color: var(--success) !important;
-}
-
-.text-success-soft {
-  color: var(--success-soft) !important;
-}
-
-.text-warning {
-  color: var(--warning) !important;
-}
-
-.text-warning-soft {
-  color: var(--warning-soft) !important;
-}
-
-.text-danger {
-  color: var(--danger) !important;
-}
-
-.text-danger-soft {
-  color: var(--danger-soft) !important;
-}
-
-/* ===================== */
-/* NEUTRALS */
-/* ===================== */
-
-.text-heading-color {
-  color: var(--neutral-dark) !important;
-}
-
-.text-body {
-  color: var(--neutral) !important;
-}
-
-.text-muted {
-  color: var(--neutral-muted) !important;
-}
-
-.text-border {
-  color: var(--neutral-soft) !important;
+.text-offWhite {
+  color: var(--off-white) !important;
 }
 
 
 
 /* =========================================================
-   BACKGROUND UTILITIES
-   Usage:
    <section class="bg-primary text-invert">
    ========================================================= */
-.bg-primary {
-  background-color: var(--primary) !important;
-}
-
-.bg-secondary {
-  background-color: var(--secondary) !important;
-}
-
-.bg-accent {
-  background-color: var(--accent) !important;
-}
-
 .bg-light {
   background-color: var(--bg-light) !important;
-}
-
-.bg-surface {
-  background-color: var(--bg-surface) !important;
 }
 
 .bg-dark {
   background-color: var(--bg-dark) !important;
 }
 
-.bg-navbar-bg {
-  background-color: var(--bg-navbar-bg) !important;
+.bg-primary {
+  background-color: var(--bg-primary) !important;
 }
 
-.bg-header-top {
-  background-color: #e1e2ee !important;
+.bg-secondary {
+  background-color: var(--bg-secondary) !important;
 }
+
+.bg-trinary {
+  background-color: var(--bg-trinary) !important;
+}
+
+
 
 
 /* =========================================================
-   BORDER UTILITIES
-   Usage:
    <div class="border border-light">
    ========================================================= */
 .border-light {
@@ -305,177 +152,163 @@ h6 {
 }
 
 .border-primary {
-  border-color: var(--primary) !important;
+  border-color: var(--border-primary) !important;
 }
 
-.border-accent {
-  border-color: var(--accent) !important;
+.border-secondary {
+  border-color: var(--border-secondary) !important;
 }
 
-
-
-
-
-
-
-/* =========================================================
-   TAILWIND VARIABLE BRIDGE
-   Usage:
-   text-[var(--tw-primary)]
-   ========================================================= */
-.custom-tailwind-vars {
-  --tw-primary: var(--primary);
-  --tw-secondary: var(--secondary);
-  --tw-accent: var(--accent);
-  --tw-dark: var(--bg-dark);
-  --tw-success: var(--success);
-  --tw-warning: var(--warning);
-  --tw-danger: var(--danger);
+.border-trinary {
+  border-color: var(--border-trinary) !important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 /* Hero */
-.text-hero {
+.text-first-heading {
   font-size: 1rem;
   font-weight: 900;
 }
 
-.text-hero-suheading {
+.text-second-heading {
   font-size: 0.2rem;
   font-weight: 500;
 }
 
-.text-hero-heading {
-  font-size: 1.6rem;
+.text-third-heading {
+  font-size: 1.8rem;
   font-weight: 800;
 }
 
 /* Section heading */
-.text-heading {
-  font-size: 1.4rem;
-  font-weight: 700;
+.text-fourth-heading {
+  font-size: 1.7rem;
+  font-weight: 800;
 }
 
 /* Subheading */
-.text-subheading {
-  font-size: 1rem;
+.text-fifth-heading {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.text-six-heading {
+  font-size: 0.8rem;
   font-weight: 500;
 }
 
 /* Body */
-.text-body {
+.text-general {
   font-size: 0.95rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* Caption */
-.text-caption {
-  font-size: 0.6875rem;
-  font-weight: 400;
+.text-general-sm {
+  font-size: 0.95rem;
+  font-weight: 450;
 }
 
 /* Breakpoints */
 @media (min-width: 640px) {
-  .text-hero {
+  .text-first-heading {
     font-size: 1.3rem;
   }
 
-  .text-hero-suheading {
+  .text-second-heading {
     font-size: 0.6rem;
   }
 
-  .text-hero-heading {
-    font-size: 1.2rem
+  .text-third-heading {
+    font-size: 2.2rem
   }
 
-  .text-heading {
+  .text-fourth-heading {
     font-size: 1rem;
   }
 
-  .text-subheading {
+  .text-fifth-heading {
+    font-size: 1.2rem;
+  }
+
+  .text-six-heading {
+    font-size: 0.9rem;
+  }
+
+  .text-general {
     font-size: 0.875rem;
   }
 
-  .text-body {
+  .text-general-sm {
     font-size: 0.875rem;
   }
 }
 
 @media (min-width: 768px) {
-  .text-hero {
+  .text-first-heading {
     font-size: 1.7rem;
   }
 
-  .text-hero-suheading {
+  .text-second-heading {
     font-size: 0.7rem;
   }
 
-  .text-hero-heading {
-    font-size: 1.65rem;
+  .text-third-heading {
+    font-size: 2.5rem;
   }
 
-  .text-heading {
+  .text-fourth-heading {
     font-size: 1.25rem;
   }
 
-  .text-subheading {
-    font-size: 1.125rem;
+  .text-fifth-heading {
+    font-size: 1.2rem;
   }
 
-  .text-body {
+  .text-six-heading {
+    font-size: 0.9rem;
+  }
+
+  .text-general {
+    font-size: 1rem;
+  }
+
+  .text-general-sm {
     font-size: 1rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .text-hero {
-    font-size: 2.2rem;
+  .text-first-heading {
+    font-size: 2.7rem;
   }
-  
-  .text-hero-suheading {
+
+  .text-second-heading {
     font-size: 1.4rem;
   }
 
-  .text-hero-heading {
-    font-size: 2rem
+  .text-third-heading {
+    font-size: 2.5rem
   }
 
-  .text-heading {
-    font-size: 1.5rem;
+  .text-fourth-heading {
+    font-size: 1.7rem;
   }
 
-  .text-subheading {
-    font-size: 1.25rem;
+  .text-fifth-heading {
+    font-size: 1.1rem;
+  }
+  
+  .text-six-heading {
+    font-size: 0.9rem;
   }
 
-  .text-body {
+  .text-general {
+    font-size: 1.125rem;
+  }
+
+  .text-general-sm {
     font-size: 1.125rem;
   }
 }

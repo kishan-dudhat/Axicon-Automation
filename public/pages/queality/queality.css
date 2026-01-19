@@ -22,6 +22,7 @@
   border: 1px solid rgba(0, 0, 0, 0.04);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   opacity: 1;
+  border: 1px solid rgb(186, 158, 212);
 }
 
 /* HOVER EFFECT */
@@ -31,17 +32,18 @@
 }
 
 /* TEXT */
-.text-heading {
+.text-fourth-heading {
   font-size: 20px;
   font-weight: 700;
-  margin-bottom: 14px;
-  color: #111827;
+  margin-bottom: 8px;
+  color:var(--primary);
+  
 }
 
-.text-body {
+.text-general {
   font-size: 15px;
   line-height: 1.7;
-  color: #4b5563;
+  color: var(--trinary);
 }
 
 /* RESPONSIVE */
