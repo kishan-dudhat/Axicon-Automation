@@ -2,21 +2,43 @@
 
 
 <!-- image section -->
-<section class="grid items-end justify-items-right   lg:mb-5 mx-auto">
-  <img src="./public/assets/images/HomeImage/axicon-automation-home-hero-img.webp"
-    class="w-full col-start-1 row-start-1" alt="Axicon Automation hero image" />
-  <h1 id="heroTitle" class="
-      col-start-1 row-start-1
-      px-4 pb-4
-      text-first-heading text-offWhite
-      text-center
-      opacity-0 translate-x-20
-      transition-all duration-700 ease-out
-       rounded-tl-3xl
+<section class="relative h-[50vh] lg:min-h-screen w-full overflow-hidden">
+  <!-- Video Background -->
+  <video class="absolute inset-0 w-full h-full object-cover pointer-events-none" autoplay loop muted playsinline
+    aria-label="Industrial Automation Background Video">
+    <source src="./public/assets/images/HomeImage/homepage-hero-section-bg-vidio.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-    ">
-    LEADER IN PERMANENT LASER MARKING SOLUTIONS.
-  </h1>
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black/65"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 flex h-full items-end justify-center px-6 pb-5">
+    <div class="max-w-4xl text-center lg:mt-40">
+      <h1 id="heroTitle" class="
+          text-offWhite text-first-heading
+          mb-6
+          opacity-0 -translate-x-10
+          transition-all duration-700 ease-out
+          animate-on-scroll
+        ">
+        The Future Leader in
+        <span class="block">Permanent Laser Marking Solutions</span>
+      </h1>
+
+      <p class="
+          text-white
+          text-base sm:text-lg lg:text-xl
+          opacity-0 translate-x-10
+          transition-all duration-700 ease-out
+          animate-on-scroll
+        ">
+        Cutting-edge laser marking technology for precise, permanent
+        identification of your products. Trusted by industries worldwide.
+      </p>
+    </div>
+  </div>
 </section>
 
 <!-- about us and our misiion section -->
@@ -24,7 +46,7 @@
   <!-- About Section -->
   <div class="
         max-w-7xl mx-auto
-        grid grid-cols-1 md:grid-cols-2
+        grid grid-cols-1 lg:grid-cols-2
         items-center
         gap-6 sm:gap-8 lg:gap-12
       ">
@@ -38,7 +60,7 @@
         class="w-full h-auto rounded-xl object-cover shadow-lg" />
     </div>
     <div class="
-          text-center md:text-left
+          text-center lg:text-left
           opacity-0 translate-x-10
           transition-all duration-700 delay-150 ease-out
           animate-on-scroll
@@ -48,13 +70,37 @@
       </h2>
 
       <p class="text-general-sm text-secondary leading-relaxed">
-        Axicon Automation is rising and thriving in the Indian Laser industry for producing a highly valuable range of
-        Industrial machines & built our reputation on designing and building industry-leading solutions for
-        laser-based
-        applications, including automated and robotic parts handling, vision and validation. The sole purpose of our
-        company is to support & uplift the quality of processes in Laser industries by providing them better machines
-        that generates finer results of Marking & Cutting process.
+        Axicon Automation is a fast-growing name in the Indian laser industry, delivering advanced industrial machines
+        for precision laser marking and cutting. We design industry-leading laser solutions with automation, robotics,
+        and vision systems to help businesses achieve finer results and superior process quality.
       </p>
+      <div class="flex items-center gap-3 mt-6 translate-x-10
+          transition-all duration-700 delay-150 ease-out
+          animate-on-scroll">
+        <i class="fa-solid fa-microchip text-2xl py-2 px-3 rounded-lg bg-cyan-100 text-cyan-700 border"></i>
+        <div class="text-left">
+          <p class="text-fifth-heading text-gray-800">Advanced Technology</p>
+          <p class="text-six-heading text-gray-500">High-precision marking using latest fiber laser tech</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 mt-4 translate-x-10
+          transition-all duration-700 delay-150 ease-out
+          animate-on-scroll">
+        <i class="fa-solid fa-medal text-2xl py-2 px-3 rounded-lg bg-green-100 text-green-700 border"></i>
+        <div class="text-left">
+          <p class="text-fifth-heading text-gray-800">Quality Assured</p>
+          <p class="text-six-heading text-gray-500">Precision engineering meets international standards</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 mt-4 translate-x-10
+          transition-all duration-700 delay-150 ease-out
+          animate-on-scroll">
+        <i class="fa-regular fa-clock text-2xl py-2 px-3 rounded-lg bg-indigo-100 text-indigo-700 border"></i>
+        <div class="text-left">
+          <p class="text-fifth-heading text-gray-800">Fast Support</p>
+          <p class="text-six-heading text-gray-500">24/7 technical support and maintenance services</p>
+        </div>
+      </div>
     </div>
   </div>
   <!-- Mission Section -->
@@ -99,158 +145,178 @@
 </section>
 
 <!-- our product -->
-<section class="py-12 overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.15)]
-   m-4 border-primary border rounded-3xl">
-  <div class="max-w-7xl mx-auto">
-    <h1 class="text-third-heading text-primary text-center opacity-0 translate-x-10
-              transition-all duration-700 ease-out animate-on-scroll mb-10">
-      Explore Our Products
-    </h1>
-    <div class="w-full mx-auto px-4 pb-8">
-      <div class="relative overflow-hidden">
+<section class="carousel-wrapper">
+  <h1 class="text-third-heading text-primary opacity-0 -translate-x-10
+             transition-all duration-700 ease-in animate-on-scroll text-center py-4">Explore Our Products</h1>
 
-        <!-- Track -->
-        <div id="carouselTrack" class="flex gap-6 transition-transform duration-500 ease-in-out">
+  <div class="carousel-container">
+    <!-- Buttons -->
+    <button class="nav-btn left" id="prevBtn">‹</button>
+    <button class="nav-btn right" id="nextBtn">›</button>
 
-          <!-- CARD -->
-          <div class="min-w-full md:min-w-[48%] lg:min-w-[32%]
-               flex flex-col
-               bg-white border border-blue-200
-               rounded-2xl shadow-md
-               hover:shadow-xl hover:-translate-y-1
-               transition-all duration-300
-               p-6">
-            <div class="w-100 h-90 rounded-xl overflow-hidden mb-4 bg-gray-100">
-              <img src="./public/assets/images/ProductsImage/lasor-marking-mashine-product.webp"
-                alt="Axicon Automation Lasor Marking Mashine" class="w-100 h-100" />
-            </div>
-            <h3 class="mt-auto text-center font-semibold text-lg">
-              Laser Marking Machine
-            </h3>
-          </div>
+    <!-- Track -->
+    <div class="carousel-viewport">
+      <div id="carouselTrack" class="carousel-track">
 
-          <!-- CARD -->
-          <div class="min-w-full md:min-w-[48%] lg:min-w-[32%]
-                  flex flex-col bg-white border border-blue-200
-                  rounded-2xl shadow-md p-6 hover:shadow-xl hover:-translate-y-1 transition-all">
-            <div class="w-100 h-90 rounded-xl overflow-hidden mb-4 bg-gray-100">
-              <img src="./public/assets/images/ProductsImage/industrial-lasor-marking-mashine-product.webp"
-                alt="Axicon Automation Industrial Lasor Marking Mashine" class="w-100 h-100" />
-            </div>
-            <h3 class="mt-auto text-center font-semibold text-lg">
-              Fiber Laser Marking Machine
-            </h3>
-          </div>
-
-          <!-- CARD -->
-          <div class="min-w-full md:min-w-[48%] lg:min-w-[32%]
-                  flex flex-col bg-white border border-blue-200
-                  rounded-2xl shadow-md p-6 hover:shadow-xl hover:-translate-y-1 transition-all">
-            <div class="w-100 h-90 rounded-xl overflow-hidden mb-4 bg-gray-100">
-              <img src="./public/assets/images/ProductsImage/co2-lasor-cutting-mashine-product.webp"
-                alt="Axicon Automation Co2 Lasor MArking Mashine" class="w-100 h-100" />
-            </div>
-            <h3 class="mt-auto text-center font-semibold text-lg">
-              CO₂ Laser Cutting Machine
-            </h3>
-          </div>
-
-          <!-- CARD -->
-          <div class="min-w-full md:min-w-[48%] lg:min-w-[32%]
-                  flex flex-col bg-white border border-blue-200
-                  rounded-2xl shadow-md p-6 hover:shadow-xl hover:-translate-y-1 transition-all">
-            <div class="w-100 h-90 rounded-xl overflow-hidden mb-4 bg-gray-100">
-              <img src="./public/assets/images/ProductsImage/compect-lasor-marking-mashine-product.webp"
-                alt="Axicon Automation Compect Lasore Mashine" class="w-100 h-100" />
-            </div>
-            <h3 class="mt-auto text-center font-semibold text-lg">
-              Compact Laser Marking Machine
-            </h3>
-          </div>
-
-        </div>
+        <!-- CARD -->
+         <div class="carousel-card flex flex-col">
+    <img src="./public/assets/images/ProductsImage/lasor-marking-mashine-product.webp" alt="Laser Marking Machine">
+    <h3 class="text-fifth-heading font-bold">Lasor Marking Mashine</h3>
+    <p class="text-fifth-heading font-semibold">High precision marking solution for industrial applications.</p>
+  </div>
+         <div class="carousel-card flex flex-col">
+    <img src="./public/assets/images/ProductsImage/co2-lasor-cutting-mashine-product.webp" alt="Co2 Lasor Cutting Mashine">
+    <h3 class="text-fifth-heading font-bold">Co2 Lasor Cutting Mashine</h3>
+    <p class="text-fifth-heading font-semibold">High precision marking solution for industrial applications.</p>
+  </div>
+         <div class="carousel-card flex flex-col">
+    <img src="./public/assets/images/ProductsImage/compect-lasor-marking-mashine-product.webp" alt="Compect Lasor Marking Mashine Product">
+    <h3 class="text-fifth-heading font-bold">Compect Lasor Marking Mashine</h3>
+    <p class="text-fifth-heading font-semibold">High precision marking solution for industrial applications.</p>
+  </div>
+         <div class="carousel-card flex flex-col">
+    <img src="./public/assets/images/ProductsImage/fiber-cutting-lasor-mashine-product.webp" alt="Fiber cutting lasor Mashine">
+    <h3 class="text-fifth-heading font-bold">Fiber cutting lasor Mashine</h3>
+    <p class="text-fifth-heading font-semibold">High precision marking solution for industrial applications.</p>
+  </div>
+         <div class="carousel-card flex flex-col">
+    <img src="./public/assets/images/ProductsImage/handling-welding-lasor-mashine-produt.webp" alt="Handling Welding Lasor Mashine Produt">
+    <h3 class="text-fifth-heading font-bold">Handling Welding Lasor Mashine</h3>
+    <p class="text-fifth-heading font-semibold">High precision marking solution for industrial applications.</p>
+  </div>
+         <div class="carousel-card flex flex-col">
+    <img src="./public/assets/images/ProductsImage/industrial-lasor-marking-mashine-product.webp" alt="Industrial Lasor Marking Mashine Product">
+    <h3 class="text-fifth-heading font-bold">Industrial Lasor Marking Mashine</h3>
+    <p class="text-fifth-heading font-semibold">High precision marking solution for industrial applications.</p>
+  </div>
       </div>
-
-
-
     </div>
   </div>
 </section>
-
-
-
-
-
-
-
-
 
 <!-- vidio section -->
-<section class="w-full py-12 px-4 sm:px-6 lg:px-12">
-  <div class="
-        max-w-7xl mx-auto
-        grid grid-cols-1 lg:grid-cols-2
-        gap-6 sm:gap-8 lg:gap-12
-        items-center
-      ">
-    <!-- left side section -->
-    <div class="text-center lg:text-left">
-      <p class="
-            text-general-sm
-            text-trinary
-            leading-relaxed
-            opacity-0 -translate-x-10
-             transition-all duration-700 ease-in animate-on-scroll
-          ">
-        <span class="pt-2">
-          We, Axicon Automation located at Ahmedabad, Gujarat, are considered a
-          renowned name in the laser industry.
-        </span>
-        <br />
-        <span class="pt-2">
-          We provide a wide range of laser
-          machines including Fiber Laser Marking Machines, Laser Cutting Machines,
-          Laser Engraving Machines, Laser Welding Machines, and customized laser
-          machine solutions for over a decade.
-        </span>
-        <br />
-        <span class="pt-2">
-          Our laser machine series is manufactured in accordance with existing
-          industry standards and norms.
-        </span>
-        <br />
-        <span class="pt-2">
-          The proposed assemblage is widely
-          appreciated for strong construction, longer operational life,
-          functional fluency, reliable performance, and low maintenance.
-        </span>
-      </p>
-    </div>
-
-    <!-- right side vidio section -->
+<section class="w-full m-auto py-12 px-4 sm:px-4 lg:px-8">
+  <div class="shadow-[0_0_30px_rgba(0,0,0,0.15)] px-4 pb-7">
+    <h2 class="mb-4 text-third-heading text-primary text-center py-8">Advanced Laser Automation Solutions</h2>
     <div class="
-           w-full
-          aspect-video
-          rounded-xl
-          overflow-hidden
-          shadow-lg
-          opacity-0 translate-x-10
-             transition-all duration-700 ease-in animate-on-scroll
+          max-w-8xl mx-auto
+          grid grid-cols-1 lg:grid-cols-2
+          gap-6 sm:gap-8 lg:gap-12
+          items-center
         ">
-      <iframe class="inset-0 w-full h-full" src="https://www.youtube.com/embed/e882a_TQfaw"
-        title="Axicon Automation Laser Machines" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
+      <!-- left side section -->
+      <div class="text-center lg:text-left">
+        <p class="
+ text-general-sm
+  text-trinary
+  leading-relaxed sm:leading-7 lg:leading-6
+  space-y-2 sm:space-y-3
+  opacity-0 -translate-x-10
+  transition-all duration-700 ease-in animate-on-scroll
+">
+          <span class="block">
+            Axicon Automation, based in Ahmedabad, Gujarat, is a trusted name in the laser
+            industry, delivering precision-driven automation solutions.
+          </span>
+
+          <span class="block">
+            We specialize in advanced laser technologies including Fiber Laser Marking,
+            Laser Cutting, Engraving, and Welding Machines, along with fully customized
+            laser solutions backed by over a decade of expertise.
+          </span>
+
+          <span class="block">
+            Our laser systems are engineered in compliance with global industry standards,
+            ensuring superior build quality, consistent performance, and long service life.
+          </span>
+
+          <span class="block">
+            Known for robust construction, smooth operation, reliability, and low
+            maintenance, our machines empower industries with efficient and future-ready
+            laser automation.
+          </span>
+        </p>
+
+      </div>
+
+      <!-- right side vidio section -->
+      <div class="
+             w-full
+            aspect-video
+            rounded-xl
+            overflow-hidden
+            shadow-lg
+            opacity-0 translate-x-10
+               transition-all duration-700 ease-in animate-on-scroll
+          ">
+        <iframe class="inset-0 w-full h-full" src="https://www.youtube.com/embed/e882a_TQfaw"
+          title="Axicon Automation Laser Machines" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 </section>
+
+
+
+
+
+<section class="py-16 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-2">
+    <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+
+      <!-- Image -->
+      <div class="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-xl">
+        <img src="./public/assets/images/HomeImage/marked-products.jpg"
+          alt="Laser marking on metal and leather products" class="h-full w-full object-cover" />
+      </div>
+
+      <!-- Content -->
+      <div>
+          <h2 class="text-third-heading text-primary">
+           Precision Marking on Any Material
+      </h2>
+
+        <p class="mt-3 max-w-xl text-fifth-heading leading-relaxed text-gray-600">
+          From metal components to leather goods, our laser marking solutions
+          deliver permanent, high-quality marks that enhance product value
+          and traceability.
+        </p>
+
+        
+
+        <div class="flex items-center gap-3 mt-6 translate-x-10
+          transition-all duration-700 delay-150 ease-out
+          animate-on-scroll">
+        <i class="fa-solid fa-gauge text-2xl py-2 px-3 rounded-lg bg-cyan-100 text-cyan-700 border"></i>
+        <div class="text-left">
+          <p class="text-fifth-heading text-gray-900">Ultra-Fast Marking</p>
+          <p class="text-six-heading text-gray-500">Mark up to 4000+ characters per second</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 mt-4 translate-x-10
+          transition-all duration-700 delay-150 ease-out
+          animate-on-scroll">
+        <i class="fa-solid fa-seedling text-2xl py-2 px-3 rounded-lg bg-green-100 text-green-700 border"></i>
+        <div class="text-left">
+          <p class="text-fifth-heading text-gray-800">Eco-Friendly</p>
+          <p class="text-six-heading text-gray-500">No chemicals or consumables required</p>
+        </div>
+      </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- Why Us section -->
 <section class="py-12">
   <h1 class="text-third-heading text-primary opacity-0 -translate-x-10
              transition-all duration-700 ease-in animate-on-scroll text-center py-4">Why Us?</h1>
   <h1 class="text-fifth-heading text-secondary opacity-0 translate-x-10
-             transition-all duration-700 ease-in animate-on-scroll text-center ">Advanced solutions backed by expert
+             transition-all duration-700 ease-in animate-on-scroll text-center">Advanced solutions backed by expert
     teams and genuine products</h1>
 
   <div class="
@@ -301,9 +367,10 @@
 <!-- we support -->
 <section class="py-12 shadow-[0_0_30px_rgba(0,0,0,0.15)]
    m-4 text-center">
-  <h1 class="text-third-heading opacity-0 -translate-x-10
-             transition-all duration-700 ease-in animate-on-scroll">We support</h1>
-  <h6 class="text-fifth-heading py-3">Our governmental support & digital preference</p>
+  <h1 class="text-third-heading text-primary opacity-0 -translate-x-10
+             transition-all duration-700 ease-in animate-on-scroll text-center py-4">We support</h1>
+  <h1 class="text-fifth-heading text-secondary opacity-0 translate-x-10
+             transition-all duration-700 ease-in animate-on-scroll text-center">Our governmental support & digital preference</p>
     <div class="grid 
               grid-cols-2 
               md:grid-cols-3 
@@ -338,12 +405,12 @@
 <section class="w-full py-20 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-white">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16">
-      <h1 class="text-third-heading opacity-0 -translate-x-10
-             transition-all duration-700 ease-in animate-on-scroll  mb-4">
+      <h1 class="text-third-heading text-primary opacity-0 -translate-x-10
+             transition-all duration-700 ease-in animate-on-scroll text-center py-4">
         Get In Touch
         </h2>
-        <p class="text-fifth-heading opacity-0 -translate-x-10
-             transition-all duration-700 ease-in animate-on-scroll">
+        <p class="text-fifth-heading text-secondary opacity-0 translate-x-10
+             transition-all duration-700 ease-in animate-on-scroll text-center">
           Have questions or need assistance? We're here to help. Reach out to us through any channel below.
         </p>
     </div>

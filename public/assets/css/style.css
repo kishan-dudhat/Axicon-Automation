@@ -28,7 +28,7 @@
   /* --secondary: #07111b; */
   --primary: #3e4095;
   --secondary: #1d2024;
-  --trinary: #102830;
+  --trinary: #13353b;
   --off-white: #dfe9ea;
 
   --bg-light: #f7f9fc;
@@ -167,7 +167,7 @@ h6 {
 
 /* Hero */
 .text-first-heading {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 900;
 }
 
@@ -195,7 +195,7 @@ h6 {
 
 .text-six-heading {
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* Body */
@@ -213,7 +213,7 @@ h6 {
 /* Breakpoints */
 @media (min-width: 640px) {
   .text-first-heading {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
   }
 
   .text-second-heading {
@@ -247,7 +247,7 @@ h6 {
 
 @media (min-width: 768px) {
   .text-first-heading {
-    font-size: 1.7rem;
+    font-size: 1.9rem;
   }
 
   .text-second-heading {
@@ -281,7 +281,8 @@ h6 {
 
 @media (min-width: 1024px) {
   .text-first-heading {
-    font-size: 2.7rem;
+    font-size: 3rem;
+    line-height: 3.5rem;
   }
 
   .text-second-heading {
@@ -289,7 +290,7 @@ h6 {
   }
 
   .text-third-heading {
-    font-size: 2.5rem
+    font-size: 2.2rem
   }
 
   .text-fourth-heading {
@@ -309,6 +310,6 @@ h6 {
   }
 
   .text-general-sm {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 }
