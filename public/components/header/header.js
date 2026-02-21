@@ -10,7 +10,7 @@ const productsBtn = document.getElementById("products-btn");
 const productsPanel = document.getElementById("products-panel");
 const aboutBtn = document.getElementById("about-btn");
 const aboutpanel = document.getElementById("about-panel")
-  const scrollBtn = document.getElementById("scrollTopBtn");
+const scrollBtn = document.getElementById("scrollTopBtn");
 
 
 
@@ -87,9 +87,9 @@ toggleBtn.addEventListener("click", () => {
   }
 });
 
-mobileBtnClose.addEventListener("click",()=>{
-   mobileMenu.classList.remove("translate-x-full");
-    mobileMenu.setAttribute("aria-hidden", "false");
+mobileBtnClose.addEventListener("click", () => {
+  mobileMenu.classList.remove("translate-x-full");
+  mobileMenu.setAttribute("aria-hidden", "false");
 })
 
 
@@ -131,21 +131,21 @@ aboutBtn.addEventListener("click", () => {
 
 
 
-  // Show / Hide button on scroll
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      scrollBtn.classList.remove("hidden", "opacity-0", "translate-y-4");
-      scrollBtn.classList.add("opacity-100", "translate-y-0");
-    } else {
-      scrollBtn.classList.add("opacity-0", "translate-y-4");
-      setTimeout(() => scrollBtn.classList.add("hidden"), 300);
-    }
-  });
+// Show / Hide button on scroll
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.remove("hidden", "opacity-0", "translate-y-4");
+    scrollBtn.classList.add("opacity-100", "translate-y-0");
+  } else {
+    scrollBtn.classList.add("opacity-0", "translate-y-4");
+    setTimeout(() => scrollBtn.classList.add("hidden"), 300);
+  }
+});
 
-  // Scroll to top smoothly
-  scrollBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+// Scroll to top smoothly
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
   });
+});

@@ -63,7 +63,7 @@
     opacity: 0.8;
     transition: all 0.3s;
     transform: translateY(0);
-color: #dde1ea;
+    color: #dde1ea;
     font-weight: 600;
 }
 
@@ -88,7 +88,7 @@ color: #dde1ea;
 
 .auth-section {
     background-color: transparent !important;
-    border:1px solid white !important;
+    border: 1px solid white !important;
 }
 
 .auth-link {
@@ -120,6 +120,17 @@ color: #dde1ea;
 .main-navbar.sticky {
     animation: slideDown 0.4s ease-out;
     background-color: var(--navbar-bg) !important;
+    height: 85px !important;
+
+    .logo img {
+        width: 5rem;
+        height: 70px !important;
+        margin-left: 0.75rem;
+    }
+
+    .nav-container {
+        padding: 0 !important;
+    }
 }
 
 .nav-container {
@@ -215,10 +226,12 @@ color: #dde1ea;
 
 .dropdown-icon {
     transition: transform 0.3s;
+    padding-left: 5px !important;
 }
 
 .dropdown:hover .dropdown-icon {
     transform: rotate(180deg);
+    padding-right: 5px !important;
 }
 
 .dropdown-menu {
@@ -453,8 +466,9 @@ color: #dde1ea;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
+    padding-top: 0.60rem;
+    padding-bottom: 0.60rem;
+    padding-left: 0.30rem;
     border-radius: 0 0.25rem 0.25rem 0;
     border: 1px solid;
     border-left: none;
@@ -464,18 +478,20 @@ color: #dde1ea;
     background-color: white;
     color: #1f2937;
     overflow: hidden;
-    width: 1.75rem;
+    width: 3.25rem;
     transition: all 0.3s ease-in-out;
 }
 
 .sidebar-item:hover {
-    width: 10rem;
+    width: 11rem;
 }
 
 .sidebar-item i {
     padding-left: 0.25rem;
+    padding-right: 0.60rem !important;
     border-radius: 0.25rem;
     color: #1e3a8a;
+    font-size: 30px !important;
 }
 
 .sidebar-item span {
