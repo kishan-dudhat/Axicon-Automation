@@ -22,7 +22,7 @@
             <div class="top-bar-content">
                 <div class="contact-info">
                     <a href="tel:+91-9099653777" class="contact-link">
-                        <i class="fa-solid fa-phone-flip rotate-90"></i>
+                        <i class="fa-solid fa-phone"></i>
                         <span>+91 9876543210</span>
                     </a>
                     <a href="mailto:axiconautomation@gmail.com" class="contact-link">
@@ -31,7 +31,7 @@
                     </a>
                     <div class="contact-link">
                         <i class="fa-solid fa-location-dot"></i>
-                        <span class="pt-1">Kathwada GIDC, Ahmedabad</span>
+                        <span>Kathwada GIDC, Ahmedabad</span>
                     </div>
                 </div>
                 <div class="social-section">
@@ -169,8 +169,20 @@
                     <li><a href="#/quality" class="mobile-nav-link">Quality</a></li>
                     <li><a href="#/services" class="mobile-nav-link">Services</a></li>
                     <li><a href="#/industries" class="mobile-nav-link">Industries</a></li>
-                    <li><a href="#/contact" class="mobile-nav-link">Contact</a></li>
+                    <li><a href="#/contact" class="mobile-nav-link border-b-0">Contact</a></li>
                 </ul>
+
+                <!-- Mobile WhatsApp Button -->
+                <div class="px-6 py-8 mt-auto mb-8 border-t border-slate-100">
+                    <a href="https://wa.me/9099653777" target="_blank"
+                        class="mobile-whatsapp-btn flex items-center justify-center gap-3 w-full bg-[#25d366] text-white py-3.5 px-4 rounded-xl shadow-[0_4px_15px_rgba(37,211,102,0.25)] hover:bg-[#1ebe57] hover:shadow-[0_6px_20px_rgba(37,211,102,0.4)] transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="relative flex items-center justify-center">
+                            <i class="fa-brands fa-whatsapp text-2xl relative z-10"></i>
+                            <span class="absolute inset-0 rounded-full bg-white opacity-20 animate-ping"></span>
+                        </div>
+                        <span class="font-medium text-[1.1rem]">WhatsApp Us</span>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -191,21 +203,24 @@
     </div>
 
     <div class="fixed-sidebar z-50 absolute">
-        <div class="sidebar-item">
-            <i class="fa-solid fa-envelope"></i>
-            <span class="text-fifth-heading" href="mailto:axiconautomation@gmail.com">Send Inquiry</span>
-        </div>
-        <div class="sidebar-item">
-            <i class="fa-solid fa-phone"></i>
-            <button type="button" data-contact-open
-                class="bg-transparent border-none cursor-pointer text-inherit p-0 text-fifth-heading">
-                Contact
-            </button>
-        </div>
-        <div class="sidebar-item">
-            <i class="fa-solid fa-rectangle-list"></i>
-            <span class="text-fifth-heading">catalouge</span>
-        </div>
+        <a href="mailto:axiconautomation@gmail.com" class="sidebar-item">
+            <div class="sidebar-icon">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <span class="sidebar-text">Send Inquiry</span>
+        </a>
+        <button type="button" data-contact-open class="sidebar-item w-full text-left p-0 border-none outline-none">
+            <div class="sidebar-icon">
+                <i class="fa-solid fa-phone"></i>
+            </div>
+            <span class="sidebar-text">Contact</span>
+        </button>
+        <a href="#/products" class="sidebar-item">
+            <div class="sidebar-icon">
+                <i class="fa-solid fa-rectangle-list"></i>
+            </div>
+            <span class="sidebar-text">Catalogue</span>
+        </a>
     </div>
     <!-- Modal container -->
     <div id="contact-root" class="contact-modal-container"></div>
