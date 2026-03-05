@@ -61,77 +61,93 @@ navbarManageScroll();
 
 
 
-toggleBtn.addEventListener("click", () => {
-  const isOpen = mobileMenu.classList.contains("translate-x-full");
+const mobileOverlay = document.getElementById("mobileOverlay");
 
-  if (isOpen) {
-    mobileMenu.classList.remove("translate-x-full");
-    mobileMenu.setAttribute("aria-hidden", "false");
+// --- Mobile Menu Toggle Logic ---
+function openMobileMenu() {
+  mobileMenu.classList.add("is-open");
+  mobileMenu.setAttribute("aria-hidden", "false");
 
+  if (mobileOverlay) {
     mobileOverlay.classList.remove("opacity-0", "pointer-events-none");
     mobileOverlay.classList.add("opacity-100");
+  }
 
-    toggleBtn.setAttribute("aria-expanded", "true");
-    mobileMenuIcon.classList.remove("fa-list");
-    mobileMenuIcon.classList.add("fa-xmark");
-  } else {
-    mobileMenu.classList.add("translate-x-full");
-    mobileMenu.setAttribute("aria-hidden", "true");
+  document.body.classList.add("sidebar-open");
+  toggleBtn.setAttribute("aria-expanded", "true");
+  mobileMenuIcon.classList.remove("fa-list");
+  mobileMenuIcon.classList.add("fa-xmark");
+}
 
+function closeMobileMenu() {
+  mobileMenu.classList.remove("is-open");
+  mobileMenu.setAttribute("aria-hidden", "true");
+
+  if (mobileOverlay) {
     mobileOverlay.classList.add("opacity-0", "pointer-events-none");
     mobileOverlay.classList.remove("opacity-100");
-
-    toggleBtn.setAttribute("aria-expanded", "false");
-    mobileMenuIcon.classList.remove("fa-xmark");
-    mobileMenuIcon.classList.add("fa-list");
   }
-});
 
-mobileBtnClose.addEventListener("click", () => {
-  mobileMenu.classList.remove("translate-x-full");
-  mobileMenu.setAttribute("aria-hidden", "false");
-})
+  document.body.classList.remove("sidebar-open");
+  toggleBtn.setAttribute("aria-expanded", "false");
+  mobileMenuIcon.classList.remove("fa-xmark");
+  mobileMenuIcon.classList.add("fa-list");
+}
 
-
-
-
-productsBtn.addEventListener("click", () => {
-  const isOpen = productsPanel.classList.contains("hidden");
-
-  if (!isOpen) {
-    productsPanel.classList.add("hidden");
-    productsBtn.setAttribute("aria-expanded", "false");
-    productsBtn.classList.remove("rotate-180");
+toggleBtn.addEventListener("click", () => {
+  const isClosed = !mobileMenu.classList.contains("is-open");
+  if (isClosed) {
+    openMobileMenu();
   } else {
-    productsPanel.classList.remove("hidden");
-    productsBtn.setAttribute("aria-expanded", "true");
-    productsBtn.classList.add("rotate-180");
+    closeMobileMenu();
   }
 });
 
+mobileBtnClose.addEventListener("click", closeMobileMenu);
+if (mobileOverlay) {
+  mobileOverlay.addEventListener("click", closeMobileMenu);
+}
+
+// Auto-close on link click
+const mobileNavLinksList = document.querySelectorAll('.mobile-nav-link');
+mobileNavLinksList.forEach(link => {
+  link.addEventListener("click", closeMobileMenu);
+});
+// Panels inside accordions matching links
+const mobilePanelLinksList = document.querySelectorAll('.mobile-panel a');
+mobilePanelLinksList.forEach(link => {
+  link.addEventListener("click", closeMobileMenu);
+});
 
 
+// --- Accordions Logic ---
+const aboutIcon = document.getElementById("about-icon");
 aboutBtn.addEventListener("click", () => {
-  const isOpen = aboutpanel.classList.contains("hidden");
-
+  const isOpen = aboutpanel.classList.contains("is-open");
   if (!isOpen) {
-    aboutpanel.classList.add("hidden");
-    aboutBtn.setAttribute("aria-expanded", "false");
-    aboutBtn.classList.remove("rotate-180");
-  } else {
-    aboutpanel.classList.remove("hidden");
+    aboutpanel.classList.add("is-open");
     aboutBtn.setAttribute("aria-expanded", "true");
-    aboutBtn.classList.add("rotate-180");
+    if (aboutIcon) aboutIcon.classList.add("rotate-180");
+  } else {
+    aboutpanel.classList.remove("is-open");
+    aboutBtn.setAttribute("aria-expanded", "false");
+    if (aboutIcon) aboutIcon.classList.remove("rotate-180");
   }
 });
 
-
-
-
-
-
-
-// Show / Hide button on scroll
+const productsIcon = document.getElementById("products-icon");
+productsBtn.addEventListener("click", () => {
+  const isOpen = productsPanel.classList.contains("is-open");
+  if (!isOpen) {
+    productsPanel.classList.add("is-open");
+    productsBtn.setAttribute("aria-expanded", "true");
+    if (productsIcon) productsIcon.classList.add("rotate-180");
+  } else {
+    productsPanel.classList.remove("is-open");
+    productsBtn.setAttribute("aria-expanded", "false");
+    if (productsIcon) productsIcon.classList.remove("rotate-180");
+  }
+});
 window.addEventListener("scroll", () => {
   if (window.scrollY > 300) {
     scrollBtn.classList.remove("hidden", "opacity-0", "translate-y-4");
@@ -149,3 +165,46 @@ scrollBtn.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
+// Update active states on Links
+function updateActiveNavLinks() {
+  const currentHash = window.location.hash || '#/home';
+
+  // Desktop links
+  const desktopLinks = document.querySelectorAll('.desktop-nav .nav-link, .desktop-nav .dropdown-item');
+  desktopLinks.forEach(link => {
+    link.classList.remove('active');
+
+    // Check if the link's href matches the current hash exactly
+    // Or if the hash starts with the link's href (for subpages)
+    const linkHref = link.getAttribute('href');
+    if (linkHref) {
+      if (linkHref === currentHash || (currentHash.startsWith(linkHref) && linkHref !== '#/')) {
+        link.classList.add('active');
+
+        // If it's a dropdown item, also highlight the parent dropdown toggle
+        const dropdownParent = link.closest('.dropdown');
+        if (dropdownParent) {
+          const toggle = dropdownParent.querySelector('.dropdown-toggle');
+          if (toggle) toggle.classList.add('active');
+        }
+      }
+    }
+  });
+
+  // Mobile Links (optional, if you want them highlighted too)
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+  mobileLinks.forEach(link => {
+    link.classList.remove('active');
+    const linkHref = link.getAttribute('href');
+    if (linkHref && (linkHref === currentHash || (currentHash.startsWith(linkHref) && linkHref !== '#/'))) {
+      link.classList.add('active');
+    }
+  });
+}
+
+// Initial check when the script loads
+updateActiveNavLinks();
+
+// Re-check whenever the hash changes
+window.addEventListener("hashchange", updateActiveNavLinks);

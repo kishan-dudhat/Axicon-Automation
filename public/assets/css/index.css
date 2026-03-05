@@ -7,6 +7,6 @@
 
 @media (width < 1021px) {
   #app {
-    margin-top: 108px !important;
+    padding-top: 108px !important;
   }
 }

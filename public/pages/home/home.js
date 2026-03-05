@@ -2,10 +2,11 @@
 const track = document.getElementById("carouselTrack");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
+const dotsContainer = document.getElementById("carouselDots");
 
 if (track && prevBtn && nextBtn) {
-  const GAP = 24;
-  const AUTO_DELAY = 2500;
+  const GAP = 22; // Must match CSS gap exactly
+  const AUTO_DELAY = 3000;
   const THRESHOLD = 60;
 
   let index = 1;
@@ -19,6 +20,7 @@ if (track && prevBtn && nextBtn) {
 
   /* ---------- Infinite Clone Setup ---------- */
   const cards = [...track.children];
+  const totalOriginalCards = cards.length;
   // Clone only if not already cloned
   if (!cards[0].classList.contains("cloned-card")) {
     const firstClone = cards[0].cloneNode(true);
@@ -32,13 +34,43 @@ if (track && prevBtn && nextBtn) {
 
   const updatedCards = [...track.children];
 
+  /* ---------- Pagination Dots Setup ---------- */
+  if (dotsContainer) {
+    dotsContainer.innerHTML = "";
+    for (let i = 0; i < totalOriginalCards; i++) {
+      const dot = document.createElement("button");
+      dot.className = "carousel-dot";
+      dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+      dot.addEventListener("click", () => {
+        stopAuto();
+        index = i + 1; // 0th is the prefixed clone
+        updateSlide();
+        startAuto();
+      });
+      dotsContainer.appendChild(dot);
+    }
+  }
+
   /* ---------- Helpers ---------- */
   const itemWidth = () => track.children[0].offsetWidth + GAP;
 
-  /* ---------- Center Card ---------- */
-  function updateCenter() {
+  /* ---------- Center Card & Active Dot ---------- */
+  function updateCenterAndDots() {
     [...track.children].forEach(c => c.classList.remove("is-center"));
     if (window.innerWidth >= 1024) track.children[index]?.classList.add("is-center");
+
+    // Update Dots
+    if (dotsContainer) {
+      let activeDotIndex = index - 1;
+      // Handle bounds due to infinite clones
+      if (activeDotIndex < 0) activeDotIndex = totalOriginalCards - 1;
+      if (activeDotIndex >= totalOriginalCards) activeDotIndex = 0;
+
+      Array.from(dotsContainer.children).forEach((dot, idx) => {
+        if (idx === activeDotIndex) dot.classList.add("active");
+        else dot.classList.remove("active");
+      });
+    }
   }
 
   /* ---------- Slide ---------- */
@@ -46,9 +78,9 @@ if (track && prevBtn && nextBtn) {
 
   function updateSlide(animate = true) {
     if (!track) return;
-    track.style.transition = animate ? "transform 0.7s ease" : "none";
+    track.style.transition = animate ? "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)" : "none";
     track.style.transform = `translateX(-${index * itemWidth()}px)`;
-    updateCenter();
+    updateCenterAndDots();
     if (animate) isTransitioning = true;
   }
 

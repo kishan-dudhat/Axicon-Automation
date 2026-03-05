@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
 /* =========================================================
    STYLE.CSS — AXICON AUTOMATION (TAILWIND FRIENDLY)
    ---------------------------------------------------------
@@ -300,7 +302,7 @@ h6 {
   .text-fifth-heading {
     font-size: 1.1rem;
   }
-  
+
   .text-six-heading {
     font-size: 0.9rem;
   }
@@ -311,5 +313,63 @@ h6 {
 
   .text-general-sm {
     font-size: 1rem;
+  }
+}
+
+/* =========================================================
+   WHATSAPP FLOATING BUTTON (DESKTOP/TABLET)
+   ========================================================= */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 32px;
+  display: none;
+  /* Hidden on small screens (mobile) */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transition: all 0.3s ease;
+  animation: pulse-whatsapp 2s infinite;
+  text-decoration: none;
+}
+
+.whatsapp-float:visited,
+.whatsapp-float:focus {
+  color: #ffffff;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe57;
+  transform: scale(1.1);
+  color: #ffffff;
+}
+
+/* Show on tablet and desktop (>= 768px) */
+@media screen and (min-width: 768px) {
+  .whatsapp-float {
+    display: flex;
+  }
+}
+
+/* Smooth pulse animation */
+@keyframes pulse-whatsapp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
   }
 }

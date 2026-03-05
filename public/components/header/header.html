@@ -124,8 +124,16 @@
                 </button>
             </nav>
 
-            <div id="mobile-menu" class="mobile-menu    shadow-[6px_0_15px_rgba(0,0,0,0.50)]" aria-hidden="true">
-                <div class="flex items-center">
+            <!-- Dark Overlay for Mobile Menu -->
+            <div id="mobileOverlay"
+                class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[90] opacity-0 pointer-events-none transition-opacity duration-300">
+            </div>
+
+            <div id="mobile-menu" class="mobile-menu shadow-2xl" aria-hidden="true">
+                <div class="flex items-center justify-between px-6 py-5 border-b border-slate-100">
+                    <img src="./public/assets/images/axicon-automation-logo.webp" alt="Axicon Logo"
+                        class="h-10 object-contain filter invert opacity-80" id="mobile-sidebar-logo"
+                        style="filter: brightness(0) saturate(100%) invert(18%) sepia(50%) saturate(1917%) hue-rotate(200deg) brightness(95%) contrast(92%);">
                     <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
@@ -134,28 +142,33 @@
                 <ul class="mobile-nav" role="menubar">
                     <li><a href="#/home" class="mobile-nav-link">Home</a></li>
                     <li>
-                        <div class="mobile-accordion mobile toggle" aria-expanded="false">
-                            About Us
-                            <i id="about-btn" class="fa-solid fa-chevron-down transition-transform"></i>
+                        <div id="about-btn" class="mobile-accordion" aria-expanded="false">
+                            <span>About Us</span>
+                            <i id="about-icon"
+                                class="fa-solid fa-chevron-down outline-none transition-transform duration-300"></i>
                         </div>
-                        <ul id="about-panel" class="mobile-panel hidden">
-                            <li><a href="#/products">Automation Systems</a></li>
-                            <li><a href="#/products">Robotics</a></li>
+                        <ul id="about-panel" class="mobile-panel">
+                            <li><a href="#/company-profile">Company Profile</a></li>
+                            <li><a href="#/environmental-protection">Environmental Protection</a></li>
+                            <li><a href="#/mission-vision">Mission & Vision</a></li>
+                            <li><a href="#/awards-achievements">Awards & Achievements</a></li>
                         </ul>
                     </li>
                     <li>
-                        <div class="mobile-accordion " aria-expanded="false">
-                            Products
-                            <i id="products-btn" class="fa-solid fa-chevron-down"></i>
+                        <div id="products-btn" class="mobile-accordion" aria-expanded="false">
+                            <span>Products</span>
+                            <i id="products-icon"
+                                class="fa-solid fa-chevron-down outline-none transition-transform duration-300"></i>
                         </div>
-                        <ul id="products-panel" class="mobile-panel hidden">
+                        <ul id="products-panel" class="mobile-panel">
+                            <li><a href="#/products">Laser Marking Machines</a></li>
                             <li><a href="#/products">Automation Systems</a></li>
                             <li><a href="#/products">Robotics</a></li>
                         </ul>
                     </li>
-                    <li><a href="#/queality" class="mobile-nav-link">Queality</a></li>
+                    <li><a href="#/quality" class="mobile-nav-link">Quality</a></li>
                     <li><a href="#/services" class="mobile-nav-link">Services</a></li>
-                    <li><a href="#/industrial" class="mobile-nav-link">Industrial</a></li>
+                    <li><a href="#/industries" class="mobile-nav-link">Industries</a></li>
                     <li><a href="#/contact" class="mobile-nav-link">Contact</a></li>
                 </ul>
             </div>
@@ -184,7 +197,8 @@
         </div>
         <div class="sidebar-item">
             <i class="fa-solid fa-phone"></i>
-            <button type="button" data-contact-open class="bg-transparent border-none cursor-pointer text-inherit p-0 text-fifth-heading">
+            <button type="button" data-contact-open
+                class="bg-transparent border-none cursor-pointer text-inherit p-0 text-fifth-heading">
                 Contact
             </button>
         </div>
