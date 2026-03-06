@@ -61,10 +61,14 @@
 
 .contact-link:hover {
     color: #38bdf8;
+
+    cursor: pointer;
 }
 
 .contact-link:hover i {
     color: #38bdf8;
+
+    cursor: pointer;
 }
 
 .social-section {
@@ -86,6 +90,8 @@
 .social-icon:hover {
     color: #ffffff;
     transform: translateY(-2px);
+
+    cursor: pointer;
 }
 
 .auth-section {
@@ -106,6 +112,8 @@
 .auth-section:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: #ffffff;
+
+    cursor: pointer;
 }
 
 .auth-section i {
@@ -126,6 +134,8 @@
 
 .auth-link:hover {
     color: #38bdf8;
+
+    cursor: pointer;
 }
 
 .main-navbar {
@@ -207,6 +217,8 @@
 .nav-link:hover::after,
 .nav-link.active::after {
     max-width: 100%;
+
+    cursor: pointer;
 }
 
 .nav-link.active {
@@ -247,6 +259,8 @@
 
 .dropdown:hover .dropdown-toggle::after {
     width: calc(100% - 2rem);
+
+    cursor: pointer;
 }
 
 .dropdown-icon {
@@ -257,6 +271,8 @@
 .dropdown:hover .dropdown-icon {
     transform: rotate(180deg);
     padding-right: 5px !important;
+
+    cursor: pointer;
 }
 
 .dropdown-menu {
@@ -277,6 +293,8 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+
+    cursor: pointer;
 }
 
 .dropdown-item {
@@ -293,6 +311,8 @@
     background-color: #cbd5e1;
     color: #1e3a8a;
     padding-left: 1.25rem;
+
+    cursor: pointer;
 }
 
 .submenu-trigger {
@@ -311,6 +331,8 @@
 
 .submenu-trigger:hover .submenu-item i {
     transform: translateX(0.5rem);
+
+    cursor: pointer;
 }
 
 .submenu {
@@ -333,6 +355,8 @@
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
+
+    cursor: pointer;
 }
 
 @media (max-width: 1024px) {
@@ -407,6 +431,8 @@
     color: #ef4444;
     /* Clean red hover */
     background-color: #f1f5f9;
+
+    cursor: pointer;
 }
 
 .mobile-nav {
@@ -430,6 +456,8 @@
     color: var(--primary-soft);
     background-color: #f8fafc;
     padding-left: 2.25rem;
+
+    cursor: pointer;
 }
 
 .mobile-accordion {
@@ -448,6 +476,8 @@
 
 .mobile-accordion:hover {
     background-color: #f8fafc;
+
+    cursor: pointer;
 }
 
 .mobile-panel {
@@ -483,6 +513,8 @@
     color: var(--primary-soft);
     padding-left: 3.25rem;
     background-color: #ffffff;
+
+    cursor: pointer;
 }
 
 /* Helper to lock body scrolling when mobile menu opens */
@@ -514,6 +546,8 @@ body.sidebar-open {
 
 .cta-button:hover {
     background-color: #ea580c;
+
+    cursor: pointer;
 }
 
 
@@ -567,6 +601,8 @@ body.sidebar-open {
     /* Expand out to the right */
     box-shadow: 4px 6px 15px rgba(37, 99, 235, 0.2);
     /* Enhanced hover shadow */
+
+    cursor: pointer;
 }
 
 .sidebar-icon {
@@ -584,6 +620,8 @@ body.sidebar-open {
 .sidebar-item:hover .sidebar-icon {
     background-color: var(--primary-soft, #1e3a8a);
     color: #ffffff;
+
+    cursor: pointer;
 }
 
 .sidebar-text {
@@ -603,6 +641,8 @@ body.sidebar-open {
     opacity: 1;
     transform: translateX(0);
     /* Slide in to its natural position */
+
+    cursor: pointer;
 }
 
 .mobile-bottom-bar {
@@ -672,6 +712,8 @@ body.sidebar-open {
 
 .bottom-bar-item:hover {
     filter: brightness(1.1);
+
+    cursor: pointer;
 }
 
 .bottom-bar-item:nth-child(1) {

@@ -350,6 +350,8 @@ h6 {
   background-color: #1ebe57;
   transform: scale(1.1);
   color: #ffffff;
+
+    cursor: pointer;
 }
 
 /* Show on tablet and desktop (>= 768px) */
