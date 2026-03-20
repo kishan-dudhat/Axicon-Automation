@@ -10,3 +10,9 @@
     padding-top: 108px !important;
   }
 }
+
+@media (max-width: 768px) {
+    #app {
+        padding-top: 94px !important;
+    }
+}

@@ -1,0 +1,7 @@
+/* Contact page specific styles */
+
+@media (max-width: 768px) {
+    #app {
+        padding-top: 94px !important;
+    }
+}
