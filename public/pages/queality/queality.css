@@ -30,7 +30,7 @@
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* TEXT */
@@ -38,8 +38,8 @@
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 8px;
-  color:var(--primary);
-  
+  color: var(--primary);
+
 }
 
 .text-general {
@@ -54,9 +54,11 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width:770px){
+
+@media (max-width:770px) {
   .commitment-section {
-  padding: 0px 20px 80px 20px !important;}
+    padding: 0px 20px 80px 20px !important;
+  }
 }
 
 @media (max-width: 640px) {
@@ -68,4 +70,3 @@
     padding: 60px 16px;
   }
 }
-

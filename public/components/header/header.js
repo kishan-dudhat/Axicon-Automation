@@ -8,8 +8,6 @@ const toggleBtn = document.getElementById("mobile-menu-toggle");
 const mobileBtnClose = document.getElementById("mobile-menu-close");
 const productsBtn = document.getElementById("products-btn");
 const productsPanel = document.getElementById("products-panel");
-const aboutBtn = document.getElementById("about-btn");
-const aboutpanel = document.getElementById("about-panel")
 const scrollBtn = document.getElementById("scrollTopBtn");
 
 
@@ -121,20 +119,6 @@ mobilePanelLinksList.forEach(link => {
 
 
 // --- Accordions Logic ---
-const aboutIcon = document.getElementById("about-icon");
-aboutBtn.addEventListener("click", () => {
-  const isOpen = aboutpanel.classList.contains("is-open");
-  if (!isOpen) {
-    aboutpanel.classList.add("is-open");
-    aboutBtn.setAttribute("aria-expanded", "true");
-    if (aboutIcon) aboutIcon.classList.add("rotate-180");
-  } else {
-    aboutpanel.classList.remove("is-open");
-    aboutBtn.setAttribute("aria-expanded", "false");
-    if (aboutIcon) aboutIcon.classList.remove("rotate-180");
-  }
-});
-
 const productsIcon = document.getElementById("products-icon");
 productsBtn.addEventListener("click", () => {
   const isOpen = productsPanel.classList.contains("is-open");

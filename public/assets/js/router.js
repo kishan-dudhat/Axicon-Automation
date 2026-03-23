@@ -2,10 +2,6 @@ const routes = {
   "/home": "/public/pages/home/home.html",
 
   "/about": "/public/pages/about/about.html",
-  "/company-profile": "/public/pages/about/company-profile.html",
-  "/environmental-protection": "/public/pages/about/environmental-protection.html",
-  "/mission-vision": "/public/pages/about/mission-vision.html",
-  "/awards-achievements": "/public/pages/about/awards-achievements.html",
 
   "/quality": "/public/pages/queality/queality.html",
 
