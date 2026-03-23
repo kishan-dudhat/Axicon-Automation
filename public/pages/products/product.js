@@ -291,6 +291,10 @@ const products = [
   }
 ];
 
+
+
+
+
 function renderProducts() {
   const container = document.getElementById('products-container');
   if (!container) return;
@@ -314,7 +318,7 @@ function renderProducts() {
 
   const product = selectedProduct;
   const slug = product.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-  
+
   const html = `
     <div id="${slug}" class="product-item max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 border-none scroll-mt-24">
       <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
@@ -346,7 +350,7 @@ function renderProducts() {
             <div class="overflow-x-auto w-full">
               <table class="w-full text-[0.85rem] sm:text-sm text-center border-collapse bg-white shadow-sm border border-gray-200">
                 <tbody>
-                  ${ Object.entries(product.specifications).map(([key, value]) => `
+                  ${Object.entries(product.specifications).map(([key, value]) => `
                     <tr class="border-b border-gray-200 last:border-none">
                       <th scope="row" class="px-3 md:px-5 py-3 md:py-4 font-semibold text-white bg-primary border-r border-[#ffffff30] w-[35%] whitespace-nowrap align-middle tracking-wide">
                         ${key}
@@ -355,7 +359,7 @@ function renderProducts() {
                         ${value}
                       </td>
                     </tr>
-                  `).join('') }
+                  `).join('')}
                 </tbody>
               </table>
             </div>
@@ -402,8 +406,8 @@ function renderProducts() {
 }
 
 // Render when DOM loads
-if(document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", renderProducts);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", renderProducts);
 } else {
-    renderProducts();
+  renderProducts();
 }
