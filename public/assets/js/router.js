@@ -32,8 +32,9 @@ export async function loadRoute() {
     loader.classList.remove("opacity-0");
   }
 
-  const hash = location.hash.replace("#", "") || "/";
-  const page = routes[hash] || routes["/"];
+  const fullHash = location.hash.replace("#", "");
+  const hashPath = fullHash.split("?")[0] || "/home";
+  const page = routes[hashPath] || routes["/home"];
 
   // Random delay between 500ms and 1000ms to show the loader
   const delayMs = Math.floor(Math.random() * 500) + 500;
