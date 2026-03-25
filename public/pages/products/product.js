@@ -279,7 +279,6 @@ const products = [
       "Laser Type": "Fiber Laser",
       "Axis Scope": "X/Y/Z high precision motion",
       "Laser Power": "1000W, 1500W, 2000W",
-      "Programming": "G-code / Teach pendant",
       "Cooling": "Water Chiller",
       "Weld Head": "Wobble welding head"
     },
@@ -319,90 +318,208 @@ function renderProducts() {
   const product = selectedProduct;
   const slug = product.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
+  // Quick stats extraction
+  const specKeys = Object.keys(product.specifications);
+  const quickStats = specKeys.slice(0, 4).map(key => ({
+    label: key.toUpperCase(),
+    value: product.specifications[key]
+  }));
+
+  // Build the related products list
+  const relatedProducts = products.filter(p => p.id !== product.id).slice(0, 3);
+
+  // Generate HTML
   const html = `
-    <div id="${slug}" class="product-item max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 border-none scroll-mt-24">
-      <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
-        
-        <!-- Left Side: Image & Buttons -->
-        <div class="w-full lg:w-5/12 flex flex-col gap-6">
-          <div class="bg-white rounded-xl overflow-hidden flex items-center justify-center p-8 border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,0.04)] aspect-[4/3] group relative">
-            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-contain mix-blend-darken transform group-hover:scale-105 transition-transform duration-[0.8s] ease-out" />
+    <!-- Top Hero Section -->
+    <div class="hero-gradient relative pt-24 lg:pt-32 pb-32 lg:pb-40 w-full border-b border-color">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center gap-10">
+          <!-- Text Content -->
+          <div class="w-full lg:w-1/2 mb-10 lg:mb-0">
+             <div class="text-sm font-semibold text-brand mb-4 uppercase tracking-wide">Axicon Automation Products &gt; ${product.name}</div>
+             <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand leading-tight font-outfit uppercase py-2 drop-shadow-sm">
+               ${product.name}
+             </h1>
           </div>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <button class="flex-1 bg-primary hover:bg-[#34367f] text-white font-semibold py-4 px-6 transition-all duration-300 text-sm md:text-[0.9rem] flex items-center justify-between shadow-[0_5px_15px_rgba(62,64,149,0.3)] tracking-wide">
-              Request A Quote <i class="fa-solid fa-arrow-right text-xs"></i>
-            </button>
-            <button class="flex-1 bg-primary hover:bg-[#34367f] text-white font-semibold py-4 px-6 transition-all duration-300 text-sm md:text-[0.9rem] flex items-center justify-between shadow-[0_5px_15px_rgba(62,64,149,0.3)] tracking-wide">
-              Download Catalogue <i class="fa-solid fa-arrow-right text-xs"></i>
-            </button>
+          <!-- Hero Image -->
+          <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+             <img src="${product.image}" alt="${product.name}" class="w-full max-w-lg object-contain drop-shadow-2xl mix-blend-multiply hover:scale-105 transition-transform duration-700" />
           </div>
-        </div>
-        
-        <!-- Right Side: Details -->
-        <div class="w-full lg:w-7/12 flex flex-col">
-          <h2 class="text-3xl md:text-4xl lg:text-[2.2rem] font-extrabold text-primary mb-8 font-outfit tracking-tight">
-            ${product.name}
-          </h2>
-          
-          <!-- Specification -->
-          <div class="mb-10 w-full overflow-hidden">
-            <h3 class="text-xl md:text-[1.35rem] font-extrabold text-primary mb-4 font-outfit">Specification</h3>
-            <div class="overflow-x-auto w-full">
-              <table class="w-full text-[0.85rem] sm:text-sm text-center border-collapse bg-white shadow-sm border border-gray-200">
-                <tbody>
-                  ${Object.entries(product.specifications).map(([key, value]) => `
-                    <tr class="border-b border-gray-200 last:border-none">
-                      <th scope="row" class="px-3 md:px-5 py-3 md:py-4 font-semibold text-white bg-primary border-r border-[#ffffff30] w-[35%] whitespace-nowrap align-middle tracking-wide">
-                        ${key}
-                      </th>
-                      <td class="px-3 md:px-5 py-3 md:py-4 text-gray-700 bg-gray-50/70 font-medium">
-                        ${value}
-                      </td>
-                    </tr>
-                  `).join('')}
-                </tbody>
-              </table>
-            </div>
-          </div>
-          
-          <!-- Application -->
-          <div>
-            <h3 class="text-xl md:text-[1.35rem] font-extrabold text-primary mb-4 font-outfit">Application</h3>
-            <ul class="space-y-2 mb-8">
-              ${product.applications.map(app => `
-                <li class="flex items-start text-gray-500 font-medium text-[0.95rem] leading-relaxed font-inter">
-                  <i class="fa-solid fa-arrow-right-long text-gray-400 mt-1.5 mr-3 text-xs"></i>
-                  <span>${app}</span>
-                </li>
-              `).join('')}
-            </ul>
-            
-            <!-- Hexagon Thumbnails Grid -->
-            <div class="flex flex-wrap gap-4 lg:gap-6 mt-6">
-              ${[1, 2, 3, 4, 5].map(idx => `
-              <div class="w-[4.5rem] h-[4.5rem] md:w-[5.5rem] md:h-[5.5rem] bg-gray-50 flex items-center justify-center border border-gray-100 hover:border-gray-200 transition-colors">
-                 <div class="w-[85%] h-[85%] relative bg-white overflow-hidden shadow-sm" style="clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)">
-                   <img src="./public/assets/images/HomeImage/home-why-us-${idx > 4 ? 4 : idx}.png" alt="Application sample" class="w-full h-full object-cover p-1 opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                 </div>
-              </div>
-              `).join('')}
-            </div>
-          </div>
-          
         </div>
       </div>
+    </div>
+
+    <!-- Info Banner Component: Overlaps Hero -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-20">
+       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          ${quickStats.map(stat => `
+            <div class="bg-primary rounded-lg p-5 lg:p-6 shadow-lg product-quick-card text-center flex flex-col justify-between h-36 border border-gray-100">
+              <h4 class="text-[0.7rem] md:text-sm font-bold text-brand-dark uppercase tracking-widest mb-2 line-clamp-2 leading-snug">${stat.label}</h4>
+              <p class="text-[0.85rem] md:text-[0.95rem] font-medium text-gray-700 line-clamp-2">${stat.value}</p>
+              <a href="#specifications" class="text-red-500 text-xs font-semibold mt-auto inline-block hover:underline">View Details <i class="fa-solid fa-arrow-right ml-1"></i></a>
+            </div>
+          `).join('')}
+       </div>
+    </div>
+
+    <!-- Contact & Small Image Block -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 lg:mt-24 mb-16">
+      <div class="bg-primary border border-gray-100 shadow-xl shadow-blue-900/5 rounded-2xl flex flex-col md:flex-row overflow-hidden">
+         <!-- Left Details -->
+         <div class="w-full md:w-5/12 p-8 md:p-12 border-r border-color flex flex-col justify-center bg-gray-50/50">
+           <h2 class="text-2xl md:text-3xl font-extrabold text-brand mb-4 font-outfit uppercase">${product.name}</h2>
+           <p class="text-secondary text-[0.95rem] mb-8 leading-relaxed">
+             The ${product.name} provides best-in-class performance. Find out more about how it fits your production line. Connect with our technical experts today.
+           </p>
+           <h3 class="text-[1.1rem] font-bold text-primary mb-3">Immediate Contact Us</h3>
+           <div class="flex items-center text-gray-700 mb-3 font-medium">
+             <div class="w-8 flex items-center justify-center text-brand text-lg"><i class="fa-solid fa-phone"></i></div>
+             <a href="tel:+919978430431" class="hover:text-blue-600 transition-colors ml-2">+91-9978430431</a>
+           </div>
+           <div class="flex items-center text-gray-700 mb-8 font-medium">
+             <div class="w-8 flex items-center justify-center text-brand text-lg"><i class="fa-solid fa-phone"></i></div>
+             <a href="tel:+919099653777" class="hover:text-blue-600 transition-colors ml-2">+91-9099653777</a>
+           </div>
+           <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" class="bg-brand hover:bg-blue-800 text-light font-bold py-3 px-8 rounded shadow-lg transition-colors self-start flex items-center justify-center gap-3">
+             FREE INQUIRY <i class="fa-solid fa-paper-plane"></i>
+           </button>
+         </div>
+         <!-- Right Image -->
+         <div class="w-full md:w-7/12 bg-primary flex items-center justify-center p-8 md:p-12">
+            <img src="${product.image}" alt="${product.name} details" class="w-full max-w-lg object-contain drop-shadow-xl hover:scale-105 transition-transform duration-500 mix-blend-darken" />
+         </div>
+      </div>
+    </div>
+
+    <!-- Blue Banner -->
+    <div class="w-full bg-brand py-10 lg:py-14 mt-10 shadow-inner my-16 bg-gradient-to-r from-blue-700 to-blue-600 relative overflow-hidden">
+      <!-- Decorative background elements -->
+       <div class="absolute top-0 right-0 w-64 h-64 bg-primary opacity-5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+       <div class="absolute bottom-0 left-0 w-48 h-48 bg-primary opacity-5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+       
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between relative z-10 gap-6">
+        <div class="text-center md:text-left">
+          <h2 class="text-2xl lg:text-3xl font-bold text-light mb-2 leading-tight">Building a Reliable <br class="hidden md:block" /> Technical Experience!</h2>
+          <p class="text-blue-100 text-sm md:text-base mt-2">Axicon Automation: Advanced laser technology making manufacturing easier.</p>
+        </div>
+        <button class="border-2 border-white text-light hover:bg-white hover:text-[var(--primary-color)] font-bold py-3 px-8 rounded flex items-center transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap">
+          DOWNLOAD BROCHURE <i class="fa-solid fa-file-pdf ml-3 text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Product Description & Application Video Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+         <!-- Left View (Video/Image Box) -->
+         <div class="w-full lg:w-1/2 relative group rounded-2xl overflow-hidden shadow-2xl border flex-shrink-0 cursor-pointer bg-secondary" onclick="window.open('${product.image}', '_blank')">
+            <div class="flex items-center justify-center aspect-video relative">
+               <img src="${product.image}" alt="Video placeholder" class="w-[80%] object-contain mix-blend-darken group-hover:scale-105 transition-transform duration-700" />
+               <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                 <div class="w-16 h-16 bg-white/95 rounded-full flex items-center justify-center text-brand shadow-xl group-hover:scale-110 transition-transform">
+                   <i class="fa-solid fa-play text-2xl ml-1"></i>
+                 </div>
+               </div>
+               <!-- Brand Banner top-left -->
+               <div class="absolute top-4 left-4 bg-orange-500 text-light text-[11px] font-extrabold px-3 py-1 uppercase rounded-sm shadow-md tracking-wider">
+                  AXICON
+               </div>
+            </div>
+         </div>
+         <!-- Right Text -->
+         <div class="w-full lg:w-1/2">
+            <h2 class="text-sm font-bold text-red-500 mb-2 uppercase tracking-widest border-l-4 border-red-500 pl-3">PRODUCT</h2>
+            <h3 class="section-heading text-brand mb-6 inline-block w-full">Product Description</h3>
+            <p class="text-secondary mb-6 leading-relaxed text-[0.95rem] md:text-base">
+              The exactly configured <strong>${product.name}</strong> offers exceptional consistency and durability for harsh industrial environments. Its intelligent engineering promotes higher throughput, minimizes downtime, and handles complex production lines natively. Built entirely according to international standards, this model delivers precise output with seamless operation.
+            </p>
+         </div>
+      </div>
+
+      <!-- Feature Badges Row -->
+      <div class="flex flex-wrap items-stretch justify-center gap-6 md:gap-8 lg:gap-14 mt-20 mb-8 text-center px-4">
+         ${product.applications.slice(0, 4).map((app, index) => {
+    let icons = ["fa-bolt", "fa-microchip", "fa-gauge-high", "fa-droplet"];
+    let icon = icons[index % icons.length];
+    return `
+    <div class="flex flex-col items-center w-32 md:w-36 lg:w-44 group cursor-pointer">
+      <div class="feature-circle flex items-center justify-center mb-5 group-hover:-translate-y-2 transition-transform duration-300">
+        <i class="fa-solid ${icon} text-[3rem] text-brand opacity-80 group-hover:opacity-100 transition-opacity"></i>
+      </div>
+      <h4 class="text-xs md:text-[0.8rem] lg:text-[0.85rem] font-bold text-primary uppercase tracking-wide leading-tight group-hover:text-[var(--primary-color)] transition-colors">${app}</h4>
+    </div>
+    `}).join('')}
+      </div>
+    </div>
+
+
+    <!-- Technical Specifications Table -->
+    <div id="specifications" class="bg-secondary py-20 border-t border-color">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+           <h2 class="section-heading text-brand tracking-wide inline-block relative pb-4">
+             Technical Specification
+             <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-red-500 rounded-full"></span>
+           </h2>
+        </div>
+        
+        <div class="bg-primary shadow-lg rounded-xl border border-gray-100 overflow-hidden">
+           <div class="bg-blue-50 border-b border-color px-6 sm:px-8 py-4 flex justify-between font-bold text-blue-900 text-sm sm:text-base border-t-4 border-t-[var(--primary-color)]">
+             <span class="uppercase tracking-wider">Model</span>
+             <span>${product.name}</span>
+           </div>
+           <div class="overflow-x-auto">
+             <table class="w-full spec-table text-[0.85rem] sm:text-sm">
+               <tbody>
+                 ${Object.entries(product.specifications).map(([key, value]) => `
+                   <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-0">
+                     <th class="py-3 sm:py-4 px-6 sm:px-8 w-[40%] text-primary bg-primary font-semibold border-r border-gray-100 tracking-wide">${key}</th>
+                     <td class="py-3 sm:py-4 px-6 sm:px-8 text-secondary bg-primary font-medium">${value}</td>
+                   </tr>
+                 `).join('')}
+               </tbody>
+             </table>
+           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Products Carousel (Bottom Blue Section) -->
+    <div class="w-full bg-brand py-20 relative overflow-hidden bg-gradient-to-br from-[var(--primary-color)] to-[#125ba6]">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="flex items-center justify-between mb-10 flex-col sm:flex-row gap-6">
+            <h3 class="text-2xl font-bold text-light tracking-wide uppercase">Related Products</h3>
+            <div class="flex items-center gap-4">
+               <button class="related-carousel-btn shadow-lg hover:shadow-xl"><i class="fa-solid fa-chevron-left text-lg"></i></button>
+               <button class="related-carousel-btn shadow-lg hover:shadow-xl"><i class="fa-solid fa-chevron-right text-lg"></i></button>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 w-full">
+            ${relatedProducts.map(rp => {
+      const rpSlug = rp.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+      return `
+              <a href="#?item=${rpSlug}" onclick="setTimeout(()=>window.location.reload(), 50)" class="bg-primary rounded-2xl shadow-xl p-5 hover:-translate-y-3 transition-transform duration-300 block text-center cursor-pointer group border-b-4 border-transparent hover:border-red-500">
+                <div class="bg-secondary rounded-xl p-6 mb-5 flex items-center justify-center h-48 sm:h-56 relative overflow-hidden border border-gray-100 group-hover:bg-blue-50/20 transition-colors">
+                  <img src="${rp.image}" alt="${rp.name}" class="h-full object-contain mix-blend-darken group-hover:scale-110 transition-transform duration-500 relative z-10" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-gray-100 to-transparent opacity-50"></div>
+                </div>
+                <h4 class="font-bold text-primary text-[1.05rem] leading-tight line-clamp-2 min-h-[44px] group-hover:text-[var(--primary-color)] transition-colors">${rp.name}</h4>
+                <div class="mt-4 flex justify-center">
+                  <span class="inline-block border border-[var(--primary-color)] text-brand px-6 py-2 rounded text-xs font-bold tracking-wide w-full max-w-[180px] group-hover:bg-[var(--primary-color)] group-hover:text-white transition-colors">
+                    VIEW PRODUCT
+                  </span>
+                </div>
+              </a>
+            `}).join('')}
+          </div>
+       </div>
     </div>
   `;
 
   container.innerHTML = html;
 
-  // Scroll down past hero section if a specific machine was accessed directly
-  if (targetSlug) {
-    setTimeout(() => {
-      const el = document.getElementById(slug);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 300);
-  }
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // Render when DOM loads

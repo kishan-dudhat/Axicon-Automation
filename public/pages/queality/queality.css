@@ -1,7 +1,7 @@
 /* SECTION */
 .commitment-section {
   padding: 80px 20px;
-  background: #f8fafc;
+  background: var(--bg-secondary);
 }
 
 /* GRID */

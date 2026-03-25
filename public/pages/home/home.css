@@ -106,7 +106,7 @@
 .carousel-card h3 {
   margin: 20px 0 8px;
   font-size: 1.7rem;
-  color: #1e3a8a;
+  color: var(--primary-dark);
 }
 
 .carousel-card p {
@@ -160,10 +160,10 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border-color);
 
   background: #ffffff;
-  color: #1e293b;
+  color: var(--text-primary);
   cursor: pointer;
 
   display: flex;
@@ -178,7 +178,7 @@
 
 .nav-btn:hover {
   background: var(--primary-soft, #2563eb);
-  color: #ffffff;
+  color: var(--text-light);
   border-color: var(--primary-soft, #2563eb);
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
   transform: scale(1.08);
@@ -209,7 +209,7 @@
   height: 12px;
   border-radius: 9999px;
   /* Fully rounded */
-  background-color: #cbd5e1;
+  background-color: var(--border-color);
   /* slate-300 */
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;

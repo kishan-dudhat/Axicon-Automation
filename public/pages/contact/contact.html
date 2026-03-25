@@ -8,7 +8,7 @@
     alt="Axicon Automation Contact Hero Banner" />
   <div class="relative z-20 text-center px-4 md:px-8 mt-16 md:mt-24">
     <h1 class="
-           text-white text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold tracking-tight leading-[1.1]
+           text-light text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold tracking-tight leading-[1.1]
            mb-4 sm:mb-6
            opacity-0 scale-95 translate-y-4
            transition-all duration-700 ease-out
@@ -30,7 +30,8 @@
 </section>
 
 <!-- Main Contact Form Section -->
-<section class="py-16 md:py-24 px-4 bg-gradient-to-br from-[#f8fafc] to-[#e2e8f0] relative -mt-5 z-20 rounded-t-3xl">
+<section
+  class="py-16 md:py-24 px-4 bg-gradient-to-br from-[var(--bg-secondary)] to-[var(--border-color)] relative -mt-5 z-20 rounded-t-3xl">
   <!-- Subtle background decoration -->
   <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none rounded-t-3xl">
     <div class="absolute -top-32 -left-32 w-96 h-96 bg-primary/opacity-10 rounded-full blur-3xl opacity-20"></div>
@@ -41,14 +42,14 @@
   <div class="max-w-6xl mx-auto relative z-10">
     <!-- Header Block -->
     <div class="text-center mb-12 md:mb-16">
-      <h2 class="inline-block text-3xl md:text-5xl font-bold text-gray-800 mb-4 relative">
+      <h2 class="inline-block text-3xl md:text-5xl font-bold text-primary mb-4 relative">
         Let's Work <span class="text-primary relative z-10">Together</span>
         <svg class="absolute w-full h-3 -bottom-1 left-0 text-primary/20 z-0" viewBox="0 0 100 20"
           preserveAspectRatio="none">
           <path d="M0 10 Q 50 20 100 10" stroke="currentColor" stroke-width="8" fill="transparent" />
         </svg>
       </h2>
-      <p class="text-gray-500 max-w-xl mx-auto text-lg">
+      <p class="text-secondary max-w-xl mx-auto text-lg">
         Fill out the form below and our dedicated team will get back to you promptly to discuss your project
         requirements.
       </p>
@@ -56,7 +57,7 @@
 
     <!-- Form Container -->
     <div
-      class="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100 overflow-hidden max-w-4xl mx-auto transform transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]">
+      class="bg-primary rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100 overflow-hidden max-w-4xl mx-auto transform transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]">
 
       <div class="p-8 md:p-12 lg:p-16">
         <form id="contactForm" class="space-y-6" novalidate>
@@ -72,7 +73,7 @@
                   <i class="fa-regular fa-user"></i>
                 </div>
                 <input type="text" id="name" required placeholder="John Doe"
-                  class="w-full pl-11 pr-4 py-3.5 bg-gray-50 border border-gray-200 text-gray-800 rounded-xl outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary focus:bg-white transition-all duration-300 shadow-sm" />
+                  class="w-full pl-11 pr-4 py-3.5 bg-secondary border border-color text-primary rounded-xl outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary focus:bg-white transition-all duration-300 shadow-sm" />
               </div>
               <p id="nameErr" class="text-xs text-red-500 hidden font-medium ml-1 mt-1 transition-all">Name is required.
               </p>
@@ -87,7 +88,7 @@
                   <i class="fa-solid fa-phone"></i>
                 </div>
                 <input type="tel" id="contactNumber" required placeholder="9876543210"
-                  class="w-full pl-11 pr-4 py-3.5 bg-gray-50 border border-gray-200 text-gray-800 rounded-xl outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary focus:bg-white transition-all duration-300 shadow-sm" />
+                  class="w-full pl-11 pr-4 py-3.5 bg-secondary border border-color text-primary rounded-xl outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary focus:bg-white transition-all duration-300 shadow-sm" />
               </div>
               <p id="contactNumberErr" class="text-xs text-red-500 hidden font-medium ml-1 mt-1 transition-all">Valid
                 numeric contact number is required.</p>
@@ -103,7 +104,7 @@
                 <i class="fa-regular fa-envelope"></i>
               </div>
               <input type="email" id="email" required placeholder="john@example.com"
-                class="w-full pl-11 pr-4 py-3.5 bg-gray-50 border border-gray-200 text-gray-800 rounded-xl outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary focus:bg-white transition-all duration-300 shadow-sm" />
+                class="w-full pl-11 pr-4 py-3.5 bg-secondary border border-color text-primary rounded-xl outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary focus:bg-white transition-all duration-300 shadow-sm" />
             </div>
             <p id="emailErr" class="text-xs text-red-500 hidden font-medium ml-1 mt-1 transition-all">A valid email
               address is required.</p>
@@ -120,7 +121,7 @@
                   <i class="fa-solid fa-globe"></i>
                 </div>
                 <input type="text" id="country" required placeholder="e.g. India"
-                  class="w-full pl-11 pr-4 py-3.5 bg-gray-50 border border-gray-200 text-gray-800 rounded-xl outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary focus:bg-white transition-all duration-300 shadow-sm" />
+                  class="w-full pl-11 pr-4 py-3.5 bg-secondary border border-color text-primary rounded-xl outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary focus:bg-white transition-all duration-300 shadow-sm" />
               </div>
               <p id="countryErr" class="text-xs text-red-500 hidden font-medium ml-1 mt-1 transition-all">Country is
                 required.</p>
@@ -135,7 +136,7 @@
                   <i class="fa-solid fa-city"></i>
                 </div>
                 <input type="text" id="city" required placeholder="e.g. Ahmedabad"
-                  class="w-full pl-11 pr-4 py-3.5 bg-gray-50 border border-gray-200 text-gray-800 rounded-xl outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary focus:bg-white transition-all duration-300 shadow-sm" />
+                  class="w-full pl-11 pr-4 py-3.5 bg-secondary border border-color text-primary rounded-xl outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary focus:bg-white transition-all duration-300 shadow-sm" />
               </div>
               <p id="cityErr" class="text-xs text-red-500 hidden font-medium ml-1 mt-1 transition-all">City is required.
               </p>
@@ -151,7 +152,7 @@
                 <i class="fa-regular fa-comment-dots"></i>
               </div>
               <textarea id="message" required rows="4" placeholder="How can we help you?"
-                class="w-full pl-11 pr-4 py-3.5 bg-gray-50 border border-gray-200 text-gray-800 rounded-xl outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary focus:bg-white transition-all duration-300 resize-none shadow-sm"></textarea>
+                class="w-full pl-11 pr-4 py-3.5 bg-secondary border border-color text-primary rounded-xl outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary focus:bg-white transition-all duration-300 resize-none shadow-sm"></textarea>
             </div>
             <p id="messageErr" class="text-xs text-red-500 hidden font-medium ml-1 mt-1 transition-all">Please provide a
               message.</p>
@@ -160,7 +161,7 @@
           <!-- Submit Button -->
           <div class="pt-4">
             <button type="submit"
-              class="w-full relative overflow-hidden group py-4 px-6 rounded-xl text-white font-bold text-lg bg-primary hover:bg-secondary shadow-[0_8px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_12px_25px_rgba(0,0,0,0.15)] transform transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-3">
+              class="w-full relative overflow-hidden group py-4 px-6 rounded-xl text-light font-bold text-lg bg-primary hover:bg-secondary shadow-[0_8px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_12px_25px_rgba(0,0,0,0.15)] transform transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-3">
               <!-- Animated background gradient on hover -->
               <span
                 class="absolute inset-0 w-full h-full bg-gradient-to-r from-primary via-[#2563eb] to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out z-0"></span>
@@ -212,11 +213,11 @@
           if (isError) {
             errText.classList.remove("hidden");
             elem.classList.add("border-red-400", "focus:border-red-500", "focus:ring-red-400/20");
-            elem.classList.remove("border-gray-200", "focus:border-primary", "focus:ring-primary/10");
+            elem.classList.remove("border-color", "focus:border-primary", "focus:ring-primary/10");
           } else {
             errText.classList.add("hidden");
             elem.classList.remove("border-red-400", "focus:border-red-500", "focus:ring-red-400/20");
-            elem.classList.add("border-gray-200", "focus:border-primary", "focus:ring-primary/10");
+            elem.classList.add("border-color", "focus:border-primary", "focus:ring-primary/10");
           }
         };
 

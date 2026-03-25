@@ -24,29 +24,41 @@
    ROOT VARIABLES — SINGLE SOURCE OF TRUTH
    ========================================================= */
 :root {
+  /* Brand Colors */
+  --primary-color: #1773d0;
+  /* Used in header, product titles, main buttons */
+  --primary-dark: #3e4095;
+  /* Header bg, dark blue variants (#1e3a8a, #243b7a) */
+  --primary-light: #0ea5e9;
+  /* Light blue highlights, sky-500 */
+  --secondary-color: #f97316;
+  /* Orange brand accents */
 
-  /* CORE BRAND */
-  /* --primary: #16497b; */
-  /* --secondary: #07111b; */
-  --primary: #3e4095;
-  --secondary: #1d2024;
-  --trinary: #13353b;
-  --off-white: #dfe9ea;
+  /* Text Colors */
+  --text-primary: var(--text-primary);
+  /* Main headings, dark slate (#1f2937, #1e293b) */
+  --text-secondary: #3c6cae;
+  /* Paragraphs, muted text (#334155) */
+  --text-light: #ffffff;
+  /* Text on dark backgrounds */
 
-  --bg-light: #f7f9fc;
+  /* Background Colors */
+  --bg-primary: #ffffff;
+  /* Main page background */
+  --bg-secondary: #f8fafc;
+  /* Cards, light sections (#f1f5f9, #eff6ff, #f7f9fc) */
   --bg-dark: #0a1622;
-  --bg-primary: #1773d0;
-  --bg-secondary: #2631ab;
-  --bg-trinary: rgb(7, 18, 114);
-  --navbar-bg: #3e4095;
+  /* Darker sections */
 
-  --border-light: #e2e8f0;
+  /* UI Colors */
+  --border-color: #e2e8f0;
+  /* Default borders (#cbd5e1, #d1d5db) */
   --border-dark: #1e293b;
-  --border-primary: #1773d0;
-  --border-secondary: #2631ab;
-  --border-trinary: rgb(7, 18, 114);
-
-
+  /* Darker borders */
+  --hover-color: #38bdf8;
+  /* Hover states for links and buttons */
+  --success-color: var(--success-color);
+  /* WhatsApp float button */
 
   /* Font-F */
   --font-poppins: 'Poppins',
@@ -80,6 +92,8 @@
 body {
   font-family: var(--font-poppins);
   line-height: 1.6;
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
 }
 
 h1,
@@ -92,41 +106,36 @@ h6 {
 }
 
 
-
-
 /* =========================================================
-   <span class="text-muted">
-/* ===================== */
+   COLOR UTILITY CLASSES
+   ========================================================= */
 
+/* Text Colors */
 .text-primary {
-  color: var(--primary) !important;
+  color: var(--text-primary) !important;
 }
 
 .text-secondary {
-  color: var(--secondary) !important;
+  color: var(--text-secondary) !important;
 }
 
-.text-trinary {
-  color: var(--trinary) !important;
+.text-light {
+  color: var(--text-light) !important;
 }
 
-.text-offWhite {
-  color: var(--off-white) !important;
+.text-brand {
+  color: var(--primary-color) !important;
 }
 
-
-
-/* =========================================================
-   <section class="bg-primary text-invert">
-   ========================================================= */
-.bg-light {
-  background-color: var(--bg-light) !important;
+.text-brand-dark {
+  color: var(--primary-dark) !important;
 }
 
-.bg-dark {
-  background-color: var(--bg-dark) !important;
+.text-accent {
+  color: var(--secondary-color) !important;
 }
 
+/* Background Colors */
 .bg-primary {
   background-color: var(--bg-primary) !important;
 }
@@ -135,34 +144,33 @@ h6 {
   background-color: var(--bg-secondary) !important;
 }
 
-.bg-trinary {
-  background-color: var(--bg-trinary) !important;
+.bg-dark {
+  background-color: var(--bg-dark) !important;
 }
 
+.bg-brand {
+  background-color: var(--primary-color) !important;
+}
 
+.bg-brand-dark {
+  background-color: var(--primary-dark) !important;
+}
 
+.bg-accent {
+  background-color: var(--secondary-color) !important;
+}
 
-/* =========================================================
-   <div class="border border-light">
-   ========================================================= */
-.border-light {
-  border-color: var(--border-light) !important;
+/* Border Colors */
+.border-color {
+  border-color: var(--border-color) !important;
 }
 
 .border-dark {
   border-color: var(--border-dark) !important;
 }
 
-.border-primary {
-  border-color: var(--border-primary) !important;
-}
-
-.border-secondary {
-  border-color: var(--border-secondary) !important;
-}
-
-.border-trinary {
-  border-color: var(--border-trinary) !important;
+.border-brand {
+  border-color: var(--primary-color) !important;
 }
 
 
@@ -351,7 +359,7 @@ h6 {
   transform: scale(1.1);
   color: #ffffff;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* Show on tablet and desktop (>= 768px) */
@@ -373,5 +381,49 @@ h6 {
 
   100% {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* =========================================================
+   SECTION BADGE
+   ========================================================= */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 1rem;
+  border-radius: 9999px;
+  background-color: var(--bg-secondary);
+  color: var(--primary-dark);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+.section-heading {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 640px) {
+  .section-heading {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-heading {
+    font-size: 3rem;
+    line-height: 1;
   }
 }

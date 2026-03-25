@@ -1,10 +1,12 @@
+<!-- Load Custom Product CSS -->
+<link rel="stylesheet" href="./public/pages/products/product.css" />
 <section class="grid items-end justify-items-center lg:mb-5 mx-auto">
-  <img src="./public/assets/images/ProductsImage/Products-hero-images.jpg" class="w-full col-start-1 row-start-1 h-[50vh] md:h-[60vh] lg:h-[75vh] object-cover"
-    alt="Axicon Automation Product Catalog Banner" />
+    <img src="./public/assets/images/ProductsImage/Products-hero-images.jpg"
+        class="w-full col-start-1 row-start-1 h-[50vh] md:h-[60vh] lg:h-[75vh] object-cover"
+        alt="Axicon Automation Product Catalog Banner" />
 </section>
-
 <!-- Dynamic Products Container (Rendered via product.js) -->
-<div id="products-container" class="bg-white w-full"></div>
+<div id="products-container" class="w-full bg-primary relative z-0"></div>
 
 <!-- Load standard product logic & data script -->
 <script src="./public/pages/products/product.js"></script>
