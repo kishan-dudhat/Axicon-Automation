@@ -99,5 +99,8 @@ loadComponent("header");
 // Load footer component
 loadComponent("footer");
 
+// Load Lead Popup Form
+loadComponent("popupform");
+
 // Initialize SPA routing
 loadRoute();

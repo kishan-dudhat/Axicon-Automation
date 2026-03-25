@@ -1,0 +1,68 @@
+<!-- Lead Generation Popup Form -->
+<div id="lead-popup" class="popup-overlay hidden opacity-0">
+    <div class="popup-content-container">
+        <!-- Close Button -->
+        <button id="close-popup" class="popup-close-btn" aria-label="Close Form">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="popup-card">
+            <!-- Right Side: Form -->
+            <div class="popup-form-side">
+                <div class="form-header">
+                    <h2 class="form-title">Inquiry Form</h2>
+                    <p class="form-subtitle">Fill the details below, our expert will contact you soon.</p>
+                </div>
+
+                <form id="popup-lead-form" class="popup-form">
+                    <!-- Web3Forms Access Key -->
+                    <input type="hidden" name="access_key" value="4518f12f-5ee8-445b-beee-5a8d5fc84bb9">
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="popup-name">Full Name *</label>
+                            <input type="text" id="popup-name" name="name" placeholder="please enter your full name"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="popup-email">Email Address *</label>
+                            <input type="email" id="popup-email" name="email"
+                                placeholder="please enter your email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="popup-phone">Phone Number *</label>
+                            <input type="tel" id="popup-phone" name="phone" placeholder="please enter your phone number"
+                                pattern="[0-9]{10}" maxlength="10"
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                                title="Please enter exactly 10 digits" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="popup-company">Company Name</label>
+                            <input type="text" id="popup-company" name="company"
+                                placeholder="please enter your company name">
+                        </div>
+                        <div class="form-group">
+                            <label for="popup-city">City *</label>
+                            <input type="text" id="popup-city" name="city" placeholder="please enter your city name"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="popup-requirement">Requirement Detail *</label>
+                        <textarea id="popup-requirement" name="requirement" rows="3"
+                            placeholder="I am looking for Fiber Laser Marking Machine..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="popup-submit-btn">
+                        <span>Send Inquiry</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+
+                    <p class="form-footer-note text-center mt-3 text-[10px] text-slate-400">
+                        * Your information is secure with us.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

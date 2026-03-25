@@ -1,0 +1,236 @@
+/* Popup Overlay */
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(8px);
+    padding: 1rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.popup-overlay.hidden {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.popup-overlay.opacity-0 {
+    opacity: 0;
+}
+
+/* Container & Close Button */
+.popup-content-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    animation: popupFadeUp 0.5s ease-out;
+}
+
+.popup-close-btn {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 36px;
+    height: 36px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a1a1a;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s;
+    border: none;
+}
+
+.popup-close-btn:hover {
+    background-color: #f8fafc;
+    transform: rotate(90deg);
+}
+
+/* Main Card */
+.popup-card {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    min-height: 500px;
+}
+
+/* Sidebar */
+.popup-sidebar {
+    width: 35%;
+    background: linear-gradient(135deg, #1773d0 0%, #3e4095 100%);
+    padding: 2.5rem;
+    color: #ffffff;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sidebar-logo {
+    height: 48px;
+    margin-bottom: 2rem;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+}
+
+.sidebar-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.sidebar-text {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.feature-item i {
+    color: #38bdf8;
+}
+
+/* Form Side */
+.popup-form-side {
+    flex: 1;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-header {
+    margin-bottom: 2rem;
+}
+
+.form-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+/* Form Elements */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+    margin-top: 1.25rem;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1773d0;
+    box-shadow: 0 0 0 3px rgba(23, 115, 208, 0.1);
+}
+
+.popup-submit-btn {
+    margin-top: 2rem;
+    width: 100%;
+    background-color: #1773d0;
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.popup-submit-btn:hover {
+    background-color: #3e4095;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes popupFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .popup-card {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .popup-form-side {
+        padding: 1.5rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: span 1;
+    }
+
+    .popup-close-btn {
+        top: 10px;
+        right: 10px;
+    }
+}
