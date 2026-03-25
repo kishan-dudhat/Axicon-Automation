@@ -1,298 +1,7 @@
-const products = [
-  {
-    id: 1,
-    name: "Fiber Laser Marking Machine",
-    image: "./public/assets/images/ProductsImage/lasor-marking-mashine-product.webp",
-    specifications: {
-      "Laser Type": "Fiber Laser",
-      "Laser Working Area": "110x110 mm - 300x300 mm",
-      "Laser Power": "20W, 30W, 50W, 100W",
-      "Pulse Repetition": "20-80 kHz",
-      "Cooling": "Air Cooling",
-      "Marking Speed": "Up to 7000 mm/s",
-      "Continuous Marking": "Yes, supported"
-    },
-    applications: [
-      "Metal components engraving",
-      "Automotive parts branding",
-      "Electronic PCB marking"
-    ]
-  },
-  {
-    id: 2,
-    name: "UV Laser Marking Machine",
-    image: "./public/assets/images/ProductsImage/compect-lasor-marking-mashine-product.webp",
-    specifications: {
-      "Laser Type": "UV Laser (355nm)",
-      "Laser Working Area": "110x110 mm",
-      "Laser Power": "3W, 5W, 10W",
-      "Pulse Repetition": "20-200 kHz",
-      "Cooling": "Water Cooling",
-      "Marking Speed": "Up to 7000 mm/s",
-      "Continuous Marking": "Cold marking process"
-    },
-    applications: [
-      "Glass surface marking",
-      "Plastic & polymer engraving",
-      "Medical device coding"
-    ]
-  },
-  {
-    id: 3,
-    name: "CO₂ Laser Marking Machine",
-    image: "./public/assets/images/ProductsImage/industrial-lasor-marking-mashine-product.webp",
-    specifications: {
-      "Laser Type": "CO2 Laser",
-      "Laser Working Area": "110x110 mm - 300x300 mm",
-      "Laser Power": "30W, 60W, 100W",
-      "Cooling": "Air / Water Cooling",
-      "Marking Speed": "Up to 7000 mm/s",
-      "Continuous Marking": "High speed galvo scanner"
-    },
-    applications: [
-      "Wood and leather engraving",
-      "Acrylic cutting & marking",
-      "Paper packaging coding"
-    ]
-  },
-  {
-    id: 4,
-    name: "Jewellery Laser Marking Machine",
-    image: "./public/assets/images/ProductsImage/lasor-marking-mashine-product.webp",
-    specifications: {
-      "Laser Type": "Fiber Laser",
-      "Laser Working Area": "70x70 mm - 110x110 mm",
-      "Laser Power": "20W, 30W, 50W",
-      "Cooling": "Air Cooling",
-      "Precision": "High precision micron level",
-      "Rotary Support": "Yes, for ring marking"
-    },
-    applications: [
-      "Gold & silver ring engraving",
-      "Hallmark cutting & marking",
-      "Bangle continuous marking"
-    ]
-  },
-  {
-    id: 5,
-    name: "Online Laser Marking Machine",
-    image: "./public/assets/images/ProductsImage/compect-lasor-marking-mashine-product.webp",
-    specifications: {
-      "Laser Type": "Fiber / CO2 / UV",
-      "Integration": "Conveyor mounted",
-      "Laser Power": "20W - 100W",
-      "Cooling": "Air Cooling",
-      "Speed": "High speed On-the-Fly (OTF)",
-      "Continuous Marking": "Encoder synced motion"
-    },
-    applications: [
-      "FMCG packaging dates",
-      "Cable & pipe continuous marking",
-      "Beverage bottle coding"
-    ]
-  },
-  {
-    id: 6,
-    name: "Battery Laser Welding Machine",
-    image: "./public/assets/images/ProductsImage/handling-welding-lasor-mashine-produt.webp",
-    specifications: {
-      "Laser Type": "Fiber Laser",
-      "Weld Depth": "Up to 3 mm",
-      "Laser Power": "1000W, 1500W, 2000W",
-      "Cooling": "Industrial Water Chiller",
-      "Automation": "CNC controlled table",
-      "Gas Shielding": "Argon / Nitrogen"
-    },
-    applications: [
-      "Lithium battery pack welding",
-      "EV battery tab welding",
-      "Precision spot welding"
-    ]
-  },
-  {
-    id: 7,
-    name: "HandHeld 4 In 1 Laser Welding Machine",
-    image: "./public/assets/images/ProductsImage/handling-welding-lasor-mashine-produt.webp",
-    specifications: {
-      "Laser Type": "Fiber Laser",
-      "Functions": "Welding, Cleaning, Cutting, Weld-Seam Cleaning",
-      "Laser Power": "1500W, 2000W, 3000W",
-      "Cooling": "Built-in Water Chiller",
-      "Weight": "Lightweight handheld torch",
-      "Gas Shielding": "Auto-controlled"
-    },
-    applications: [
-      "Sheet metal fabrications",
-      "Rust & paint removal",
-      "Door & window frame welding"
-    ]
-  },
-  {
-    id: 8,
-    name: "Mould Laser Welding Machine",
-    image: "./public/assets/images/ProductsImage/handling-welding-lasor-mashine-produt.webp",
-    specifications: {
-      "Laser Type": "Nd:YAG Laser / Fiber",
-      "Table Type": "3/4 Axis Motorized",
-      "Laser Power": "200W, 300W, 400W",
-      "Cooling": "Water Cooling",
-      "Microscope": "10X Stereo Microscope",
-      "Spot Size": "0.1 - 2.0 mm"
-    },
-    applications: [
-      "Injection mould repairing",
-      "Die casting mould modifications",
-      "Tooling precision welding"
-    ]
-  },
-  {
-    id: 9,
-    name: "Jewellery Laser Soldering Machine",
-    image: "./public/assets/images/ProductsImage/handling-welding-lasor-mashine-produt.webp",
-    specifications: {
-      "Laser Type": "Nd:YAG Pulse Laser",
-      "Peak Power": "100W, 150W, 200W",
-      "Pulse Energy": "Up to 60 Joules",
-      "Cooling": "Internal Water Chiller",
-      "Microscope": "High clarity crosshair microscope",
-      "Spot Size": "0.1 - 2.0 mm adjustable"
-    },
-    applications: [
-      "Gold & silver chain soldering",
-      "Porosity filling in castings",
-      "Antique jewellery repair"
-    ]
-  },
-  {
-    id: 10,
-    name: "Metal Laser Cutting Machine",
-    image: "./public/assets/images/ProductsImage/fiber-cutting-lasor-mashine-product.webp",
-    specifications: {
-      "Laser Type": "Fiber Laser",
-      "Working Area": "1500x3000 mm to 2000x6000 mm",
-      "Laser Power": "1kW to 12kW",
-      "Cooling": "Dual-temperature Water Chiller",
-      "Cutting Head": "Auto Focus Laser Head",
-      "Max Speed": "Up to 120m/min"
-    },
-    applications: [
-      "MS / SS / Aluminum sheet cutting",
-      "Automotive panel manufacturing",
-      "Machinery parts fabrication"
-    ]
-  },
-  {
-    id: 11,
-    name: "Tube-Pipe Laser Cutting Machine",
-    image: "./public/assets/images/ProductsImage/fiber-cutting-lasor-mashine-product.webp",
-    specifications: {
-      "Laser Type": "Fiber Laser",
-      "Tube Length": "Up to 6000 mm",
-      "Laser Power": "1000W - 6000W",
-      "Chuck Type": "Pneumatic dual chucks",
-      "Cutting Speed": "Variable high-rotation",
-      "Cooling": "Industrial Water Chiller"
-    },
-    applications: [
-      "Square, round, & oval pipe cutting",
-      "Furniture pipeline processing",
-      "Structural steel tubing"
-    ]
-  },
-  {
-    id: 12,
-    name: "CO₂ Laser Cutting Machine",
-    image: "./public/assets/images/ProductsImage/co2-lasor-cutting-mashine-product.webp",
-    specifications: {
-      "Laser Type": "CO2 Glass Tube",
-      "Working Area": "1300x900 mm / 1300x2500 mm",
-      "Laser Power": "80W, 100W, 130W, 150W",
-      "Cooling": "CW-5200 Water Chiller",
-      "Drive System": "Stepper / Servo motor",
-      "Control": "DSP Ruida Controller"
-    },
-    applications: [
-      "Acrylic and plastic display cutting",
-      "MDF and wood crafts",
-      "Fabric and leather patterns"
-    ]
-  },
-  {
-    id: 13,
-    name: "Jewellery Laser Cutting Machine",
-    image: "./public/assets/images/ProductsImage/fiber-cutting-lasor-mashine-product.webp",
-    specifications: {
-      "Laser Type": "Fiber Laser",
-      "Working Area": "600x600 mm",
-      "Laser Power": "50W, 100W",
-      "Cooling": "Air Cooling",
-      "Precision": "Ultra-fine continuous cutting",
-      "Dust Collection": "Precious metal recovery box"
-    },
-    applications: [
-      "Gold & silver name pendants",
-      "Intricate jewellery filigree cutting",
-      "Custom coin & medal blanking"
-    ]
-  },
-  {
-    id: 14,
-    name: "Customized Laser Marking Machine",
-    image: "./public/assets/images/ProductsImage/lasor-marking-mashine-product.webp",
-    specifications: {
-      "Laser Type": "Fiber / UV / CO2",
-      "Working Area": "Custom tailored",
-      "Integration": "Robotic arm / Vision system",
-      "Laser Power": "Application dependent",
-      "Automation": "Fully enclosed / Automatic door",
-      "Continuous Marking": "Custom PLC integration"
-    },
-    applications: [
-      "Large architectural panel marking",
-      "Automated assembly line marking",
-      "Multi-axis complex part engraving"
-    ]
-  },
-  {
-    id: 15,
-    name: "3D Laser Marking Machine",
-    image: "./public/assets/images/ProductsImage/lasor-marking-mashine-product.webp",
-    specifications: {
-      "Laser Type": "Fiber Laser with 3D Galvo",
-      "Focus Shift": "Dynamic auto-focus",
-      "Laser Power": "30W, 50W, 100W",
-      "Cooling": "Air Cooling",
-      "Software": "3D mapping capable software",
-      "Relief Engraving": "Deep volume engraving support"
-    },
-    applications: [
-      "Curved cylinder marking without rotary",
-      "Deep relief 3D coin engraving",
-      "Multi-level uneven surface marking"
-    ]
-  },
-  {
-    id: 16,
-    name: "3 Axis Laser Welding Machine",
-    image: "./public/assets/images/ProductsImage/handling-welding-lasor-mashine-produt.webp",
-    specifications: {
-      "Laser Type": "Fiber Laser",
-      "Axis Scope": "X/Y/Z high precision motion",
-      "Laser Power": "1000W, 1500W, 2000W",
-      "Cooling": "Water Chiller",
-      "Weld Head": "Wobble welding head"
-    },
-    applications: [
-      "Automated continuous seam welding",
-      "Sensor housing sealing",
-      "Medical instrument precision welding"
-    ]
-  }
-];
+import { products } from './product-object.js';
 
-
-
-
+// Global Carousel State Management
+const carouselsData = {};
 
 function renderProducts() {
   const container = document.getElementById('products-container');
@@ -306,8 +15,8 @@ function renderProducts() {
   }
 
   // Find targeted product by slug, fallback to first entry
-  let selectedProduct = products[0];
-  if (targetSlug) {
+  let selectedProduct = products && products.length > 0 ? products[0] : null;
+  if (targetSlug && products) {
     const foundProduct = products.find(p => {
       const slug = p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
       return slug === targetSlug;
@@ -315,211 +24,377 @@ function renderProducts() {
     if (foundProduct) selectedProduct = foundProduct;
   }
 
-  const product = selectedProduct;
-  const slug = product.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  const p = selectedProduct;
+  if (!p) {
+    container.innerHTML = `<div class="text-center py-20 text-2xl">No products found.</div>`;
+    return;
+  }
 
-  // Quick stats extraction
-  const specKeys = Object.keys(product.specifications);
-  const quickStats = specKeys.slice(0, 4).map(key => ({
-    label: key.toUpperCase(),
-    value: product.specifications[key]
-  }));
+  // Generic fallbacks
+  const desc = p.description
+  const specEntries = Object.entries(p.specifications || {}).slice(0, 3);
 
-  // Build the related products list
-  const relatedProducts = products.filter(p => p.id !== product.id).slice(0, 3);
+  // Extract images from a nested object 'productcarouselImage', an array 'images', or fallback to individual keys 'image', 'image2', etc.
+  let images = [];
+  if (p.productcarouselImage && typeof p.productcarouselImage === 'object') {
+    // Automatically extracts all values (image, image2, image3, etc.) from inside the {}
+    images = Object.values(p.productcarouselImage).filter(Boolean);
+  } else if (p.images && Array.isArray(p.images)) {
+    images = p.images;
+  } else {
+    images = [p.image, p.image2, p.image3, p.image4, p.image5].filter(Boolean);
+  }
 
-  // Generate HTML
+  // If object only had 1 image, handle gracefully
+  if (images.length === 0) {
+    images = ["https://via.placeholder.com/800x400?text=No+Image"];
+  }
+
+  // Extract application images dynamically
+  // If the user's object does not have 'applicationImages', we drop in standard sleek placeholders for styling purposes.
+  const appImages = p.applicationImages || [
+    "https://via.placeholder.com/600x400/e2e8f0/1e293b?text=Industry+Application+1",
+    "https://via.placeholder.com/600x400/e2e8f0/1e293b?text=Industry+Application+2",
+    "https://via.placeholder.com/600x400/e2e8f0/1e293b?text=Industry+Application+3",
+    "https://via.placeholder.com/600x400/e2e8f0/1e293b?text=Industry+Application+4",
+    "https://via.placeholder.com/600x400/e2e8f0/1e293b?text=Industry+Application+5",
+    "https://via.placeholder.com/600x400/e2e8f0/1e293b?text=Industry+Application+6"
+  ];
+
+  let justifyCls = "justify-start";
+  if (appImages.length <= 2) {
+    justifyCls = "justify-center";
+  } else if (appImages.length === 3) {
+    justifyCls = "justify-start md:justify-center";
+  } else if (appImages.length === 4) {
+    justifyCls = "justify-start xl:justify-center";
+  }
+
   const html = `
-    <!-- Top Hero Section -->
-    <div class="hero-gradient relative pt-24 lg:pt-32 pb-32 lg:pb-40 w-full border-b border-color">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="flex flex-col lg:flex-row items-center gap-10">
-          <!-- Text Content -->
-          <div class="w-full lg:w-1/2 mb-10 lg:mb-0">
-             <div class="text-sm font-semibold text-brand mb-4 uppercase tracking-wide">Axicon Automation Products &gt; ${product.name}</div>
-             <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand leading-tight font-outfit uppercase py-2 drop-shadow-sm">
-               ${product.name}
-             </h1>
-          </div>
-          <!-- Hero Image -->
-          <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
-             <img src="${product.image}" alt="${product.name}" class="w-full max-w-lg object-contain drop-shadow-2xl mix-blend-multiply hover:scale-105 transition-transform duration-700" />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Info Banner Component: Overlaps Hero -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-20">
-       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          ${quickStats.map(stat => `
-            <div class="bg-primary rounded-lg p-5 lg:p-6 shadow-lg product-quick-card text-center flex flex-col justify-between h-36 border border-gray-100">
-              <h4 class="text-[0.7rem] md:text-sm font-bold text-brand-dark uppercase tracking-widest mb-2 line-clamp-2 leading-snug">${stat.label}</h4>
-              <p class="text-[0.85rem] md:text-[0.95rem] font-medium text-gray-700 line-clamp-2">${stat.value}</p>
-              <a href="#specifications" class="text-red-500 text-xs font-semibold mt-auto inline-block hover:underline">View Details <i class="fa-solid fa-arrow-right ml-1"></i></a>
-            </div>
-          `).join('')}
-       </div>
-    </div>
-
-    <!-- Contact & Small Image Block -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 lg:mt-24 mb-16">
-      <div class="bg-primary border border-gray-100 shadow-xl shadow-blue-900/5 rounded-2xl flex flex-col md:flex-row overflow-hidden">
-         <!-- Left Details -->
-         <div class="w-full md:w-5/12 p-8 md:p-12 border-r border-color flex flex-col justify-center bg-gray-50/50">
-           <h2 class="text-2xl md:text-3xl font-extrabold text-brand mb-4 font-outfit uppercase">${product.name}</h2>
-           <p class="text-secondary text-[0.95rem] mb-8 leading-relaxed">
-             The ${product.name} provides best-in-class performance. Find out more about how it fits your production line. Connect with our technical experts today.
-           </p>
-           <h3 class="text-[1.1rem] font-bold text-primary mb-3">Immediate Contact Us</h3>
-           <div class="flex items-center text-gray-700 mb-3 font-medium">
-             <div class="w-8 flex items-center justify-center text-brand text-lg"><i class="fa-solid fa-phone"></i></div>
-             <a href="tel:+919978430431" class="hover:text-blue-600 transition-colors ml-2">+91-9978430431</a>
-           </div>
-           <div class="flex items-center text-gray-700 mb-8 font-medium">
-             <div class="w-8 flex items-center justify-center text-brand text-lg"><i class="fa-solid fa-phone"></i></div>
-             <a href="tel:+919099653777" class="hover:text-blue-600 transition-colors ml-2">+91-9099653777</a>
-           </div>
-           <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" class="bg-brand hover:bg-blue-800 text-light font-bold py-3 px-8 rounded shadow-lg transition-colors self-start flex items-center justify-center gap-3">
-             FREE INQUIRY <i class="fa-solid fa-paper-plane"></i>
-           </button>
-         </div>
-         <!-- Right Image -->
-         <div class="w-full md:w-7/12 bg-primary flex items-center justify-center p-8 md:p-12">
-            <img src="${product.image}" alt="${product.name} details" class="w-full max-w-lg object-contain drop-shadow-xl hover:scale-105 transition-transform duration-500 mix-blend-darken" />
-         </div>
-      </div>
-    </div>
-
-    <!-- Blue Banner -->
-    <div class="w-full bg-brand py-10 lg:py-14 mt-10 shadow-inner my-16 bg-gradient-to-r from-blue-700 to-blue-600 relative overflow-hidden">
-      <!-- Decorative background elements -->
-       <div class="absolute top-0 right-0 w-64 h-64 bg-primary opacity-5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-       <div class="absolute bottom-0 left-0 w-48 h-48 bg-primary opacity-5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
-       
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between relative z-10 gap-6">
-        <div class="text-center md:text-left">
-          <h2 class="text-2xl lg:text-3xl font-bold text-light mb-2 leading-tight">Building a Reliable <br class="hidden md:block" /> Technical Experience!</h2>
-          <p class="text-blue-100 text-sm md:text-base mt-2">Axicon Automation: Advanced laser technology making manufacturing easier.</p>
-        </div>
-        <button class="border-2 border-white text-light hover:bg-white hover:text-[var(--primary-color)] font-bold py-3 px-8 rounded flex items-center transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap">
-          DOWNLOAD BROCHURE <i class="fa-solid fa-file-pdf ml-3 text-lg"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Product Description & Application Video Section -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
-         <!-- Left View (Video/Image Box) -->
-         <div class="w-full lg:w-1/2 relative group rounded-2xl overflow-hidden shadow-2xl border flex-shrink-0 cursor-pointer bg-secondary" onclick="window.open('${product.image}', '_blank')">
-            <div class="flex items-center justify-center aspect-video relative">
-               <img src="${product.image}" alt="Video placeholder" class="w-[80%] object-contain mix-blend-darken group-hover:scale-105 transition-transform duration-700" />
-               <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                 <div class="w-16 h-16 bg-white/95 rounded-full flex items-center justify-center text-brand shadow-xl group-hover:scale-110 transition-transform">
-                   <i class="fa-solid fa-play text-2xl ml-1"></i>
-                 </div>
-               </div>
-               <!-- Brand Banner top-left -->
-               <div class="absolute top-4 left-4 bg-orange-500 text-light text-[11px] font-extrabold px-3 py-1 uppercase rounded-sm shadow-md tracking-wider">
-                  AXICON
-               </div>
-            </div>
-         </div>
-         <!-- Right Text -->
-         <div class="w-full lg:w-1/2">
-            <h2 class="text-sm font-bold text-red-500 mb-2 uppercase tracking-widest border-l-4 border-red-500 pl-3">PRODUCT</h2>
-            <h3 class="section-heading text-brand mb-6 inline-block w-full">Product Description</h3>
-            <p class="text-secondary mb-6 leading-relaxed text-[0.95rem] md:text-base">
-              The exactly configured <strong>${product.name}</strong> offers exceptional consistency and durability for harsh industrial environments. Its intelligent engineering promotes higher throughput, minimizes downtime, and handles complex production lines natively. Built entirely according to international standards, this model delivers precise output with seamless operation.
-            </p>
-         </div>
-      </div>
-
-      <!-- Feature Badges Row -->
-      <div class="flex flex-wrap items-stretch justify-center gap-6 md:gap-8 lg:gap-14 mt-20 mb-8 text-center px-4">
-         ${product.applications.slice(0, 4).map((app, index) => {
-    let icons = ["fa-bolt", "fa-microchip", "fa-gauge-high", "fa-droplet"];
-    let icon = icons[index % icons.length];
-    return `
-    <div class="flex flex-col items-center w-32 md:w-36 lg:w-44 group cursor-pointer">
-      <div class="feature-circle flex items-center justify-center mb-5 group-hover:-translate-y-2 transition-transform duration-300">
-        <i class="fa-solid ${icon} text-[3rem] text-brand opacity-80 group-hover:opacity-100 transition-opacity"></i>
-      </div>
-      <h4 class="text-xs md:text-[0.8rem] lg:text-[0.85rem] font-bold text-primary uppercase tracking-wide leading-tight group-hover:text-[var(--primary-color)] transition-colors">${app}</h4>
-    </div>
-    `}).join('')}
-      </div>
-    </div>
-
-
-    <!-- Technical Specifications Table -->
-    <div id="specifications" class="bg-secondary py-20 border-t border-color">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-           <h2 class="section-heading text-brand tracking-wide inline-block relative pb-4">
-             Technical Specification
-             <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-red-500 rounded-full"></span>
-           </h2>
-        </div>
+    <div class="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+      
+      <!-- Split Product Intro Section -->
+      <div class="flex flex-col lg:flex-row bg-white rounded-[1.25rem] shadow-lg border border-gray-100 overflow-hidden relative">
         
-        <div class="bg-primary shadow-lg rounded-xl border border-gray-100 overflow-hidden">
-           <div class="bg-blue-50 border-b border-color px-6 sm:px-8 py-4 flex justify-between font-bold text-blue-900 text-sm sm:text-base border-t-4 border-t-[var(--primary-color)]">
-             <span class="uppercase tracking-wider">Model</span>
-             <span>${product.name}</span>
-           </div>
-           <div class="overflow-x-auto">
-             <table class="w-full spec-table text-[0.85rem] sm:text-sm">
+        <!-- Left Side: Product Information -->
+        <div class="w-full lg:w-2/5 bg-slate-50/80 p-8 lg:p-12 xl:p-14 border-b lg:border-b-0 lg:border-r border-gray-200 flex flex-col justify-center relative overflow-hidden">
+          
+          <!-- Decorative Blur -->
+          <div class="absolute top-0 right-0 -mt-10 -mr-10 w-48 h-48 bg-blue-200/40 rounded-full blur-3xl pointer-events-none z-0"></div>
+
+          <div class="relative z-10 w-full h-full flex flex-col justify-center">
+            
+            <h2 class="text-[2.2rem] xl:text-[2.5rem] font-extrabold text-brand tracking-tight leading-tight">${p.name}</h2>
+            <div class="w-[20%] h-1 bg-gradient-to-r from-blue-900 to-cyan-500 rounded-full mt-2 mb-6"></div>
+
+            <p class="text-slate-600 text-[1rem] mb-8 leading-relaxed">
+              ${desc}
+            </p>
+            
+            <!-- Specs Inner Card -->
+            <div class="space-y-3 mb-10 text-[0.95rem] bg-white p-4 rounded-xl border border-gray-100 shadow-[0_2px_10px_-3px_rgba(0,0,0,0.05)] w-full">
+              ${specEntries.map(([k, v]) => `
+                <div class="flex items-center gap-3">
+                  <div class="w-1.5 h-1.5 rounded-full bg-brand opacity-70 flex-shrink-0"></div>
+                  <p class="truncate"><span class="font-bold text-slate-800">${k} :</span> <span class="text-slate-500">${v}</span></p>
+                </div>
+              `).join('')}
+            </div>
+            
+            <h3 class="text-[1.1rem] font-bold text-slate-800 tracking-wide mb-5">Immediate Contact No.</h3>
+            <ul class="space-y-4 mb-10">
+              <li class="flex items-center text-brand font-semibold hover:text-blue-700 transition-colors cursor-pointer text-[1.05rem]">
+                <div class="w-8 h-8 rounded-full bg-blue-100/60 flex items-center justify-center mr-3 shadow-inner"><i class="fa-solid fa-phone text-[0.85rem]"></i></div>
+                <a href="tel:9978430431">+91-9978430431</a>
+              </li>
+              <li class="flex items-center text-brand font-semibold hover:text-blue-700 transition-colors cursor-pointer text-[1.05rem]">
+                <div class="w-8 h-8 rounded-full bg-blue-100/60 flex items-center justify-center mr-3 shadow-inner"><i class="fa-solid fa-phone text-[0.85rem]"></i></div>
+                <a href="tel:9099653777">+91-9099653777</a>
+              </li>
+            </ul>
+            
+            <button class="bg-gradient-to-r from-brand to-[#115ba5] hover:to-brand-dark text-trinary font-bold py-4 px-8 rounded-lg flex items-center justify-center gap-3 w-max text-[0.95rem] shadow-[0_5px_15px_-3px_rgba(23,115,208,0.4)] hover:shadow-[0_8px_20px_-4px_rgba(23,115,208,0.5)] transition-all duration-300 transform hover:-translate-y-1 tracking-wider">
+              SEND INQUIRY <i class="fa-solid fa-paper-plane ml-1"></i>
+            </button>
+            
+          </div>
+        </div>
+
+        <!-- Right Side: Product Image Carousel -->
+        <div class="w-full lg:w-3/5 p-8 lg:p-14 flex flex-col items-center justify-between bg-white relative">
+          
+          <!-- Main Image Wrapper -->
+          <div class="relative w-full flex-grow flex items-center justify-center mb-8 min-h-[400px]">
+             
+             <!-- Left Arrow -->
+             <button class="carousel-nav-btn absolute left-0 z-30 text-slate-500 hover:text-primary text-[1.15rem] hover:bg-brand transition-all duration-300 w-11 h-11 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white opacity-100 border-2 border-slate-300 hover:border-brand shadow-md hover:shadow-lg hover:scale-105" data-id="${p.id}" data-dir="-1">
+               <i class="fa-solid fa-chevron-left"></i>
+             </button>
+             
+             <!-- Viewport Slider Track -->
+             <div class="w-full h-full overflow-hidden" id="carousel-viewport-${p.id}">
+                <div class="flex h-full items-center relative" id="carousel-track-${p.id}">
+                   <!-- Cloned Last Image -->
+                   <div class="w-full h-full flex-shrink-0 flex items-center justify-center px-12 md:px-16 py-4">
+                      <div class="w-full max-w-[480px] aspect-[4/3] relative flex items-center justify-center">
+                         <img src="${images[images.length - 1]}" alt="${p.name} Clone End" class="absolute inset-0 w-full h-full object-contain mix-blend-multiply drop-shadow-[0_4px_12px_rgba(0,0,0,0.08)] p-1" />
+                      </div>
+                   </div>
+                   <!-- Original Images -->
+                   ${images.map((img, i) => `
+                     <div class="w-full h-full flex-shrink-0 flex items-center justify-center px-12 md:px-16 py-4">
+                        <div class="w-full max-w-[480px] aspect-[4/3] relative flex items-center justify-center">
+                           <img src="${img}" alt="${p.name} Image ${i + 1}" class="absolute inset-0 w-full h-full object-contain mix-blend-multiply drop-shadow-[0_4px_12px_rgba(0,0,0,0.08)] p-1" />
+                        </div>
+                     </div>
+                   `).join('')}
+                   <!-- Cloned First Image -->
+                   <div class="w-full h-full flex-shrink-0 flex items-center justify-center px-12 md:px-16 py-4">
+                      <div class="w-full max-w-[480px] aspect-[4/3] relative flex items-center justify-center">
+                         <img src="${images[0]}" alt="${p.name} Clone Start" class="absolute inset-0 w-full h-full object-contain mix-blend-multiply drop-shadow-[0_4px_12px_rgba(0,0,0,0.08)] p-1" />
+                      </div>
+                   </div>
+                </div>
+             </div>
+             
+             <!-- Right Arrow -->
+             <button class="carousel-nav-btn absolute right-0 z-30 text-slate-500 hover:text-primary text-[1.15rem] hover:bg-brand transition-all duration-300 w-11 h-11 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white opacity-100 border-2 border-slate-300 hover:border-brand shadow-md hover:shadow-lg hover:scale-105" data-id="${p.id}" data-dir="1">
+               <i class="fa-solid fa-chevron-right"></i>
+             </button>
+          </div>
+          
+          <!-- Thumbnails -->
+          <div class="w-full flex gap-3 md:gap-5 justify-center py-2 relative z-10" id="thumbs-${p.id}">
+             ${images.map((img, idx) => `
+               <div class="thumb-box w-20 h-14 md:w-28 md:h-16 flex-shrink-0 cursor-pointer overflow-hidden transition-all duration-300 
+                           ${idx === 0 ? 'bg-white rounded-lg border-[2px] border-brand shadow-md' : 'bg-gray-100/50 rounded-lg hover:bg-gray-200/50 border-[2px] border-transparent blur-[0.3px]'}"
+                    data-id="${p.id}" data-index="${idx}">
+                  <img src="${img}" class="w-full h-full object-contain p-[2px] mix-blend-multiply ${idx !== 0 ? 'opacity-80 grayscale-[20%]' : ''}" alt="${p.name} Thumbnail ${idx + 1}"/>
+               </div>
+             `).join('')}
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-- Section 2: Technical Specification -->
+      ${Object.keys(p.specifications || {}).length > 0 ? `
+      <div class="mt-20 md:mt-28 mb-10 w-full animate-on-scroll">
+         <div class="text-center mb-10 md:mb-14">
+            <h2 class="text-[2rem] md:text-[2.5rem] font-bold text-brand tracking-tight">Technical Specification</h2>
+         </div>
+         
+         <div class="max-w-5xl mx-auto overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300 rounded-xl border border-gray-200">
+            <table class="w-full text-left border-collapse">
                <tbody>
-                 ${Object.entries(product.specifications).map(([key, value]) => `
-                   <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-0">
-                     <th class="py-3 sm:py-4 px-6 sm:px-8 w-[40%] text-primary bg-primary font-semibold border-r border-gray-100 tracking-wide">${key}</th>
-                     <td class="py-3 sm:py-4 px-6 sm:px-8 text-secondary bg-primary font-medium">${value}</td>
+                 ${Object.entries(p.specifications || {}).map(([key, value]) => `
+                   <tr class="border-b border-gray-200 last:border-b-0 hover:bg-slate-50 transition-colors duration-200">
+                     <th class="w-2/5 md:w-[35%] align-middle py-4 px-5 md:py-6 md:px-8 border-r border-gray-200 text-slate-900 font-bold text-[0.95rem] md:text-[1.05rem]">
+                       ${key}
+                     </th>
+                     <td class="w-3/5 md:w-[65%] align-middle py-4 px-5 md:py-6 md:px-8 text-slate-600 text-[0.95rem] md:text-[1.05rem] leading-relaxed">
+                       ${value}
+                     </td>
                    </tr>
                  `).join('')}
                </tbody>
-             </table>
-           </div>
-        </div>
+            </table>
+         </div>
       </div>
-    </div>
-
-    <!-- Related Products Carousel (Bottom Blue Section) -->
-    <div class="w-full bg-brand py-20 relative overflow-hidden bg-gradient-to-br from-[var(--primary-color)] to-[#125ba6]">
-       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div class="flex items-center justify-between mb-10 flex-col sm:flex-row gap-6">
-            <h3 class="text-2xl font-bold text-light tracking-wide uppercase">Related Products</h3>
-            <div class="flex items-center gap-4">
-               <button class="related-carousel-btn shadow-lg hover:shadow-xl"><i class="fa-solid fa-chevron-left text-lg"></i></button>
-               <button class="related-carousel-btn shadow-lg hover:shadow-xl"><i class="fa-solid fa-chevron-right text-lg"></i></button>
+      ` : ''}
+      
+      <!-- Section 3: Application Industries -->
+      <div class="mt-20 md:mt-28 mb-16 w-full animate-on-scroll">
+         <div class="text-center mb-10 md:mb-12">
+            <h2 class="text-[2rem] md:text-[2.5rem] font-bold text-brand tracking-tight">Application Industries</h2>
+         </div>
+         
+         <!-- Horizontal Scroll Container -->
+         <div class="relative w-full">
+            <div class="w-full overflow-x-auto pb-8 pt-2 snap-x snap-mandatory flex ${justifyCls} gap-3 sm:gap-4 md:gap-5 lg:gap-6 px-1 scroll-smooth" style="scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent;">
+               ${appImages.map(img => `
+                  <div class="flex-shrink-0 snap-start bg-white
+                              w-[calc(50%-0.375rem)] sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.85rem)] lg:w-[calc(25%-1.125rem)]
+                              rounded-xl border-[2px] border-brand/20 hover:border-brand shadow-[0_2px_10px_-3px_rgba(0,0,0,0.05)] hover:shadow-lg transition-all duration-300 overflow-hidden group">
+                     <div class="w-full h-36 sm:h-40 md:h-48 lg:h-52 overflow-hidden bg-slate-50">
+                        <img src="${img}" alt="Application Industry" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[600ms] ease-out mix-blend-multiply" />
+                     </div>
+                  </div>
+               `).join('')}
             </div>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 w-full">
-            ${relatedProducts.map(rp => {
-      const rpSlug = rp.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-      return `
-              <a href="#?item=${rpSlug}" onclick="setTimeout(()=>window.location.reload(), 50)" class="bg-primary rounded-2xl shadow-xl p-5 hover:-translate-y-3 transition-transform duration-300 block text-center cursor-pointer group border-b-4 border-transparent hover:border-red-500">
-                <div class="bg-secondary rounded-xl p-6 mb-5 flex items-center justify-center h-48 sm:h-56 relative overflow-hidden border border-gray-100 group-hover:bg-blue-50/20 transition-colors">
-                  <img src="${rp.image}" alt="${rp.name}" class="h-full object-contain mix-blend-darken group-hover:scale-110 transition-transform duration-500 relative z-10" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-gray-100 to-transparent opacity-50"></div>
-                </div>
-                <h4 class="font-bold text-primary text-[1.05rem] leading-tight line-clamp-2 min-h-[44px] group-hover:text-[var(--primary-color)] transition-colors">${rp.name}</h4>
-                <div class="mt-4 flex justify-center">
-                  <span class="inline-block border border-[var(--primary-color)] text-brand px-6 py-2 rounded text-xs font-bold tracking-wide w-full max-w-[180px] group-hover:bg-[var(--primary-color)] group-hover:text-white transition-colors">
-                    VIEW PRODUCT
-                  </span>
-                </div>
-              </a>
-            `}).join('')}
-          </div>
-       </div>
+         </div>
+
+         <!-- Mobile Swipe Indicator -->
+         <div class="flex justify-center mt-2 lg:hidden">
+            <div class="flex items-center gap-2 text-slate-400 text-[0.85rem] bg-slate-50 px-4 py-1.5 rounded-full border border-gray-100 shadow-sm animate-pulse">
+               <i class="fa-solid fa-arrows-left-right"></i>
+               <span>Swipe to explore industries</span>
+            </div>
+         </div>
+      </div>
+      
     </div>
   `;
 
   container.innerHTML = html;
 
-  // Scroll to top
+  // Register Carousel State
+  carouselsData[p.id] = {
+    index: 1, // Start at index 1 (skipping cloned last image)
+    totalOriginal: images.length,
+    timer: null,
+    isTransitioning: false,
+    trackEl: document.getElementById(`carousel-track-${p.id}`),
+    startX: 0,
+    isDown: false
+  };
+
+  initCarouselEvents(p.id);
+  // Prepare initial position (no transition animation)
+  updateCarouselUI(p.id, false);
+  startAutoSlide(p.id);
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function initCarouselEvents(id) {
+  const data = carouselsData[id];
+  if (!data || !data.trackEl) return;
+
+  const track = data.trackEl;
+  const viewportContainer = track.parentElement.parentElement;
+
+  // Hover Events
+  viewportContainer.addEventListener('mouseenter', () => stopAutoSlide(id));
+  viewportContainer.addEventListener('mouseleave', () => startAutoSlide(id));
+
+  // Arrow Buttons
+  document.querySelectorAll(`.carousel-nav-btn[data-id="${id}"]`).forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const dir = parseInt(btn.getAttribute('data-dir'));
+      changeSlide(id, dir);
+    });
+  });
+
+  // Track Event (Infinite Loop Resolution)
+  track.addEventListener("transitionend", () => {
+    data.isTransitioning = false;
+
+    // If reached cloned Start (which is Original Last Image)
+    if (data.index === 0) {
+      data.index = data.totalOriginal;
+      updateCarouselUI(id, false); // Snap physically
+    }
+    // If reached cloned End (which is Original First Image)
+    if (data.index === data.totalOriginal + 1) {
+      data.index = 1;
+      updateCarouselUI(id, false); // Snap physically
+    }
+  });
+
+  // Thumbnails
+  document.querySelectorAll(`.thumb-box[data-id="${id}"]`).forEach(box => {
+    box.addEventListener('click', (e) => {
+      e.preventDefault();
+      const realIndex = parseInt(box.getAttribute('data-index'));
+      goToSlide(id, realIndex + 1); // Map to track index (offset by clone)
+    });
+  });
+
+  // Touch and Mouse Swipe logic
+  const swipeThreshold = 50;
+
+  // Mouse Drag
+  track.addEventListener("mousedown", (e) => {
+    stopAutoSlide(id);
+    data.isDown = true;
+    data.startX = e.clientX;
+    track.style.cursor = 'grabbing';
+  });
+  window.addEventListener("mouseup", (e) => {
+    if (!data.isDown) return;
+    data.isDown = false;
+    track.style.cursor = 'default';
+    const diff = e.clientX - data.startX;
+    if (diff > swipeThreshold) changeSlide(id, -1);
+    else if (diff < -swipeThreshold) changeSlide(id, 1);
+    startAutoSlide(id);
+  });
+
+  // Touch Swipe
+  track.addEventListener("touchstart", (e) => {
+    stopAutoSlide(id);
+    data.startX = e.touches[0].clientX;
+  }, { passive: true });
+  track.addEventListener("touchend", (e) => {
+    const diff = e.changedTouches[0].clientX - data.startX;
+    if (diff > swipeThreshold) changeSlide(id, -1);
+    else if (diff < -swipeThreshold) changeSlide(id, 1);
+    startAutoSlide(id);
+  });
+}
+
+function updateCarouselUI(id, animate = true) {
+  const data = carouselsData[id];
+  if (!data || !data.trackEl) return;
+
+  if (animate) data.isTransitioning = true;
+
+  // Transform horizontal track flawlessly
+  data.trackEl.style.transition = animate ? "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)" : "none";
+  data.trackEl.style.transform = `translateX(-${data.index * 100}%)`;
+
+  // Determine active visual thumbnail (handling infinite clone edges safely)
+  let activeDotIndex = data.index - 1;
+  if (activeDotIndex < 0) activeDotIndex = data.totalOriginal - 1;
+  if (activeDotIndex >= data.totalOriginal) activeDotIndex = 0;
+
+  // Sync Thumbnails UI
+  const thumbContainer = document.getElementById(`thumbs-${id}`);
+  if (thumbContainer) {
+    const thumbs = thumbContainer.querySelectorAll('.thumb-box');
+    thumbs.forEach((th, idx) => {
+      const img = th.querySelector('img');
+      if (idx === activeDotIndex) {
+        th.className = "thumb-box w-20 h-14 md:w-28 md:h-16 flex-shrink-0 cursor-pointer overflow-hidden transition-all duration-300 bg-white rounded-lg border-[2px] border-brand shadow-md";
+        img.className = "w-full h-full object-contain p-[2px] mix-blend-multiply";
+      } else {
+        th.className = "thumb-box w-20 h-14 md:w-28 md:h-16 flex-shrink-0 cursor-pointer overflow-hidden transition-all duration-300 bg-gray-100/50 rounded-lg hover:bg-gray-200/50 border-[2px] border-transparent blur-[0.3px]";
+        img.className = "w-full h-full object-contain p-[2px] mix-blend-multiply opacity-80 grayscale-[20%]";
+      }
+    });
+  }
+}
+
+function changeSlide(id, dir) {
+  const data = carouselsData[id];
+  if (!data || data.isTransitioning) return;
+  stopAutoSlide(id);
+  data.index += dir;
+  updateCarouselUI(id, true);
+}
+
+function goToSlide(id, targetIndex) {
+  const data = carouselsData[id];
+  if (!data || data.isTransitioning || data.index === targetIndex) return;
+  stopAutoSlide(id);
+  data.index = targetIndex;
+  updateCarouselUI(id, true);
+}
+
+function startAutoSlide(id) {
+  stopAutoSlide(id);
+  if (!carouselsData[id]) return;
+  carouselsData[id].timer = setInterval(() => {
+    changeSlide(id, 1);
+  }, 4500); // Same pacing as Our Portfolio
+}
+
+function stopAutoSlide(id) {
+  if (carouselsData[id] && carouselsData[id].timer) {
+    clearInterval(carouselsData[id].timer);
+    carouselsData[id].timer = null;
+  }
 }
 
 // Render when DOM loads
@@ -528,3 +403,10 @@ if (document.readyState === "loading") {
 } else {
   renderProducts();
 }
+
+// Ensure product loads immediately when clicking a header product while already on the product page
+window.addEventListener("hashchange", () => {
+  if (window.location.hash.includes("#/products")) {
+    renderProducts();
+  }
+});

@@ -57,13 +57,28 @@
 </head>
 
 <body class="relative bg-bg-light text-secondary font-poppins">
-  <!-- Page Loader -->
+  <!-- Page Loader (Premium Glassmorphism) -->
   <div id="page-loader"
-    class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-bg-light transition-opacity duration-300 hidden">
-    <div class="relative flex justify-center items-center">
-      <div class="absolute animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-primary"></div>
-      <img src="./public/assets/images/axicon-automation-logo.webp" alt="Loading..."
-        class="h-8 w-8 animate-pulse rounded-full" onerror="this.style.display='none'">
+    class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white/40 backdrop-blur-2xl transition-all duration-300 hidden">
+    <div class="flex flex-col items-center gap-8 transform scale-90 sm:scale-100">
+      <div class="relative w-24 h-24 flex items-center justify-center">
+        <!-- Outer glowing ring -->
+        <div class="absolute inset-0 rounded-full border-[3px] border-slate-200/50 shadow-[0_0_20px_rgba(23,115,208,0.1)]"></div>
+        <!-- Spinning active ring -->
+        <div class="absolute inset-0 rounded-full border-t-[3px] border-brand animate-spin [animation-duration:0.8s]"></div>
+        <!-- Logo centered -->
+        <img src="./public/assets/images/axicon-automation-logo.webp" alt="Axicon"
+          class="h-10 w-10 animate-pulse relative z-10" onerror="this.style.display='none'">
+      </div>
+      
+      <div class="flex flex-col items-center gap-2">
+        <h4 class="text-brand font-bold tracking-[0.3em] text-sm uppercase">Axicon Automation</h4>
+        <div class="flex items-center gap-3">
+          <span class="h-[1px] w-6 bg-slate-300"></span>
+          <span class="text-[10px] text-slate-500 font-medium tracking-[0.2em] uppercase">Precision Industries</span>
+          <span class="h-[1px] w-6 bg-slate-300"></span>
+        </div>
+      </div>
     </div>
   </div>
 

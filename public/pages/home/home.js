@@ -1,9 +1,29 @@
+import { homeProducts } from './productlist.js';
+
 // Carousel Logic
 const track = document.getElementById("carouselTrack");
+
+// Dynamically inject all 16 product cards right before cloning begins, avoiding dual renders
+if (track && homeProducts && (track.children.length === 0 || !track.firstElementChild.classList.contains("carousel-card"))) {
+  track.innerHTML = homeProducts.map(p => `
+          <div class="carousel-card flex flex-col justify-between h-auto rounded-2xl bg-primary border border-slate-100 hover:border-blue-200 cursor-pointer">
+            <div class="relative w-full h-64 overflow-hidden rounded-t-xl bg-secondary flex items-center justify-center p-4">
+              <img src="${p.image}" alt="${p.name}" class="object-contain h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-500 cursor-pointer">
+            </div>
+            <div class="p-6 text-left flex-grow flex flex-col justify-between border-t border-slate-100">
+              <div>
+                <h3 class="text-xl font-bold text-primary mb-2 leading-tight">${p.name}</h3>
+                <p class="text-sm text-secondary line-clamp-2">${p.description}</p>
+              </div>
+              <a href="${p.navigatelink}" class="mt-4 inline-flex items-center text-brand font-semibold text-sm hover:text-blue-800 transition-colors cursor-pointer" onclick="window.location.hash='${p.navigatelink.replace('#', '')}'">Learn More <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+            </div>
+          </div>
+  `).join('');
+}
+
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const dotsContainer = document.getElementById("carouselDots");
-
 if (track && prevBtn && nextBtn) {
   const GAP = 22; // Must match CSS gap exactly
   const AUTO_DELAY = 3000;
