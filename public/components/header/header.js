@@ -8,6 +8,8 @@ const toggleBtn = document.getElementById("mobile-menu-toggle");
 const mobileBtnClose = document.getElementById("mobile-menu-close");
 const productsBtn = document.getElementById("products-btn");
 const productsPanel = document.getElementById("products-panel");
+const contactUsBtn = document.getElementById("contact-us-btn");
+const contactUsPanel = document.getElementById("contact-us-panel");
 const scrollBtn = document.getElementById("scrollTopBtn");
 
 
@@ -130,6 +132,20 @@ productsBtn.addEventListener("click", () => {
     productsPanel.classList.remove("is-open");
     productsBtn.setAttribute("aria-expanded", "false");
     if (productsIcon) productsIcon.classList.remove("rotate-180");
+  }
+});
+
+const contactUsIcon = document.getElementById("contact-us-icon");
+contactUsBtn.addEventListener("click", () => {
+  const isOpen = contactUsPanel.classList.contains("is-open");
+  if (!isOpen) {
+    contactUsPanel.classList.add("is-open");
+    contactUsBtn.setAttribute("aria-expanded", "true");
+    if (contactUsIcon) contactUsIcon.classList.add("rotate-180");
+  } else {
+    contactUsPanel.classList.remove("is-open");
+    contactUsBtn.setAttribute("aria-expanded", "false");
+    if (contactUsIcon) contactUsIcon.classList.remove("rotate-180");
   }
 });
 window.addEventListener("scroll", () => {

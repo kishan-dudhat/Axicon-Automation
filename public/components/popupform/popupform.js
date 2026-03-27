@@ -1,3 +1,5 @@
+import { submitForm } from "../../assets/js/standardapi.js";
+
 /**
  * Popup Form Logic
  * Handles 6-second delay, close button, and submission.
@@ -88,19 +90,11 @@ export function initPopupForm() {
             submitBtn.disabled = true;
 
             // 3. Silent Background Submission (Web3Forms)
-            fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: json
-            })
-            .then(async (response) => {
-                const result = await response.json();
-                if (response.status == 200) {
-                    // Success UI (Clean and attractive)
-                    form.innerHTML = `
+            submitForm(object)
+                .then((result) => {
+                    if (result.success) {
+                        // Success UI (Clean and attractive)
+                        form.innerHTML = `
                         <div class="flex flex-col items-center justify-center py-12 px-4 text-center success-msg">
                             <div class="h-20 w-20 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-emerald-100">
                                 <i class="fa-solid fa-check text-4xl text-emerald-500"></i>
@@ -109,19 +103,21 @@ export function initPopupForm() {
                             <p class="text-slate-500 text-sm leading-relaxed max-w-[280px]">Your inquiry has been received. Our expert will contact you shortly.</p>
                         </div>
                     `;
-                    clearTimeout(showTimer);
-                    setTimeout(closePopup, 3000);
-                } else {
-                    alert(result.message || "Submission failed.");
+                        clearTimeout(showTimer);
+                        // Set flag for one-time submission
+                        localStorage.setItem('popup_submitted', 'true');
+                        setTimeout(closePopup, 3000);
+                    } else {
+                        alert(result.message);
+                        submitBtn.innerHTML = originalBtnText;
+                        submitBtn.disabled = false;
+                    }
+                })
+                .catch(error => {
+                    alert("An unexpected error occurred. Please try again later.");
                     submitBtn.innerHTML = originalBtnText;
                     submitBtn.disabled = false;
-                }
-            })
-            .catch(error => {
-                alert("Network error. Please try again later.");
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-            });
+                });
         });
     }
 }

@@ -1,0 +1,194 @@
+/* 
+   Axicon Automation - Premium Services Page Styles
+   Design Style: Modern Industrial SaaS
+*/
+
+:root {
+    --brand-primary: #3e4095;
+    --brand-accent: #1773d0;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    --card-hover-shadow: 0 25px 50px -12px rgba(62, 64, 149, 0.15);
+}
+
+/* Service Cards */
+.service-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    padding: 3rem 2.5rem;
+    border-radius: 2.5rem;
+    box-shadow: var(--card-shadow);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-accent), var(--brand-primary));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--card-hover-shadow);
+    background: #ffffff;
+    border-color: rgba(62, 64, 149, 0.2);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-icon-wrapper {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    background: #f8fafc;
+    border-radius: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    transition: all 0.4s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.service-card:hover .service-icon-wrapper {
+    background: var(--brand-primary);
+    border-color: var(--brand-primary);
+    transform: rotate(5deg);
+}
+
+.service-card:hover .service-icon-wrapper i {
+    color: #ffffff !important;
+}
+
+.service-card h3 {
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+/* Sampling CTA Section */
+.sampling-box-outer {
+    position: relative;
+    padding: 3px;
+    border-radius: 2.25rem;
+    background: linear-gradient(135deg, rgba(62,64,149,0.1), rgba(23,115,208,0.3));
+    transition: all 0.5s ease;
+}
+
+.sampling-box-outer:hover {
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+}
+
+.sampling-box-inner {
+    background: #ffffff;
+    border-radius: 2rem;
+    padding: 3.5rem 2.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.btn-sampling {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--brand-primary);
+    color: #ffffff !important;
+    padding: 1.25rem 3rem;
+    border-radius: 1rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px -5px rgba(62, 64, 149, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-sampling:hover {
+    background: var(--brand-accent);
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px -5px rgba(23, 115, 208, 0.4);
+}
+
+/* Core Points Section */
+.core-point-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+    padding: 2rem 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    transition: all 0.4s ease;
+    min-height: 180px;
+    justify-content: center;
+}
+
+.core-point-card:hover {
+    background: #ffffff;
+    border-color: var(--brand-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px -10px rgba(0,0,0,0.1);
+}
+
+.core-icon-box {
+    width: 64px;
+    height: 64px;
+    border-radius: 1rem;
+    background: #f1f5f9;
+    color: var(--brand-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    transition: all 0.4s ease;
+}
+
+.core-point-card:hover .core-icon-box {
+    background: var(--brand-primary);
+    color: #ffffff !important;
+    border-radius: 50%;
+}
+
+.core-point-card p {
+    line-height: 1.3;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .service-card {
+        padding: 2.25rem 1.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        border-radius: 1.75rem;
+    }
+    .sampling-box-inner {
+        padding: 2.5rem 1.5rem;
+    }
+    .btn-sampling {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        border-radius: 0.85rem;
+        width: 100%;
+        justify-content: center;
+    }
+}

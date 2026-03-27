@@ -1,4 +1,5 @@
 import { homeProducts } from './productlist.js';
+import { submitForm } from '../../assets/js/standardapi.js';
 
 // Carousel Logic
 const track = document.getElementById("carouselTrack");
@@ -152,3 +153,46 @@ if (track && prevBtn && nextBtn) {
 
   window.addEventListener("resize", () => updateSlide(false));
 }
+
+// Homepage Contact Form Logic
+export function initHomeContactForm() {
+    const form = document.getElementById('homeContactForm');
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // 1. Prepare Data
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+
+        // 2. UI Feedback (Loading)
+        const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
+        const originalContent = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span class="text-md font-semibold text-light">Sending...</span> <i class="fa-solid fa-spinner animate-spin text-light"></i>`;
+
+        // 3. Submit via Standard API
+        const result = await submitForm(data);
+
+        if (result.success) {
+            // Show success message
+            form.innerHTML = `
+                <div class="flex flex-col items-center justify-center py-12 px-4 text-center">
+                    <div class="h-20 w-20 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-emerald-100">
+                        <i class="fa-solid fa-check text-4xl text-emerald-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3 tracking-tight">Message Sent!</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed max-w-[280px]">Thank you for your message. We will get back to you shortly.</p>
+                </div>
+            `;
+        } else {
+            alert(result.message);
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalContent;
+        }
+    });
+}
+
+// Initialize
+initHomeContactForm();

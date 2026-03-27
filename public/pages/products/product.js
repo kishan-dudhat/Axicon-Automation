@@ -113,7 +113,7 @@ function renderProducts() {
               </li>
             </ul>
             
-            <button class="bg-gradient-to-r from-brand to-[#115ba5] hover:to-brand-dark text-trinary font-bold py-4 px-8 rounded-lg flex items-center justify-center gap-3 w-max text-[0.95rem] shadow-[0_5px_15px_-3px_rgba(23,115,208,0.4)] hover:shadow-[0_8px_20px_-4px_rgba(23,115,208,0.5)] transition-all duration-300 transform hover:-translate-y-1 tracking-wider">
+            <button onclick="window.location.hash='#/inquiry'" class="bg-gradient-to-r from-brand to-[#115ba5] hover:to-brand-dark text-trinary font-bold py-4 px-8 rounded-lg flex items-center justify-center gap-3 w-max text-[0.95rem] shadow-[0_5px_15px_-3px_rgba(23,115,208,0.4)] hover:shadow-[0_8px_20px_-4px_rgba(23,115,208,0.5)] transition-all duration-300 transform hover:-translate-y-1 tracking-wider">
               SEND INQUIRY <i class="fa-solid fa-paper-plane ml-1"></i>
             </button>
             

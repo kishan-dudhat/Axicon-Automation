@@ -3,16 +3,21 @@
   overflow-x: hidden !important;
   scroll-behavior: smooth !important;
   scrollbar-width: none !important;
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+#app::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 
 @media (width < 1021px) {
   #app {
-    padding-top: 108px !important;
+    padding-top: 80px !important;
   }
 }
 
 @media (max-width: 768px) {
     #app {
-        padding-top: 94px !important;
+        padding-top: 70px !important;
     }
 }

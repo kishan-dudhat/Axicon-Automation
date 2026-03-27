@@ -1,0 +1,12 @@
+/* Inquiry page specific styles */
+
+@media (max-width: 768px) {
+    #app {
+        padding-top: 94px !important;
+    }
+}
+
+/* Standardize option text color */
+.form-option-text {
+    color: #e0e3e7 !important;
+}

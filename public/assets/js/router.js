@@ -11,8 +11,9 @@ const routes = {
 
   "/products": "/public/pages/products/product.html",
 
-  "/contact": "/public/pages/contact/contact.html",
-
+  "/contact": "/public/pages/contact-us/contact/contact.html",
+  "/inquiry": "/public/pages/contact-us/inquiry/inquiry.html",
+  "/virtual-demo": "/public/pages/contact-us/virtual-demo/virtual-demo.html",
 
   "/contactForm": "/public/components/contactForm.html"
 };
