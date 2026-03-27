@@ -30,6 +30,14 @@ function renderProducts() {
     return;
   }
 
+  // Update hero title dynamically
+  const heroTitle = document.getElementById('product-hero-title');
+  if (heroTitle) {
+    heroTitle.innerText = p.name;
+    // Special class reset for animations to re-trigger if needed
+    heroTitle.classList.remove('opacity-0', 'scale-95', 'translate-y-4');
+  }
+
   // Generic fallbacks
   const desc = p.description
   const specEntries = Object.entries(p.specifications || {}).slice(0, 3);
