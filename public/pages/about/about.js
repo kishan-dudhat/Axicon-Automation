@@ -56,8 +56,40 @@ const initModule = () => {
         });
     }, observerOptions);
 
-    // 3. Begin observing
-    // We observe both the columns and the individual cards to be safe
+    // 3. Tab Switching Logic
+    const initTabs = () => {
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+
+        if (!tabBtns.length || !tabPanels.length) return;
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.getAttribute('data-tab');
+
+                // Update Buttons
+                tabBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+
+                // Update Panels
+                tabPanels.forEach(panel => {
+                    panel.classList.remove('active');
+                });
+                const targetPanel = document.getElementById(targetId);
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                }
+            });
+        });
+    };
+
+    // 4. Begin observing and init tabs
+    initTabs();
+
     const searchSelectors = ['.animate-on-scroll', '.bg-white.p-6'];
     searchSelectors.forEach(selector => {
         document.querySelectorAll(selector).forEach(el => {

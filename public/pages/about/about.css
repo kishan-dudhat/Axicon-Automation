@@ -108,6 +108,163 @@
   color: rgba(15, 23, 42, 0.04);
 }
 
+/* --- 'All-in-One' Unified Our Story Section --- */
+
+.story-unified-card {
+  display: flex;
+  background-color: #ffffff;
+  border: 1.5px solid #cbd5e1; /* Darker industrial border */
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.story-nav-column {
+  background-color: #f8fafc;
+  border-right: 1.5px solid #cbd5e1;
+  min-width: 280px;
+  overflow: hidden; /* Crucial for clipping button backgrounds */
+  padding: 0; /* Ensure no gaps */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* PERFECT VERTICAL CENTERING (Top to Bottom) */
+}
+
+.tab-btn {
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  justify-content: center; /* Center the entire content wrapper as a block */
+  padding: 1.5rem 1rem;
+  transition: all 0.4s ease;
+  background-color: #ffffff;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-bottom: 1.5px solid #cbd5e1; /* Matched to main section border color */
+  border-radius: 0 !important; /* Fix for 'cut' or rounded backgrounds inside bars */
+}
+
+.tab-btn:last-child {
+  border-bottom: none;
+}
+
+.tab-btn .tab-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: left;
+  min-width: 210px; /* FIXED WIDTH FOR PERFECT ICON COLUMN ALIGNMENT */
+}
+
+.tab-btn.active {
+  background-color: #2563eb !important; /* Industrial Blue */
+  color: #ffffff !important;
+}
+
+.tab-btn.active .icon-circle {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+.tab-btn.active span {
+  color: #ffffff !important;
+}
+
+.tab-btn .icon-circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.6rem;
+  background-color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  transition: all 0.4s ease;
+  flex-shrink: 0;
+}
+
+/* Tab Content Styling */
+.tab-story-content {
+  flex: 1;
+  padding: 3.5rem;
+  background-color: #ffffff;
+}
+
+.tab-panel {
+  display: none;
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.tab-panel.active {
+  display: block;
+  animation: tabFadeIn 0.5s ease-out forwards;
+}
+
+@keyframes tabFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile & Tablet Refinement (max-width: 1023px) */
+@media (max-width: 1023px) {
+  .story-unified-card {
+    flex-direction: column;
+    border-radius: 1.5rem; /* Slightly tighter on mobile */
+  }
+
+  .story-nav-column {
+    min-width: 100%;
+    border-right: none;
+    border-bottom: 1.5px solid #cbd5e1;
+  }
+
+  .tab-btn {
+    padding: 1.25rem 1rem;
+  }
+
+  .tab-btn .tab-content-wrapper {
+    gap: 0.75rem;
+  }
+
+  .tab-story-content {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .tab-story-content h3 {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Highlight Pills */
+.pill-badge {
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  background-color: #fff7ed;
+  color: #c2410c;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 237, 213, 0.5);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Mobile Tabs Scrollbar Hide */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Interactive Arrow Link */
 .learn-more-arrow {
   opacity: 0;
