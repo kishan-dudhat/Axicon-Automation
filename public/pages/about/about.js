@@ -32,7 +32,7 @@ const initModule = () => {
             if (!counter.classList.contains('counted')) {
                 const target = parseInt(counter.getAttribute('data-target'), 10);
                 if (!isNaN(target)) {
-                    animateValue(counter, 0, target, 3000); // 2 Seconds
+                    animateValue(counter, 0, target, 2000); // 2 Seconds
                     counter.classList.add('counted');
                 }
             }
@@ -114,7 +114,7 @@ const initModule = () => {
             e.stopPropagation();
             closeModal();
         });
-        
+
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeModal();
         });
