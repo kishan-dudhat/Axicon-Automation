@@ -38,19 +38,25 @@ function renderProducts() {
     heroTitle.classList.remove('opacity-0', 'scale-95', 'translate-y-4');
   }
 
+  // Update SEO Metadata
+  updateProductSEO(p);
+
   // Generic fallbacks
   const desc = p.description
   const specEntries = Object.entries(p.specifications || {}).slice(0, 3);
 
-  // Extract images from a nested object 'productcarouselImage', an array 'images', or fallback to individual keys 'image', 'image2', etc.
+  // Extract images from the new structured object '{ src, alt }'
   let images = [];
   if (p.productcarouselImage && typeof p.productcarouselImage === 'object') {
-    // Automatically extracts all values (image, image2, image3, etc.) from inside the {}
-    images = Object.values(p.productcarouselImage).filter(Boolean);
+    // Extracts all image objects from the group
+    images = Object.values(p.productcarouselImage).filter(img => img && img.src);
   } else if (p.images && Array.isArray(p.images)) {
     images = p.images;
-  } else {
-    images = [p.image, p.image2, p.image3, p.image4, p.image5].filter(Boolean);
+  }
+  
+  // Fallback for safety
+  if (images.length === 0) {
+    images = [{ src: "https://via.placeholder.com/800x400?text=No+Image", alt: "No Image Available" }];
   }
 
   // If object only had 1 image, handle gracefully
@@ -59,14 +65,13 @@ function renderProducts() {
   }
 
   // Extract application images dynamically
-  // If the user's object does not have 'applicationImages', we drop in standard sleek placeholders for styling purposes.
   const appImages = p.applicationImages || [
-    "https://via.placeholder.com/600x400/e2e8f0/1e293b?text=Industry+Application+1",
-    "https://via.placeholder.com/600x400/e2e8f0/1e293b?text=Industry+Application+2",
-    "https://via.placeholder.com/600x400/e2e8f0/1e293b?text=Industry+Application+3",
-    "https://via.placeholder.com/600x400/e2e8f0/1e293b?text=Industry+Application+4",
-    "https://via.placeholder.com/600x400/e2e8f0/1e293b?text=Industry+Application+5",
-    "https://via.placeholder.com/600x400/e2e8f0/1e293b?text=Industry+Application+6"
+    { src: "https://via.placeholder.com/600x400/e2e8f0/1e293b?text=Industry+Application+1", alt: "Industry Application" },
+    { src: "https://via.placeholder.com/600x400/e2e8f0/1e293b?text=Industry+Application+2", alt: "Industry Application" },
+    { src: "https://via.placeholder.com/600x400/e2e8f0/1e293b?text=Industry+Application+3", alt: "Industry Application" },
+    { src: "https://via.placeholder.com/600x400/e2e8f0/1e293b?text=Industry+Application+4", alt: "Industry Application" },
+    { src: "https://via.placeholder.com/600x400/e2e8f0/1e293b?text=Industry+Application+5", alt: "Industry Application" },
+    { src: "https://via.placeholder.com/600x400/e2e8f0/1e293b?text=Industry+Application+6", alt: "Industry Application" }
   ];
 
   let justifyCls = "justify-start";
@@ -145,21 +150,21 @@ function renderProducts() {
                    <!-- Cloned Last Image -->
                    <div class="w-full h-full flex-shrink-0 flex items-center justify-center px-12 md:px-16 py-4">
                       <div class="w-full max-w-[480px] aspect-[4/3] relative flex items-center justify-center">
-                         <img src="${images[images.length - 1]}" alt="${p.name} Clone End" class="absolute inset-0 w-full h-full object-contain mix-blend-multiply drop-shadow-[0_4px_12px_rgba(0,0,0,0.08)] p-1" />
+                         <img src="${images[images.length - 1].src}" alt="${images[images.length - 1].alt}" class="absolute inset-0 w-full h-full object-contain mix-blend-multiply drop-shadow-[0_4px_12px_rgba(0,0,0,0.08)] p-1" />
                       </div>
                    </div>
                    <!-- Original Images -->
                    ${images.map((img, i) => `
                      <div class="w-full h-full flex-shrink-0 flex items-center justify-center px-12 md:px-16 py-4">
                         <div class="w-full max-w-[480px] aspect-[4/3] relative flex items-center justify-center">
-                           <img src="${img}" alt="${p.name} Image ${i + 1}" class="absolute inset-0 w-full h-full object-contain mix-blend-multiply drop-shadow-[0_4px_12px_rgba(0,0,0,0.08)] p-1" />
+                           <img src="${img.src}" alt="${img.alt}" class="absolute inset-0 w-full h-full object-contain mix-blend-multiply drop-shadow-[0_4px_12px_rgba(0,0,0,0.08)] p-1" />
                         </div>
                      </div>
                    `).join('')}
                    <!-- Cloned First Image -->
                    <div class="w-full h-full flex-shrink-0 flex items-center justify-center px-12 md:px-16 py-4">
                       <div class="w-full max-w-[480px] aspect-[4/3] relative flex items-center justify-center">
-                         <img src="${images[0]}" alt="${p.name} Clone Start" class="absolute inset-0 w-full h-full object-contain mix-blend-multiply drop-shadow-[0_4px_12px_rgba(0,0,0,0.08)] p-1" />
+                         <img src="${images[0].src}" alt="${images[0].alt}" class="absolute inset-0 w-full h-full object-contain mix-blend-multiply drop-shadow-[0_4px_12px_rgba(0,0,0,0.08)] p-1" />
                       </div>
                    </div>
                 </div>
@@ -177,7 +182,7 @@ function renderProducts() {
                <div class="thumb-box w-20 h-14 md:w-28 md:h-16 flex-shrink-0 cursor-pointer overflow-hidden transition-all duration-300 
                            ${idx === 0 ? 'bg-white rounded-lg border-[2px] border-brand shadow-md' : 'bg-gray-100/50 rounded-lg hover:bg-gray-200/50 border-[2px] border-transparent blur-[0.3px]'}"
                     data-id="${p.id}" data-index="${idx}">
-                  <img src="${img}" class="w-full h-full object-contain p-[2px] mix-blend-multiply ${idx !== 0 ? 'opacity-80 grayscale-[20%]' : ''}" alt="${p.name} Thumbnail ${idx + 1}"/>
+                  <img src="${img.src}" class="w-full h-full object-contain p-[2px] mix-blend-multiply ${idx !== 0 ? 'opacity-80 grayscale-[20%]' : ''}" alt="${img.alt}"/>
                </div>
              `).join('')}
           </div>
@@ -224,9 +229,9 @@ function renderProducts() {
                   <div class="flex-shrink-0 snap-start bg-white
                               w-[calc(50%-0.375rem)] sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.85rem)] lg:w-[calc(25%-1.125rem)]
                               rounded-xl border-[2px] border-brand/20 hover:border-brand shadow-[0_2px_10px_-3px_rgba(0,0,0,0.05)] hover:shadow-lg transition-all duration-300 overflow-hidden group">
-                     <div class="w-full h-36 sm:h-40 md:h-48 lg:h-52 overflow-hidden bg-slate-50">
-                        <img src="${img}" alt="Application Industry" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[600ms] ease-out mix-blend-multiply" />
-                     </div>
+                      <div class="w-full h-36 sm:h-40 md:h-48 lg:h-52 overflow-hidden bg-slate-50">
+                         <img src="${img.src}" alt="${img.alt}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[600ms] ease-out mix-blend-multiply" />
+                      </div>
                   </div>
                `).join('')}
             </div>
@@ -403,6 +408,31 @@ function stopAutoSlide(id) {
     clearInterval(carouselsData[id].timer);
     carouselsData[id].timer = null;
   }
+}
+
+/**
+ * Dynamically updates the page's meta tags for better SEO based on the selected product.
+ */
+function updateProductSEO(p) {
+  if (!p) return;
+
+  // Update window title
+  if (p.seoTitle) {
+    document.title = p.seoTitle;
+  }
+
+  // Update meta description
+  const metaDescription = document.querySelector('meta[name="description"]');
+  if (metaDescription && p.seoDescription) {
+    metaDescription.setAttribute("content", p.seoDescription);
+  }
+
+  // Update Open Graph (Social Sharing) Tags
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle && p.seoTitle) ogTitle.setAttribute("content", p.seoTitle);
+
+  const ogDescription = document.querySelector('meta[property="og:description"]');
+  if (ogDescription && p.seoDescription) ogDescription.setAttribute("content", p.seoDescription);
 }
 
 // Render when DOM loads
