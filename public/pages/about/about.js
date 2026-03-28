@@ -87,8 +87,49 @@ const initModule = () => {
         });
     };
 
-    // 4. Begin observing and init tabs
+    // 4. Video Modal Logic
+    const initVideoModal = () => {
+        const playBtn = document.querySelector('.video-play-btn');
+        const modal = document.getElementById('video-modal');
+        const player = document.getElementById('youtube-player');
+        const closeBtn = document.getElementById('close-video');
+        const youtubeUrl = "https://www.youtube.com/embed/XjHdZ7W6klc?autoplay=1&rel=0&showinfo=0";
+
+        if (!playBtn || !modal || !player || !closeBtn) return;
+
+        const openModal = () => {
+            player.src = youtubeUrl;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        };
+
+        const closeModal = () => {
+            modal.classList.remove('active');
+            player.src = ""; // Stop playback
+            document.body.style.overflow = ''; // Restore scrolling
+        };
+
+        playBtn.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeModal();
+        });
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    };
+
+    // 5. Begin observing and init features
     initTabs();
+    initVideoModal();
 
     const searchSelectors = ['.animate-on-scroll', '.bg-white.p-6'];
     searchSelectors.forEach(selector => {

@@ -402,17 +402,19 @@
     <!-- Decorative Accents -->
     <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
     <div class="absolute -top-24 -left-24 w-96 h-96 bg-blue-50/40 blur-[100px] rounded-full"></div>
-    
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
+
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
+      <div
+        class="text-center max-w-3xl mx-auto mb-16 md:mb-20 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
         <div class="section-badge mb-6 inline-flex mx-auto">
           <i class="fa-solid fa-award"></i>
           <span>Our Recognition</span>
         </div>
         <h2 class="section-heading mb-6">
-          Industry Awards <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-500">& Recognition</span>
+          Industry Awards <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-500">&
+            Recognition</span>
         </h2>
         <p class="text-slate-500 text-lg leading-relaxed">
           Our commitment to excellence has been recognized by industry leaders and organizations worldwide.
@@ -421,7 +423,7 @@
 
       <!-- Awards Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-        
+
         <!-- Award Card 1 -->
         <div class="animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 delay-100">
           <div class="award-card">
@@ -529,6 +531,104 @@
       </div>
     </div>
   </section>
+
+  <!-- Section 6: Global Presence & Overview -->
+  <section class="presence-section py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div
+        class="text-center max-w-3xl mx-auto mb-20 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
+        <div class="section-badge mb-6 inline-flex mx-auto" style="border-color: #ef4444; color: #ef4444;">
+          <span>Overview</span>
+        </div>
+        <h2 class="section-heading mb-6">
+          Global <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-500">Presence</span>
+        </h2>
+        <p class="text-slate-500 text-lg leading-relaxed">
+          Ever since incorporation, we have been making our own way through multiple domains and industries.
+        </p>
+      </div>
+
+      <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
+
+        <!-- Left Side: Staggered Info Grid -->
+        <div class="w-full lg:w-1/2">
+          <div class="presence-grid">
+
+            <!-- Card 1: Years -->
+            <div class="animate-on-scroll opacity-0 -translate-x-10 transition-all duration-700">
+              <div class="presence-card">
+                <i class="fa-solid fa-award presence-icon"></i>
+                <h4 class="presence-title">25+ Years of Expertise</h4>
+                <p class="presence-desc">Trusted legacy since 2000 in CNC, CO2, Laser, and Digital Printing Solutions.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 2: Manufacturing -->
+            <div class="animate-on-scroll opacity-0 translate-x-10 transition-all duration-700 stagger-down">
+              <div class="presence-card">
+                <i class="fa-solid fa-industry presence-icon"></i>
+                <h4 class="presence-title">Manufacturing Power</h4>
+                <p class="presence-desc">30,000+ sq. m. across 15 advanced, ISO-certified facilities.</p>
+              </div>
+            </div>
+
+            <!-- Card 3: Countries -->
+            <div class="animate-on-scroll opacity-0 -translate-x-10 transition-all duration-700 mt-0 lg:-mt-8">
+              <div class="presence-card">
+                <i class="fa-solid fa-globe presence-icon"></i>
+                <h4 class="presence-title">Global Presence</h4>
+                <p class="presence-desc">Serving 15+ countries with strong distributor and support networks.</p>
+              </div>
+            </div>
+
+            <!-- Card 4: Team -->
+            <div
+              class="animate-on-scroll opacity-0 translate-x-10 transition-all duration-700 stagger-down mt-0 lg:-mt-8">
+              <div class="presence-card">
+                <i class="fa-solid fa-users-gear presence-icon"></i>
+                <h4 class="presence-title">1,500+ Team Members</h4>
+                <p class="presence-desc">A skilled workforce powering innovation, service, and support.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Side: Map & Video -->
+        <div class="w-full lg:w-1/2 lg:mt-0">
+          <div class="map-container animate-on-scroll opacity-0 scale-95 transition-all duration-1000 delay-300">
+            <!-- Gemini Industrial Background (Main Visual) -->
+            <img src="./public/assets/images/industrial_gemini_bg.png"
+              class="w-full h-auto object-cover opacity-70 blur-[2px] rounded-3xl" alt="Global Network Background">
+
+            <!-- Floating Pulse Play Button -->
+            <div class="video-play-btn" title="Watch Our Story">
+              <i class="fa-solid fa-play translate-x-0.5"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Modal -->
+  <div id="video-modal" class="video-modal-backdrop">
+    <div class="video-modal-content">
+      <button class="close-video-btn" id="close-video" title="Close Video">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="video-ratio-box">
+        <iframe id="youtube-player" src="" title="Axicon Automation Corp Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
 
 </body>
 
