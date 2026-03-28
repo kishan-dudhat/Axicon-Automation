@@ -255,7 +255,91 @@
   gap: 0.5rem;
 }
 
-/* Mobile Tabs Scrollbar Hide */
+/* --- Recognition & Awards Section (Section 5) --- */
+
+.award-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8); /* Even softer border */
+  border-radius: 1.5rem;
+  padding: 2.75rem 2.25rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  height: 100%;
+}
+
+.award-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px -12px rgba(15, 23, 42, 0.08); /* More premium shadow */
+  border-color: rgba(13, 148, 136, 0.2);
+}
+
+.award-card .card-glow-accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: #f0fdfa; /* Extremely soft teal */
+  border-bottom-left-radius: 100%;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+.award-card:hover .card-glow-accent {
+  background: #ccfbf1;
+  width: 140px;
+  height: 140px;
+}
+
+.award-card .award-icon-box {
+  position: relative;
+  z-index: 5;
+  width: 3.25rem;
+  height: 3.25rem;
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1; /* Darker defined border */
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0d9488;
+  margin-bottom: 2.5rem;
+  transition: all 0.5s ease;
+}
+
+.award-card:hover .award-icon-box {
+  background: #0d9488;
+  color: #ffffff;
+  /* Simple hover transition without rotation or scale */
+}
+
+.award-year {
+  color: #14b8a6;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.85rem;
+  opacity: 0.8;
+}
+
+.award-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700; /* Cleaner weight */
+  color: #1e293b;
+  font-size: 1.15rem; /* Better scale */
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
+}
+
+.award-org {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* Scrollbar Hide & Link Arrow Re-use */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
