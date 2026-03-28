@@ -19,7 +19,7 @@ async function loadComponent(name) {
   // /public/components/header/header.html
   // /public/components/header/header.css
   // /public/components/header/header.js
-  const base = `/public/components/${name}/${name}`;
+  const base = `./public/components/${name}/${name}`;
 
   /*
    Fetch the HTML file of the component

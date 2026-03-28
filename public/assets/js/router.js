@@ -1,26 +1,69 @@
 const routes = {
   "/home": "/public/pages/home/home.html",
-
   "/about": "/public/pages/about/about.html",
-
   "/quality": "/public/pages/queality/queality.html",
-
   "/services": "/public/pages/services/services.html",
-
   "/industries": "/public/pages/industries/industries.html",
-
   "/products": "/public/pages/products/product.html",
-
   "/contact": "/public/pages/contact-us/contact/contact.html",
   "/inquiry": "/public/pages/contact-us/inquiry/inquiry.html",
   "/virtual-demo": "/public/pages/contact-us/virtual-demo/virtual-demo.html",
+};
 
-  "/contactForm": "/public/components/contactForm.html"
+const pageMetadata = {
+  "/home": {
+    title: "Axicon Automation | Leader in Laser Marking & Automation",
+    description: "Axicon Automation provides state-of-the-art Fiber Laser Marking, Cutting, and Robotic automation solutions for precision industries."
+  },
+  "/about": {
+    title: "About Axicon | Our Story, Awards & Global Presence",
+    description: "Learn about Axicon Automation's journey, industry recognition, and our mission to innovate the future of laser technology."
+  },
+  "/quality": {
+    title: "Quality Excellence | Axicon Automation Standards",
+    description: "Our commitment to international quality standards and precision engineering ensures long-lasting and reliable industrial systems."
+  },
+  "/services": {
+    title: "Automation Services | Support, Training & Installation",
+    description: "Comprehensive technical support, professional installation, and expert training for all Axicon laser and automation systems."
+  },
+  "/industries": {
+    title: "Industrial Applications | Laser Solutions for Every Sector",
+    description: "Explore how Axicon laser systems power the automotive, electronics, medical, jewellery, and engineering sectors."
+  },
+  "/products": {
+    title: "Product Catalog | Fiber Laser Marking & Cutting Machines",
+    description: "View our full range of industrial fiber laser marking machines, CO2 lasers, and customized automation systems."
+  },
+  "/contact": {
+    title: "Contact Us | Get a Quote from Axicon Automation",
+    description: "Ready to upgrade your manufacturing? Contact Axicon Automation today for expert advice and competitive quotes."
+  }
 };
 
 async function loadFile(path) {
   const res = await fetch(path);
   return await res.text();
+}
+
+function updateSEO(path) {
+  const metadata = pageMetadata[path] || pageMetadata["/home"];
+  
+  // Set window title
+  document.title = metadata.title;
+  
+  // Update standard description
+  const metaDescription = document.querySelector('meta[name="description"]');
+  if (metaDescription) {
+    metaDescription.setAttribute("content", metadata.description);
+  }
+
+  // Update Open Graph (Social Sharing) Tags
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) ogTitle.setAttribute("content", metadata.title);
+  
+  const ogDescription = document.querySelector('meta[property="og:description"]');
+  if (ogDescription) ogDescription.setAttribute("content", metadata.description);
 }
 
 export async function loadRoute() {
@@ -47,6 +90,9 @@ export async function loadRoute() {
   ]);
 
   app.innerHTML = htmlContent;
+  
+  // Update SEO after a small delay to ensure DOM state is captured correctly
+  setTimeout(() => updateSEO(hashPath), 100);
 
   // Reset scroll position to the top of the page
   window.scrollTo(0, 0);
