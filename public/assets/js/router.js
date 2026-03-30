@@ -1,48 +1,8 @@
-const routes = {
-  "/home": "/public/pages/home/home.html",
-  "/about": "/public/pages/about/about.html",
-  "/quality": "/public/pages/queality/queality.html",
-  "/services": "/public/pages/services/services.html",
-  "/industries": "/public/pages/industries/industries.html",
-  "/products": "/public/pages/products/product.html",
-  "/contact": "/public/pages/contact-us/contact/contact.html",
-  "/inquiry": "/public/pages/contact-us/inquiry/inquiry.html",
-  "/virtual-demo": "/public/pages/contact-us/virtual-demo/virtual-demo.html",
-};
-
-const pageMetadata = {
-  "/home": {
-    title: "Axicon Automation | Leader in Laser Marking & Automation",
-    description: "Axicon Automation provides state-of-the-art Fiber Laser Marking, Cutting, and Robotic automation solutions for precision industries."
-  },
-  "/about": {
-    title: "About Axicon | Our Story, Awards & Global Presence",
-    description: "Learn about Axicon Automation's journey, industry recognition, and our mission to innovate the future of laser technology."
-  },
-  "/quality": {
-    title: "Quality Excellence | Axicon Automation Standards",
-    description: "Our commitment to international quality standards and precision engineering ensures long-lasting and reliable industrial systems."
-  },
-  "/services": {
-    title: "Automation Services | Support, Training & Installation",
-    description: "Comprehensive technical support, professional installation, and expert training for all Axicon laser and automation systems."
-  },
-  "/industries": {
-    title: "Industrial Applications | Laser Solutions for Every Sector",
-    description: "Explore how Axicon laser systems power the automotive, electronics, medical, jewellery, and engineering sectors."
-  },
-  "/products": {
-    title: "Product Catalog | Fiber Laser Marking & Cutting Machines",
-    description: "View our full range of industrial fiber laser marking machines, CO2 lasers, and customized automation systems."
-  },
-  "/contact": {
-    title: "Contact Us | Get a Quote from Axicon Automation",
-    description: "Ready to upgrade your manufacturing? Contact Axicon Automation today for expert advice and competitive quotes."
-  }
-};
+import { routes, pageMetadata } from "./config.js";
 
 async function loadFile(path) {
   const res = await fetch(path);
+  if (!res.ok) throw new Error(`Failed to load: ${path}`);
   return await res.text();
 }
 
@@ -80,42 +40,42 @@ export async function loadRoute() {
   const hashPath = fullHash.split("?")[0] || "/home";
   const page = routes[hashPath] || routes["/home"];
 
-  // Random delay between 500ms and 1000ms to show the loader
-  const delayMs = Math.floor(Math.random() * 500) + 500;
+  try {
+    // Fetch content immediately
+    const htmlContent = await loadFile(page);
 
-  // Load file and wait for delay concurrently
-  const [htmlContent] = await Promise.all([
-    loadFile(page),
-    new Promise((resolve) => setTimeout(resolve, delayMs)),
-  ]);
+    app.innerHTML = htmlContent;
+    
+    // Update SEO
+    updateSEO(hashPath);
 
-  app.innerHTML = htmlContent;
-  
-  // Update SEO after a small delay to ensure DOM state is captured correctly
-  setTimeout(() => updateSEO(hashPath), 100);
+    // Reset scroll position
+    window.scrollTo(0, 0);
 
-  // Reset scroll position to the top of the page
-  window.scrollTo(0, 0);
+    if (!window.location.hash) {
+      window.location.hash = "#/home";
+    }
 
-  if (!window.location.hash) {
-    window.location.hash = "#/home";
-  }
+    const base = page.replace(".html", "");
+    loadCSS(`${base}.css`);
+    loadJS(`${base}.js`);
 
-  const base = page.replace(".html", "");
-  loadCSS(`${base}.css`);
-  loadJS(`${base}.js`);
-
-  // Force animations to reset / initialize
-  setTimeout(() => {
-    initScrollAnimations();
-  }, 100);
-
-  // Hide loader smoothly
-  if (loader) {
-    loader.classList.add("opacity-0");
+    // Force animations to reset / initialize
     setTimeout(() => {
-      loader.classList.add("hidden");
-    }, 200); // 300ms matches Tailwind's default duration-300
+      initScrollAnimations();
+    }, 100);
+
+  } catch (error) {
+    console.error("Routing error:", error);
+    app.innerHTML = `<div class="p-20 text-center"><h2>Page Not Found</h2><p>Sorry, the page you are looking for does not exist.</p><a href="#/home" class="text-brand">Go back home</a></div>`;
+  } finally {
+    // Hide loader smoothly
+    if (loader) {
+      loader.classList.add("opacity-0");
+      setTimeout(() => {
+        loader.classList.add("hidden");
+      }, 300);
+    }
   }
 }
 
@@ -140,7 +100,7 @@ function initScrollAnimations() {
         }
       });
     },
-    { threshold: 0.05 } // Low threshold ensures it triggers even for tall elements on small screens
+    { threshold: 0.05 }
   );
 
   document
@@ -160,8 +120,8 @@ function loadCSS(href) {
 function loadJS(src) {
   removeOld("page-script");
   const script = document.createElement("script");
-  // Add timestamp to foil module caching so scripts re-run correctly across routes
-  script.src = src + "?t=" + Date.now();
+  // Use timestamp to bypass cache
+  script.src = src + "?v=" + new Date().getTime();
   script.type = "module";
   script.id = "page-script";
   document.body.appendChild(script);
@@ -174,3 +134,4 @@ function removeOld(id) {
 
 window.addEventListener("hashchange", loadRoute);
 window.addEventListener("load", loadRoute);
+
