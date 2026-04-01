@@ -10,6 +10,7 @@ export const routes = {
   "/services": "/src/pages/services/services.html",
   "/industries": "/src/pages/industries/industries.html",
   "/products": "/src/pages/products/product.html",
+  "/product-list": "/src/pages/products/product-list.html",
   "/contact": "/src/pages/contact-us/contact/contact.html",
   "/inquiry": "/src/pages/contact-us/inquiry/inquiry.html",
   "/virtual-demo": "/src/pages/contact-us/virtual-demo/virtual-demo.html",
@@ -43,5 +44,9 @@ export const pageMetadata = {
   "/contact": {
     title: "Contact Us | Get a Quote from Axicon Automation",
     description: "Ready to upgrade your manufacturing? Contact Axicon Automation today for expert advice and competitive quotes."
+  },
+  "/product-list": {
+    title: "All Products | Advanced Laser Solutions Catalog",
+    description: "Discover our full range of industrial laser machines including marking, cutting, welding, and automated SPM solutions."
   }
 };

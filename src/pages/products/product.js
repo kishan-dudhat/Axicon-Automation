@@ -53,7 +53,7 @@ function renderProducts() {
   } else if (p.images && Array.isArray(p.images)) {
     images = p.images;
   }
-  
+
   // Fallback for safety
   if (images.length === 0) {
     images = [{ src: "https://via.placeholder.com/800x400?text=No+Image", alt: "No Image Available" }];

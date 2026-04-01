@@ -1,0 +1,76 @@
+/* Product List Section Styling */
+.product-list-page {
+    min-height: 100vh;
+}
+
+.product-list-hero {
+    background-color: var(--bg-dark, #0a1622);
+}
+
+.product-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(226, 232, 240, 0.6);
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+.product-card:hover h3 {
+    color: var(--primary-color, #1773d0);
+}
+
+/* Card Image Shine Effect */
+.product-card .relative::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    transition: left 0.75s ease-out;
+}
+
+.product-card:hover .relative::after {
+    left: 150%;
+}
+
+/* Link underline effect */
+.product-card a {
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.product-card a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color, #1773d0);
+    transition: width 0.3s ease;
+}
+
+.product-card a:hover::after {
+    width: 100%;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 640px) {
+    .product-list-hero h1 {
+        font-size: 2.25rem;
+        line-height: 2.75rem;
+    }
+    
+    .product-card {
+        margin: 0 auto;
+        max-width: 380px;
+    }
+}

@@ -362,8 +362,8 @@ h6 {
   cursor: pointer;
 }
 
-/* Show on tablet and desktop (>= 768px) */
-@media screen and (min-width: 768px) {
+/* Show on desktop (>= 1024px) */
+@media screen and (min-width: 1024px) {
   .whatsapp-float {
     display: flex;
   }

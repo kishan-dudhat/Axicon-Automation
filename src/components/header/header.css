@@ -153,8 +153,8 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 
-    .nav-link, 
-    .dropdown-toggle, 
+    .nav-link,
+    .dropdown-toggle,
     .mobile-toggle {
         color: var(--primary-color) !important;
     }
@@ -731,15 +731,17 @@ body.sidebar-open {
 }
 
 .bottom-bar-item:nth-child(1) {
-    background: linear-gradient(135deg, #5b6aff, #4655f0);
+    background: linear-gradient(135deg, #1773d0, #0c4a8e);
+    /* Brand Primary Blue Sapphire */
 }
 
 .bottom-bar-item:nth-child(2) {
-    background: linear-gradient(135deg, #e33030, #393232);
+    background: linear-gradient(135deg, #ff922b, #f06700);
+    /* Premium Vibrant Orange */
 }
 
 .bottom-bar-item:nth-child(3) {
-    background: linear-gradient(135deg, #934aff, #8034f5);
+    background: linear-gradient(135deg, #25d366, #128c7e);
 }
 
 @keyframes slideDown {
