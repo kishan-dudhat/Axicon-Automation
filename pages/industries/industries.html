@@ -1,0 +1,62 @@
+<section
+  class="relative w-full h-[50vh] md:h-[60vh] lg:h-[75vh] min-h-[300px] flex items-center justify-center overflow-hidden lg:mb-5 bg-gray-900 shadow-2xl">
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black/50 z-10 transition-all duration-500"></div>
+
+  <img src="./assets/images/industrialImage/industrialImage.jpg"
+    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+    alt="Axicon Automation - Advanced Industrial Solutions and Laser Technology Applications" />
+
+  <div class="relative z-20 text-center px-4 md:px-8 mt-16 md:mt-24">
+    <h1 class="
+           text-light text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold
+           mb-4 sm:mb-6
+           opacity-0 scale-95 translate-y-4
+           transition-all duration-700 ease-out
+           animate-on-scroll
+         " style="font-family: 'Outfit', sans-serif;">
+      Industrial Solutions
+    </h1>
+    <p class="
+           text-slate-300
+           text-base sm:text-lg md:text-xl font-light
+           opacity-0 translate-y-4
+           transition-all duration-700 ease-out
+           animate-on-scroll
+           mb-10 max-w-3xl leading-relaxed mx-auto
+         ">
+      Serving a diverse range of industries with cutting-edge automation and laser technology, ensuring precision and
+      high-efficiency performance.
+    </p>
+  </div>
+</section>
+
+<!-- Content Section -->
+<section class="py-24 bg-white relative z-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div
+      class="text-center max-w-3xl mx-auto mb-16 md:mb-20 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
+      <div class="section-badge mb-6 inline-flex mx-auto">
+        <i class="fa-solid fa-industry"></i>
+        <span>Our Impact</span>
+      </div>
+      <h2 class="section-heading mb-6">
+        Industries <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-500">We
+          Serve</span>
+      </h2>
+      <p class="text-slate-500 text-lg leading-relaxed">
+        Empowering world-class manufacturing with high-precision laser marking, cutting, and industrial automation
+        solutions tailored for every sector.
+      </p>
+    </div>
+
+    <!-- Dynamic Grid Container -->
+    <div id="industries-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+      <!-- Cards will be dynamically injected here via industries.js -->
+    </div>
+  </div>
+</section>
+
+<!-- Page-Specific Logic -->
+<script type="module" src="./industries.js"></script>
