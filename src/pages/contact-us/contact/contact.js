@@ -91,5 +91,49 @@ export function initContactForm() {
     });
 }
 
-// Initialize
+/**
+ * Regional Presence Carousel Logic
+ */
+export function initCityCarousel() {
+    const track = document.getElementById('cityTrack');
+    if (!track) return;
+
+    const cities = [
+        "Ahmedabad", "Mumbai", "Pune", "New Delhi", "Chennai",
+        "Hyderabad", "Bengaluru", "Coimbatore", "Surat", "Rajkot",
+        "Vadodara", "Vapi", "Ankleshwar", "Gandhinagar", "Jaipur",
+        "Indore", "Bhopal", "Nagpur", "Nashik", "Kolhapur",
+        "Aurangabad", "Kochi", "Madurai", "Trichy", "Vizag",
+        "Kolkata", "Lucknow", "Kanpur", "Ludhiana"
+    ];
+
+    // Ensure the track is wide enough for seamless infinite scroll
+    // Duplicate the array to create the loop effect
+    const fullList = [...cities, ...cities];
+
+    track.innerHTML = fullList.map(city => `
+        <div class="city-pill">
+            <i class="fa-solid fa-location-dot opacity-40 mr-2 text-[0.8rem]"></i>
+            ${city}
+        </div>
+    `).join('');
+}
+
+// Initialize components
+document.addEventListener('DOMContentLoaded', () => {
+    initContactForm();
+    initCityCarousel();
+});
+
+// Since the app uses hash-based routing, we might need a re-init
+window.addEventListener('hashchange', () => {
+    // Small delay to ensure DOM is ready after navigation
+    setTimeout(() => {
+        initContactForm();
+        initCityCarousel();
+    }, 400);
+});
+
+// Manual call for initial load if DOM is already ready
 initContactForm();
+initCityCarousel();
