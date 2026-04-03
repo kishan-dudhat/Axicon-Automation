@@ -14,6 +14,7 @@ export const routes = {
   "/contact": "/src/pages/contact-us/contact/contact.html",
   "/inquiry": "/src/pages/contact-us/inquiry/inquiry.html",
   "/virtual-demo": "/src/pages/contact-us/virtual-demo/virtual-demo.html",
+  "/blog": "/src/pages/blog/blog.html",
 };
 
 export const pageMetadata = {
@@ -48,5 +49,9 @@ export const pageMetadata = {
   "/product-list": {
     title: "All Products | Advanced Laser Solutions Catalog",
     description: "Discover our full range of industrial laser machines including marking, cutting, welding, and automated SPM solutions."
+  },
+  "/blog": {
+    title: "Industrial Insights & Blog | Axicon Automation",
+    description: "Deep dives into laser cutting, marking, and industrial automation. Expert perspectives on the future of smart manufacturing in India."
   }
 };
