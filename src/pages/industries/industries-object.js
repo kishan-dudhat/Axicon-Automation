@@ -64,7 +64,14 @@ const industriesData = [
     image: "./public/images/industrialImage/utensils-industry.webp",
     alt: "Laser Marking and Engraving for the Utensils Industry",
     name: "Utensils Industry"
+  },
+  {
+    id: 12,
+    image: "./public/images/industrialImage/battery-industry.jpg",
+    alt: "Laser Marking and Engraving for the Battery Industry",
+    name: "Battery Industry"
   }
+
 ];
 
 export default industriesData;
