@@ -2,14 +2,15 @@ import { blogData } from "./blog-object.js";
 
 /**
  * AXICON AUTOMATION — BLOG LOGIC
- * Handles dynamic grid rendering, filtering, pagination, and single post view.
+ * Optimized for Premium Industrial UI & High SEO
  */
 
 // Configuration & State
 const CONFIG = {
     itemsPerPage: 6,
-    defaultImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200", // Industrial fallback
+    defaultImage: "../../assets/images/blog/hero-industrial.png",
     placeholderBase: "https://picsum.photos/seed/",
+    siteName: "Axicon Automation"
 };
 
 let state = {
@@ -90,7 +91,7 @@ function applyFilters() {
     if (state.currentCategory === "all") {
         state.filteredData = [...blogData];
     } else {
-        state.filteredData = blogData.filter(item => 
+        state.filteredData = blogData.filter(item =>
             item.category.toLowerCase().includes(state.currentCategory.toLowerCase())
         );
     }
@@ -112,18 +113,22 @@ function renderBlogList(append = false) {
     listView.classList.remove("hidden");
     postView.classList.add("hidden");
 
+    // Reset Meta for List View
+    document.title = `Industrial Insights & Innovation Blog | ${CONFIG.siteName}`;
+
     const displayData = state.filteredData.slice(0, state.visibleCount);
 
     if (!append) grid.innerHTML = "";
 
     if (displayData.length === 0) {
         grid.innerHTML = `
-            <div class="col-span-full py-20 text-center animate-on-scroll">
-                <i class="fa-solid fa-note-sticky text-5xl text-slate-200 mb-4"></i>
-                <h3 class="text-xl font-bold text-slate-800">No articles found</h3>
-                <p class="text-slate-500">Try selecting a different category.</p>
+            <div class="col-span-full py-24 text-center animate-on-scroll opacity-0 translate-y-10">
+                <i class="fa-solid fa-note-sticky text-6xl text-slate-200 mb-6"></i>
+                <h3 class="text-2xl font-bold text-slate-800 mb-2">No articles found in this category</h3>
+                <p class="text-slate-500">Please try selecting a different industrial category.</p>
             </div>
         `;
+        if (window.initScrollAnimations) window.initScrollAnimations();
         loadMoreContainer.classList.add("hidden");
         return;
     }
@@ -154,36 +159,36 @@ function createBlogCard(post, index) {
     const div = document.createElement("div");
     div.className = "blog-grid-item opacity-0 translate-y-10 transition-all duration-700";
     div.style.transitionDelay = `${(index % 3) * 100}ms`;
-    
-    // SEO optimization: use semantic HTML
+
+    // Premium Cardiovascular Design
     div.innerHTML = `
-        <article class="blog-card flex flex-col h-full bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-500">
-            <div class="card-image-wrapper relative overflow-hidden aspect-[16/10]">
-                <span class="card-category-badge">${post.category.toUpperCase()}</span>
+        <article class="blog-card">
+            <div class="card-image-wrapper">
+                <span class="card-category-badge">${post.category}</span>
                 <img src="${post.image}" 
                      alt="${post.alt || post.title}" 
-                     class="card-image w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                     class="card-image w-full h-full object-cover"
                      onerror="this.src='${CONFIG.placeholderBase}${post.id}'">
             </div>
             
-            <div class="card-content p-8 flex flex-col flex-grow">
-                <div class="card-meta flex items-center gap-4 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">
-                    <span class="flex items-center gap-1.5"><i class="fa-regular fa-calendar text-brand"></i> ${formatDate(post.date)}</span>
-                    <span class="flex items-center gap-1.5"><i class="fa-regular fa-clock text-brand"></i> ${post.readTime}</span>
+            <div class="card-content">
+                <div class="card-meta">
+                    <span class="meta-item"><i class="fa-regular fa-calendar"></i> ${formatDate(post.date)}</span>
+                    <span class="meta-item"><i class="fa-regular fa-clock"></i> ${post.readTime}</span>
                 </div>
                 
-                <h3 class="card-title text-xl lg:text-2xl font-black text-slate-900 mb-4 line-clamp-2 leading-tight hover:text-brand transition-colors">
-                    <a href="#/blog?slug=${post.slug}">${post.title}</a>
+                <h3 class="card-title">
+                     <a href="#/blog?slug=${post.slug}">${post.title}</a>
                 </h3>
                 
-                <p class="card-excerpt text-slate-500 text-sm lg:text-base line-clamp-3 mb-6 leading-relaxed">
+                <p class="card-excerpt">
                     ${post.description}
                 </p>
                 
-                <div class="card-footer mt-auto pt-6 border-t border-slate-50">
-                    <a href="#/blog?slug=${post.slug}" class="read-more-link group/link inline-flex items-center gap-2 font-bold text-brand uppercase text-xs tracking-widest">
-                        Read Full Insight
-                        <i class="fa-solid fa-arrow-right-long transition-transform group-hover/link:translate-x-1.5"></i>
+                <div class="card-footer">
+                    <a href="#/blog?slug=${post.slug}" class="read-more-link">
+                        Read Analytics
+                        <i class="fa-solid fa-arrow-right-long"></i>
                     </a>
                 </div>
             </div>
@@ -213,119 +218,137 @@ function renderSinglePost(slug) {
         return;
     }
 
+    // Update SEO Meta Tags
+    document.title = `${post.title} | ${CONFIG.siteName}`;
+    updateMetaDescription(post.seo.metaDescription || post.description);
+    injectJSONLD(post);
+
     // Switch views
     listView.classList.add("hidden");
     postView.classList.remove("hidden");
     window.scrollTo(0, 0);
 
-    // Update Browser SEO Title & Description
-    // The router handles base metadata, but we can override for specific posts
-    document.title = `${post.seo.metaTitle} | Axicon Automation`;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", post.seo.metaDescription);
-
-    // Build Post HTML
+    // Build Post HTML with Premium Structure
     postContent.innerHTML = `
-        <article class="animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
-            <header class="post-header mb-12 text-center lg:text-left">
-                <div class="flex flex-wrap justify-center lg:justify-start items-center gap-4 mb-6">
-                    <span class="px-4 py-1.5 bg-brand/10 text-brand rounded-full text-xs font-bold uppercase tracking-widest">
+        <article class="post-detail-container animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
+            <header class="post-header">
+                <div class="flex flex-wrap justify-center items-center gap-4 mb-8">
+                    <span class="px-5 py-2 bg-brand/5 text-brand rounded-full text-xs font-extrabold uppercase tracking-widest border border-brand/10">
                         ${post.category}
                     </span>
-                    <span class="text-slate-400 text-sm font-medium">
-                        <i class="fa-regular fa-calendar-days mr-1.5"></i> ${formatDate(post.date)}
+                    <span class="text-slate-400 text-sm font-bold">
+                        <i class="fa-regular fa-calendar-days mr-2 text-brand"></i> ${formatDate(post.date)}
                     </span>
                 </div>
-                <h1 class="post-title text-3xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-8 leading-[1.1]">
+                <h1 class="post-title">
                     ${post.title}
                 </h1>
-                <p class="text-lg md:text-xl text-slate-500 max-w-3xl leading-relaxed">
+                <p class="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-light">
                     ${post.description}
                 </p>
             </header>
 
-            <div class="post-featured-image aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl relative group">
+            <div class="post-featured-img-wrapper">
                 <img src="${post.image}" 
                      alt="${post.alt}" 
-                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s]"
+                     class="w-full h-full object-cover transition-transform duration-[3s] hover:scale-105"
                      onerror="this.src='${CONFIG.placeholderBase}${post.id}'">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                <div class="lg:col-span-8">
-                    <div class="post-body prose prose-lg prose-slate max-w-none">
-                        <h2 class="text-3xl font-bold text-slate-900 mb-6">Technical Overview</h2>
-                        <p>${post.description}</p>
-                        
-                        <h2 class="text-3xl font-bold text-slate-900 mb-6">Impact on Industry</h2>
-                        <p>The implementation of high-precision ${post.category} technology in <strong>${post.city}, ${post.state}</strong> has revolutionized local manufacturing processes. Companies are seeing significant improvements in throughput and quality consistency.</p>
-                        
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Key Benefits:</h3>
-                        <ul class="space-y-3 mb-8">
-                            ${post.industries.map(ind => `<li>Proven results in <strong>${ind}</strong> applications.</li>`).join('')}
-                            <li>Zero-compromise precision with ±0.05mm accuracy.</li>
-                            <li>Significant reduction in operational overhead and waste.</li>
-                        </ul>
+            <div class="post-body max-w-none">
+                <h2 class="text-4xl">Technical Innovation Overview</h2>
+                <p>${post.description}</p>
+                
+                <p>The strategic implementation of high-precision ${post.category} technology in <strong>${post.city}, ${post.state}</strong> has established a new benchmark for manufacturing excellence. By integrating Axicon Automation's advanced industrial systems, local enterprises are achieving unprecedented levels of efficiency.</p>
+                
+                <blockquote>
+                    "Precision is not an act, it is a habit. Automation is the vehicle that drives that habit into production reality."
+                </blockquote>
 
-                        <div class="p-8 bg-slate-50 border-l-4 border-brand rounded-r-2xl mb-10 italic text-slate-700 text-xl font-medium leading-relaxed">
-                            "Automation is not just about replacing labor; it's about amplifying human potential and precision to levels previously unreachable."
-                        </div>
+                <h2 class="text-3xl">Strategic Impact & Results</h2>
+                <ul class="space-y-4 mb-12">
+                    ${post.industries.map(ind => `<li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-brand mt-1"></i> Specialized optimization for <strong>${ind}</strong>.</li>`).join('')}
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-brand mt-1"></i> Industry-leading ±0.05mm precision threshold.</li>
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-brand mt-1"></i> Significant reduction in MTBF (Mean Time Between Failures).</li>
+                </ul>
 
-                        <p>As we look towards the future of <strong>Smart Manufacturing</strong>, Axicon Automation remains committed to delivering state-of-the-art solutions that empower Indian industries to compete on a global scale.</p>
-                    </div>
+                <p>Axicon Automation continues to lead the <strong>Industry 4.0</strong> revolution in India, providing the tools and technical expertise required for global competitiveness.</p>
+            </div>
 
-                    <div class="post-tags mt-12 flex flex-wrap gap-2">
-                        ${post.hashtags.map(tag => `<span class="post-tag text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-md hover:bg-brand/10 hover:text-brand transition-colors cursor-default">${tag}</span>`).join('')}
+            <footer class="mt-16 pt-10 border-t border-slate-100 flex flex-wrap items-center justify-between gap-6">
+                <div class="flex flex-wrap gap-2">
+                    ${post.hashtags.map(tag => `<span class="px-3 py-1 bg-slate-50 text-slate-500 rounded-lg text-xs font-bold hover:bg-brand/10 hover:text-brand transition-colors">${tag}</span>`).join('')}
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="text-xs font-black text-slate-400 uppercase tracking-widest">Share Project:</span>
+                    <div class="flex gap-3">
+                        <button class="w-10 h-10 rounded-full bg-slate-50 text-slate-400 hover:bg-brand hover:text-white transition-all"><i class="fa-brands fa-linkedin-in"></i></button>
+                        <button class="w-10 h-10 rounded-full bg-slate-50 text-slate-400 hover:bg-green-500 hover:text-white transition-all"><i class="fa-brands fa-whatsapp"></i></button>
                     </div>
                 </div>
-
-                <!-- Sidebar / Related Info -->
-                <aside class="lg:col-span-4">
-                    <div class="sticky top-32 space-y-8">
-                        <!-- Quick Stats -->
-                        <div class="p-8 bg-bg-dark rounded-3xl text-white">
-                            <h4 class="text-xl font-bold mb-6 flex items-center gap-2">
-                                <i class="fa-solid fa-microchip text-brand"></i> Post Details
-                            </h4>
-                            <div class="space-y-6">
-                                <div>
-                                    <span class="block text-xs uppercase text-slate-500 font-bold tracking-widest mb-1">Estimated Read</span>
-                                    <span class="text-lg font-bold">${post.readTime}</span>
-                                </div>
-                                <div>
-                                    <span class="block text-xs uppercase text-slate-500 font-bold tracking-widest mb-1">Primary Industry</span>
-                                    <span class="text-lg font-bold">${post.industries[0]}</span>
-                                </div>
-                                <div>
-                                    <span class="block text-xs uppercase text-slate-500 font-bold tracking-widest mb-1">Application Focus</span>
-                                    <span class="text-lg font-bold">${post.category === 'cutting' ? 'Heavy Fabrication' : 'Traceability & Branding'}</span>
-                                </div>
-                            </div>
-                            <a href="#/contact" class="mt-10 w-full inline-flex justify-center items-center gap-2 px-6 py-4 bg-brand hover:bg-brand/90 text-white font-bold rounded-2xl transition-all shadow-lg hover:shadow-brand/20">
-                                Get Expert Advice <i class="fa-solid fa-paper-plane text-xs"></i>
-                            </a>
-                        </div>
-
-                        <!-- Share -->
-                        <div class="p-8 border border-slate-100 rounded-3xl text-center">
-                            <h4 class="text-sm font-bold text-slate-900 mb-4 uppercase tracking-[0.2em]">Share this insight</h4>
-                            <div class="flex justify-center gap-4">
-                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-50 text-slate-400 hover:bg-blue-600 hover:text-white transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
-                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-50 text-slate-400 hover:bg-green-500 hover:text-white transition-all"><i class="fa-brands fa-whatsapp"></i></a>
-                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-50 text-slate-400 hover:bg-blue-400 hover:text-white transition-all"><i class="fa-brands fa-twitter"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
-            </div>
+            </footer>
         </article>
     `;
 
     // Trigger entrance animation for post
     setTimeout(() => {
-        postContent.querySelector("article").classList.remove("opacity-0", "translate-y-10");
+        const article = postContent.querySelector("article");
+        if (article) article.classList.remove("opacity-0", "translate-y-10");
+        if (window.initScrollAnimations) window.initScrollAnimations();
     }, 50);
+}
+
+/**
+ * SEO Utility: Update Meta Description
+ */
+function updateMetaDescription(description) {
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+        meta = document.createElement('meta');
+        meta.name = "description";
+        document.head.appendChild(meta);
+    }
+    meta.setAttribute("content", description);
+}
+
+/**
+ * SEO Utility: Inject JSON-LD Schema for BlogPosting
+ */
+function injectJSONLD(post) {
+    // Remove existing blog schema if any
+    const existingSchema = document.getElementById("blog-schema");
+    if (existingSchema) existingSchema.remove();
+
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "description": post.description,
+        "image": post.image,
+        "author": {
+            "@type": "Organization",
+            "name": CONFIG.siteName
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": CONFIG.siteName,
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://axiconautomation.com/assets/images/logo.png" // Update with real URL
+            }
+        },
+        "datePublished": post.date,
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": window.location.href
+        }
+    };
+
+    const script = document.createElement('script');
+    script.id = "blog-schema";
+    script.type = "application/ld+json";
+    script.text = JSON.stringify(schema);
+    document.head.appendChild(script);
 }
 
 /**

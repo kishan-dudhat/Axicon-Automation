@@ -49,7 +49,7 @@ function createIndustryCard(industry, index) {
                      loading="lazy">
             </div>
             <div class="industry-card-footer">
-                <h4 class="industry-card-name underline-offset-4 group-hover:underline transition-all">
+                <h4 class="industry-card-name underline-offset-4 transition-all">
                     ${industry.name}
                 </h4>
             </div>
@@ -64,7 +64,7 @@ function createIndustryCard(industry, index) {
  */
 function initRevealObserver() {
     const cards = document.querySelectorAll('.industries-animate-in');
-    
+
     const observerOptions = {
         threshold: 0.15,
         rootMargin: '0px 0px -50px 0px'
