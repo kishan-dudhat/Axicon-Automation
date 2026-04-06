@@ -33,53 +33,6 @@
     transform: scale(1.05);
 }
 
-/* Post-Hero Filter Bar */
-.filter-bar {
-    background: white;
-    border-bottom: 1px solid var(--border-color);
-    padding: 1.5rem 0;
-    position: sticky;
-    top: 70px;
-    z-index: 30;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-}
-
-#blog-filters {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-/* Category Filter Buttons */
-.filter-btn {
-    padding: 0.6rem 1.75rem;
-    border-radius: 9999px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #f1f5f9;
-    border: 1.5px solid transparent;
-    color: #64748b;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-
-.filter-btn:hover {
-    background-color: #e2e8f0;
-    color: var(--primary-dark);
-}
-
-.filter-btn.active {
-    background-color: var(--primary-dark);
-    border-color: var(--primary-dark);
-    color: white;
-    box-shadow: 0 10px 20px -5px rgba(62, 64, 149, 0.3);
-    transform: translateY(-2px);
-}
 
 /* Blog Grid Layout */
 .blog-grid-section {
@@ -224,65 +177,84 @@
     transform: translateX(6px);
 }
 
-/* Single Post View Redesign */
-.post-detail-container {
-    max-width: 900px;
-    margin: 0 auto;
+/* =========================================================
+   SIMPLIFIED BLOG DETAIL REDESIGN (PROFESSIONAL)
+   ========================================================= */
+
+#blog-post-view {
+    animation: fadeIn 0.4s ease-out;
 }
 
-.post-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.post-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 2.75rem;
-    line-height: 1.1;
-    font-weight: 900;
+/* Typography & Content Layout */
+.prose h2 {
+    font-family: 'Outfit', sans-serif !important;
     color: var(--primary-dark);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-top: 4rem;
     margin-bottom: 1.5rem;
-    letter-spacing: -0.02em;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.75rem;
 }
 
-@media (min-width: 768px) {
-    .post-title {
-        font-size: 3.5rem;
+.prose p {
+    margin-bottom: 1.75rem;
+    line-height: 1.8;
+    color: #475569;
+    font-size: 1.05rem;
+}
+
+.prose strong {
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+.prose blockquote {
+    font-size: 1.35rem;
+    line-height: 1.6;
+    font-weight: 600;
+    color: var(--primary-dark);
+    border-left: 5px solid var(--primary-color);
+    padding: 1.5rem 2rem;
+    background: #f8fafc;
+    border-radius: 0 1rem 1rem 0;
+    margin: 3rem 0;
+    font-style: italic;
+}
+
+/* Component Simplification */
+.prose ul li {
+    list-style: none;
+    position: relative;
+}
+
+/* Key Takeaways Box */
+.takeaway-card-simple {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .prose h1 { font-size: 1.85rem !important; }
+    .prose h2 { font-size: 1.5rem !important; }
+    
+    .container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
     }
 }
 
-.post-featured-img-wrapper {
-    width: 100%;
-    border-radius: 2.5rem;
-    overflow: hidden;
-    margin-bottom: 4rem;
-    box-shadow: 0 40px 100px -20px rgba(15, 23, 42, 0.2);
+/* Professional Card Styling */
+.card-simple {
+    border: 1px solid #f1f5f9;
+    background: white;
+    transition: border-color 0.3s ease;
 }
 
-.post-body {
-    font-size: 1.15rem;
-    line-height: 1.85;
-    color: #334155;
-}
-
-.post-body h2 {
-    font-family: 'Outfit', sans-serif;
-    font-size: 2.25rem;
-    font-weight: 800;
-    color: var(--primary-dark);
-    margin: 4rem 0 1.5rem;
-}
-
-.post-body blockquote {
-    font-size: 1.5rem;
-    font-weight: 500;
-    font-style: italic;
-    color: var(--primary-dark);
-    border-left: 6px solid var(--primary-light);
-    padding: 1.5rem 2.5rem;
-    background: #f8fafc;
-    border-radius: 0 1.5rem 1.5rem 0;
-    margin: 3rem 0;
+.card-simple:hover {
+    border-color: var(--primary-color);
 }
 
 /* Animation utilities for blog */

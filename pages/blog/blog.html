@@ -27,19 +27,7 @@
         </div>
     </section>
 
-    <!-- Category Filter Bar (Post-Hero) -->
-    <section class="py-8 bg-white border-b border-slate-100 shadow-sm sticky top-[70px] z-30">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-wrap items-center justify-center gap-4" id="blog-filters">
-                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mr-2 hidden md:block">Filter By:</span>
-                <button class="filter-btn active" data-category="all">All Articles</button>
-                <button class="filter-btn" data-category="marking">Laser Marking</button>
-                <button class="filter-btn" data-category="cutting">Laser Cutting</button>
-                <button class="filter-btn" data-category="welding">Laser Welding</button>
-                <button class="filter-btn" data-category="automation">Automation</button>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Blog Grid Listing (Visible by default) -->
     <section id="blog-list-view" class="py-16 lg:py-24 bg-bg-light">
@@ -65,16 +53,11 @@
     </section>
 
     <!-- Single Blog Post View (Hidden by default) -->
-    <section id="blog-post-view" class="py-16 lg:py-24 bg-white hidden">
-        <div class="container mx-auto px-6">
-            <button id="back-to-blog" class="flex items-center gap-2 text-slate-500 hover:text-brand font-medium mb-12 transition-colors group">
-                <i class="fa-solid fa-arrow-left transition-transform group-hover:-translate-x-1"></i>
-                Back to all insights
-            </button>
-
-            <div id="post-content" class="max-w-4xl mx-auto">
-                <!-- Full article content will be injected here -->
-            </div>
+    <section id="blog-post-view" class="bg-white hidden">
+        <!-- Dynamic Hero/Breadcrumb area will be injected here if needed, 
+             or we keep it in post-content for full control -->
+        <div id="post-content">
+            <!-- Full premium article content will be injected here via blog.js -->
         </div>
     </section>
 </div>
