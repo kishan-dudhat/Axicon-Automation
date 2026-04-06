@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Industries Page Custom Styles
+   ========================================================================== */
+
+/* Industry Card Base */
+.industry-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Image Container (Square Aspect Ratio) */
+.industry-card-image-box {
+    position: relative;
+    width: 100%;
+    /* Create a square container */
+    padding-bottom: 90%;
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+.industry-card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Footer Label (Matching Reference Image) */
+.industry-card-footer {
+    background: #1e3a8a;
+    /* Deep Brand Blue */
+    padding: 1.25rem 1rem;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.industry-card-name {
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Hover Effects */
+.industry-card:hover {
+    box-shadow: 0 20px 40px rgba(30, 58, 138, 0.15);
+    border-color: #3b82f6;
+}
+
+.industry-card:hover .industry-card-image {
+    transform: scale(1.1);
+}
+
+/* Animation on Scroll Support */
+.industries-animate-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.industries-animate-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Scaling */
+@media (max-width: 640px) {
+    .industry-card-name {
+        font-size: 1rem;
+    }
+}

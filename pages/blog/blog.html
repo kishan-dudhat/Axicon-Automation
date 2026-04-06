@@ -1,0 +1,80 @@
+    <!-- SEO Meta Tags -->
+    <title>Industrial Insights & Innovation Blog | Axicon Automation</title>
+    <meta name="description" content="Explore deep dives into laser cutting, marking, and automation technology. Expert perspectives on the future of Indian smart manufacturing and industry 4.0.">
+    <meta name="keywords" content="industrial automation, laser marking, laser cutting, smart manufacturing, industry 4.0, Axicon Automation">
+    <meta property="og:title" content="Industrial Insights & Innovation Blog | Axicon Automation">
+    <meta property="og:description" content="Expert perspectives on the future of Indian smart manufacturing.">
+    <meta property="og:type" content="website">
+
+    <!-- Hero Section (Standardized with About Page) -->
+    <section class="relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh] min-h-[350px] flex items-center justify-center overflow-hidden bg-slate-900">
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-black/60 z-10 transition-all duration-500"></div>
+
+        <!-- Featured Background Image -->
+        <img src="../../assets/images/blog/hero-industrial.png" 
+             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" 
+             alt="Axicon Automation Industrial Insights Background">
+
+        <div class="relative z-20 text-center px-4 md:px-8 mt-16 md:mt-24">
+            <h1 class="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 opacity-0 scale-95 translate-y-4 transition-all duration-700 ease-out animate-on-scroll" 
+                style="font-family: 'Outfit', sans-serif;">
+                Industrial <span class="text-brand">Insights</span>
+            </h1>
+            <p class="text-slate-200 text-base sm:text-lg md:text-xl font-light opacity-0 translate-y-4 transition-all duration-700 ease-out animate-on-scroll mb-0 max-w-3xl leading-relaxed mx-auto">
+                Deep dives into laser cutting, marking, and automation technology. Expert perspectives on the future of Indian smart manufacturing.
+            </p>
+        </div>
+    </section>
+
+    <!-- Category Filter Bar (Post-Hero) -->
+    <section class="py-8 bg-white border-b border-slate-100 shadow-sm sticky top-[70px] z-30">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap items-center justify-center gap-4" id="blog-filters">
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mr-2 hidden md:block">Filter By:</span>
+                <button class="filter-btn active" data-category="all">All Articles</button>
+                <button class="filter-btn" data-category="marking">Laser Marking</button>
+                <button class="filter-btn" data-category="cutting">Laser Cutting</button>
+                <button class="filter-btn" data-category="welding">Laser Welding</button>
+                <button class="filter-btn" data-category="automation">Automation</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid Listing (Visible by default) -->
+    <section id="blog-list-view" class="py-16 lg:py-24 bg-bg-light">
+        <div class="container mx-auto px-6">
+            <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+                <!-- Blog cards will be injected here via blog.js -->
+                <div class="col-span-full py-20 text-center">
+                    <div class="inline-block w-12 h-12 border-4 border-brand border-t-transparent rounded-full animate-spin"></div>
+                    <p class="mt-4 text-slate-500 font-medium">Loading industrial insights...</p>
+                </div>
+            </div>
+
+            <!-- Load More Section -->
+            <div id="load-more-container" class="mt-16 text-center hidden">
+                <button id="load-more-btn" class="group relative px-8 py-4 bg-white border border-slate-200 text-slate-700 font-semibold rounded-full overflow-hidden transition-all duration-300 hover:border-brand hover:text-brand shadow-sm hover:shadow-md">
+                    <span class="relative z-10 flex items-center justify-center gap-2">
+                        Load More Articles
+                        <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:translate-y-1"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Single Blog Post View (Hidden by default) -->
+    <section id="blog-post-view" class="py-16 lg:py-24 bg-white hidden">
+        <div class="container mx-auto px-6">
+            <button id="back-to-blog" class="flex items-center gap-2 text-slate-500 hover:text-brand font-medium mb-12 transition-colors group">
+                <i class="fa-solid fa-arrow-left transition-transform group-hover:-translate-x-1"></i>
+                Back to all insights
+            </button>
+
+            <div id="post-content" class="max-w-4xl mx-auto">
+                <!-- Full article content will be injected here -->
+            </div>
+        </div>
+    </section>
+</div>

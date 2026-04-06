@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+/* =========================================================
+   STYLE.CSS — AXICON AUTOMATION (TAILWIND FRIENDLY)
+   ---------------------------------------------------------
+   HOW TO USE (IMPORTANT)
+   ---------------------------------------------------------
+   This file EXTENDS Tailwind CSS.
+    Use these semantic utility classes like:
+      text-primary
+      bg-primary
+      border-light
+      btn btn-primary
+      card
+      breadcrumb
+
+   Example usage in HTML:
+   <h1 class="text-primary">Automation Solutions</h1>
+   <p class="text-muted">Industrial-grade machinery</p>
+   <div class="card bg-surface">...</div>
+
+
+/* =========================================================
+   ROOT VARIABLES — SINGLE SOURCE OF TRUTH
+   ========================================================= */
+:root {
+  /* Brand Colors */
+  --primary-color: #1773d0;
+  /* Used in header, product titles, main buttons */
+  --primary-dark: #3e4095;
+  /* Header bg, dark blue variants (#1e3a8a, #243b7a) */
+  --primary-light: #0ea5e9;
+  /* Light blue highlights, sky-500 */
+  --secondary-color: #f97316;
+  /* Orange brand accents */
+
+  /* Text Colors */
+  --text-primary: var(--text-primary);
+  /* Main headings, dark slate (#1f2937, #1e293b) */
+  --text-secondary: #3c6cae;
+  /* Paragraphs, muted text (#334155) */
+  --text-light: #ffffff;
+  /* Text on dark backgrounds */
+
+  /* Background Colors */
+  --bg-primary: #ffffff;
+  /* Main page background */
+  --bg-secondary: #f8fafc;
+  /* Cards, light sections (#f1f5f9, #eff6ff, #f7f9fc) */
+  --bg-dark: #0a1622;
+  /* Darker sections */
+
+  /* UI Colors */
+  --border-color: #e2e8f0;
+  /* Default borders (#cbd5e1, #d1d5db) */
+  --border-dark: #1e293b;
+  /* Darker borders */
+  --hover-color: #38bdf8;
+  /* Hover states for links and buttons */
+  --success-color: var(--success-color);
+  /* WhatsApp float button */
+
+  /* Font-F */
+  --font-poppins: 'Poppins',
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Arial,
+    sans-serif;
+
+  --font-inter: 'Inter',
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Arial,
+    sans-serif;
+
+  --font-serif: ui-serif,
+    Georgia,
+    'Times New Roman',
+    serif;
+}
+
+
+/* =========================================================
+   BASE STYLES (GLOBAL)
+   ========================================================= */
+body {
+  font-family: var(--font-poppins);
+  line-height: 1.6;
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   COLOR UTILITY CLASSES
+   ========================================================= */
+
+/* Text Colors */
+.text-primary {
+  color: var(--text-primary) !important;
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.text-light {
+  color: var(--text-light) !important;
+}
+
+.text-brand {
+  color: var(--primary-color) !important;
+}
+
+.text-brand-dark {
+  color: var(--primary-dark) !important;
+}
+
+.text-accent {
+  color: var(--secondary-color) !important;
+}
+
+/* Background Colors */
+.bg-primary {
+  background-color: var(--bg-primary) !important;
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary) !important;
+}
+
+.bg-dark {
+  background-color: var(--bg-dark) !important;
+}
+
+.bg-brand {
+  background-color: var(--primary-color) !important;
+}
+
+.bg-brand-dark {
+  background-color: var(--primary-dark) !important;
+}
+
+.bg-accent {
+  background-color: var(--secondary-color) !important;
+}
+
+/* Border Colors */
+.border-color {
+  border-color: var(--border-color) !important;
+}
+
+.border-dark {
+  border-color: var(--border-dark) !important;
+}
+
+.border-brand {
+  border-color: var(--primary-color) !important;
+}
+
+
+
+/* Hero */
+.text-first-heading {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.text-second-heading {
+  font-size: 0.2rem;
+  font-weight: 500;
+}
+
+.text-third-heading {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+/* Section heading */
+.text-fourth-heading {
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+/* Subheading */
+.text-fifth-heading {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.text-six-heading {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+/* Body */
+.text-general {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Caption */
+.text-general-sm {
+  font-size: 0.95rem;
+  font-weight: 450;
+}
+
+/* Breakpoints */
+@media (min-width: 640px) {
+  .text-first-heading {
+    font-size: 1.7rem;
+  }
+
+  .text-second-heading {
+    font-size: 0.6rem;
+  }
+
+  .text-third-heading {
+    font-size: 2.2rem
+  }
+
+  .text-fourth-heading {
+    font-size: 1rem;
+  }
+
+  .text-fifth-heading {
+    font-size: 1.2rem;
+  }
+
+  .text-six-heading {
+    font-size: 0.9rem;
+  }
+
+  .text-general {
+    font-size: 0.875rem;
+  }
+
+  .text-general-sm {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-first-heading {
+    font-size: 1.9rem;
+  }
+
+  .text-second-heading {
+    font-size: 0.7rem;
+  }
+
+  .text-third-heading {
+    font-size: 2.5rem;
+  }
+
+  .text-fourth-heading {
+    font-size: 1.25rem;
+  }
+
+  .text-fifth-heading {
+    font-size: 1.2rem;
+  }
+
+  .text-six-heading {
+    font-size: 0.9rem;
+  }
+
+  .text-general {
+    font-size: 1rem;
+  }
+
+  .text-general-sm {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-first-heading {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .text-second-heading {
+    font-size: 1.4rem;
+  }
+
+  .text-third-heading {
+    font-size: 2.2rem
+  }
+
+  .text-fourth-heading {
+    font-size: 1.7rem;
+  }
+
+  .text-fifth-heading {
+    font-size: 1.1rem;
+  }
+
+  .text-six-heading {
+    font-size: 0.9rem;
+  }
+
+  .text-general {
+    font-size: 1.125rem;
+  }
+
+  .text-general-sm {
+    font-size: 1rem;
+  }
+}
+
+/* =========================================================
+   WHATSAPP FLOATING BUTTON (DESKTOP/TABLET)
+   ========================================================= */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 32px;
+  display: none;
+  /* Hidden on small screens (mobile) */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transition: all 0.3s ease;
+  animation: pulse-whatsapp 2s infinite;
+  text-decoration: none;
+}
+
+.whatsapp-float:visited,
+.whatsapp-float:focus {
+  color: #ffffff;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe57;
+  transform: scale(1.1);
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+/* Show on desktop (>= 1024px) */
+@media screen and (min-width: 1024px) {
+  .whatsapp-float {
+    display: flex;
+  }
+}
+
+/* Smooth pulse animation */
+@keyframes pulse-whatsapp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* =========================================================
+   SECTION BADGE
+   ========================================================= */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 1rem;
+  border-radius: 9999px;
+  background-color: var(--bg-secondary);
+  color: var(--primary-dark);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+.section-heading {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 640px) {
+  .section-heading {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-heading {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
