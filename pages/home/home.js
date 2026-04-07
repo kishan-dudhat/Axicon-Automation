@@ -1,5 +1,6 @@
 import { homeProducts } from './productlist.js';
 import { submitForm } from '../../js/standardapi.js';
+import { blogData } from '../blog/blog-object.js';
 
 // Carousel Logic
 const track = document.getElementById("carouselTrack");
@@ -103,7 +104,7 @@ if (track && prevBtn && nextBtn) {
 
   function updateSlide(animate = true) {
     if (!track) return;
-    track.style.transition = animate ? "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)" : "none";
+    track.style.transition = animate ? "transform 0.5s cubic(0.4, 0, 0.2, 1)" : "none";
     track.style.transform = `translateX(-${index * itemWidth()}px)`;
     updateCenterAndDots();
     if (animate) isTransitioning = true;
@@ -158,6 +159,56 @@ if (track && prevBtn && nextBtn) {
   window.addEventListener("resize", () => updateSlide(false));
 }
 
+// Home Page Blog Rendering
+function initHomeBlog() {
+    const homeGrid = document.getElementById("home-blog-grid");
+    if (!homeGrid) return;
+
+    // Get latest 3 posts
+    const latestPosts = [...blogData]
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .slice(0, 3);
+
+    homeGrid.innerHTML = latestPosts.map((post, index) => `
+        <a href="#/blog?slug=${post.slug}" class="group block opacity-0 translate-y-10 animate-on-scroll"
+                 style="transition-delay: ${index * 150}ms;">
+            <article class="h-full bg-white rounded-[2rem] border border-slate-200 overflow-hidden hover:shadow-2xl hover:shadow-brand/5 transition-all duration-500 hover:-translate-y-2">
+                <div class="relative h-64 overflow-hidden">
+                    <div class="absolute inset-0 bg-brand/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="${post.image}" alt="${post.alt}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <span class="absolute top-6 left-6 z-20 px-4 py-1.5 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-widest text-brand shadow-sm">
+                        ${post.category}
+                    </span>
+                </div>
+                
+                <div class="p-8">
+                    <div class="flex items-center gap-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">
+                        <span><i class="fa-regular fa-calendar mr-1.5 text-brand"></i> ${new Date(post.date).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                        <span class="w-1 h-1 rounded-full bg-slate-200"></span>
+                        <span><i class="fa-regular fa-clock mr-1.5 text-brand"></i> ${post.readTime}</span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-slate-900 mb-4 group-hover:text-brand transition-colors leading-tight" style="font-family: 'Outfit', sans-serif;">
+                        ${post.title}
+                    </h3>
+                    
+                    <p class="text-slate-500 text-sm line-clamp-2 mb-6 leading-relaxed">
+                        ${post.description}
+                    </p>
+                    
+                    <div class="inline-flex items-center gap-2 text-brand font-black text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
+                        Read Full Insight
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </div>
+                </div>
+            </article>
+        </a>
+    `).join('');
+
+    // Re-init animations
+    if (window.initScrollAnimations) window.initScrollAnimations();
+}
+
 // Homepage Contact Form Logic
 export function initHomeContactForm() {
     const form = document.getElementById('homeContactForm');
@@ -200,3 +251,4 @@ export function initHomeContactForm() {
 
 // Initialize
 initHomeContactForm();
+initHomeBlog();

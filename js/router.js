@@ -79,7 +79,8 @@ export async function loadRoute() {
   }
 }
 
-function initScrollAnimations() {
+// Expose function globally to allow re-triggering for dynamic content
+window.initScrollAnimations = function initScrollAnimations() {
   const scrollObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
