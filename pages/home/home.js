@@ -10,9 +10,9 @@ if (track && homeProducts && (track.children.length === 0 || !track.firstElement
   track.innerHTML = homeProducts.map(p => `
           <div class="carousel-card flex flex-col justify-between h-auto rounded-2xl bg-primary border border-slate-100 hover:border-blue-200 cursor-pointer overflow-hidden">
             <a href="${p.navigatelink}" onclick="window.location.hash='${p.navigatelink.replace('#', '')}'" class="flex flex-col h-full"> 
-              <div class="relative w-full h-64 overflow-hidden rounded-t-xl bg-secondary flex items-center justify-center p-4">
-                <img src="${p.image}" alt="${p.name}" class="object-contain h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-500 cursor-pointer">
-              </div>
+             <div class="relative w-full h-64 overflow-hidden rounded-t-[22px] bg-slate-50 flex items-center justify-center p-6 group">
+                    <img src="${p.image}" alt="${p.name}" class="object-contain h-full w-full transition-transform duration-700 ease-out cursor-pointer">
+                </div>
               <div class="p-6 text-left flex-grow flex flex-col justify-between border-t border-slate-100">
                 <div>
                   <h3 class="text-xl font-bold text-primary mb-2 leading-tight">${p.name}</h3>
@@ -104,7 +104,7 @@ if (track && prevBtn && nextBtn) {
 
   function updateSlide(animate = true) {
     if (!track) return;
-    track.style.transition = animate ? "transform 0.5s cubic(0.4, 0, 0.2, 1)" : "none";
+    track.style.transition = animate ? "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)" : "none";
     track.style.transform = `translateX(-${index * itemWidth()}px)`;
     updateCenterAndDots();
     if (animate) isTransitioning = true;
@@ -161,15 +161,15 @@ if (track && prevBtn && nextBtn) {
 
 // Home Page Blog Rendering
 function initHomeBlog() {
-    const homeGrid = document.getElementById("home-blog-grid");
-    if (!homeGrid) return;
+  const homeGrid = document.getElementById("home-blog-grid");
+  if (!homeGrid) return;
 
-    // Get latest 3 posts
-    const latestPosts = [...blogData]
-        .sort((a, b) => new Date(b.date) - new Date(a.date))
-        .slice(0, 3);
+  // Get latest 3 posts
+  const latestPosts = [...blogData]
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 3);
 
-    homeGrid.innerHTML = latestPosts.map((post, index) => `
+  homeGrid.innerHTML = latestPosts.map((post, index) => `
         <a href="#/blog?slug=${post.slug}" class="group block opacity-0 translate-y-10 animate-on-scroll"
                  style="transition-delay: ${index * 150}ms;">
             <article class="h-full bg-white rounded-[2rem] border border-slate-200 overflow-hidden hover:shadow-2xl hover:shadow-brand/5 transition-all duration-500 hover:-translate-y-2">
@@ -205,34 +205,34 @@ function initHomeBlog() {
         </a>
     `).join('');
 
-    // Re-init animations
-    if (window.initScrollAnimations) window.initScrollAnimations();
+  // Re-init animations
+  if (window.initScrollAnimations) window.initScrollAnimations();
 }
 
 // Homepage Contact Form Logic
 export function initHomeContactForm() {
-    const form = document.getElementById('homeContactForm');
-    if (!form) return;
+  const form = document.getElementById('homeContactForm');
+  if (!form) return;
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-        // 1. Prepare Data
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
+    // 1. Prepare Data
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
 
-        // 2. UI Feedback (Loading)
-        const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
-        const originalContent = submitBtn.innerHTML;
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = `<span class="text-md font-semibold text-light">Sending...</span> <i class="fa-solid fa-spinner animate-spin text-light"></i>`;
+    // 2. UI Feedback (Loading)
+    const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
+    const originalContent = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `<span class="text-md font-semibold text-light">Sending...</span> <i class="fa-solid fa-spinner animate-spin text-light"></i>`;
 
-        // 3. Submit via Standard API
-        const result = await submitForm(data);
+    // 3. Submit via Standard API
+    const result = await submitForm(data);
 
-        if (result.success) {
-            // Show success message
-            form.innerHTML = `
+    if (result.success) {
+      // Show success message
+      form.innerHTML = `
                 <div class="flex flex-col items-center justify-center py-12 px-4 text-center">
                     <div class="h-20 w-20 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-emerald-100">
                         <i class="fa-solid fa-check text-4xl text-emerald-500"></i>
@@ -241,14 +241,79 @@ export function initHomeContactForm() {
                     <p class="text-slate-500 text-sm leading-relaxed max-w-[280px]">Thank you for your message. We will get back to you shortly.</p>
                 </div>
             `;
-        } else {
-            alert(result.message);
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalContent;
-        }
-    });
+    } else {
+      alert(result.message);
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalContent;
+    }
+  });
 }
 
 // Initialize
 initHomeContactForm();
 initHomeBlog();
+
+// Homepage Counters Logic
+export function initHomeCounters() {
+  const animateValue = (obj, start, end, duration) => {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+
+      // Premium Ease-Out-Quart for smooth finish
+      const easeOutProgress = 1 - Math.pow(1 - progress, 4);
+      const currentVal = Math.floor(easeOutProgress * (end - start) + start);
+
+      obj.innerHTML = currentVal;
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        obj.innerHTML = end;
+      }
+    };
+    window.requestAnimationFrame(step);
+  };
+
+  const startCounters = (counters) => {
+    counters.forEach(counter => {
+      if (!counter.classList.contains('counted')) {
+        const target = parseInt(counter.getAttribute('data-target'), 10);
+        if (!isNaN(target)) {
+          animateValue(counter, 0, target, 3000); // 2 Seconds
+          counter.classList.add('counted');
+        }
+      }
+    });
+  };
+
+  // Setup the Intersection Observer
+  const observerOptions = {
+    threshold: 0.1
+  };
+
+  const counterObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counters = entry.target.querySelectorAll('.counter');
+        if (counters.length > 0) {
+          startCounters(counters);
+          observer.unobserve(entry.target);
+        }
+      }
+    });
+  }, observerOptions);
+
+  const searchSelectors = ['.animate-on-scroll', '.bg-white.p-8'];
+  searchSelectors.forEach(selector => {
+    document.querySelectorAll(selector).forEach(el => {
+      if (el.querySelector('.counter')) {
+        counterObserver.observe(el);
+      }
+    });
+  });
+}
+
+// Execute initialization
+setTimeout(initHomeCounters, 200);

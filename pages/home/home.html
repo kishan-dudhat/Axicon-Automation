@@ -275,16 +275,16 @@
       </div>
 
       <!-- Mobile Layout: Navigation & Dots -->
-      <div class="flex justify-center items-center gap-4 mt-8 pb-4 relative z-10 w-full">
-        <button class="nav-btn left" id="prevBtn" aria-label="Previous Products">
+      <div class="flex justify-between md:justify-center items-center gap-4 mt-8 pb-4 relative z-10 w-full px-4 sm:px-8">
+        <button class="nav-btn left shrink-0" id="prevBtn" aria-label="Previous Products">
           <i class="fa-solid fa-chevron-left"></i>
         </button>
 
-        <div id="carouselDots" class="flex justify-center items-center gap-2 px-3">
+        <div id="carouselDots" class="hidden md:flex justify-center items-center gap-2 px-3 overflow-hidden">
           <!-- Dots injected via JS -->
         </div>
 
-        <button class="nav-btn right" id="nextBtn" aria-label="Next Products">
+        <button class="nav-btn right shrink-0" id="nextBtn" aria-label="Next Products">
           <i class="fa-solid fa-chevron-right"></i>
         </button>
       </div>
@@ -760,12 +760,14 @@
 
       <h2
         class="section-heading mb-6 opacity-0 translate-y-10 transition-all duration-700 delay-100 ease-out animate-on-scroll">
-        Precision Trusted by <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Industry Leaders</span>
+        Precision Trusted by <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Industry Leaders</span>
       </h2>
 
       <p
         class="text-lg text-secondary font-light opacity-0 translate-y-10 transition-all duration-700 delay-200 ease-out animate-on-scroll max-w-2xl mx-auto mb-0 leading-relaxed">
-        Powering innovation for over 3,500+ global enterprises with high-precision fiber laser systems and dedicated technical support.
+        Powering innovation for over 3,500+ global enterprises with high-precision fiber laser systems and dedicated
+        technical support.
       </p>
     </div>
 
@@ -774,61 +776,60 @@
       class="marquee-container opacity-0 translate-y-10 transition-all duration-1000 delay-300 ease-out animate-on-scroll mt-12">
       <div class="marquee-content flex gap-12 md:gap-32 py-10 items-center">
         <!-- High-Truth Industrial Clients & Sectors -->
-        <div class="client-logo-item group">
-          <i class="fa-solid fa-industry text-5xl md:text-7xl text-slate-400 group-hover:text-brand transition-all duration-500"></i>
-          <span class="block mt-4 text-[11px] font-black uppercase tracking-widest text-slate-400 group-hover:text-slate-600 transition-colors">Tata Steel</span>
-        </div>
-        <div class="client-logo-item group">
-          <i class="fa-solid fa-shield-halved text-5xl md:text-7xl text-slate-400 group-hover:text-brand transition-all duration-500"></i>
-          <span class="block mt-4 text-[11px] font-black uppercase tracking-widest text-slate-400 group-hover:text-slate-600 transition-colors">L&T Defense</span>
-        </div>
-        <div class="client-logo-item group">
-          <i class="fa-solid fa-oil-well text-5xl md:text-7xl text-slate-400 group-hover:text-brand transition-all duration-500"></i>
-          <span class="block mt-4 text-[11px] font-black uppercase tracking-widest text-slate-400 group-hover:text-slate-600 transition-colors">Reliance</span>
-        </div>
-        <div class="client-logo-item group">
-          <i class="fa-solid fa-gem text-5xl md:text-7xl text-slate-400 group-hover:text-brand transition-all duration-500"></i>
-          <span class="block mt-4 text-[11px] font-black uppercase tracking-widest text-slate-400 group-hover:text-slate-600 transition-colors">Aditya Birla</span>
-        </div>
-        <div class="client-logo-item group">
-          <i class="fa-solid fa-microchip text-5xl md:text-7xl text-slate-400 group-hover:text-brand transition-all duration-500"></i>
-          <span class="block mt-4 text-[11px] font-black uppercase tracking-widest text-slate-400 group-hover:text-slate-600 transition-colors">Radhe Laser</span>
-        </div>
-        <div class="client-logo-item group">
-          <i class="fa-solid fa-gears text-5xl md:text-7xl text-slate-400 group-hover:text-brand transition-all duration-500"></i>
-          <span class="block mt-4 text-[11px] font-black uppercase tracking-widest text-slate-400 group-hover:text-slate-600 transition-colors">RK Laser Fab</span>
-        </div>
+
 
         <!-- Repeated for infinite marquee loop -->
         <div class="client-logo-item group" aria-hidden="true">
-          <i class="fa-solid fa-industry text-5xl md:text-7xl text-slate-400 group-hover:text-brand transition-all duration-500"></i>
-          <span class="block mt-4 text-[11px] font-black uppercase tracking-widest text-slate-400 group-hover:text-slate-600 transition-colors">Tata Steel</span>
+          <img src="../../assets/images/HomeImage/client-1.jpeg" alt="Tata Steel" class="w-24 h-24 object-contain">
         </div>
         <div class="client-logo-item group" aria-hidden="true">
-          <i class="fa-solid fa-shield-halved text-5xl md:text-7xl text-slate-400 group-hover:text-brand transition-all duration-500"></i>
-          <span class="block mt-4 text-[11px] font-black uppercase tracking-widest text-slate-400 group-hover:text-slate-600 transition-colors">L&T Defense</span>
+          <img src="../../assets/images/HomeImage/client-2.jpeg" alt="Tata Steel" class="w-24 h-24 object-contain">
         </div>
         <div class="client-logo-item group" aria-hidden="true">
-          <i class="fa-solid fa-oil-well text-5xl md:text-7xl text-slate-400 group-hover:text-brand transition-all duration-500"></i>
-          <span class="block mt-4 text-[11px] font-black uppercase tracking-widest text-slate-400 group-hover:text-slate-600 transition-colors">Reliance</span>
+          <img src="../../assets/images/HomeImage/client-3.jpeg" alt="Tata Steel" class="w-24 h-24 object-contain">
+        </div>
+        <div class="client-logo-item group" aria-hidden="true">
+          <img src="../../assets/images/HomeImage/client-4.jpeg" alt="Tata Steel" class="w-24 h-24 object-contain">
+        </div>
+        <div class="client-logo-item group" aria-hidden="true">
+          <img src="../../assets/images/HomeImage/client-5.jpeg" alt="Tata Steel" class="w-24 h-24 object-contain">
+        </div>
+        <div class="client-logo-item group" aria-hidden="true">
+          <img src="../../assets/images/HomeImage/client-6.jpeg" alt="Tata Steel" class="w-24 h-24 object-contain">
         </div>
       </div>
     </div>
 
     <!-- Success Metrics Bar -->
-    <div class="mt-20 pt-16 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 opacity-0 translate-y-10 transition-all duration-1000 delay-500 ease-out animate-on-scroll">
-       <div class="flex flex-col items-center group cursor-default">
-          <span class="text-4xl md:text-5xl font-black text-brand mb-2 group-hover:scale-110 transition-transform">3,500+</span>
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary">Global Partners</span>
-       </div>
-       <div class="flex flex-col items-center group cursor-default">
-          <span class="text-4xl md:text-5xl font-black text-brand mb-2 group-hover:scale-110 transition-transform">15+</span>
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary">Countries Served</span>
-       </div>
-       <div class="flex flex-col items-center group cursor-default">
-          <span class="text-4xl md:text-5xl font-black text-brand mb-2 group-hover:scale-110 transition-transform">24/7</span>
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary">Expert Support</span>
-       </div>
+    <div
+      class="mt-10  grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 opacity-0 translate-y-10 transition-all duration-1000 delay-500 ease-out animate-on-scroll">
+
+      <!-- Card 1 -->
+      <div
+        class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] border border-gray-300 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
+        <span class="text-4xl md:text-5xl font-extrabold text-brand mb-2"><span class="counter"
+            data-target="3500">0</span>+</span>
+        <span
+          class="text-[0.85rem] font-bold text-slate-400 tracking-widest uppercase leading-tight mt-2">Installation</span>
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] border border-gray-300 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
+        <span class="text-4xl md:text-5xl font-extrabold text-cyan-500 mb-2"><span class="counter"
+            data-target="15">0</span>+</span>
+        <span class="text-[0.85rem] font-bold text-slate-400 tracking-widest uppercase leading-tight mt-2">Team</span>
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] border border-gray-300 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
+        <span class="text-4xl md:text-5xl font-extrabold text-orange-400 mb-2"><span class="counter"
+            data-target="7">0</span>+</span>
+        <span class="text-[0.85rem] font-bold text-slate-400 tracking-widest uppercase leading-tight mt-2">Years
+          Experience</span>
+      </div>
+
     </div>
 
 
@@ -1022,6 +1023,10 @@
                   <a href="tel:+919978430431"
                     class="block text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
                     +91-9978430431
+                  </a>
+                  <a href="tel:+919099653777"
+                    class="block text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
+                    +91-9099653777
                   </a>
                 </div>
               </div>

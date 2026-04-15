@@ -1,0 +1,119 @@
+/* Product2 Page Specific Styles - Optimized for performance and SEO */
+
+/* Variables for consistency */
+:root {
+    --brand-blue: #1773d0;
+    --brand-dark: #0f172a;
+    --brand-light: #f8fafc;
+    --accent-cyan: #06b6d4;
+}
+
+/* Custom Hero Styles */
+.product-hero {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0f172a;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+/* Animation utilities */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Carousel Professional Styling */
+.carousel-viewport {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-nav-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #e2e8f0;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 30;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.carousel-nav-btn:hover {
+    border-color: var(--brand-blue);
+    color: var(--brand-blue);
+    transform: scale(1.05);
+}
+
+.thumb-box {
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.thumb-box.active {
+    border-color: var(--brand-blue);
+    box-shadow: 0 4px 12px -2px rgba(23, 115, 208, 0.2);
+}
+
+/* Technical Specification Table */
+.spec-row:hover {
+    background-color: #f1f5f9;
+}
+
+/* Application Industries Hover Effects */
+.industry-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.industry-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--brand-blue);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+}
+
+/* Scrollbar Customization */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .product-hero {
+        min-height: 300px;
+    }
+}
