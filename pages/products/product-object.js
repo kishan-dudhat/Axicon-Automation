@@ -4,11 +4,11 @@ export const products = [
     name: "Fiber Laser Marking Machine",
     description: "High-precision fiber laser marking machine designed for permanent marking on metals and some plastics. Ideal for serial numbers, barcodes, logos, and QR codes. Offers high speed, low maintenance, long laser life, and consistent marking quality for industrial production environments.",
     productcarouselImage: {
-      image: { src: "https://img.freepik.com/free-photo/laser-engraving-machine-metal_23-2149366662.jpg", alt: "Axicon Automation Fiber Laser Marking Machine - Precise Metal Engraving Illustration" },
-      image2: { src: "https://img.freepik.com/free-photo/laser-engraving-machine-industrial_23-2149366661.jpg", alt: "Industrial Fiber Laser Marking Setup for High-Speed Production" },
-      image3: { src: "https://img.freepik.com/free-photo/laser-marking-machine-metal-parts_23-2149366658.jpg", alt: "Detailed Laser Marking on Industrial Metallic Parts and Components" },
-      image4: { src: "https://img.freepik.com/free-photo/industrial-laser-machine_23-2149366660.jpg", alt: "Axicon Fiber Laser Marking Machine for Permanent Product Identification" },
-      image5: { src: "https://img.freepik.com/free-photo/laser-engraving-process_23-2149366659.jpg", alt: "High-Resolution Laser Engraving and Etching on Hardware Parts" }
+      image: { src: "./assets/images/ProductsImage/fiber-laser-marking-machine.png", alt: "Axicon Automation Fiber Laser Marking Machine - Precise Metal Engraving Illustration" },
+      image2: { src: "./assets/images/ProductsImage/fiber-laser-marking-machine-2.png", alt: "Industrial Fiber Laser Marking Setup for High-Speed Production" },
+      image3: { src: "./assets/images/ProductsImage/fiber-laser-marking-machine-3.webp", alt: "Detailed Laser Marking on Industrial Metallic Parts and Components" },
+      image4: { src: "./assets/images/ProductsImage/fiber-laser-marking-machine-4.jpg", alt: "Axicon Fiber Laser Marking Machine for Permanent Product Identification" },
+      // image5: { src: "https://img.freepik.com/free-photo/laser-engraving-process_23-2149366659.jpg", alt: "High-Resolution Laser Engraving and Etching on Hardware Parts" }
     },
     seoTitle: "Fiber Laser Marking Machine | Axicon Automation - Metal Marking Solutions",
     seoDescription: "Explore the best Fiber Laser Marking Machine for metals. High-precision laser engraving for serial numbers, barcodes, and logos. 20W/30W/50W/100W options available.",
@@ -22,9 +22,10 @@ export const products = [
       "Power Supply": "220V / 50Hz"
     },
     applicationImages: [
-      { src: "https://img.freepik.com/free-photo/laser-engraving-metal_23-2149366657.jpg", alt: "Fiber Laser Marking Application on Automotive Parts" },
-      { src: "https://img.freepik.com/free-photo/laser-marking-metal_23-2149366656.jpg", alt: "Precise Laser Marking on Electronic Hardware Components" },
-      { src: "https://img.freepik.com/free-photo/industrial-laser-marking_23-2149366655.jpg", alt: "Permanent Laser Branding on Industrial Tools and Gears" }
+      { src: "./assets/images/ProductsImage/fiber-laser-marking-machine-app-1.webp", alt: "Fiber Laser Marking Application on Automotive Parts" },
+      { src: "./assets/images/ProductsImage/fiber-laser-marking-machine-app-2.webp", alt: "Precise Laser Marking on Electronic Hardware Components" },
+      { src: "./assets/images/ProductsImage/fiber-laser-marking-machine-app-3.webp", alt: "Permanent Laser Branding on Industrial Tools and Gears" },
+      { src: "./assets/images/ProductsImage/fiber-laser-marking-machine-app-4.webp", alt: "Permanent Laser Branding on Industrial Tools and Gears" },
     ]
   },
 
@@ -33,11 +34,11 @@ export const products = [
     name: "UV Laser Marking Machine",
     description: "UV laser marking machine provides ultra-fine, cold marking for sensitive materials like plastic, glass, and medical devices. Produces high-contrast marks without thermal damage. Ideal for electronics, pharmaceutical packaging, and precision industries requiring delicate, permanent marking.",
     productcarouselImage: {
-      image: { src: "https://img.freepik.com/free-photo/laser-marking-plastic_23-2149366654.jpg", alt: "Axicon UV Laser Marking Machine for Sensitive Heat-Sensitive Plastics" },
-      image2: { src: "https://img.freepik.com/free-photo/uv-laser-machine_23-2149366653.jpg", alt: "High-Precision UV Laser Marking Solution for Industrial Precision" },
-      image3: { src: "https://img.freepik.com/free-photo/laser-marking-glass_23-2149366652.jpg", alt: "UV Laser Glass Etching and Marking for Medical and Pharma Labelling" },
-      image4: { src: "https://img.freepik.com/free-photo/uv-laser-industrial_23-2149366651.jpg", alt: "Advanced UV Laser Machine for Permanent Cold Marking Applications" },
-      image5: { src: "https://img.freepik.com/free-photo/precision-laser-machine_23-2149366650.jpg", alt: "Ultra-Fine UV Laser Marking Process for Precision Electronic Parts" }
+      image: { src: "./assets/images/ProductsImage/uv-laser-marking-machine.png", alt: "Axicon UV Laser Marking Machine for Sensitive Heat-Sensitive Plastics" },
+      image2: { src: "./assets/images/ProductsImage/uv-laser-marking-machine-2.webp", alt: "High-Precision UV Laser Marking Solution for Industrial Precision" },
+      // image3: { src: "./assets/images/ProductsImage/uv-laser-marking-machine-3.webp", alt: "UV Laser Glass Etching and Marking for Medical and Pharma Labelling" },
+      // image4: { src: "./assets/images/ProductsImage/uv-laser-marking-machine-4.webp", alt: "Advanced UV Laser Machine for Permanent Cold Marking Applications" },
+      // image5: { src: "./assets/images/ProductsImage/uv-laser-marking-machine-5.webp", alt: "Ultra-Fine UV Laser Marking Process for Precision Electronic Parts" }
     },
     seoTitle: "UV Laser Marking Machine | Axicon Automation - Precision Glass & Plastic Marking",
     seoDescription: "UV Laser Marking Machine for cold marking on glass, plastic, and sensitive materials. 355nm wavelength ensures high contrast without thermal damage.",
@@ -51,9 +52,9 @@ export const products = [
       "Precision": "Ultra Fine"
     },
     applicationImages: [
-      { src: "https://img.freepik.com/free-photo/uv-laser-glass_23-2149366649.jpg", alt: "Medical Grade UV Laser Marking on Specialized Glassware" },
-      { src: "https://img.freepik.com/free-photo/uv-laser-plastic_23-2149366648.jpg", alt: "Pharmaceutical Packaging UV Laser Marking for Batch Codes" },
-      { src: "https://img.freepik.com/free-photo/precision-laser-marking_23-2149366647.jpg", alt: "Sensitive Electronic Material marking via Cold UV Laser" }
+      { src: "./assets/images/ProductsImage/uv-laser-marking-machine-app.jpg", alt: "Medical Grade UV Laser Marking on Specialized Glassware" },
+      { src: "./assets/images/ProductsImage/uv-laser-marking-machine-app-2.jpg", alt: "Pharmaceutical Packaging UV Laser Marking for Batch Codes" },
+      { src: "./assets/images/ProductsImage/uv-laser-marking-machine-app-3.webp", alt: "Sensitive Electronic Material marking via Cold UV Laser" }
     ]
   },
 
@@ -62,7 +63,7 @@ export const products = [
     name: "CO2 Laser Marking Machine",
     description: "CO₂ laser marking machine is suitable for non-metal materials such as wood, acrylic, leather, paper, and plastics. Provides clean, high-speed marking and engraving. Widely used in packaging, crafts, and industrial applications requiring permanent marking on organic materials.",
     productcarouselImage: {
-      image: { src: "https://img.freepik.com/free-photo/co2-laser-machine_23-2149366646.jpg", alt: "Axicon CO2 Laser Marking Machine for Non-Metallic Industrial Materials" },
+      image: { src: "./assets/images/ProductsImage/co2-laser-marking-machine.png", alt: "Axicon CO2 Laser Marking Machine for Non-Metallic Industrial Materials" },
       image2: { src: "https://img.freepik.com/free-photo/laser-cutting-wood_23-2149366645.jpg", alt: "Precision CO2 Laser Cutting and Engraving on Premium Quality Wood" },
       image3: { src: "https://img.freepik.com/free-photo/co2-laser-engraving_23-2149366644.jpg", alt: "Acrylic and Plastic Engraving Solution with High-Speed CO2 Laser" },
       image4: { src: "https://img.freepik.com/free-photo/laser-marking-wood_23-2149366643.jpg", alt: "Industrial Wood Branding and Marking via CO2 Laser Technology" },
@@ -79,8 +80,8 @@ export const products = [
       "Speed": "7000 mm/s"
     },
     applicationImages: [
-      { src: "https://img.freepik.com/free-photo/laser-wood_23-2149366641.jpg", alt: "Custom Wood Product Personalized Engraving via CO2 Laser" },
-      { src: "https://img.freepik.com/free-photo/co2-laser-acrylic_23-2149366640.jpg", alt: "Clear Acrylic and Plastic Part Marking with Advanced CO2 Laser" }
+      { src: "./assets/images/ProductsImage/co2-laser-marking-machine-app-1.webp", alt: "Custom Wood Product Personalized Engraving via CO2 Laser" },
+      { src: "./assets/images/ProductsImage/co2-laser-marking-machine-app-2.webp", alt: "Clear Acrylic and Plastic Part Marking with Advanced CO2 Laser" }
     ]
   },
 
@@ -277,7 +278,7 @@ export const products = [
   {
     id: 11,
     name: "Tube Pipe Laser Cutting Machine",
-    description: "Tube pipe laser cutting machine is designed for precision cutting of round, square, and rectangular pipes. High-speed rotary system ensures accurate cuts. Ideal for furniture, automotive, and structural fabrication industries.",    productcarouselImage: {
+    description: "Tube pipe laser cutting machine is designed for precision cutting of round, square, and rectangular pipes. High-speed rotary system ensures accurate cuts. Ideal for furniture, automotive, and structural fabrication industries.", productcarouselImage: {
       image: { src: "https://img.freepik.com/free-photo/laser-cutting-metal-pipe_23-2149419927.jpg", alt: "Axicon Tube and Pipe Laser Cutting Machine for Structural Steel Profiles" },
       image2: { src: "https://img.freepik.com/free-photo/industrial-tube-laser-cutting_23-2149419926.jpg", alt: "Automatic Rotary Tube Cutting Solution for Round and Square Pipes" },
       image3: { src: "https://img.freepik.com/free-photo/pipe-laser-cutting-machine_23-2149419925.jpg", alt: "High-Performance Industrial Laser Pipe Processing and Cutting System" },
