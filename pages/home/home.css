@@ -249,49 +249,38 @@
   -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   overflow: hidden;
   user-select: none;
-  display: flex;
   position: relative;
   width: 100%;
 }
 
 .marquee-content {
-  animation: scroll-marquee 20s linear infinite;
+  animation: scroll-marquee 25s linear infinite;
   display: flex;
-  flex-shrink: 3;
-  min-width: 100%;
+  width: max-content;
 }
 
 @keyframes scroll-marquee {
-  from {
-    transform: translateX(0);
+  0% {
+    transform: translate3d(0, 0, 0);
   }
 
-  to {
-    transform: translateX(-50%);
+  100% {
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
-.marquee-container:hover .marquee-content {
-  animation-play-state: paused;
-}
 
 .client-logo-item {
-  /* flex-shrink: ; */
-  width: 250px;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   transform: translateY(-10px) scale(1.1);
-  filter: grayscale(0);
-  opacity: 1;
+  width: 120px;
 }
 
-.client-logo-item:hover {
-  transform: translateY(-20px) scale(1.1);
-  filter: grayscale(0);
-  opacity: 1;
-}
+
 
 @media (max-width: 768px) {
   .client-logo-item {

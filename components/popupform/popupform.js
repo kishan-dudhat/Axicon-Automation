@@ -19,7 +19,7 @@ export function initPopupForm() {
         setTimeout(() => {
             popup.classList.remove('opacity-0');
         }, 10);
-    }, 6000);
+    }, 10000);
 
     const closePopup = () => {
         popup.classList.add('opacity-0');
