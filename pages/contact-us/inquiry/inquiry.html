@@ -1,24 +1,42 @@
-<!-- Hero Section -->
-<section
-  class="relative w-full h-[50vh] md:h-[60vh] lg:h-[75vh] min-h-[400px] flex items-center justify-center overflow-hidden lg:mb-5 bg-gray-900 border-b border-brand/20">
-  <!-- Premium Gradient Overlay -->
-  <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-transparent z-10"></div>
-  <div class="absolute inset-0 bg-black/30 z-10"></div>
+<!DOCTYPE html>
+<html lang="en">
 
-  <img src="./assets/images/contactImage/contact-hero-image-new.png"
-    class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
-    alt="Request an Industrial Automation Inquiry from Axicon - Custom Laser Solutions" />
-  <div class="relative z-20 text-center px-4 md:px-8 mt-16 md:mt-24">
-    <h1 class="
+<head>
+  <title>Send Inquiry | Axicon Automation</title>
+  <meta name="description"
+    content="Send your product inquiry to Axicon Automation. Our team will respond with specifications, pricing, and a customized quote." />
+  <link rel="canonical" href="https://www.axiconautomation.com/inquiry" />
+  <meta property="og:url" content="https://www.axiconautomation.com/inquiry" />
+  <meta property="og:title" content="Send Inquiry | Axicon Automation" />
+  <meta property="og:description"
+    content="Send your product inquiry to Axicon Automation. Our team will respond with specifications, pricing, and a customized quote." />
+  <meta property="og:image" content="https://www.axiconautomation.com/assets/images/axicon-automation-logo.webp" />
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="/pages/contact-us/inquiry/inquiry.css" />
+</head>
+
+<body>
+  <!-- Hero Section -->
+  <section
+    class="relative w-full h-[50vh] md:h-[60vh] lg:h-[75vh] min-h-[400px] flex items-center justify-center overflow-hidden lg:mb-5 bg-gray-900 border-b border-brand/20">
+    <!-- Premium Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-transparent z-10"></div>
+    <div class="absolute inset-0 bg-black/30 z-10"></div>
+
+    <img src="./assets/images/contactImage/contact-hero-image-new.png"
+      class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+      alt="Request an Industrial Automation Inquiry from Axicon - Custom Laser Solutions" />
+    <div class="relative z-20 text-center px-4 md:px-8 mt-16 md:mt-24">
+      <h1 class="
            text-light text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold
            mb-4 sm:mb-6
            opacity-0 scale-95 translate-y-4
            transition-all duration-700 ease-out
            animate-on-scroll
          " style="font-family: 'Outfit', sans-serif;">
-      Inquiry
-    </h1>
-    <p class="
+        Inquiry
+      </h1>
+      <p class="
            text-slate-300
            text-base sm:text-lg md:text-xl font-light
            opacity-0 translate-y-4
@@ -26,321 +44,324 @@
            animate-on-scroll
            mb-10 max-w-3xl leading-relaxed mx-auto
          ">
-      Ready to scale your production? Share your project details and our engineers will design the ideal automation
-      strategy for your facility.
-    </p>
-  </div>
-</section>
+        Ready to scale your production? Share your project details and our engineers will design the ideal automation
+        strategy for your facility.
+      </p>
+    </div>
+  </section>
 
-<!-- Inquiry Form Section -->
-<section class="pb-24 px-4 bg-gradient-to-br from-[#ffffff] to-[#f8fafc] relative z-20 rounded-t-3xl">
-  <div class="max-w-6xl mx-auto relative z-10">
+  <!-- Inquiry Form Section -->
+  <section class="pb-24 px-4 bg-gradient-to-br from-[#ffffff] to-[#f8fafc] relative z-20 rounded-t-3xl">
+    <div class="max-w-6xl mx-auto relative z-10">
 
-    <!-- Form Container -->
-    <div
-      class="bg-primary rounded-[2.5rem] shadow-[0_30px_60px_rgba(0,0,0,0.06)] border border-gray-200 overflow-hidden max-w-5xl mx-auto animate-on-scroll opacity-0 translate-y-12">
-      <div class="p-8 md:p-12 lg:p-14">
-        <form id="inquiryForm" class="space-y-12" novalidate>
+      <!-- Form Container -->
+      <div
+        class="bg-primary rounded-[2.5rem] shadow-[0_30px_60px_rgba(0,0,0,0.06)] border border-gray-200 overflow-hidden max-w-5xl mx-auto animate-on-scroll opacity-0 translate-y-12">
+        <div class="p-8 md:p-12 lg:p-14">
+          <form id="inquiryForm" class="space-y-12" novalidate>
 
-          <!-- Section 1: Contact & Company Details -->
-          <div>
-            <h4 class="text-xl font-bold text-[#1e293b] mb-8 flex items-center gap-3">
-              <i class="fa-solid fa-address-card text-brand text-xs"></i>
-              Personal & Company Details
-            </h4>
+            <!-- Section 1: Contact & Company Details -->
+            <div>
+              <h4 class="text-xl font-bold text-[#1e293b] mb-8 flex items-center gap-3">
+                <i class="fa-solid fa-address-card text-brand text-xs"></i>
+                Personal & Company Details
+              </h4>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <!-- Name -->
-              <div class="space-y-2">
-                <input type="text" id="name" name="name" required placeholder="Full Name *"
-                  class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
-                <p id="nameErr" class="text-xs text-red-500 hidden font-medium ml-1">Name is required.</p>
-              </div>
-
-              <!-- Company Name -->
-              <div class="space-y-2">
-                <input type="text" id="company" name="company" required placeholder="Company Name *"
-                  class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
-                <p id="companyErr" class="text-xs text-red-500 hidden font-medium ml-1">Company name required.</p>
-              </div>
-
-              <!-- Industry & Designation -->
-              <div class="grid grid-cols-2 gap-4 md:col-span-2">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Name -->
                 <div class="space-y-2">
-                  <select name="industry"
-                    class="w-full px-5 py-4 bg-secondary border border-color form-option-text rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm">
-                    <option value="" class="form-option-text">Industry Category</option>
-                    <option value="Automotive" class="form-option-text">Automotive</option>
-                    <option value="Jewellery" class="form-option-text">Jewellery</option>
-                    <option value="Medical" class="form-option-text">Medical</option>
-                    <option value="Electronics" class="form-option-text">Electronics</option>
-                    <option value="Aerospace" class="form-option-text">Aerospace</option>
-                    <option value="Other" class="form-option-text">Other</option>
+                  <input type="text" id="name" name="name" required placeholder="Full Name *"
+                    class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
+                  <p id="nameErr" class="text-xs text-red-500 hidden font-medium ml-1">Name is required.</p>
+                </div>
+
+                <!-- Company Name -->
+                <div class="space-y-2">
+                  <input type="text" id="company" name="company" required placeholder="Company Name *"
+                    class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
+                  <p id="companyErr" class="text-xs text-red-500 hidden font-medium ml-1">Company name required.</p>
+                </div>
+
+                <!-- Industry & Designation -->
+                <div class="grid grid-cols-2 gap-4 md:col-span-2">
+                  <div class="space-y-2">
+                    <select name="industry"
+                      class="w-full px-5 py-4 bg-secondary border border-color form-option-text rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm">
+                      <option value="" class="form-option-text">Industry Category</option>
+                      <option value="Automotive" class="form-option-text">Automotive</option>
+                      <option value="Jewellery" class="form-option-text">Jewellery</option>
+                      <option value="Medical" class="form-option-text">Medical</option>
+                      <option value="Electronics" class="form-option-text">Electronics</option>
+                      <option value="Aerospace" class="form-option-text">Aerospace</option>
+                      <option value="Other" class="form-option-text">Other</option>
+                    </select>
+                  </div>
+                  <div class="space-y-2">
+                    <input type="text" name="designation" placeholder="Designation"
+                      class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
+                  </div>
+                </div>
+
+                <!-- Laser Processing & Material Type -->
+                <div class="grid grid-cols-2 gap-4 md:col-span-2">
+                  <div class="space-y-2">
+                    <select name="processing_type"
+                      class="w-full px-5 py-4 bg-secondary border border-color form-option-text rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm">
+                      <option value="" class="form-option-text">Laser Processing Type</option>
+                      <option value="Marking" class="form-option-text">Marking</option>
+                      <option value="Welding" class="form-option-text">Welding</option>
+                      <option value="Cutting" class="form-option-text">Cutting</option>
+                      <option value="Cleaning" class="form-option-text">Cleaning</option>
+                      <option value="3D Processing" class="form-option-text">3D Processing</option>
+                      <option value="Other" class="form-option-text">Other</option>
+                    </select>
+                  </div>
+                  <div class="space-y-2">
+                    <select name="material_type"
+                      class="w-full px-5 py-4 bg-secondary border border-color form-option-text rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm">
+                      <option value="" class="form-option-text">Material Type</option>
+                      <option value="Metal" class="form-option-text">Metal</option>
+                      <option value="Plastic" class="form-option-text">Plastic</option>
+                      <option value="Glass" class="form-option-text">Glass</option>
+                      <option value="Wood" class="form-option-text">Wood</option>
+                      <option value="Acrylic" class="form-option-text">Acrylic</option>
+                      <option value="Other" class="form-option-text">Other</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- Address (Full Row) -->
+                <div class="md:col-span-2 space-y-2">
+                  <input type="text" id="address" name="address" required placeholder="Full Factory / Office Address *"
+                    class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
+                  <p id="addressErr" class="text-xs text-red-500 hidden font-medium ml-1">Address is required.</p>
+                </div>
+
+                <!-- City, State, ZIP -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:col-span-2">
+                  <div class="space-y-2">
+                    <input type="text" id="city" name="city" required placeholder="City *"
+                      class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
+                  </div>
+                  <div class="space-y-2">
+                    <input type="text" id="state" name="state" required placeholder="Province / State"
+                      class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
+                  </div>
+                  <div class="space-y-2">
+                    <input type="text" id="pincode" name="pincode" required placeholder="ZIP / PIN CODE *"
+                      class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
+                  </div>
+                </div>
+
+                <!-- Email & Mobile -->
+                <div class="space-y-2">
+                  <input type="email" id="email" name="email" required placeholder="Official Email Address *"
+                    class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
+                  <p id="emailErr" class="text-xs text-red-500 hidden font-medium ml-1">Valid email required.</p>
+                </div>
+                <div class="space-y-2">
+                  <input type="tel" id="contactNumber" name="phone" required placeholder="Mobile / WhatsApp Number *"
+                    class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
+                  <p id="contactNumberErr" class="text-xs text-red-500 hidden font-medium ml-1">Valid 10-digit number
+                    required.</p>
+                </div>
+
+                <!-- Country (Full Row) -->
+                <div class="md:col-span-2 space-y-2">
+                  <select id="country" name="country"
+                    class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm">
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Other">Other</option>
                   </select>
-                </div>
-                <div class="space-y-2">
-                  <input type="text" name="designation" placeholder="Designation"
-                    class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
-                </div>
-              </div>
-
-              <!-- Laser Processing & Material Type -->
-              <div class="grid grid-cols-2 gap-4 md:col-span-2">
-                <div class="space-y-2">
-                  <select name="processing_type"
-                    class="w-full px-5 py-4 bg-secondary border border-color form-option-text rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm">
-                    <option value="" class="form-option-text">Laser Processing Type</option>
-                    <option value="Marking" class="form-option-text">Marking</option>
-                    <option value="Welding" class="form-option-text">Welding</option>
-                    <option value="Cutting" class="form-option-text">Cutting</option>
-                    <option value="Cleaning" class="form-option-text">Cleaning</option>
-                    <option value="3D Processing" class="form-option-text">3D Processing</option>
-                    <option value="Other" class="form-option-text">Other</option>
-                  </select>
-                </div>
-                <div class="space-y-2">
-                  <select name="material_type"
-                    class="w-full px-5 py-4 bg-secondary border border-color form-option-text rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm">
-                    <option value="" class="form-option-text">Material Type</option>
-                    <option value="Metal" class="form-option-text">Metal</option>
-                    <option value="Plastic" class="form-option-text">Plastic</option>
-                    <option value="Glass" class="form-option-text">Glass</option>
-                    <option value="Wood" class="form-option-text">Wood</option>
-                    <option value="Acrylic" class="form-option-text">Acrylic</option>
-                    <option value="Other" class="form-option-text">Other</option>
-                  </select>
-                </div>
-              </div>
-              <!-- Address (Full Row) -->
-              <div class="md:col-span-2 space-y-2">
-                <input type="text" id="address" name="address" required placeholder="Full Factory / Office Address *"
-                  class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
-                <p id="addressErr" class="text-xs text-red-500 hidden font-medium ml-1">Address is required.</p>
-              </div>
-
-              <!-- City, State, ZIP -->
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:col-span-2">
-                <div class="space-y-2">
-                  <input type="text" id="city" name="city" required placeholder="City *"
-                    class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
-                </div>
-                <div class="space-y-2">
-                  <input type="text" id="state" name="state" required placeholder="Province / State"
-                    class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
-                </div>
-                <div class="space-y-2">
-                  <input type="text" id="pincode" name="pincode" required placeholder="ZIP / PIN CODE *"
-                    class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
-                </div>
-              </div>
-
-              <!-- Email & Mobile -->
-              <div class="space-y-2">
-                <input type="email" id="email" name="email" required placeholder="Official Email Address *"
-                  class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
-                <p id="emailErr" class="text-xs text-red-500 hidden font-medium ml-1">Valid email required.</p>
-              </div>
-              <div class="space-y-2">
-                <input type="tel" id="contactNumber" name="phone" required placeholder="Mobile / WhatsApp Number *"
-                  class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
-                <p id="contactNumberErr" class="text-xs text-red-500 hidden font-medium ml-1">Valid 10-digit number
-                  required.</p>
-              </div>
-
-              <!-- Country (Full Row) -->
-              <div class="md:col-span-2 space-y-2">
-                <select id="country" name="country"
-                  class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm">
-                  <option value="India">India</option>
-                  <option value="USA">USA</option>
-                  <option value="Germany">Germany</option>
-                  <option value="Japan">Japan</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <!-- Section 2: Product Selection Grid -->
-          <div>
-            <hr class="border-gray-100 mb-10" />
-            <h4 class="text-xl font-bold text-[#1e293b] mb-8 flex items-center gap-3">
-              <i class="fa-solid fa-layer-group text-brand text-xs"></i>
-              Select Products for Inquiry
-            </h4>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <!-- Category 1: Laser Marking -->
-              <div class="space-y-4">
-                <h5 class="text-sm font-bold text-brand uppercase tracking-wider mb-4 border-b border-brand/10 pb-2">
-                  Laser Marking</h5>
-                <div class="space-y-3">
-                  <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
-                    <input type="checkbox" name="product" value="Fiber Marking" class="hidden" />
-                    <span
-                      class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
-                        class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
-                    <span class="text-sm text-[#1e293b] font-medium">Fiber Laser</span>
-                  </label>
-                  <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
-                    <input type="checkbox" name="product" value="UV Marking" class="hidden" />
-                    <span
-                      class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
-                        class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
-                    <span class="text-sm text-[#1e293b] font-medium">UV Laser</span>
-                  </label>
-                  <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
-                    <input type="checkbox" name="product" value="CO2 Marking" class="hidden" />
-                    <span
-                      class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
-                        class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
-                    <span class="text-sm text-[#1e293b] font-medium">CO2 Laser</span>
-                  </label>
-                  <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
-                    <input type="checkbox" name="product" value="3D Marking" class="hidden" />
-                    <span
-                      class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
-                        class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
-                    <span class="text-sm text-[#1e293b] font-medium">3D Marking</span>
-                  </label>
-                </div>
-              </div>
-
-              <!-- Category 2: Laser Welding -->
-              <div class="space-y-4">
-                <h5 class="text-sm font-bold text-brand uppercase tracking-wider mb-4 border-b border-brand/10 pb-2">
-                  Laser Welding</h5>
-                <div class="space-y-3">
-                  <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
-                    <input type="checkbox" name="product" value="Handheld 4 In 1" class="hidden" />
-                    <span
-                      class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
-                        class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
-                    <span class="text-sm text-[#1e293b] font-medium">4-in-1 Handheld</span>
-                  </label>
-                  <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
-                    <input type="checkbox" name="product" value="Battery Welding" class="hidden" />
-                    <span
-                      class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
-                        class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
-                    <span class="text-sm text-[#1e293b] font-medium">Battery Series</span>
-                  </label>
-                  <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
-                    <input type="checkbox" name="product" value="Mould Welding" class="hidden" />
-                    <span
-                      class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
-                        class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
-                    <span class="text-sm text-[#1e293b] font-medium">Mould Repair</span>
-                  </label>
-                  <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
-                    <input type="checkbox" name="product" value="3-Axis Automatic" class="hidden" />
-                    <span
-                      class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
-                        class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
-                    <span class="text-sm text-[#1e293b] font-medium">3-Axis Auto</span>
-                  </label>
-                </div>
-              </div>
-
-              <!-- Category 3: Laser Cutting -->
-              <div class="space-y-4">
-                <h5 class="text-sm font-bold text-brand uppercase tracking-wider mb-4 border-b border-brand/10 pb-2">
-                  Laser Cutting</h5>
-                <div class="space-y-3">
-                  <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
-                    <input type="checkbox" name="product" value="Metal Cutting" class="hidden" />
-                    <span
-                      class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
-                        class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
-                    <span class="text-sm text-[#1e293b] font-medium">Metal Fiber</span>
-                  </label>
-                  <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
-                    <input type="checkbox" name="product" value="Tube/Pipe Cutting" class="hidden" />
-                    <span
-                      class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
-                        class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
-                    <span class="text-sm text-[#1e293b] font-medium">Tube & Pipe</span>
-                  </label>
-                  <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
-                    <input type="checkbox" name="product" value="CO2 Cutting" class="hidden" />
-                    <span
-                      class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
-                        class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
-                    <span class="text-sm text-[#1e293b] font-medium">CO2 Non-Metal</span>
-                  </label>
-                  <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
-                    <input type="checkbox" name="product" value="Jewellery Cutting" class="hidden" />
-                    <span
-                      class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
-                        class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
-                    <span class="text-sm text-[#1e293b] font-medium">Jewellery</span>
-                  </label>
-                </div>
-              </div>
-
-              <!-- Category 4: Specialty Systems -->
-              <div class="space-y-4">
-                <h5 class="text-sm font-bold text-brand uppercase tracking-wider mb-4 border-b border-brand/10 pb-2">
-                  Specialized</h5>
-                <div class="space-y-3">
-                  <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
-                    <input type="checkbox" name="product" value="Laser Soldering" class="hidden" />
-                    <span
-                      class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
-                        class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
-                    <span class="text-sm text-[#1e293b] font-medium">Soldering</span>
-                  </label>
-                  <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
-                    <input type="checkbox" name="product" value="Laser Cleaning" class="hidden" />
-                    <span
-                      class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
-                        class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
-                    <span class="text-sm text-[#1e293b] font-medium">Rust Cleaning</span>
-                  </label>
-                  <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
-                    <input type="checkbox" name="product" value="Custom Automation" class="hidden" />
-                    <span
-                      class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
-                        class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
-                    <span class="text-sm text-[#1e293b] font-medium">Robotic Integration</span>
-                  </label>
-                  <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
-                    <input type="checkbox" name="product" value="Other" class="hidden" />
-                    <span
-                      class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
-                        class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
-                    <span class="text-sm text-[#1e293b] font-medium">Other</span>
-                  </label>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Section 3: Message -->
-          <div>
-            <hr class="border-gray-100 mb-10" />
-            <h4 class="text-xl font-bold text-[#1e293b] mb-6 flex items-center gap-3">
-              <i class="fa-solid fa-comment-dots text-brand text-xs"></i>
-              Additional Requirements
-            </h4>
-            <div class="space-y-2 group">
-              <textarea id="message" name="message" rows="4"
-                placeholder="Describe your material, cycle time, or specific application needs here..."
-                class="w-full px-5 py-5 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 resize-none shadow-sm"></textarea>
+            <!-- Section 2: Product Selection Grid -->
+            <div>
+              <hr class="border-gray-100 mb-10" />
+              <h4 class="text-xl font-bold text-[#1e293b] mb-8 flex items-center gap-3">
+                <i class="fa-solid fa-layer-group text-brand text-xs"></i>
+                Select Products for Inquiry
+              </h4>
+
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Category 1: Laser Marking -->
+                <div class="space-y-4">
+                  <h5 class="text-sm font-bold text-brand uppercase tracking-wider mb-4 border-b border-brand/10 pb-2">
+                    Laser Marking</h5>
+                  <div class="space-y-3">
+                    <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
+                      <input type="checkbox" name="product" value="Fiber Marking" class="hidden" />
+                      <span
+                        class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
+                          class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
+                      <span class="text-sm text-[#1e293b] font-medium">Fiber Laser</span>
+                    </label>
+                    <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
+                      <input type="checkbox" name="product" value="UV Marking" class="hidden" />
+                      <span
+                        class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
+                          class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
+                      <span class="text-sm text-[#1e293b] font-medium">UV Laser</span>
+                    </label>
+                    <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
+                      <input type="checkbox" name="product" value="CO2 Marking" class="hidden" />
+                      <span
+                        class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
+                          class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
+                      <span class="text-sm text-[#1e293b] font-medium">CO2 Laser</span>
+                    </label>
+                    <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
+                      <input type="checkbox" name="product" value="3D Marking" class="hidden" />
+                      <span
+                        class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
+                          class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
+                      <span class="text-sm text-[#1e293b] font-medium">3D Marking</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Category 2: Laser Welding -->
+                <div class="space-y-4">
+                  <h5 class="text-sm font-bold text-brand uppercase tracking-wider mb-4 border-b border-brand/10 pb-2">
+                    Laser Welding</h5>
+                  <div class="space-y-3">
+                    <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
+                      <input type="checkbox" name="product" value="Handheld 4 In 1" class="hidden" />
+                      <span
+                        class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
+                          class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
+                      <span class="text-sm text-[#1e293b] font-medium">4-in-1 Handheld</span>
+                    </label>
+                    <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
+                      <input type="checkbox" name="product" value="Battery Welding" class="hidden" />
+                      <span
+                        class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
+                          class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
+                      <span class="text-sm text-[#1e293b] font-medium">Battery Series</span>
+                    </label>
+                    <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
+                      <input type="checkbox" name="product" value="Mould Welding" class="hidden" />
+                      <span
+                        class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
+                          class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
+                      <span class="text-sm text-[#1e293b] font-medium">Mould Repair</span>
+                    </label>
+                    <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
+                      <input type="checkbox" name="product" value="3-Axis Automatic" class="hidden" />
+                      <span
+                        class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
+                          class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
+                      <span class="text-sm text-[#1e293b] font-medium">3-Axis Auto</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Category 3: Laser Cutting -->
+                <div class="space-y-4">
+                  <h5 class="text-sm font-bold text-brand uppercase tracking-wider mb-4 border-b border-brand/10 pb-2">
+                    Laser Cutting</h5>
+                  <div class="space-y-3">
+                    <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
+                      <input type="checkbox" name="product" value="Metal Cutting" class="hidden" />
+                      <span
+                        class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
+                          class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
+                      <span class="text-sm text-[#1e293b] font-medium">Metal Fiber</span>
+                    </label>
+                    <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
+                      <input type="checkbox" name="product" value="Tube/Pipe Cutting" class="hidden" />
+                      <span
+                        class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
+                          class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
+                      <span class="text-sm text-[#1e293b] font-medium">Tube & Pipe</span>
+                    </label>
+                    <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
+                      <input type="checkbox" name="product" value="CO2 Cutting" class="hidden" />
+                      <span
+                        class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
+                          class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
+                      <span class="text-sm text-[#1e293b] font-medium">CO2 Non-Metal</span>
+                    </label>
+                    <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
+                      <input type="checkbox" name="product" value="Jewellery Cutting" class="hidden" />
+                      <span
+                        class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
+                          class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
+                      <span class="text-sm text-[#1e293b] font-medium">Jewellery</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Category 4: Specialty Systems -->
+                <div class="space-y-4">
+                  <h5 class="text-sm font-bold text-brand uppercase tracking-wider mb-4 border-b border-brand/10 pb-2">
+                    Specialized</h5>
+                  <div class="space-y-3">
+                    <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
+                      <input type="checkbox" name="product" value="Laser Soldering" class="hidden" />
+                      <span
+                        class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
+                          class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
+                      <span class="text-sm text-[#1e293b] font-medium">Soldering</span>
+                    </label>
+                    <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
+                      <input type="checkbox" name="product" value="Laser Cleaning" class="hidden" />
+                      <span
+                        class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
+                          class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
+                      <span class="text-sm text-[#1e293b] font-medium">Rust Cleaning</span>
+                    </label>
+                    <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
+                      <input type="checkbox" name="product" value="Custom Automation" class="hidden" />
+                      <span
+                        class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
+                          class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
+                      <span class="text-sm text-[#1e293b] font-medium">Robotic Integration</span>
+                    </label>
+                    <label class="custom-checkbox-label flex items-center gap-2 cursor-pointer group">
+                      <input type="checkbox" name="product" value="Other" class="hidden" />
+                      <span
+                        class="checkbox-box w-5 h-5 rounded border border-gray-300 flex items-center justify-center transition-all group-hover:border-brand"><i
+                          class="fa-solid fa-check text-[10px] text-white hidden"></i></span>
+                      <span class="text-sm text-[#1e293b] font-medium">Other</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <!-- Submit Button -->
-          <div class="pt-6">
-            <button type="submit"
-              class="w-full group py-5 px-8 rounded-2xl text-light font-bold text-xl bg-brand hover:bg-brand-dark shadow-xl transform transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-4">
-              <span>Send Project Inquiry</span>
-              <i
-                class="fa-solid fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
-            </button>
-          </div>
-        </form>
+            <!-- Section 3: Message -->
+            <div>
+              <hr class="border-gray-100 mb-10" />
+              <h4 class="text-xl font-bold text-[#1e293b] mb-6 flex items-center gap-3">
+                <i class="fa-solid fa-comment-dots text-brand text-xs"></i>
+                Additional Requirements
+              </h4>
+              <div class="space-y-2 group">
+                <textarea id="message" name="message" rows="4"
+                  placeholder="Describe your material, cycle time, or specific application needs here..."
+                  class="w-full px-5 py-5 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 resize-none shadow-sm"></textarea>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="pt-6">
+              <button type="submit"
+                class="w-full group py-5 px-8 rounded-2xl text-light font-bold text-xl bg-brand hover:bg-brand-dark shadow-xl transform transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-4">
+                <span>Send Project Inquiry</span>
+                <i
+                  class="fa-solid fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</body>
+
+</html>

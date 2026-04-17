@@ -1,71 +1,93 @@
-<div class="product-list-page">
-    <section
-        class="relative w-full h-[50vh] md:h-[60vh] lg:h-[75vh] min-h-[300px] flex items-center justify-center overflow-hidden lg:mb-5 bg-gray-900">
-        <!-- Dark Overlay -->
-        <div class="absolute inset-0 bg-black/50 z-10 transition-all duration-500"></div>
+<!DOCTYPE html>
+<html lang="en">
 
-        <img src="./assets/images/ProductsImage/hero-bg.png"
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-            alt="Axicon Automation - High-Precision Industrial Laser Product Catalog" />
+<head>
+    <title>All Products | Advanced Laser Solutions Catalog</title>
+    <meta name="description"
+        content="Discover our full range of industrial laser machines including marking, cutting, welding, and automated SPM solutions." />
+    <link rel="canonical" href="https://www.axiconautomation.com/product-list" />
+    <meta property="og:url" content="https://www.axiconautomation.com/product-list" />
+    <meta property="og:title" content="All Products | Advanced Laser Solutions Catalog" />
+    <meta property="og:description"
+        content="Discover our full range of industrial laser machines including marking, cutting, welding, and automated SPM solutions." />
+    <meta property="og:image" content="https://www.axiconautomation.com/assets/images/axicon-automation-logo.webp" />
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/pages/products/product-list.css" />
+</head>
 
-        <div class="relative z-20 text-center px-4 md:px-8 mt-16 md:mt-24">
-            <h1 id="product-hero-title" class="
-           text-light text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold
-           mb-4 sm:mb-6
-           opacity-0 scale-95 translate-y-4
-           transition-all duration-700 ease-out
-           animate-on-scroll
-         " style="font-family: 'Outfit', sans-serif;">
-                Product Catalog
-            </h1>
-            <p class="
-           text-slate-300
-           text-base sm:text-lg md:text-xl font-light
-           opacity-0 translate-y-4
-           transition-all duration-700 ease-out
-           animate-on-scroll
-           mb-10 max-w-3xl leading-relaxed mx-auto
-         ">
-                Explore our state-of-the-art laser machinery and industrial automation solutions, engineered for
-                precision,
-                durability, and peak performance.
-            </p>
-        </div>
-    </section>
+<body>
+    <div class="product-list-page">
+        <section
+            class="relative w-full h-[50vh] md:h-[60vh] lg:h-[75vh] min-h-[300px] flex items-center justify-center overflow-hidden lg:mb-5 bg-gray-900">
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-black/50 z-10 transition-all duration-500"></div>
+
+            <img src="./assets/images/ProductsImage/hero-bg.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                alt="Axicon Automation - High-Precision Industrial Laser Product Catalog" />
+
+            <div class="relative z-20 text-center px-4 md:px-8 mt-16 md:mt-24">
+                <h1 id="product-hero-title" class="
+               text-light text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold
+               mb-4 sm:mb-6
+               opacity-0 scale-95 translate-y-4
+               transition-all duration-700 ease-out
+               animate-on-scroll
+             " style="font-family: 'Outfit', sans-serif;">
+                    Product Catalog
+                </h1>
+                <p class="
+               text-slate-300
+               text-base sm:text-lg md:text-xl font-light
+               opacity-0 translate-y-4
+               transition-all duration-700 ease-out
+               animate-on-scroll
+               mb-10 max-w-3xl leading-relaxed mx-auto
+             ">
+                    Explore our state-of-the-art laser machinery and industrial automation solutions, engineered for
+                    precision,
+                    durability, and peak performance.
+                </p>
+            </div>
+        </section>
 
 
 
-    <!-- Product Grid Section -->
-    <section class="py-16  bg-slate-50">
-        <div class="container mx-auto px-4">
-            <div id="productListGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Cards will be injected here by JS -->
-                <div class="col-span-full py-20 flex flex-col items-center justify-center opacity-0 transition-opacity duration-500"
-                    id="productGridLoader">
-                    <i class="fa-solid fa-spinner animate-spin text-4xl text-brand mb-4"></i>
-                    <p class="text-slate-500 font-medium">Loading our products...</p>
+        <!-- Product Grid Section -->
+        <section class="py-16  bg-slate-50">
+            <div class="container mx-auto px-4">
+                <div id="productListGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Cards will be injected here by JS -->
+                    <div class="col-span-full py-20 flex flex-col items-center justify-center opacity-0 transition-opacity duration-500"
+                        id="productGridLoader">
+                        <i class="fa-solid fa-spinner animate-spin text-4xl text-brand mb-4"></i>
+                        <p class="text-slate-500 font-medium">Loading our products...</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Quick Contact / CTA -->
-    <section class="py-16 bg-white border-t border-slate-100">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-slate-900 mb-4" style="font-family: 'Outfit', sans-serif;">Can't find
-                what you're looking for?</h2>
-            <p class="text-slate-500 mb-8 max-w-xl mx-auto">Our experts can help you find or customize the perfect laser
-                solution for your specific industrial application.</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#/contact"
-                    class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand text-white font-semibold rounded-full hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/25">
-                    <i class="fa-solid fa-headset"></i> Contact Sales
-                </a>
-                <a href="#/inquiry"
-                    class="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-slate-200 text-slate-700 font-semibold rounded-full hover:border-brand hover:text-brand transition-all">
-                    <i class="fa-solid fa-file-invoice"></i> Request a Quote
-                </a>
+        <!-- Quick Contact / CTA -->
+        <section class="py-16 bg-white border-t border-slate-100">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4" style="font-family: 'Outfit', sans-serif;">Can't find
+                    what you're looking for?</h2>
+                <p class="text-slate-500 mb-8 max-w-xl mx-auto">Our experts can help you find or customize the perfect
+                    laser
+                    solution for your specific industrial application.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#/contact"
+                        class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand text-white font-semibold rounded-full hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/25">
+                        <i class="fa-solid fa-headset"></i> Contact Sales
+                    </a>
+                    <a href="#/inquiry"
+                        class="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-slate-200 text-slate-700 font-semibold rounded-full hover:border-brand hover:text-brand transition-all">
+                        <i class="fa-solid fa-file-invoice"></i> Request a Quote
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
-</div>
+        </section>
+    </div>
+</body>
+
+</html>
