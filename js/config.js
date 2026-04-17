@@ -10,6 +10,7 @@ export const routes = {
   "/services": "/pages/services/services.html",
   "/industries": "/pages/industries/industries.html",
   "/products": "/pages/products/product.html",
+  "/3-axis-laser-welding-machine": "/pages/product2/3-axis-laser-welding-machine.html",
   "/product-list": "/pages/products/product-list.html",
   "/contact": "/pages/contact-us/contact/contact.html",
   "/inquiry": "/pages/contact-us/inquiry/inquiry.html",
