@@ -113,7 +113,8 @@
 .story-unified-card {
   display: flex;
   background-color: #ffffff;
-  border: 1.5px solid #cbd5e1; /* Darker industrial border */
+  border: 1.5px solid #cbd5e1;
+  /* Darker industrial border */
   border-radius: 2rem;
   overflow: hidden;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -123,26 +124,32 @@
   background-color: #f8fafc;
   border-right: 1.5px solid #cbd5e1;
   min-width: 280px;
-  overflow: hidden; /* Crucial for clipping button backgrounds */
-  padding: 0; /* Ensure no gaps */
+  overflow: hidden;
+  /* Crucial for clipping button backgrounds */
+  padding: 0;
+  /* Ensure no gaps */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* PERFECT VERTICAL CENTERING (Top to Bottom) */
+  justify-content: center;
+  /* PERFECT VERTICAL CENTERING (Top to Bottom) */
 }
 
 .tab-btn {
   position: relative;
   display: flex !important;
   align-items: center;
-  justify-content: center; /* Center the entire content wrapper as a block */
+  justify-content: center;
+  /* Center the entire content wrapper as a block */
   padding: 1.5rem 1rem;
   transition: all 0.4s ease;
   background-color: #ffffff;
   cursor: pointer;
   width: 100%;
   border: none;
-  border-bottom: 1.5px solid #cbd5e1; /* Matched to main section border color */
-  border-radius: 0 !important; /* Fix for 'cut' or rounded backgrounds inside bars */
+  border-bottom: 1.5px solid #cbd5e1;
+  /* Matched to main section border color */
+  border-radius: 0 !important;
+  /* Fix for 'cut' or rounded backgrounds inside bars */
 }
 
 .tab-btn:last-child {
@@ -154,11 +161,13 @@
   align-items: center;
   gap: 1.25rem;
   text-align: left;
-  min-width: 210px; /* FIXED WIDTH FOR PERFECT ICON COLUMN ALIGNMENT */
+  min-width: 210px;
+  /* FIXED WIDTH FOR PERFECT ICON COLUMN ALIGNMENT */
 }
 
 .tab-btn.active {
-  background-color: #2563eb !important; /* Industrial Blue */
+  background-color: #2563eb !important;
+  /* Industrial Blue */
   color: #ffffff !important;
 }
 
@@ -213,7 +222,8 @@
 @media (max-width: 1023px) {
   .story-unified-card {
     flex-direction: column;
-    border-radius: 1.5rem; /* Slightly tighter on mobile */
+    border-radius: 1.5rem;
+    /* Slightly tighter on mobile */
   }
 
   .story-nav-column {
@@ -260,7 +270,8 @@
 .award-card {
   position: relative;
   background: #ffffff;
-  border: 1px solid rgba(226, 232, 240, 0.8); /* Even softer border */
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  /* Even softer border */
   border-radius: 1.5rem;
   padding: 2.75rem 2.25rem;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -270,7 +281,8 @@
 
 .award-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 30px 60px -12px rgba(15, 23, 42, 0.08); /* More premium shadow */
+  box-shadow: 0 30px 60px -12px rgba(15, 23, 42, 0.08);
+  /* More premium shadow */
   border-color: rgba(13, 148, 136, 0.2);
 }
 
@@ -280,7 +292,8 @@
   right: 0;
   width: 120px;
   height: 120px;
-  background: #f0fdfa; /* Extremely soft teal */
+  background: #f0fdfa;
+  /* Extremely soft teal */
   border-bottom-left-radius: 100%;
   z-index: 1;
   transition: all 0.5s ease;
@@ -298,7 +311,8 @@
   width: 3.25rem;
   height: 3.25rem;
   background: #f8fafc;
-  border: 1.5px solid #cbd5e1; /* Darker defined border */
+  border: 1.5px solid #cbd5e1;
+  /* Darker defined border */
   border-radius: 1rem;
   display: flex;
   align-items: center;
@@ -325,9 +339,11 @@
 
 .award-title {
   font-family: 'Outfit', sans-serif;
-  font-weight: 700; /* Cleaner weight */
+  font-weight: 700;
+  /* Cleaner weight */
   color: #1e293b;
-  font-size: 1.15rem; /* Better scale */
+  font-size: 1.15rem;
+  /* Better scale */
   line-height: 1.4;
   margin-bottom: 0.6rem;
 }
@@ -374,7 +390,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  row-gap: 4.5rem; /* Increased vertical spacing between cards */
+  row-gap: 4.5rem;
+  /* Increased vertical spacing between cards */
   padding-right: 2rem;
 }
 
@@ -382,11 +399,13 @@
   position: relative;
   background: #ffffff;
   border-radius: 1.25rem;
-  padding: 2.75rem 2.5rem 2.75rem 3.5rem; /* More spacious padding */
+  padding: 2.75rem 2.5rem 2.75rem 3.5rem;
+  /* More spacious padding */
   box-shadow: 0 15px 35px -10px rgba(15, 23, 42, 0.08);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   height: fit-content;
-  border: 2px solid #cbd5e1; /* BOLDER BORDER as requested */
+  border: 2px solid #cbd5e1;
+  /* BOLDER BORDER as requested */
 }
 
 /* Custom Floating Side Accent to match reference exactly */
@@ -413,7 +432,8 @@
 }
 
 .stagger-down {
-  transform: translateY(4rem); /* More airy staggering */
+  transform: translateY(4rem);
+  /* More airy staggering */
 }
 
 .presence-icon {
@@ -486,9 +506,11 @@
   0% {
     box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
   }
+
   70% {
     box-shadow: 0 0 0 25px rgba(37, 99, 235, 0);
   }
+
   100% {
     box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
   }
@@ -499,7 +521,8 @@
   .presence-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    row-gap: 1.5rem; /* Explicitly reduced row-gap */
+    row-gap: 1.5rem;
+    /* Explicitly reduced row-gap */
     padding-right: 0;
   }
 
@@ -508,7 +531,8 @@
   }
 
   .map-container {
-    margin-top: 1.5rem; /* Reduced from 4rem to fix large space issue */
+    margin-top: 1.5rem;
+    /* Reduced from 4rem to fix large space issue */
   }
 
   .video-play-btn {
@@ -559,7 +583,8 @@
 
 .video-ratio-box {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 56.25%;
+  /* 16:9 Aspect Ratio */
   height: 0;
 }
 
@@ -601,7 +626,7 @@
   .video-modal-content {
     border-radius: 0.75rem;
   }
-  
+
   .close-video-btn {
     top: -3.5rem;
     width: 2.5rem;

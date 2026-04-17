@@ -132,7 +132,8 @@ function createBlogCard(post, index) {
     // Premium Cardiovascular Design
     div.innerHTML = `
         <article class="blog-card">
-            <div class="card-image-wrapper">
+        <a href="#/blog?slug=${post.slug}" class="read-more-link">
+            <div class="card-image-wrapper cursor-pointer">
                 <span class="card-category-badge">${post.category}</span>
                 <img src="${post.image}" 
                      alt="${post.alt || post.title}" 
@@ -154,13 +155,13 @@ function createBlogCard(post, index) {
                     ${post.description}
                 </p>
                 
-                <div class="card-footer">
-                    <a href="#/blog?slug=${post.slug}" class="read-more-link">
+                <div class="card-footer cursor-pointer font-[600]">
                         Read Analytics
                         <i class="fa-solid fa-arrow-right-long"></i>
-                    </a>
+                   
                 </div>
             </div>
+            </a>
         </article>
     `;
 
@@ -208,7 +209,7 @@ function renderSinglePost(slug) {
         <section class="relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh] min-h-[300px] flex items-center justify-center overflow-hidden bg-slate-900">
             <div class="absolute inset-0 bg-black/40 z-10"></div>
             <img src="${post.image}" 
-                 class="absolute inset-0 w-full h-full object-cover" 
+                 class="absolute inset-0 w-full h-full object-cover " 
                  alt="${post.alt}"
                  onerror="this.src='${CONFIG.placeholderBase}${post.id}'">
         </section>

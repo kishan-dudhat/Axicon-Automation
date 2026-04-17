@@ -237,8 +237,6 @@
 .industry-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.3);
-
-  cursor: pointer;
 }
 
 /* =========================
