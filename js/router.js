@@ -74,7 +74,7 @@ export async function loadRoute() {
       loader.classList.add("opacity-0");
       setTimeout(() => {
         loader.classList.add("hidden");
-      }, 300);
+      }, 10);
     }
   }
 }
