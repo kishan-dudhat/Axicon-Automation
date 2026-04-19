@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Since the app uses hash-based routing, we might need a re-init
-window.addEventListener('hashchange', () => {
+window.addEventListener('popstate', () => {
     // Small delay to ensure DOM is ready after navigation
     setTimeout(() => {
         initContactForm();

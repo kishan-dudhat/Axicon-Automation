@@ -21,7 +21,8 @@ function renderProductCards() {
         grid.innerHTML = homeProducts.map((p, index) => `
         
         <div class="product-card flex flex-col justify-between h-auto rounded-3xl bg-white border border-slate-300 hover:border-slate-400 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 cursor-pointer animate-on-scroll opacity-0 translate-y-10 overflow-hidden" style="transition-delay: ${index * 50}ms">
-            <a href="${p.navigatelink}" onclick="window.location.hash='${p.navigatelink.replace('#', '')}'" class="flex flex-col h-full"> 
+
+            <a href="${p.navigatelink}" onclick="event.preventDefault();window.navigate(p.navigatelink)" class="flex flex-col h-full">
                 <!-- Image Container -->
                 <div class="relative w-full h-64 overflow-hidden rounded-t-[22px] bg-slate-50 flex items-center justify-center p-6 group">
                     <img src="${p.image}" alt="${p.name}" class="object-contain h-full w-full transition-transform duration-700 ease-out cursor-pointer">

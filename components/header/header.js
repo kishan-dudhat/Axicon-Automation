@@ -168,7 +168,7 @@ scrollBtn.addEventListener("click", () => {
 
 // Update active states on Links
 function updateActiveNavLinks() {
-  const currentHash = window.location.hash || '#/home';
+  const currentHash = window.location.hash || '/home';
 
   // Desktop links
   const desktopLinks = document.querySelectorAll('.desktop-nav .nav-link, .desktop-nav .dropdown-item');
@@ -179,7 +179,7 @@ function updateActiveNavLinks() {
     // Or if the hash starts with the link's href (for subpages)
     const linkHref = link.getAttribute('href');
     if (linkHref) {
-      if (linkHref === currentHash || (currentHash.startsWith(linkHref) && linkHref !== '#/')) {
+      if (linkHref === currentHash || (currentHash.startsWith(linkHref) && linkHref !== '/')) {
         link.classList.add('active');
 
         // If it's a dropdown item, also highlight the parent dropdown toggle
@@ -197,7 +197,7 @@ function updateActiveNavLinks() {
   mobileLinks.forEach(link => {
     link.classList.remove('active');
     const linkHref = link.getAttribute('href');
-    if (linkHref && (linkHref === currentHash || (currentHash.startsWith(linkHref) && linkHref !== '#/'))) {
+    if (linkHref && (linkHref === currentHash || (currentHash.startsWith(linkHref) && linkHref !== '/'))) {
       link.classList.add('active');
     }
   });
@@ -207,4 +207,5 @@ function updateActiveNavLinks() {
 updateActiveNavLinks();
 
 // Re-check whenever the hash changes
-window.addEventListener("hashchange", updateActiveNavLinks);
+window.addEventListener("popstate", updateActiveNavLinks);
+window.addEventListener("navigate", updateActiveNavLinks);

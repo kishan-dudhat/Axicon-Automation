@@ -30,14 +30,20 @@ export function initBlog() {
  * Handle Hash-based Routing within the Blog Page
  */
 function handleRouting() {
-    const params = new URLSearchParams(window.location.hash.split("?")[1]);
-    const slug = params.get("slug");
+    const path = window.location.pathname;
+    const match = path.match(/\/blog\/(blog-\d+)$/);
 
-    if (slug) {
-        renderSinglePost(slug);
-    } else {
-        renderBlogList();
+    if (match) {
+        const blogId = parseInt(match[1].replace("blog-", ""), 10);
+        const post = blogData.find(p => p.id === blogId);
+
+        if (post) {
+            renderSinglePost(post.slug);
+            return;
+        }
     }
+
+    renderBlogList();
 }
 
 /**
@@ -45,7 +51,7 @@ function handleRouting() {
  */
 function setupEventListeners() {
     // Listen for hash changes to support back/forward buttons
-    window.addEventListener("hashchange", handleRouting);
+    window.addEventListener("popstate", handleRouting);
 
 
     // Load More click
@@ -61,7 +67,8 @@ function setupEventListeners() {
     const backBtn = document.getElementById("back-to-blog");
     if (backBtn) {
         backBtn.addEventListener("click", () => {
-            window.location.hash = "#/blog";
+            window.history.pushState({}, "", "/blog");
+            handleRouting();
         });
     }
 }
@@ -132,7 +139,7 @@ function createBlogCard(post, index) {
     // Premium Cardiovascular Design
     div.innerHTML = `
         <article class="blog-card">
-        <a href="#/blog?slug=${post.slug}" class="read-more-link">
+            <a href="/blog/blog-${post.id}" class="read-more-link">
             <div class="card-image-wrapper cursor-pointer">
                 <span class="card-category-badge">${post.category}</span>
                 <img src="${post.image}" 
@@ -148,7 +155,7 @@ function createBlogCard(post, index) {
                 </div>
                 
                 <h3 class="card-title">
-                     <a href="#/blog?slug=${post.slug}">${post.title}</a>
+                     <a href="/blog?slug=${post.slug}">${post.title}</a>
                 </h3>
                 
                 <p class="card-excerpt">
@@ -183,9 +190,9 @@ function renderSinglePost(slug) {
     const postContent = document.getElementById("post-content");
 
     const post = blogData.find(p => p.slug === slug);
-
     if (!post) {
-        window.location.hash = "#/blog";
+        window.history.pushState({}, "", "/blog");
+        renderBlogList();
         return;
     }
 
@@ -238,7 +245,7 @@ function renderSinglePost(slug) {
                     <!-- Refined Navigation & Meta Hub -->
                     <div class="flex flex-wrap items-center justify-between gap-6 py-8 border-y border-slate-100 mb-12">
                         <nav class="flex items-center gap-2 text-slate-400 text-[10px] font-black uppercase tracking-[2px]">
-                            <a href="#/blog" class="hover:text-brand transition-colors">Axicon Research</a>
+                           <a href="/blog" onclick="event.preventDefault();history.pushState({},'', '/blog');handleRouting();" class="hover:text-brand transition-colors">Axicon Research</a>
                             <i class="fa-solid fa-chevron-right text-[8px] mt-0.5"></i>
                             <span class="text-slate-800">${post.category}</span>
                         </nav>
@@ -385,7 +392,8 @@ function renderSinglePost(slug) {
     if (backBtnV3) {
         backBtnV3.addEventListener("click", () => {
             if (blogHero) blogHero.classList.remove("hidden");
-            window.location.hash = "#/blog";
+            window.history.pushState({}, "", "/blog");
+            handleRouting();
         });
     }
 

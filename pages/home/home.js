@@ -9,7 +9,7 @@ const track = document.getElementById("carouselTrack");
 if (track && homeProducts && (track.children.length === 0 || !track.firstElementChild.classList.contains("carousel-card"))) {
   track.innerHTML = homeProducts.map(p => `
           <div class="carousel-card flex flex-col justify-between h-auto rounded-2xl bg-primary border border-slate-100 hover:border-blue-200 cursor-pointer overflow-hidden">
-            <a href="${p.navigatelink}" onclick="window.location.hash='${p.navigatelink.replace('#', '')}'" class="flex flex-col h-full"> 
+            <a href="${p.navigatelink}" onclick="window.navigate('${p.navigatelink}')" class="flex flex-col h-full"> 
              <div class="relative w-full h-64 overflow-hidden rounded-t-[22px] bg-slate-50 flex items-center justify-center p-6 group">
                     <img src="${p.image}" alt="${p.name}" class="object-contain h-full w-full transition-transform duration-700 ease-out cursor-pointer">
                 </div>
@@ -170,7 +170,7 @@ function initHomeBlog() {
     .slice(0, 3);
 
   homeGrid.innerHTML = latestPosts.map((post, index) => `
-        <a href="#/blog?slug=${post.slug}" class="group block opacity-0 translate-y-10 animate-on-scroll"
+        <a href="/blog?slug=${post.slug}" class="group block opacity-0 translate-y-10 animate-on-scroll"
                  style="transition-delay: ${index * 150}ms;">
             <article class="h-full bg-white rounded-[2rem] border border-slate-200 overflow-hidden hover:shadow-2xl hover:shadow-brand/5 transition-all duration-500 hover:-translate-y-2">
                 <div class="relative h-64 overflow-hidden">
