@@ -69,25 +69,14 @@ export async function loadRoute() {
     console.error("Routing error:", error);
     app.innerHTML = `<div class="p-20 text-center"><h2>Page Not Found</h2><p>Sorry, the page you are looking for does not exist.</p><a href="#/home" class="text-brand">Go back home</a></div>`;
   } finally {
-    // Hide loader smoothly
-
-    if (screen.width > 768) {
-      if (loader) {
+     if (loader) {
         loader.classList.add("opacity-0");
         setTimeout(() => {
           loader.classList.add("hidden");
         }, 200);
       }
-    }
 
-    if (screen.width <= 768) {
-      if (loader) {
-        loader.classList.add("opacity-0");
-        setTimeout(() => {
-          loader.classList.add("hidden");
-        }, 300);
-      }
-    }
+    
   }
 }
 
