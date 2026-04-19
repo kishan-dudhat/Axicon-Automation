@@ -8,10 +8,10 @@ async function loadFile(path) {
 
 function updateSEO(path) {
   const metadata = pageMetadata[path] || pageMetadata["/home"];
-  
+
   // Set window title
   document.title = metadata.title;
-  
+
   // Update standard description
   const metaDescription = document.querySelector('meta[name="description"]');
   if (metaDescription) {
@@ -21,7 +21,7 @@ function updateSEO(path) {
   // Update Open Graph (Social Sharing) Tags
   const ogTitle = document.querySelector('meta[property="og:title"]');
   if (ogTitle) ogTitle.setAttribute("content", metadata.title);
-  
+
   const ogDescription = document.querySelector('meta[property="og:description"]');
   if (ogDescription) ogDescription.setAttribute("content", metadata.description);
 }
@@ -45,7 +45,7 @@ export async function loadRoute() {
     const htmlContent = await loadFile(page);
 
     app.innerHTML = htmlContent;
-    
+
     // Update SEO
     updateSEO(hashPath);
 
@@ -70,14 +70,27 @@ export async function loadRoute() {
     app.innerHTML = `<div class="p-20 text-center"><h2>Page Not Found</h2><p>Sorry, the page you are looking for does not exist.</p><a href="#/home" class="text-brand">Go back home</a></div>`;
   } finally {
     // Hide loader smoothly
-    if (loader) {
-      loader.classList.add("opacity-0");
-      setTimeout(() => {
-        loader.classList.add("hidden");
-      }, 200);
+
+    if (screen.width > 768) {
+      if (loader) {
+        loader.classList.add("opacity-0");
+        setTimeout(() => {
+          loader.classList.add("hidden");
+        }, 200);
+      }
+    }
+
+    if (screen.width <= 768) {
+      if (loader) {
+        loader.classList.add("opacity-0");
+        setTimeout(() => {
+          loader.classList.add("hidden");
+        }, 300);
+      }
     }
   }
 }
+
 
 // Expose function globally to allow re-triggering for dynamic content
 window.initScrollAnimations = function initScrollAnimations() {
