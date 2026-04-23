@@ -1,23 +1,20 @@
-#app {
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
-  scroll-behavior: smooth !important;
-  scrollbar-width: none !important;
-  -ms-overflow-style: none; /* IE and Edge */
+/* index.css — Global page shell styles */
+
+/* Smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-#app::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
+body {
+  overflow-x: hidden;
 }
 
-@media (width < 1021px) {
-  #app {
-    padding-top: 80px !important;
-  }
+/* Scrollbar hide utility (for carousel tracks etc.) */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-
-@media (max-width: 768px) {
-    #app {
-        padding-top: 70px !important;
-    }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

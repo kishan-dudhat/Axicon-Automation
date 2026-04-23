@@ -60,7 +60,6 @@ navbarManageScroll();
 
 
 
-
 const mobileOverlay = document.getElementById("mobileOverlay");
 
 // --- Mobile Menu Toggle Logic ---
@@ -148,6 +147,7 @@ contactUsBtn.addEventListener("click", () => {
     if (contactUsIcon) contactUsIcon.classList.remove("rotate-180");
   }
 });
+
 window.addEventListener("scroll", () => {
   if (window.scrollY > 300) {
     scrollBtn.classList.remove("hidden", "opacity-0", "translate-y-4");
@@ -166,46 +166,51 @@ scrollBtn.addEventListener("click", () => {
   });
 });
 
-// Update active states on Links
+// Update active states based on current URL pathname
 function updateActiveNavLinks() {
-  const currentHash = window.location.hash || '/home';
+  const currentPath = window.location.pathname;
 
   // Desktop links
   const desktopLinks = document.querySelectorAll('.desktop-nav .nav-link, .desktop-nav .dropdown-item');
   desktopLinks.forEach(link => {
     link.classList.remove('active');
 
-    // Check if the link's href matches the current hash exactly
-    // Or if the hash starts with the link's href (for subpages)
     const linkHref = link.getAttribute('href');
-    if (linkHref) {
-      if (linkHref === currentHash || (currentHash.startsWith(linkHref) && linkHref !== '/')) {
-        link.classList.add('active');
+    if (!linkHref) return;
 
-        // If it's a dropdown item, also highlight the parent dropdown toggle
-        const dropdownParent = link.closest('.dropdown');
-        if (dropdownParent) {
-          const toggle = dropdownParent.querySelector('.dropdown-toggle');
-          if (toggle) toggle.classList.add('active');
-        }
+    // Normalize: strip trailing slash for comparison
+    const linkPath = linkHref.replace(/\/$/, '') || '/';
+    const pagePath = currentPath.replace(/\/$/, '') || '/';
+
+    // Exact match, or current path starts with link path (for product sub-pages)
+    if (
+      linkPath === pagePath ||
+      (pagePath.startsWith(linkPath) && linkPath !== '/' && linkPath.length > 1)
+    ) {
+      link.classList.add('active');
+
+      // Highlight parent dropdown toggle if link is inside a dropdown
+      const dropdownParent = link.closest('.dropdown');
+      if (dropdownParent) {
+        const toggle = dropdownParent.querySelector('.dropdown-toggle');
+        if (toggle) toggle.classList.add('active');
       }
     }
   });
 
-  // Mobile Links (optional, if you want them highlighted too)
+  // Mobile links
   const mobileLinks = document.querySelectorAll('.mobile-nav-link');
   mobileLinks.forEach(link => {
     link.classList.remove('active');
     const linkHref = link.getAttribute('href');
-    if (linkHref && (linkHref === currentHash || (currentHash.startsWith(linkHref) && linkHref !== '/'))) {
+    if (!linkHref) return;
+    const linkPath = linkHref.replace(/\/$/, '') || '/';
+    const pagePath = currentPath.replace(/\/$/, '') || '/';
+    if (linkPath === pagePath || (pagePath.startsWith(linkPath) && linkPath !== '/' && linkPath.length > 1)) {
       link.classList.add('active');
     }
   });
 }
 
-// Initial check when the script loads
+// Run on load
 updateActiveNavLinks();
-
-// Re-check whenever the hash changes
-window.addEventListener("popstate", updateActiveNavLinks);
-window.addEventListener("navigate", updateActiveNavLinks);
