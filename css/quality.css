@@ -36,14 +36,13 @@
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 8px;
-  color: var(--primary);
-
+  color: var(--primary-color);   /* brand blue #1773d0 */
 }
 
 .text-general {
   font-size: 15px;
   line-height: 1.7;
-  color: var(--trinary);
+  color: var(--text-secondary);  /* readable slate #475569 */
 }
 
 /* RESPONSIVE */

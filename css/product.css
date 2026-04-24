@@ -6,10 +6,17 @@
   .reveal {
       opacity: 0;
       transform: translateY(35px);
-      transition: all .8s ease
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      /* CSS fallback: sections always appear after 1.2s even if JS fails */
+      animation: revealFallback 0.8s ease 1.2s forwards;
+  }
+
+  @keyframes revealFallback {
+      to { opacity: 1; transform: none; }
   }
 
   .reveal.show {
       opacity: 1;
-      transform: none
+      transform: none;
+      animation: none; /* JS added show — disable CSS fallback */
   }

@@ -60,7 +60,7 @@ function setupEventListeners() {
     const backBtn = document.getElementById("back-to-blog");
     if (backBtn) {
         backBtn.addEventListener("click", () => {
-            window.location.href = "/blog/index.html";
+            window.location.href = "/blog/blog-list.html";
         });
     }
 }
@@ -184,7 +184,7 @@ function renderSinglePost(slug) {
     const post = blogData.find(p => p.slug === slug);
 
     if (!post) {
-        window.location.href = "/blog/index.html";
+        window.location.href = "/blog/blog-list.html";
         return;
     }
 
@@ -237,7 +237,7 @@ function renderSinglePost(slug) {
                     <!-- Refined Navigation & Meta Hub -->
                     <div class="flex flex-wrap items-center justify-between gap-6 py-8 border-y border-slate-100 mb-12">
                         <nav class="flex items-center gap-2 text-slate-400 text-[10px] font-black uppercase tracking-[2px]">
-                            <a href="/blog/index.html" class="hover:text-brand transition-colors">Axicon Research</a>
+                            <a href="/blog/blog-list.html" class="hover:text-brand transition-colors">Axicon Research</a>
                             <i class="fa-solid fa-chevron-right text-[8px] mt-0.5"></i>
                             <span class="text-slate-800">${post.category}</span>
                         </nav>
@@ -384,7 +384,7 @@ function renderSinglePost(slug) {
     if (backBtnV3) {
         backBtnV3.addEventListener("click", () => {
             if (blogHero) blogHero.classList.remove("hidden");
-            window.location.href = "/blog/index.html";
+            window.location.href = "/blog/blog-list.html";
         });
     }
 

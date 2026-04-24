@@ -64,13 +64,36 @@ function resetAuto() {
 updateSlider();
 startAuto();
 
-// Reveal animation
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
+// Reveal animation — robust with viewport check + hard fallback
+function setupReveal() {
+    const revealEls = document.querySelectorAll(".reveal");
+    if (!revealEls.length) return;
+
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.05, rootMargin: "0px 0px -30px 0px" });
+
+    revealEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            // Already visible on page load — show immediately
+            el.classList.add("show");
+        } else {
+            obs.observe(el);
         }
     });
-}, { threshold: 0.15 });
 
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    // Hard fallback: if any section is still hidden after 1s, force show it
+    setTimeout(() => {
+        document.querySelectorAll(".reveal:not(.show)").forEach(el => {
+            el.classList.add("show");
+        });
+    }, 1000);
+}
+
+setupReveal();

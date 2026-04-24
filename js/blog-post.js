@@ -6,8 +6,8 @@
 
 import { blogData } from './blog-object.js';
 
-const SITE  = "Axicon Automation";
-const BLOG_LIST_URL = "/blog/index.html";
+const SITE = "Axicon Automation";
+const BLOG_LIST_URL = "/blog/blog-list.html";
 
 /* ── Helpers ────────────────────────────────────────────── */
 
@@ -38,9 +38,12 @@ function injectSchema(post) {
     "image": post.image,
     "datePublished": post.date,
     "author": { "@type": "Organization", "name": SITE },
-    "publisher": { "@type": "Organization", "name": SITE,
-      "logo": { "@type": "ImageObject",
-        "url": "https://www.axiconautomation.com/assets/images/axicon-automation-logo.webp" }
+    "publisher": {
+      "@type": "Organization", "name": SITE,
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.axiconautomation.com/assets/images/axicon-automation-logo.webp"
+      }
     },
     "mainEntityOfPage": { "@type": "WebPage", "@id": window.location.href },
     "keywords": (post.seo?.keywords || []).join(', ')
@@ -59,14 +62,14 @@ function renderPost() {
   const match = window.location.pathname.match(/blog-(\d+)\.html/i);
   if (!match) { window.location.href = BLOG_LIST_URL; return; }
 
-  const id   = parseInt(match[1], 10);
+  const id = parseInt(match[1], 10);
   const post = blogData.find(p => p.id === id);
 
   if (!post) { window.location.href = BLOG_LIST_URL; return; }
 
   // ── SEO update ──────────────────────────────────────────
   const seoTitle = post.seo?.metaTitle || `${post.title} | ${SITE}`;
-  const seoDesc  = post.seo?.metaDescription || post.description;
+  const seoDesc = post.seo?.metaDescription || post.description;
   setMeta(seoTitle, seoDesc);
   injectSchema(post);
 
@@ -86,7 +89,7 @@ function renderPost() {
       </li>`).join('');
 
   // Prev / Next navigation
-  const allIds = blogData.map(p => p.id).sort((a,b)=>a-b);
+  const allIds = blogData.map(p => p.id).sort((a, b) => a - b);
   const currentIndex = allIds.indexOf(id);
   const prevId = currentIndex > 0 ? allIds[currentIndex - 1] : null;
   const nextId = currentIndex < allIds.length - 1 ? allIds[currentIndex + 1] : null;

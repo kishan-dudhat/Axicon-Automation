@@ -134,10 +134,6 @@ h6 {
   background-color: var(--bg-dark) !important;
 }
 
-.bg-brand {
-  background-color: var(--primary-color) !important;
-}
-
 .bg-brand-dark {
   background-color: var(--primary-dark) !important;
 }
@@ -160,6 +156,51 @@ h6 {
 }
 
 
+
+/* =========================================================
+   BRAND GRADIENT UTILITIES
+   (Tailwind CDN doesn't know 'brand' — define here globally)
+   ========================================================= */
+
+/* bg-brand */
+.bg-brand {
+  background-color: var(--primary-color) !important;
+}
+.hover\:bg-brand:hover {
+  background-color: var(--primary-color) !important;
+}
+.bg-brand-dark {
+  background-color: var(--primary-dark) !important;
+}
+
+/* Gradient from/to utilities */
+.from-brand {
+  --tw-gradient-from: var(--primary-color);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(23 115 208 / 0));
+}
+.to-brand {
+  --tw-gradient-to: var(--primary-color);
+}
+.to-brand-dark {
+  --tw-gradient-to: var(--primary-dark);
+}
+.hover\:to-brand-dark:hover {
+  --tw-gradient-to: var(--primary-dark);
+}
+.hover\:bg-blue-700:hover {
+  background-color: #1d4ed8 !important;
+}
+
+/* text-trinary used on dark/blue backgrounds (button labels) — force white */
+.from-brand ~ *, .from-brand .text-trinary,
+button.from-brand, button.bg-brand {
+  color: #ffffff;
+}
+
+/* Ensure button text on brand gradient is always white */
+.bg-gradient-to-r.from-brand {
+  color: #ffffff;
+}
 
 /* Hero */
 .text-first-heading {
@@ -412,4 +453,11 @@ h6 {
     font-size: 3rem;
     line-height: 1;
   }
+}
+/* =========================================================
+   DARK SECTION HEADING FIX
+   Prevent global h1-h6 dark color from overriding white-on-dark sections.
+   ========================================================= */
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+  color: #ffffff;
 }

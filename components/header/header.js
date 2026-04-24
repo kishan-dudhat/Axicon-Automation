@@ -10,9 +10,6 @@ const productsBtn = document.getElementById("products-btn");
 const productsPanel = document.getElementById("products-panel");
 const contactUsBtn = document.getElementById("contact-us-btn");
 const contactUsPanel = document.getElementById("contact-us-panel");
-const scrollBtn = document.getElementById("scrollTopBtn");
-
-
 
 const navbarManageScroll = () => {
   let last = 0;
@@ -148,23 +145,33 @@ contactUsBtn.addEventListener("click", () => {
   }
 });
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    scrollBtn.classList.remove("hidden", "opacity-0", "translate-y-4");
-    scrollBtn.classList.add("opacity-100", "translate-y-0");
-  } else {
-    scrollBtn.classList.add("opacity-0", "translate-y-4");
-    setTimeout(() => scrollBtn.classList.add("hidden"), 300);
-  }
-});
+// scrollTopBtn lives inside footer.html — wait for it to be injected by main.js
+function initScrollTopBtn() {
+  const btn = document.getElementById("scrollTopBtn");
+  if (!btn) return;
 
-// Scroll to top smoothly
-scrollBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      btn.classList.remove("hidden", "opacity-0", "translate-y-4");
+      btn.classList.add("opacity-100", "translate-y-0");
+    } else {
+      btn.classList.add("opacity-0", "translate-y-4");
+      setTimeout(() => btn.classList.add("hidden"), 300);
+    }
   });
-});
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+// Poll until footer is loaded (footer.js injects scrollTopBtn)
+const scrollBtnInterval = setInterval(() => {
+  if (document.getElementById("scrollTopBtn")) {
+    clearInterval(scrollBtnInterval);
+    initScrollTopBtn();
+  }
+}, 100);
 
 // Update active states based on current URL pathname
 function updateActiveNavLinks() {
