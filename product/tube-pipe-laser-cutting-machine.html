@@ -62,7 +62,13 @@
         }
     </script>
 
+    <!-- Font Awesome — async (non-render-blocking) -->
+  <link rel="preload" as="style"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </noscript>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/product.css" />
     <script type="module" src="/js/main.js"></script>
@@ -87,7 +93,7 @@
                 <!-- Dark Overlay -->
                 <div class="absolute inset-0 bg-black/50 z-10 transition-all duration-500"></div>
 
-                <img src="./assets/images/ProductsImage/Products-hero-images.avif"
+                <img loading="lazy" src="./assets/images/ProductsImage/Products-hero-images.avif"
                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                     alt="Axicon Automation of Products Images" />
 
@@ -218,28 +224,28 @@
                                     <!-- Slide -->
                                     <div
                                         class="w-full shrink-0 flex justify-center items-center min-h-[320px] md:min-h-[420px] px-10">
-                                        <img src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/product-1.webp"
+                                        <img loading="lazy" src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/product-1.webp"
                                             class="max-h-[380px] object-contain"
                                             alt="Axicon Tube and Pipe Laser Cutting Machine for Structural Steel Profiles">
                                     </div>
 
                                     <div
                                         class="w-full shrink-0 flex justify-center items-center min-h-[320px] md:min-h-[420px] px-10">
-                                        <img src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/product-2.webp"
+                                        <img loading="lazy" src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/product-2.webp"
                                             class="max-h-[380px] object-contain"
                                             alt="Automatic Rotary Tube Cutting Solution for Round and Square Pipes">
                                     </div>
 
                                     <div
                                         class="w-full shrink-0 flex justify-center items-center min-h-[320px] md:min-h-[420px] px-10">
-                                        <img src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/product-3.avif"
+                                        <img loading="lazy" src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/product-3.avif"
                                             class="max-h-[380px] object-contain"
                                             alt="High-Performance Industrial Laser Pipe Processing and Cutting System">
                                     </div>
 
                                     <div
                                         class="w-full shrink-0 flex justify-center items-center min-h-[320px] md:min-h-[420px] px-10">
-                                        <img src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/product-4.jpg"
+                                        <img loading="lazy" src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/product-4.jpg"
                                             class="max-h-[380px] object-contain"
                                             alt="Precision Laser Cutting on Square Metal Pipes for Construction">
                                     </div>
@@ -260,28 +266,28 @@
 
                             <button
                                 class="thumb border-2 border-[#1773d0] rounded-lg bg-white shadow-md p-1 w-20 h-14 md:w-28 md:h-16">
-                                <img src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/product-1.webp"
+                                <img loading="lazy" src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/product-1.webp"
                                     alt="Axicon Automation Industrial Laser Tube and Pipe Processing Machine"
                                     class="w-full h-full object-contain">
                             </button>
 
                             <button
                                 class="thumb border-2 border-transparent rounded-lg bg-gray-100 p-1 w-20 h-14 md:w-28 md:h-16">
-                                <img src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/product-2.webp"
+                                <img loading="lazy" src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/product-2.webp"
                                     alt="High-Precision Rotary Fiber Laser Cutting Machine for Tubes and Pipes"
                                     class="w-full h-full object-contain opacity-80">
                             </button>
 
                             <button
                                 class="thumb border-2 border-transparent rounded-lg bg-gray-100 p-1 w-20 h-14 md:w-28 md:h-16">
-                                <img src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/product-3.avif"
+                                <img loading="lazy" src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/product-3.avif"
                                     alt="High-Performance Industrial Laser Pipe Processing and Cutting System"
                                     class="w-full h-full object-contain opacity-80">
                             </button>
 
                             <button
                                 class="thumb border-2 border-transparent rounded-lg bg-gray-100 p-1 w-20 h-14 md:w-28 md:h-16">
-                                <img src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/product-4.jpg"
+                                <img loading="lazy" src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/product-4.jpg"
                                     alt="Precision Laser Cutting on Square Metal Pipes for Construction"
                                     class="w-full h-full object-contain opacity-80">
                             </button>
@@ -348,7 +354,7 @@
                         <div
                             class="w-56 md:w-72 rounded-xl overflow-hidden bg-white border-2 border-blue-100 hover:border-[#1773d0] shadow-sm hover:shadow-lg transition group">
                             <div class="h-40 md:h-52 bg-slate-50 overflow-hidden">
-                                <img src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/app-1.jpg"
+                                <img loading="lazy" src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/app-1.jpg"
                                     alt="Industrial Steel Pipe Laser Cutting for Structural Engineering"
                                     class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                             </div>
@@ -357,7 +363,7 @@
                         <div
                             class="w-56 md:w-72 rounded-xl overflow-hidden bg-white border-2 border-blue-100 hover:border-[#1773d0] shadow-sm hover:shadow-lg transition group">
                             <div class="h-40 md:h-52 bg-slate-50 overflow-hidden">
-                                <img src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/app-2.jpg"
+                                <img loading="lazy" src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/app-2.jpg"
                                     alt="Complex Rotary Cuts on Stainless Steel Tubes via Fiber Laser"
                                     class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                             </div>
@@ -366,7 +372,7 @@
                         <div
                             class="w-56 md:w-72 rounded-xl overflow-hidden bg-white border-2 border-blue-100 hover:border-[#1773d0] shadow-sm hover:shadow-lg transition group">
                             <div class="h-40 md:h-52 bg-slate-50 overflow-hidden">
-                                <img src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/app-3.webp"
+                                <img loading="lazy" src="../../assets/images/ProductsImage/tube-pipe-laser-cutting-machine/app-3.webp"
                                     alt="Precision Mitre Cutting for Furniture and Fitness Equipment"
                                     class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                             </div>

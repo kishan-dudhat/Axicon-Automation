@@ -62,7 +62,13 @@
         }
     </script>
 
+    <!-- Font Awesome — async (non-render-blocking) -->
+  <link rel="preload" as="style"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </noscript>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/product.css" />
     <script type="module" src="/js/main.js"></script>
@@ -86,7 +92,7 @@
                 <!-- Dark Overlay -->
                 <div class="absolute inset-0 bg-black/50 z-10 transition-all duration-500"></div>
 
-                <img src="./assets/images/ProductsImage/Products-hero-images.avif"
+                <img loading="lazy" src="./assets/images/ProductsImage/Products-hero-images.avif"
                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                     alt="Axicon Automation of Products Images" />
 
@@ -220,35 +226,35 @@
                                     <!-- Slide -->
                                     <div
                                         class="w-full shrink-0 flex justify-center items-center min-h-[320px] md:min-h-[420px] px-10">
-                                        <img src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-1.jpeg"
+                                        <img loading="lazy" src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-1.jpeg"
                                             class="max-h-[380px] object-contain" alt="Axicon Industrial CO2 Laser Cutting
                                             Machine for Large Sheet Materials">
                                     </div>
 
                                     <div
                                         class="w-full shrink-0 flex justify-center items-center min-h-[320px] md:min-h-[420px] px-10">
-                                        <img src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-2.webp"
+                                        <img loading="lazy" src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-2.webp"
                                             class="max-h-[380px] object-contain"
                                             alt="Precision Acrylic and Plastic Sheet Laser Cutting with Smooth Edges">
                                     </div>
 
                                     <div
                                         class="w-full shrink-0 flex justify-center items-center min-h-[320px] md:min-h-[420px] px-10">
-                                        <img src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-3.jpg"
+                                        <img loading="lazy" src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-3.jpg"
                                             class="max-h-[380px] object-contain"
                                             alt="Versatile CO2 Laser Solution for Wood, Leather, and Fabric Fabrication">
                                     </div>
 
                                     <div
                                         class="w-full shrink-0 flex justify-center items-center min-h-[320px] md:min-h-[420px] px-10">
-                                        <img src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-4.webp"
+                                        <img loading="lazy" src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-4.webp"
                                             class="max-h-[380px] object-contain"
                                             alt="Sleek and Clean Wood Cutting Service with High-Power CO2 Laser">
                                     </div>
 
                                     <div
                                         class="w-full shrink-0 flex justify-center items-center min-h-[320px] md:min-h-[420px] px-10">
-                                        <img src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-5.avif"
+                                        <img loading="lazy" src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-5.avif"
                                             class="max-h-[380px] object-contain"
                                             alt="Professional Acrylic Fabrication via Advanced Industrial CO2 Laser">
                                     </div>
@@ -268,34 +274,34 @@
                         <div id="thumbs" class="w-full flex gap-3 md:gap-5 justify-center py-2 relative z-10">
                             <button
                                 class="thumb border-2 border-[#1773d0] rounded-lg bg-white shadow-md p-1 w-20 h-14 md:w-28 md:h-16">
-                                <img src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-1.jpeg"
+                                <img loading="lazy" src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-1.jpeg"
                                     alt="Axicon Industrial CO2 Laser Cutting Machine for Large Sheet Materials"
                                     class="w-full h-full object-contain">
                             </button>
 
                             <button
                                 class="thumb border-2 border-transparent rounded-lg bg-gray-100 p-1 w-20 h-14 md:w-28 md:h-16">
-                                <img src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-2.webp"
+                                <img loading="lazy" src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-2.webp"
                                     class="w-full h-full object-contain opacity-80">
                             </button>
 
                             <button
                                 class="thumb border-2 border-transparent rounded-lg bg-gray-100 p-1 w-20 h-14 md:w-28 md:h-16">
-                                <img src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-3.jpg"
+                                <img loading="lazy" src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-3.jpg"
                                     alt="Versatile CO2 Laser Solution for Wood, Leather, and Fabric Fabrication" ,
                                     class="w-full h-full object-contain opacity-80">
                             </button>
 
                             <button
                                 class="thumb border-2 border-transparent rounded-lg bg-gray-100 p-1 w-20 h-14 md:w-28 md:h-16">
-                                <img src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-4.webp"
+                                <img loading="lazy" src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-4.webp"
                                     alt="Versatile CO2 Laser Solution for Wood, Leather, and Fabric Fabrication" ,
                                     class="w-full h-full object-contain opacity-80">
                             </button>
 
                             <button
                                 class="thumb border-2 border-transparent rounded-lg bg-gray-100 p-1 w-20 h-14 md:w-28 md:h-16">
-                                <img src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-5.avif"
+                                <img loading="lazy" src="../../assets/images/ProductsImage/co2-laser-cutting-machine/product-5.avif"
                                     alt="Versatile CO2 Laser Solution for Wood, Leather, and Fabric Fabrication" ,
                                     class="w-full h-full object-contain opacity-80">
                             </button>
@@ -364,7 +370,7 @@
                         <div
                             class="w-56 md:w-72 rounded-xl overflow-hidden bg-white border-2 border-blue-100 hover:border-[#1773d0] shadow-sm hover:shadow-lg transition group">
                             <div class="h-40 md:h-52 bg-slate-50 overflow-hidden">
-                                <img src="../../assets/images/ProductsImage/co2-laser-cutting-machine/app-1.jpg"
+                                <img loading="lazy" src="../../assets/images/ProductsImage/co2-laser-cutting-machine/app-1.jpg"
                                     alt="Intricate Signage and Letter Cutting via CO2 Laser System"
                                     class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                             </div>
@@ -373,7 +379,7 @@
                         <div
                             class="w-56 md:w-72 rounded-xl overflow-hidden bg-white border-2 border-blue-100 hover:border-[#1773d0] shadow-sm hover:shadow-lg transition group">
                             <div class="h-40 md:h-52 bg-slate-50 overflow-hidden">
-                                <img src="../../assets/images/ProductsImage/co2-laser-cutting-machine/app-2.jpg"
+                                <img loading="lazy" src="../../assets/images/ProductsImage/co2-laser-cutting-machine/app-2.jpg"
                                     alt="Intricate Signage and Letter Cutting via CO2 Laser System"
                                     class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                             </div>
@@ -382,7 +388,7 @@
                         <div
                             class="w-56 md:w-72 rounded-xl overflow-hidden bg-white border-2 border-blue-100 hover:border-[#1773d0] shadow-sm hover:shadow-lg transition group">
                             <div class="h-40 md:h-52 bg-slate-50 overflow-hidden">
-                                <img src="../../assets/images/ProductsImage/co2-laser-cutting-machine/app-3.webp"
+                                <img loading="lazy" src="../../assets/images/ProductsImage/co2-laser-cutting-machine/app-3.webp"
                                     alt="Intricate Signage and Letter Cutting via CO2 Laser System"
                                     class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                             </div>
@@ -391,7 +397,7 @@
                         <div
                             class="w-56 md:w-72 rounded-xl overflow-hidden bg-white border-2 border-blue-100 hover:border-[#1773d0] shadow-sm hover:shadow-lg transition group">
                             <div class="h-40 md:h-52 bg-slate-50 overflow-hidden">
-                                <img src="../../assets/images/ProductsImage/co2-laser-cutting-machine/app-4.jpg"
+                                <img loading="lazy" src="../../assets/images/ProductsImage/co2-laser-cutting-machine/app-4.jpg"
                                     alt="Intricate Signage and Letter Cutting via CO2 Laser System"
                                     class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                             </div>

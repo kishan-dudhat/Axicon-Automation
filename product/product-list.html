@@ -62,7 +62,13 @@
     }
   </script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Font Awesome — async (non-render-blocking) -->
+  <link rel="preload" as="style"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </noscript>
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/product-list.css" />
   <script type="module" src="/js/main.js"></script>
@@ -83,7 +89,7 @@
         <!-- Dark Overlay -->
         <div class="absolute inset-0 bg-black/50 z-10 transition-all duration-500"></div>
 
-        <img src="./assets/images/ProductsImage/hero-bg.png"
+        <img loading="lazy" src="./assets/images/ProductsImage/hero-bg.png"
           class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
           alt="Axicon Automation - High-Precision Industrial Laser Product Catalog" />
 
@@ -180,4 +186,4 @@
   <script type="module" src="/js/product-list.js"></script>
 </body>
 
-</html>
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   

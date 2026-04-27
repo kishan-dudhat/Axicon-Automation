@@ -22,10 +22,30 @@
   <meta name="twitter:title" content="Send Product Inquiry | Axicon Automation Laser Machines" />
   <meta name="twitter:description" content="Send your product inquiry to Axicon Automation. Our team will respond with specifications, pricing, and a customized quote within 24 hours." />
   <meta name="twitter:image" content="https://www.axiconautomation.com/assets/images/axicon-automation-logo.webp" />
+  <meta name="theme-color" content="#1773d0" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+  <!-- DNS Prefetch for external domains -->
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+  <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Google Fonts — async (non-render-blocking) -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet" />
+  </noscript>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -65,7 +85,7 @@
         <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-transparent z-10"></div>
         <div class="absolute inset-0 bg-black/30 z-10"></div>
     
-        <img src="./assets/images/contactImage/contact-hero-image-new.png"
+        <img loading="lazy" src="./assets/images/contactImage/contact-hero-image-new.png"
           class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
           alt="Request an Industrial Automation Inquiry from Axicon - Custom Laser Solutions" />
         <div class="relative z-20 text-center px-4 md:px-8 mt-16 md:mt-24">

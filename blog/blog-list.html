@@ -40,7 +40,13 @@
       }
     }
   </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Font Awesome — async (non-render-blocking) -->
+  <link rel="preload" as="style"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </noscript>
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/updates.css" />
   <script type="module" src="/js/main.js"></script>
@@ -61,7 +67,7 @@
             <div class="absolute inset-0 bg-black/60 z-10 transition-all duration-500"></div>
     
             <!-- Featured Background Image -->
-            <img src="./assets/images/blog/hero-industrial.png"
+            <img loading="lazy" src="./assets/images/blog/hero-industrial.png"
                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 alt="Axicon Automation Industrial Insights Background">
     

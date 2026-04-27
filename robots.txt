@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://axiconautomation.com/sitemap.xml
+# Disallow redirect stubs (old URLs that just redirect)
+Disallow: /blog.html
+Disallow: /contact.html
+Disallow: /inquiry.html
+Disallow: /virtual-demo.html
+Disallow: /product-list.html
+
+Sitemap: https://www.axiconautomation.com/sitemap.xml
