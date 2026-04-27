@@ -4,7 +4,8 @@
     inset: 0;
     z-index: 10000;
     display: flex;
-    align-items: center; /* Center vertically for the slim card */
+    align-items: center;
+    /* Center vertically for the slim card */
     justify-content: center;
     background-color: rgba(15, 23, 42, 0.75);
     backdrop-filter: blur(8px);
@@ -28,7 +29,8 @@
 /* Container */
 .popup-content-container {
     width: 100%;
-    max-width: 650px; /* Optimized for 2-column grid */
+    max-width: 650px;
+    /* Optimized for 2-column grid */
     animation: popupFadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -44,7 +46,8 @@
 
 /* Top Header Bar */
 .popup-top-header {
-    background-color: #3e4095; /* Axicon Blue */
+    background-color: #3e4095;
+    /* Axicon Blue */
     padding: 1rem 1.5rem;
     display: flex;
     justify-content: space-between;
@@ -56,6 +59,7 @@
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 0.02em;
+    color: #fff;
 }
 
 .popup-close-btn {
@@ -137,7 +141,8 @@
 /* Dark, legible placeholders */
 .popup-form input::placeholder,
 .popup-form textarea::placeholder {
-    color: #475569; /* Dark Slate */
+    color: #475569;
+    /* Dark Slate */
     opacity: 1;
 }
 
@@ -182,6 +187,7 @@
         opacity: 0;
         transform: scale(0.95) translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: scale(1) translateY(0);
@@ -192,46 +198,59 @@
 @media (max-width: 550px) {
     .popup-overlay {
         padding: 0.75rem;
-        align-items: flex-start; /* Better for scrolling on very small phones */
+        align-items: flex-start;
+        /* Better for scrolling on very small phones */
     }
+
     .popup-content-container {
         max-width: 100%;
         margin-top: 0.25rem;
         margin-bottom: 2rem;
     }
+
     .popup-top-header {
         padding: 0.75rem 1rem;
     }
+
     .header-title {
         font-size: 0.95rem;
     }
+
     .popup-close-btn {
         width: 24px;
         height: 24px;
     }
+
     .popup-form-side {
         padding: 1.25rem 1rem;
     }
+
     .form-intro {
         margin-bottom: 0.75rem;
     }
+
     .form-heading {
         font-size: 1.15rem;
     }
+
     .form-subline {
         font-size: 0.75rem;
     }
+
     .popup-form {
         gap: 0.55rem;
     }
+
     .form-grid {
         gap: 0.55rem;
     }
+
     .popup-form input,
     .popup-form textarea {
         padding: 0.65rem 0.85rem;
         font-size: 0.85rem;
     }
+
     .popup-submit-btn {
         margin-top: 0.25rem;
         padding: 0.75rem;
