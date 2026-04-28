@@ -101,7 +101,7 @@ export const homeProducts = [
     "id": 15,
     "name": "3D Laser Marking Machine",
     "description": "3D laser marking machine enables marking on curved and uneven surfaces. Dynamic focus technology ensures consistent marking depth. Ideal for automotive parts, tools, and complex...",
-    "image": "./assets/images/ProductsImage/3d-laser-marking-machine/product-1.jpg",
+    "image": "./assets/images/ProductsImage/3d-laser-marking-machine/product-1.png",
     "navigatelink": "/product/3d-laser-marking-machine.html"
   },
   {
