@@ -10,6 +10,8 @@ const productsBtn = document.getElementById("products-btn");
 const productsPanel = document.getElementById("products-panel");
 const contactUsBtn = document.getElementById("contact-us-btn");
 const contactUsPanel = document.getElementById("contact-us-panel");
+const logoBlack = document.getElementById("logo-black");
+const logoWhite = document.getElementById("logo-white");
 
 const navbarManageScroll = () => {
   let last = 0;
@@ -24,6 +26,8 @@ const navbarManageScroll = () => {
     desktopNavbar.classList.add("hidden");
     mobileMenu.classList.remove("hidden");
     mobileMenuToggle.classList.remove("hidden");
+    logoBlack.classList.remove("hidden");
+    logoWhite.classList.add("hidden");
     last = y;
     return;
   }
@@ -32,6 +36,12 @@ const navbarManageScroll = () => {
     mobileMenuToggle.classList.add("hidden");
     mobileMenu.classList.add("hidden");
     desktopNavbar.classList.remove("hidden");
+    logoBlack.classList.remove("hidden");
+    logoWhite.classList.add("hidden");
+    if(y === 0) {
+      logoBlack.classList.add("hidden");
+      logoWhite.classList.remove("hidden");
+    }
   }
 
   // Desktop → top of page
