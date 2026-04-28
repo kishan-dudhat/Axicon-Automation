@@ -66,7 +66,7 @@ export const homeProducts = [
     "id": 10,
     "name": "Metal Laser Cutting Machine",
     "description": "Metal laser cutting machine provides high-speed precision cutting for stainless steel, mild steel, aluminum, and other metals. CNC controlled system ensures accuracy and efficiency. Ideal...",
-    "image": "./assets/images/ProductsImage/matel-laser-cutting-machine/product-1.jpeg",
+    "image": "./assets/images/ProductsImage/matel-laser-cutting-machine/product-1.png",
     "navigatelink": "/product/metal-laser-cutting-machine.html"
   },
   {
