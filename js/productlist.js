@@ -17,7 +17,7 @@ export const homeProducts = [
     "id": 3,
     "name": "CO2 Laser Marking Machine",
     "description": "CO₂ laser marking machine is suitable for non-metal materials such as wood, acrylic, leather, paper, and plastics. Provides clean, high-speed marking and engraving. Widely used...",
-    "image": "./assets/images/ProductsImage/co2-laser-marking-machine/product-1.jpg",
+    "image": "./assets/images/ProductsImage/co2-laser-marking-machine/product-1.png",
     "navigatelink": "/product/co2-laser-marking-machine.html"
   },
   {
