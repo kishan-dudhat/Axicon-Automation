@@ -73,7 +73,7 @@ export const homeProducts = [
     "id": 11,
     "name": "Tube Pipe Laser Cutting Machine",
     "description": "Tube pipe laser cutting machine is designed for precision cutting of round, square, and rectangular pipes. High-speed rotary system ensures accurate cuts. Ideal for furniture...",
-    "image": "./assets/images/ProductsImage/tube-pipe-laser-cutting-machine/product-1.webp",
+    "image": "./assets/images/ProductsImage/tube-pipe-laser-cutting-machine/product-1.jpeg",
     "navigatelink": "/product/tube-pipe-laser-cutting-machine.html"
   },
   {
