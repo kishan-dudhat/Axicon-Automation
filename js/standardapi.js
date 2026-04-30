@@ -5,7 +5,7 @@
 export async function submitForm(data) {
     const API_ENDPOINT = 'https://api.web3forms.com/submit';
     const mailformate = {
-        access_key: "4518f12f-5ee8-445b-beee-5a8d5fc84bb9", // Centralized Key
+        access_key: "796a7fdf-3c41-43f3-868e-b206868c9e5f", // Centralized Key
         subject: "🚀 New Lead - Axicon Automation",
         from_name: "Axicon Automation",
     }
