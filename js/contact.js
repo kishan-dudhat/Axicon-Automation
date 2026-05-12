@@ -7,6 +7,53 @@ export function initContactForm() {
     const form = document.getElementById('contactForm');
     if (!form) return;
 
+    /* -------------------------------------------------------
+       Strict Phone Number Validation
+       - Only digits 0–9, max 10 characters
+       - Blocks letters / symbols on keypress, paste & drop
+       ------------------------------------------------------- */
+    const phoneInput = document.getElementById('contactNumber');
+    if (phoneInput) {
+        phoneInput.addEventListener('keydown', (e) => {
+            const allowedKeys = [
+                'Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'Home', 'End',
+                'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'
+            ];
+            if (allowedKeys.includes(e.key)) return;
+            if ((e.ctrlKey || e.metaKey) && ['a', 'c', 'v', 'x', 'z'].includes(e.key.toLowerCase())) return;
+            if (!/^[0-9]$/.test(e.key)) e.preventDefault();
+        });
+        const sanitizePhone = () => {
+            const digitsOnly = phoneInput.value.replace(/\D/g, '').slice(0, 10);
+            if (phoneInput.value !== digitsOnly) phoneInput.value = digitsOnly;
+        };
+        phoneInput.addEventListener('input', sanitizePhone);
+        phoneInput.addEventListener('paste', () => setTimeout(sanitizePhone, 0));
+        phoneInput.addEventListener('drop', () => setTimeout(sanitizePhone, 0));
+        phoneInput.addEventListener('input', () => {
+            const errEl = document.getElementById('contactNumberErr');
+            if (errEl && /^\d{10}$/.test(phoneInput.value)) errEl.classList.add('hidden');
+        });
+    }
+
+    /* -------------------------------------------------------
+       Live error reset for required text fields
+       ------------------------------------------------------- */
+    const liveValidationMap = {
+        name: 'nameErr',
+        email: 'emailErr',
+        country: 'countryErr',
+        city: 'cityErr'
+    };
+    Object.entries(liveValidationMap).forEach(([id, errId]) => {
+        const input = document.getElementById(id);
+        const errEl = document.getElementById(errId);
+        if (!input || !errEl) return;
+        input.addEventListener('input', () => {
+            if (input.value.trim()) errEl.classList.add('hidden');
+        });
+    });
+
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
@@ -14,7 +61,6 @@ export function initContactForm() {
         const name = document.getElementById('name');
         const email = document.getElementById('email');
         const phone = document.getElementById('contactNumber');
-        const message = document.getElementById('message');
         const country = document.getElementById('country');
         const city = document.getElementById('city');
 
@@ -46,11 +92,6 @@ export function initContactForm() {
 
         if (!city.value.trim()) {
             document.getElementById('cityErr').classList.remove('hidden');
-            isValid = false;
-        }
-
-        if (!message.value.trim()) {
-            document.getElementById('messageErr').classList.remove('hidden');
             isValid = false;
         }
 

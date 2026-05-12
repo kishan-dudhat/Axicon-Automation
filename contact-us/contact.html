@@ -243,8 +243,9 @@
                     <!-- Contact Number -->
                     <div class="space-y-2">
                       <input type="tel" id="contactNumber" name="phone" required placeholder="Contact Number *"
+                        inputmode="numeric" maxlength="10" autocomplete="tel" pattern="\d{10}"
                         class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
-                      <p id="contactNumberErr" class="text-xs text-red-500 hidden font-medium ml-1">Valid number required.
+                      <p id="contactNumberErr" class="text-xs text-red-500 hidden font-medium ml-1">Valid 10-digit number required.
                       </p>
                     </div>
                     <!-- Email -->
@@ -276,12 +277,9 @@
                     Your Inquiry
                   </h4>
                   <div class="space-y-2 group">
-                    <textarea id="message" name="message" required rows="5"
+                    <textarea id="message" name="message" rows="5"
                       placeholder="How can we help you? Describe your requirements..."
                       class="w-full px-5 py-5 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 resize-none shadow-sm"></textarea>
-                    <p id="messageErr" class="text-xs text-red-500 hidden font-medium ml-1 mt-1 transition-all">Please
-                      provide
-                      a message.</p>
                   </div>
                 </div>
     

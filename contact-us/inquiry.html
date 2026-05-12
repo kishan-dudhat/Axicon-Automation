@@ -222,6 +222,7 @@
                     </div>
                     <div class="space-y-2">
                       <input type="tel" id="contactNumber" name="phone" required placeholder="Mobile / WhatsApp Number *"
+                        inputmode="numeric" maxlength="10" autocomplete="tel" pattern="\d{10}"
                         class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
                       <p id="contactNumberErr" class="text-xs text-red-500 hidden font-medium ml-1">Valid 10-digit number
                         required.</p>
@@ -242,12 +243,15 @@
                 </div>
     
                 <!-- Section 2: Product Selection Grid -->
-                <div>
+                <div id="productSection">
                   <hr class="border-gray-100 mb-10" />
                   <h4 class="text-xl font-bold text-[#1e293b] mb-8 flex items-center gap-3">
                     <i class="fa-solid fa-layer-group text-brand text-xs"></i>
                     Select Products for Inquiry
                   </h4>
+                  <p id="productErr" class="text-xs text-red-500 hidden font-medium -mt-6 mb-4 ml-1">
+                    Please select at least one product.
+                  </p>
     
                   <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                     <!-- Category 1: Laser Marking -->

@@ -151,19 +151,10 @@
                     </div>
                     <!-- Mobile -->
                     <div class="space-y-2">
-                      <div class="flex">
-                        <div
-                          class="flex items-center gap-2 px-4 py-3 bg-secondary border border-r-0 border-color rounded-l-2xl text-[#1e293b]">
-                          <img loading="lazy" src="https://flagcdn.com/in.svg" class="w-5 h-auto rounded-sm"
-                            alt="Axicon Automation Industrial Services in India" />
-                          <span class="font-bold text-sm">+91</span>
-                          <div class="w-px h-6 bg-gray-300 ml-2"></div>
-                        </div>
-                        <input type="tel" id="contactNumber" name="phone" required placeholder="Mobile Number *"
-                          class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-r-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
-                      </div>
-                      <p id="contactNumberErr" class="text-xs text-red-500 hidden font-medium ml-1">Valid 10-digit number
-                        required.</p>
+                      <input type="tel" id="contactNumber" name="phone" required placeholder="Mobile / WhatsApp Number *"
+                        inputmode="numeric" maxlength="10" autocomplete="tel" pattern="\d{10}"
+                        class="w-full px-5 py-4 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 shadow-sm" />
+                      <p id="contactNumberErr" class="text-xs text-red-500 hidden font-medium ml-1">Valid 10-digit number required.</p>
                     </div>
                   </div>
                   <!-- Address (Single Row) -->
@@ -268,18 +259,15 @@
     
                 <!-- Section 3: Detailed Description -->
                 <div class="space-y-4">
-                  <h4 class="text-lg font-bold text-[#1e293b]">Description *</h4>
+                  <h4 class="text-lg font-bold text-[#1e293b]">Description</h4>
                   <div class="relative">
-                    <textarea id="message" name="message" required rows="4" maxlength="1000"
+                    <textarea id="message" name="message" rows="4" maxlength="1000"
                       placeholder="Tell us about your specific application, material thickness, or desired cycle time..."
                       class="w-full px-5 py-5 bg-secondary border border-color text-[#1e293b] rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all duration-300 resize-none shadow-sm"></textarea>
                     <div class="absolute bottom-4 right-5 text-xs form-option-text opacity-60">
                       <span id="charCount">0</span> of 1000 characters
                     </div>
                   </div>
-                  <p id="messageErr" class="text-xs text-red-500 hidden font-medium ml-1">Please provide a brief
-                    description.
-                  </p>
                 </div>
     
                 <!-- Section 4: Referral Info -->

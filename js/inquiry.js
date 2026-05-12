@@ -19,7 +19,74 @@ export function initInquiryForm() {
                 box.classList.remove('bg-brand', 'border-brand');
                 icon.classList.add('hidden');
             }
+            // Auto-hide product error once at least one product is chosen
+            const productErrEl = document.getElementById('productErr');
+            const anyChecked = form.querySelectorAll('input[name="product"]:checked').length > 0;
+            if (productErrEl && anyChecked) {
+                productErrEl.classList.add('hidden');
+            }
         }
+    });
+
+    /* -------------------------------------------------------
+       Strict Phone Number Validation
+       - Only digits 0–9 are accepted
+       - Maximum length capped at 10 characters
+       - Blocks letters / symbols on keypress, paste & drop
+       ------------------------------------------------------- */
+    const phoneInput = document.getElementById('contactNumber');
+    if (phoneInput) {
+        // Block non-digit keys (allow control keys like backspace, tab, arrows)
+        phoneInput.addEventListener('keydown', (e) => {
+            const allowedKeys = [
+                'Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'Home', 'End',
+                'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'
+            ];
+            if (allowedKeys.includes(e.key)) return;
+            // Allow common copy/paste/select-all shortcuts
+            if ((e.ctrlKey || e.metaKey) && ['a', 'c', 'v', 'x', 'z'].includes(e.key.toLowerCase())) return;
+            // Only digits 0–9 may be typed
+            if (!/^[0-9]$/.test(e.key)) {
+                e.preventDefault();
+            }
+        });
+
+        // Sanitize anything that slips in (paste, autofill, mobile input methods)
+        const sanitizePhone = () => {
+            const digitsOnly = phoneInput.value.replace(/\D/g, '').slice(0, 10);
+            if (phoneInput.value !== digitsOnly) {
+                phoneInput.value = digitsOnly;
+            }
+        };
+        phoneInput.addEventListener('input', sanitizePhone);
+        phoneInput.addEventListener('paste', () => setTimeout(sanitizePhone, 0));
+        phoneInput.addEventListener('drop', () => setTimeout(sanitizePhone, 0));
+
+        // Hide phone error as soon as user starts fixing it
+        phoneInput.addEventListener('input', () => {
+            const errEl = document.getElementById('contactNumberErr');
+            if (errEl && /^\d{10}$/.test(phoneInput.value)) {
+                errEl.classList.add('hidden');
+            }
+        });
+    }
+
+    /* -------------------------------------------------------
+       Live error reset for other required text fields
+       ------------------------------------------------------- */
+    const liveValidationMap = {
+        name: 'nameErr',
+        company: 'companyErr',
+        address: 'addressErr',
+        email: 'emailErr'
+    };
+    Object.entries(liveValidationMap).forEach(([id, errId]) => {
+        const input = document.getElementById(id);
+        const errEl = document.getElementById(errId);
+        if (!input || !errEl) return;
+        input.addEventListener('input', () => {
+            if (input.value.trim()) errEl.classList.add('hidden');
+        });
     });
 
     form.addEventListener('submit', async (e) => {
@@ -63,6 +130,16 @@ export function initInquiryForm() {
         if (!fields.phone.value.trim() || !/^\d{10}$/.test(fields.phone.value.trim())) {
             document.getElementById('contactNumberErr').classList.remove('hidden');
             isValid = false;
+        }
+
+        // Require at least one product selection
+        const selectedProducts = form.querySelectorAll('input[name="product"]:checked');
+        const productErrEl = document.getElementById('productErr');
+        if (selectedProducts.length === 0) {
+            if (productErrEl) productErrEl.classList.remove('hidden');
+            isValid = false;
+        } else if (productErrEl) {
+            productErrEl.classList.add('hidden');
         }
 
         if (!isValid) {

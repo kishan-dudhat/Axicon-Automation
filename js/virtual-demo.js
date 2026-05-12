@@ -10,12 +10,12 @@ export function initDemoForm() {
     // --- 1. Character Counter Logic ---
     const textarea = document.getElementById('message');
     const charCount = document.getElementById('charCount');
-    
+
     if (textarea && charCount) {
         textarea.addEventListener('input', () => {
             const count = textarea.value.length;
             charCount.textContent = count;
-            
+
             // Visual feedback as it nears limit
             if (count > 900) {
                 charCount.style.color = '#ef4444'; // Red
@@ -24,6 +24,53 @@ export function initDemoForm() {
             }
         });
     }
+
+    /* -------------------------------------------------------
+       Strict Phone Number Validation
+       - Only digits 0–9, max 10 characters
+       - Blocks letters / symbols on keypress, paste & drop
+       ------------------------------------------------------- */
+    const phoneInput = document.getElementById('contactNumber');
+    if (phoneInput) {
+        phoneInput.addEventListener('keydown', (e) => {
+            const allowedKeys = [
+                'Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'Home', 'End',
+                'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'
+            ];
+            if (allowedKeys.includes(e.key)) return;
+            if ((e.ctrlKey || e.metaKey) && ['a', 'c', 'v', 'x', 'z'].includes(e.key.toLowerCase())) return;
+            if (!/^[0-9]$/.test(e.key)) e.preventDefault();
+        });
+        const sanitizePhone = () => {
+            const digitsOnly = phoneInput.value.replace(/\D/g, '').slice(0, 10);
+            if (phoneInput.value !== digitsOnly) phoneInput.value = digitsOnly;
+        };
+        phoneInput.addEventListener('input', sanitizePhone);
+        phoneInput.addEventListener('paste', () => setTimeout(sanitizePhone, 0));
+        phoneInput.addEventListener('drop', () => setTimeout(sanitizePhone, 0));
+        phoneInput.addEventListener('input', () => {
+            const errEl = document.getElementById('contactNumberErr');
+            if (errEl && /^\d{10}$/.test(phoneInput.value)) errEl.classList.add('hidden');
+        });
+    }
+
+    /* -------------------------------------------------------
+       Live error reset for required text fields
+       ------------------------------------------------------- */
+    const liveValidationMap = {
+        name: 'nameErr',
+        email: 'emailErr',
+        company: 'companyErr',
+        address: 'addressErr'
+    };
+    Object.entries(liveValidationMap).forEach(([id, errId]) => {
+        const input = document.getElementById(id);
+        const errEl = document.getElementById(errId);
+        if (!input || !errEl) return;
+        input.addEventListener('input', () => {
+            if (input.value.trim()) errEl.classList.add('hidden');
+        });
+    });
 
     // --- 2. Form Submission ---
     form.addEventListener('submit', async (e) => {
@@ -35,7 +82,6 @@ export function initDemoForm() {
         const phone = document.getElementById('contactNumber');
         const company = document.getElementById('company');
         const address = document.getElementById('address');
-        const message = document.getElementById('message');
 
         let isValid = true;
 
@@ -65,11 +111,6 @@ export function initDemoForm() {
 
         if (!address.value.trim()) {
             document.getElementById('addressErr').classList.remove('hidden');
-            isValid = false;
-        }
-
-        if (!message.value.trim()) {
-            document.getElementById('messageErr').classList.remove('hidden');
             isValid = false;
         }
 

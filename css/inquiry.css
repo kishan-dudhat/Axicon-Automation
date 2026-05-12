@@ -6,7 +6,52 @@
     }
 }
 
-/* Standardize option text color */
+/* Default (placeholder) color for empty dropdowns */
 .form-option-text {
     color: #93a2b5 !important;
+}
+
+/* ----------------------------------------------------
+   Custom dropdown design (design-only, no logic change)
+   ---------------------------------------------------- */
+
+/* Remove native arrow and add a custom chevron */
+#inquiryForm select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231e293b' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1.1rem center;
+    background-size: 1.1rem 1.1rem;
+    padding-right: 2.75rem !important;
+    cursor: pointer;
+}
+
+/* Subtle accent on the arrow when the field is focused */
+#inquiryForm select:focus {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231773d0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+}
+
+/* Once a real value (not the empty placeholder) is selected,
+   show the displayed text in the dark form color */
+#inquiryForm select.form-option-text:has(option:checked:not([value=""])) {
+    color: #1e293b !important;
+}
+
+/* Country select already uses a dark text class — keep it dark */
+#inquiryForm select#country {
+    color: #1e293b !important;
+}
+
+/* Options in the open dropdown list should always be dark on white */
+#inquiryForm select option {
+    color: #1e293b;
+    background-color: #ffffff;
+    font-weight: 500;
+}
+
+/* Keep the empty placeholder option grey inside the open list */
+#inquiryForm select option[value=""] {
+    color: #93a2b5;
 }
